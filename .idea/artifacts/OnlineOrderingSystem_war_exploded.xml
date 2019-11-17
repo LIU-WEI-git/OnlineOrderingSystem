@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="OnlineOrderingSystem:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="OnlineOrderingSystem/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="OnlineOrderingSystem" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.18.RELEASE" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../commons-dbcp2-2.7.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-dbcp2-2.7.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/validation-api-1.1.0.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-pool2-2.7.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.48.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
