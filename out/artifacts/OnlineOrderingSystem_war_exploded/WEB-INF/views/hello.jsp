@@ -17,6 +17,6 @@
 Hello World!
 <br>
 ${admin.admin_account}
-<a href="<c:url value="/admin/alogin" />">看看管理员</a>
+<a href="<c:url value="/admin/alogin" />">管理员登陆</a>
 </body>
 </html>
