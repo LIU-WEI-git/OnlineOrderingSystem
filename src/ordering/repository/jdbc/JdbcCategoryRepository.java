@@ -23,6 +23,7 @@ public class JdbcCategoryRepository implements CategoryRepository {
     private JdbcTemplate jdbcTemplate;
     private RowMapper<Category> categoryRowMapper = new BeanPropertyRowMapper<>(Category.class);
 
+    private static final String TOTAL_CATEGORY = "select count(*) from category";
     private static final String SELECT_CATEGORY = "select * from category";
     private static final String INSERT_CATEGORY = "insert into category (category_id,category_name) values (?,?)";
     private static final String DELETE_CATEGORY = "delete from category where ";
@@ -31,6 +32,18 @@ public class JdbcCategoryRepository implements CategoryRepository {
     @Autowired
     public JdbcCategoryRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+    @Override
+    public boolean isInDB(String category_name) {
+        if (jdbcTemplate.queryForObject(TOTAL_CATEGORY + " where category_name=" + category_name, Integer.class) == 0)
+            return false;
+        else return true;
+    }
+
+    @Override
+    public int totalCategories() {
+        return jdbcTemplate.queryForObject(TOTAL_CATEGORY, Integer.class);
     }
 
     @Override

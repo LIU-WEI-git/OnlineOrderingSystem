@@ -13,6 +13,21 @@ import java.util.List;
 public interface CategoryRepository {
 
     /**
+     * 判断某菜品名是否在数据库中
+     *
+     * @param category_name
+     * @return 返回判断结果
+     */
+    boolean isInDB(String category_name);
+
+    /**
+     * 获得当前菜品总数
+     *
+     * @return 菜品总数
+     */
+    int totalCategories();
+
+    /**
      * 获取所有菜品类别
      *
      * @return 返回菜品类别列表
