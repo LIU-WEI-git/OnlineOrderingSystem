@@ -16,6 +16,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/validation-api-1.1.0.Final.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/commons-pool2-2.7.0.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.48.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.17.jar" />
         </element>
       </element>
     </root>

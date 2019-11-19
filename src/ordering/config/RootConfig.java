@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
+import java.util.ResourceBundle;
 
 /**
  * @author: 刘威
@@ -17,8 +18,18 @@ import javax.sql.DataSource;
  */
 @Configuration  //定义为配置类
 @ComponentScan(basePackages={"ordering"},excludeFilters={@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class )})
-
 public class RootConfig {
+
+    // 读取数据库配置文件
+    private static ResourceBundle resource = ResourceBundle.getBundle("ordering.config.dbconfig");
+
+    // 获取数据库配置
+    private static String DRIVER = resource.getString("DRIVER");
+    private static String URL = resource.getString("URL");
+    private static String DBNAME = resource.getString("DBNAME");
+    private static String DBCONFIG = resource.getString("DBCONFIG");
+    private static String USER = resource.getString("USER");
+    private static String PASSWORD = resource.getString("PASSWORD");
 
     /**
      * 数据源设置，采用MySQL数据库，此处运用了数据源连接池BasicDataSource
@@ -27,11 +38,11 @@ public class RootConfig {
     @Bean
     public BasicDataSource dataSource(){
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver"); //jdbc驱动
+        dataSource.setDriverClassName(DRIVER); //jdbc驱动
         //数据库url
-        dataSource.setUrl("jdbc:mysql://localhost:3306/online_ordering_system?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-        dataSource.setUsername("root");
-        dataSource.setPassword("12345");
+        dataSource.setUrl(URL + DBNAME + DBCONFIG);
+        dataSource.setUsername(USER);
+        dataSource.setPassword(PASSWORD);
         dataSource.setInitialSize(5);
         dataSource.setMaxTotal(10);
         return dataSource;
