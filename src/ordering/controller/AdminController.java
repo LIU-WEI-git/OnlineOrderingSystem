@@ -38,9 +38,9 @@ public class AdminController {
         if (admin != null) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
-            return "hello";
+            return "index";
         } else {
-            return "loginError";
+            return "store";
         }
 
     }

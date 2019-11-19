@@ -6,25 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="创建两个视图对应的类">
-      <change afterPath="$PROJECT_DIR$/web/resources/css/style1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/pass.png" afterDir="false" />
+    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/RootConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/RootConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/RootConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/RootConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineOrderingSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineOrderingSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/css/style1.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/use.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,13 +61,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>config</find>
-      <find>application</find>
-      <find>contextpath</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -104,7 +84,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/resources/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/resources/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -113,7 +93,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24594992" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -128,8 +108,8 @@
       <recent name="ordering.domian" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\qiafan\web\resources\css" />
       <recent name="G:\qiafan\web\resources\images" />
+      <recent name="G:\qiafan\web\resources\css" />
       <recent name="G:\qiafan\web\resources" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\resources" />
@@ -262,7 +242,7 @@
       <workItem from="1573980982431" duration="11547000" />
       <workItem from="1574063695465" duration="8942000" />
       <workItem from="1574123211834" duration="7053000" />
-      <workItem from="1574170601940" duration="2685000" />
+      <workItem from="1574170601940" duration="6732000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -278,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574134241580</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="尝试1">
+      <created>1574173383377</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574173383377</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -334,83 +321,18 @@
     <MESSAGE value="newMaster" />
     <MESSAGE value="1.合并前端模板 2.数据库链接属性可用配置文件配置 3.更新数据数据 4.增加了两个数据库视图" />
     <MESSAGE value="创建两个视图对应的类" />
-    <option name="LAST_COMMIT_MESSAGE" value="创建两个视图对应的类" />
+    <MESSAGE value="尝试1" />
+    <option name="LAST_COMMIT_MESSAGE" value="尝试1" />
   </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>OnlineOrderingSystem:war exploded</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24594992" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring (OnlineOrderingSystem)|Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24594992" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>html5shiv</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24594992" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24594992" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>OnlineOrderingSystem</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24594992" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Spring MVC-4.3.18.RELEASE</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24594992" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ordering/controller/AdminController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

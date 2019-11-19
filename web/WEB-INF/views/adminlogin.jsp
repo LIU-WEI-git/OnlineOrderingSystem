@@ -10,13 +10,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%--<!DOCTYPE html>--%>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
-    <link href="${pageContext.request.contextPath}/resources/css/style1.css" rel='stylesheet' type='text/css' />
+    <link href="${pageContext.request.contextPath}/resources/css/use.css" rel='stylesheet' type='text/css' />
     <!--webfonts-->
     <link href='http://fonts.useso.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
@@ -33,7 +34,7 @@
 });
 </script>
 <!--SIGN UP-->
-<h1>klasikal Login Form</h1>
+<h1>Admin Login </h1>
 <div class="login-form">
     <div class="close"> </div>
     <div class="head-info">
@@ -43,17 +44,17 @@
     </div>
     <div class="clear"> </div>
     <div class="avtar">
-        <img src="{pageContext.request.contextPath}/resources/images/avtar.png" />
+        <img src="${pageContext.request.contextPath}/resources/images/avtar.png" />
     </div>
-    <form>
-        <input type="text" class="text" value="Username" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"--%> >
+    <form method="post">
+        <input type="text"  name="userName" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" --%>>
         <div class="key">
-            <input type="password" value="Password" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"--%>>
+            <input type="password" name="password" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"--%>>
         </div>
-    </form>
+
     <div class="signin">
         <input type="submit" value="Login" >
-    </div>
+    </div> </form>
 </div>
 <div class="copy-rights">
     <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
