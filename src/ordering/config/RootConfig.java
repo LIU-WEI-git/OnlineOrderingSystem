@@ -12,6 +12,8 @@ import javax.sql.DataSource;
 import java.util.ResourceBundle;
 
 /**
+ * 数据库访问配置类
+ *
  * @author: 刘威
  * @version: 1.0
  * Created in 2019/11/17 17:05
