@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+
 @Controller
 @RequestMapping("/admin")
-public class ManagerController {
+public class AdminController {
     @Autowired
     private AdminRepository adminRepository;
 
@@ -31,7 +32,7 @@ public class ManagerController {
 
     @RequestMapping(value = "/alogin", method = POST)
     public String processLogin(@RequestParam(value = "userName", defaultValue = "") String userName,
-                                @RequestParam(value = "password", defaultValue = "") String password, HttpSession session) {
+                               @RequestParam(value = "password", defaultValue = "") String password, HttpSession session) {
 
         Admin admin = adminRepository.findByUserName(userName, password);
         if (admin != null) {
@@ -43,4 +44,5 @@ public class ManagerController {
         }
 
     }
+
 }
