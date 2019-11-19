@@ -5,7 +5,8 @@ import ordering.domain.Admin;
 import java.util.List;
 
 /**
- * @author: 刘威
+ * admin资源库接口
+ *
  * @version: 1.0
  * Created in 2019/11/17 9:29
  */

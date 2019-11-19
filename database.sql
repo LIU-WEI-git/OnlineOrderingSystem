@@ -71,11 +71,11 @@ CREATE TABLE `category` (
 /*Data for the table `category` */
 
 insert  into `category`(`category_id`,`category_name`) values 
-('201','pizza'),
-('202','bakedrice'),
-('203','bakednoodles'),
-('204','snack'),
-('205','drink');
+('201','披萨'),
+('202','汉堡'),
+('203','面食'),
+('204','小吃'),
+('205','饮料');
 
 /*Table structure for table `customer` */
 
@@ -86,13 +86,13 @@ CREATE TABLE `customer` (
   `customer_name` varchar(20) DEFAULT NULL,
   `customer_password` varchar(20) NOT NULL,
   `customer_register_time` datetime NOT NULL,
-  `cutomer_emali` varchar(40) DEFAULT NULL,
+  `customer_email` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`customer_account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `customer` */
 
-insert  into `customer`(`customer_account`,`customer_name`,`customer_password`,`customer_register_time`,`cutomer_emali`) values 
+insert  into `customer`(`customer_account`,`customer_name`,`customer_password`,`customer_register_time`,`customer_email`) values 
 ('10086001','customer','123','2019-09-01 09:02:26','customer@163.com'),
 ('10086123','吴东杰','wdj123','2019-11-18 21:10:51','wdj@163.com'),
 ('10086223','商学伟','sxw123','2019-11-13 21:11:26','sxw@163.com');

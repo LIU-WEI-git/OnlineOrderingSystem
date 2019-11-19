@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class Customer {
 
-    private String customer;
+    private String customer_account;
     private String customer_name;
     private String customer_password;
     private Date customer_register_time;
@@ -26,26 +26,26 @@ public class Customer {
     /**
      * 构造函数
      *
-     * @param customer
+     * @param customer_account
      * @param customer_name
      * @param customer_password
      * @param customer_register_time
      * @param customer_email
      */
-    public Customer(String customer, String customer_name, String customer_password, Date customer_register_time, String customer_email) {
-        this.customer = customer;
+    public Customer(String customer_account, String customer_name, String customer_password, Date customer_register_time, String customer_email) {
+        this.customer_account = customer_account;
         this.customer_name = customer_name;
         this.customer_password = customer_password;
         this.customer_register_time = customer_register_time;
         this.customer_email = customer_email;
     }
 
-    public String getCustomer() {
-        return customer;
+    public String getCustomer_account() {
+        return customer_account;
     }
 
-    public void setCustomer(String customer) {
-        this.customer = customer;
+    public void setCustomer(String customer_account) {
+        this.customer_account = customer_account;
     }
 
     public String getCustomer_name() {
