@@ -1,23 +1,28 @@
 package ordering.controller;
 
-import ordering.repository.AdminRepository;
+import ordering.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * 顾客相关页面控制类
+ *
+ * @version: 1.0
+ * Created in 2019/11/19 18:55
+ */
 @Controller
-@RequestMapping("/hello")
-public class HelloController {
+@RequestMapping(value="/")
+public class CustomerController {
 
     @Autowired
-    private AdminRepository adminRepository;
+    private CategoryRepository categoryRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String hello(Model model) {
-        //测试数据库连接，界面应当显示数据库第一个admin的account
-        model.addAttribute("admin", adminRepository.getAdminList().get(0));
-        return "hello";
+    public String welcome(Model model){
+        model.addAttribute(categoryRepository.getCategoryList());
+        return "customer_welcome";
     }
 }

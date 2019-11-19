@@ -71,11 +71,11 @@ CREATE TABLE `category` (
 /*Data for the table `category` */
 
 insert  into `category`(`category_id`,`category_name`) values 
-('201','pizza'),
-('202','bakedrice'),
-('203','bakednoodles'),
-('204','snack'),
-('205','drink');
+('201','披萨'),
+('202','汉堡'),
+('203','面食'),
+('204','小吃'),
+('205','饮料');
 
 /*Table structure for table `customer` */
 
