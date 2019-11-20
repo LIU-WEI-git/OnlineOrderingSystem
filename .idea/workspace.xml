@@ -6,280 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/etalage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/body_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/cat_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/category_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/footer_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/img-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/img-sprite.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/label_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/marker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/marker1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/mobile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/order.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/payment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/s1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/s2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/s3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/secure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/tick1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/wish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/easyResponsiveTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery.etalage.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/dbconfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/CustomerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/DishController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/DishCategorySupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/OrderAddressInfoView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/OrderItemInfoView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/PaginationSupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/CategoryRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/CustomerRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/DishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCategoryRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCustomerRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository$CategoryRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository$DishRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/lib/mysql-connector-java-8.0.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/account.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_fruits.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_products.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/club.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/contact.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_welcome.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/fruits.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/products.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/single.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/store.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/etalage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/body_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/c9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/cat_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/category_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/footer_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/img-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/img-sprite.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/label_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/marker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/marker1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/mobile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/order.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/p8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/payment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pic9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/s1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/s2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/s3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/secure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/tick1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/wish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/js/easyResponsiveTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/js/jquery.etalage.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/etalage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/body_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/cat_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/category_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/footer_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/img-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/img-sprite.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/label_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/marker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/marker1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/mobile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/order.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/payment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/s1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/s2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/s3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/secure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/tick1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/wish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/easyResponsiveTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery.etalage.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/dbconfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/CustomerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/DishController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/DishCategorySupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/OrderAddressInfoView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/OrderItemInfoView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/PaginationSupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/CategoryRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/CustomerRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/DishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCategoryRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCustomerRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository$CategoryRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository$DishRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/model/DishCategorySupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Dish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Dish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/domain/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/domain/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/domain/PaginationSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/model/PaginationSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_products.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -529,7 +256,7 @@
       <workItem from="1574123211834" duration="7385000" />
       <workItem from="1574160628973" duration="13822000" />
       <workItem from="1574237082093" duration="823000" />
-      <workItem from="1574239891608" duration="6693000" />
+      <workItem from="1574239891608" duration="6986000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -566,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574172220448</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成customer表的数据访问">
+      <created>1574260751665</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574260751665</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -622,6 +356,16 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="TIAN" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/TIAN" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/newMaster" />
                 </option>
               </RecentGroup>
             </list>
