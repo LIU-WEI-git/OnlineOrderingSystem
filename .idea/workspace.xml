@@ -234,6 +234,32 @@
             <path>
               <item name="OnlineOrderingSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlineOrderingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlineOrderingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlineOrderingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnlineOrderingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnlineOrderingSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -509,11 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574261521876</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="准备合并TIAN分支">
+      <created>1574261840582</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574261840582</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59360000" />
+    <option name="totallyTimeSpent" value="59681000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -526,8 +559,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.17493297" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.17493297" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" sideWeight="0.5007949" side_tool="true" weight="0.15683647" />
       <window_info id="Designer" order="3" />
@@ -539,7 +573,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.29320112" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31728044" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.31728044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -627,7 +661,8 @@
     <MESSAGE value="完成customer表的数据访问" />
     <MESSAGE value="合并了TIAN分支和admin分支" />
     <MESSAGE value="合并admin分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="合并admin分支" />
+    <MESSAGE value="准备合并TIAN分支" />
+    <option name="LAST_COMMIT_MESSAGE" value="准备合并TIAN分支" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1047,8 +1082,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="185">
+          <caret line="29" column="96" lean-forward="true" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
         </state>
       </provider>
     </entry>
