@@ -1,5 +1,8 @@
 package ordering.domain;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -11,10 +14,19 @@ import java.util.Date;
  */
 public class Customer {
 
+    @NotNull(message = "账号不能为空")
     private String customer_account;
+
+    @NotNull(message = "用户名不能为空")
     private String customer_name;
+
+    @NotNull(message = "密码不能为空")
     private String customer_password;
-    private Date customer_register_time;
+
+    private Timestamp customer_register_time;
+
+    @NotNull(message = "电子邮箱不能为空")
+    @Pattern(regexp = "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$", message = "请输入正确的电子邮箱地址")
     private String customer_email;
 
     /**
@@ -32,7 +44,7 @@ public class Customer {
      * @param customer_register_time
      * @param customer_email
      */
-    public Customer(String customer_account, String customer_name, String customer_password, Date customer_register_time, String customer_email) {
+    public Customer(String customer_account, String customer_name, String customer_password, Timestamp customer_register_time, String customer_email) {
         this.customer_account = customer_account;
         this.customer_name = customer_name;
         this.customer_password = customer_password;
@@ -44,7 +56,7 @@ public class Customer {
         return customer_account;
     }
 
-    public void setCustomer(String customer_account) {
+    public void setCustomer_account(String customer_account) {
         this.customer_account = customer_account;
     }
 
@@ -64,11 +76,11 @@ public class Customer {
         this.customer_password = customer_password;
     }
 
-    public Date getCustomer_register_time() {
+    public Timestamp getCustomer_register_time() {
         return customer_register_time;
     }
 
-    public void setCustomer_register_time(Date customer_register_time) {
+    public void setCustomer_register_time(Timestamp customer_register_time) {
         this.customer_register_time = customer_register_time;
     }
 

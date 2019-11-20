@@ -2,6 +2,7 @@ package ordering.repository.jdbc;
 
 import ordering.domain.Customer;
 import ordering.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,7 +21,7 @@ import java.util.List;
 @Repository
 public class JdbcCustomerRepository implements CustomerRepository {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
     private RowMapper<Customer> customerRowMapper = new BeanPropertyRowMapper<>(Customer.class);
 
     private static final String TOTAL_CUSTOMER = "select count(*) from customer";
@@ -30,6 +31,11 @@ public class JdbcCustomerRepository implements CustomerRepository {
             "(customer_account, customer_name, customer_password, customer_register_time, customer_email) values (?,?,?,?,?)";
     private static final String UPDATE_CUSTOMER = "update customer set customer_name=?,customer_password=?,customer_email=? where customer_account=?";
     private static final String DELETE_CUSTOMER = "delete from customer where customer_account=?";
+
+    @Autowired
+    public JdbcCustomerRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public boolean isInDB(String customer_account) {

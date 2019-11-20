@@ -1891,6 +1891,20 @@ p.c_m2{
 	font-size: 1em;
 	padding: 0.5em;
 }
+.register-top-grid input[type="password"], .register-bottom-grid input[type="password"] {
+	border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+}
+.register-top-grid input[type="email"], .register-bottom-grid input[type="email"] {
+	border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+}
 .checkbox {
 	margin-bottom: 4px;
 	padding-left: 27px;
@@ -1966,7 +1980,7 @@ p.c_m2{
 .register-but{
 	margin-top:1em;
 }
-.register-but form input[type="submit"] {
+.register-but input[type="submit"] {
 	background: #FE6847;
 	color: #FFF;
 	font-size: 0.8em;

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 97718
@@ -22,7 +23,16 @@
                 <div class="clearfix"> </div>
             </ul>
             <ul class="account">
-                <li><a href="account.jsp">我的账户</a></li>
+                <c:choose>
+                    <c:when test="${not empty sessionScope.customer}">
+                        <%--@elvariable id="customer" type="ordering.domain.Customer"--%>
+<%--                        TODO 修改链接--%>
+                        <li><a href="customer_account.jsp">${customer.customer_account}</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="<c:url value="/register"/>">我的账户</a></li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
             <ul class="shopping_cart">
                 <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
@@ -60,7 +70,9 @@
                             </ul>
                             <ul class="login">
                                 <a href="account.jsp"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-                                <a href="register.jsp"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+                                <a href="<c:url value="/register" />">
+                                    <li class="login_bottom"><i class="register"> </i><span>注册</span></li>
+                                </a>
                             </ul>
                             <div class="clearfix"></div>
                         </div><!-- /.navbar-collapse -->
