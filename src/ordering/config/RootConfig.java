@@ -31,7 +31,7 @@ public class RootConfig {
         //数据库url
         dataSource.setUrl("jdbc:mysql://localhost:3306/online_ordering_system?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         dataSource.setUsername("root");
-        dataSource.setPassword("12345");
+        dataSource.setPassword("1559541488");
         dataSource.setInitialSize(5);
         dataSource.setMaxTotal(10);
         return dataSource;
