@@ -11,6 +11,7 @@ public class Dish {
 
     private String dish_id;
     private String dish_name;
+    private Category category;
     private String picture_url;
     private float price;
     private String description;
@@ -30,9 +31,10 @@ public class Dish {
      * @param price
      * @param description
      */
-    public Dish(String dish_id, String dish_name, String picture_url, float price, String description) {
+    public Dish(String dish_id, String dish_name, Category category, String picture_url, float price, String description) {
         this.dish_id = dish_id;
         this.dish_name = dish_name;
+        this.category = category;
         this.picture_url = picture_url;
         this.price = price;
         this.description = description;
@@ -52,6 +54,14 @@ public class Dish {
 
     public void setDish_name(String dish_name) {
         this.dish_name = dish_name;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getPicture_url() {
