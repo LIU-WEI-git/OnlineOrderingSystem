@@ -50,7 +50,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //TODO 还不了解静态资源，暂且采用老师的方法
-        registry.addResourceHandler("/resource/**").addResourceLocations("/resource/");
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+       /* registry.addResourceHandler("/res/**").addResourceLocations("/res/");*/
         super.addResourceHandlers(registry);
     }
 
