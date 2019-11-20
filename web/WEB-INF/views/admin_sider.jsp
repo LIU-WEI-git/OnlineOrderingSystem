@@ -16,7 +16,7 @@
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="#" class="simple-text">
-                Creative Tim
+               管理员菜单
             </a>
         </div>
 
@@ -24,25 +24,25 @@
             <li class="active">
                 <a href="dashboard.html">
                     <i class="ti-panel"></i>
-                    <p>Dashboard</p>
+                    <p>菜品</p>
                 </a>
             </li>
             <li>
                 <a href="user.html">
                     <i class="ti-user"></i>
-                    <p>User Profile</p>
+                    <p>管理员</p>
                 </a>
             </li>
             <li>
                 <a href="table.html">
                     <i class="ti-view-list-alt"></i>
-                    <p>Table List</p>
+                    <p>菜品类</p>
                 </a>
             </li>
             <li>
                 <a href="typography.html">
                     <i class="ti-text"></i>
-                    <p>Typography</p>
+                    <p>订单</p>
                 </a>
             </li>
             <li>
@@ -66,7 +66,7 @@
             <li class="active-pro">
                 <a href="upgrade.html">
                     <i class="ti-export"></i>
-                    <p>Upgrade to PRO</p>
+                    <p>管理员登出</p>
                 </a>
             </li>
         </ul>

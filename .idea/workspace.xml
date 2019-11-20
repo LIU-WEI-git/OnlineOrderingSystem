@@ -7,37 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css1/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css1/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css1/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css1/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css1/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/bootstrap-checkbox-radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/jquery-1.10.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/paper-dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineOrderingSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineOrderingSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/res/css1/animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/res/css1/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/res/css1/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/res/css1/paper-dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/res/css1/themify-icons.css" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -302,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574167833630</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1.封装admin页面的header和footer">
+      <created>1574245173909</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574245173909</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -359,6 +344,7 @@
     <MESSAGE value="1.合并前端模板 2.数据库链接属性可用配置文件配置 3.更新数据数据 4.增加了两个数据库视图" />
     <MESSAGE value="创建两个视图对应的类" />
     <MESSAGE value="1.封装顾客页面的header和footer 2.完成category表访问操作 3.部分完成顾客欢迎页 4.更新数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.封装顾客页面的header和footer 2.完成category表访问操作 3.部分完成顾客欢迎页 4.更新数据库" />
+    <MESSAGE value="1.封装admin页面的header和footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.封装admin页面的header和footer" />
   </component>
 </project>
