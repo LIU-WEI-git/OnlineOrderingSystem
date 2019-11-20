@@ -195,9 +195,9 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <c:forEach items="${paginationSupport.items}" var="dish">
+                    <c:forEach items="${paginationSupport.items}" var="item">
                         <ul class="product_img">
-                            <li class="product_left"><img src="${pageContext.request.contextPath}/resources/${dish.picture_url}" class="img-responsive" alt=""/>
+                            <li class="product_left"><img src="${pageContext.request.contextPath}/resources/${item.dish.picture_url}" class="img-responsive" alt=""/>
                                 <p>
                                     <button type="button">Update</button>&nbsp;&nbsp;
                                     <button type="button">Remove</button>
@@ -205,14 +205,18 @@
                             </li>
                             <li class="product_right">
                                 <h3>Date Added: Wed 25 June, 2014</h3>
-                                <h4><a href="#">${dish.dish_name}</a></h4>
-                                <span class="model"><strong>Model : </strong>${dish.category.category_name}</span><br>
+                                <h4><a href="#">${item.dish.dish_name}</a></h4>
+                                <span class="model"><strong>Model : </strong>
+                                    <c:forEach items="${item.categories}" var="category">
+                                        ${category.category_name}&nbsp;&nbsp;
+                                    </c:forEach>
+                                </span><br>
 <%--                                <span class="model"><strong>Manufacturer : </strong>Example1</span>--%>
                                 <div class="product_price"><strong>Price : </strong>
-                                    <span class="actual"><fmt:formatNumber value="${dish.price}" type="currency" pattern="$.00"/></span>
+                                    <span class="actual"><fmt:formatNumber value="${item.dish.price}" type="currency" pattern="$.00"/></span>
                                 </div>
                                 <h5 class="detail">Details: </h5>
-                                <p class="detail_desc">${dish.description}</p>
+                                <p class="detail_desc">${item.dish.description}</p>
                             </li>
                             <div class="clearfix"> </div>
                         </ul>

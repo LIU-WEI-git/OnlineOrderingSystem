@@ -1,7 +1,8 @@
 package ordering.repository;
 
 import ordering.domain.Dish;
-import ordering.domain.PaginationSupport;
+import ordering.utils.DishCategorySupport;
+import ordering.utils.PaginationSupport;
 
 import java.util.List;
 
@@ -40,7 +41,16 @@ public interface DishRepository {
      * @param PageSize 每页数量
      * @return 分页菜品
      */
-    PaginationSupport<Dish> findByPage(int pageNo, int PageSize);
+    PaginationSupport<DishCategorySupport> findByPage(int pageNo, int PageSize);
+
+    /**
+     * 列出菜品的类别列表
+     *
+     * //@param categories 类别列表
+     * @param dish 菜品
+     * @return 菜品类别列表
+     */
+    DishCategorySupport listDishCategories(Dish dish);
 
     /**
      * 删除指定ID的菜品

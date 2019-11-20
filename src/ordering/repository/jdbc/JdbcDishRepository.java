@@ -2,7 +2,8 @@ package ordering.repository.jdbc;
 
 import ordering.domain.Category;
 import ordering.domain.Dish;
-import ordering.domain.PaginationSupport;
+import ordering.utils.DishCategorySupport;
+import ordering.utils.PaginationSupport;
 import ordering.repository.DishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -52,14 +53,25 @@ public class JdbcDishRepository implements DishRepository {
     }
 
     @Override
-    public PaginationSupport<Dish> findByPage(int pageNo, int PageSize) {
+    public PaginationSupport<DishCategorySupport> findByPage(int pageNo, int PageSize) {
         int totalCount = (int) count();
         int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
 
-        List<Dish> items = jdbc.query(SELECT_FROM_DISH_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<DishCategorySupport> items = new ArrayList<>();
+        for (Dish dish : dishes) {
+            items.add(listDishCategories(dish));
+        }
         return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
+    }
+
+    @Override
+    public DishCategorySupport listDishCategories(Dish dish) {
+
+        List<Category> categories = jdbc.query(SELECT_DISH_CATEGORY, new CategoryRowMapper(), dish.getDish_id());
+        return new DishCategorySupport(categories, dish);
     }
 
     @Override
@@ -81,13 +93,21 @@ public class JdbcDishRepository implements DishRepository {
             String picture_url = rs.getString("picture_url");
             float price = rs.getFloat("price");
             String description = rs.getString("description");
-            String category_id = rs.getString("category_id");
-            String category_name = rs.getString("category_name");
-            Category category = new Category(category_id, category_name);
-            return new Dish(dish_id, dish_name, category, picture_url, price, description);
+            return new Dish(dish_id, dish_name, picture_url, price, description);
         }
     }
 
-    private static final String SELECT_FROM_DISH = "SELECT v.dish_id, v.dish_name, v.picture_url, v.price, v.description, c.category_id, c.category_name FROM (SELECT * FROM dish d NATURAL JOIN dish_category dc) v NATURAL JOIN category c";
-    private static final String SELECT_FROM_DISH_PAGE = SELECT_FROM_DISH + " order by v.dish_id limit ? offset ?";
+    private static final class CategoryRowMapper implements RowMapper<Category> {
+
+        @Override
+        public Category mapRow(ResultSet rs, int rowNum) throws SQLException {
+            String category_id = rs.getString("category_id");
+            String category_name = rs.getString("category_name");
+            return new Category(category_id, category_name);
+        }
+    }
+
+    private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish";
+    private static final String SELECT_FROM_DISH_PAGE = SELECT_FROM_DISH + " order by dish_id limit ? offset ?";
+    private static final String SELECT_DISH_CATEGORY = "SELECT dc.dish_id, c.category_id, c.category_name FROM category c JOIN dish_category dc WHERE c.category_id=dc.category_id AND dish_id=?";
 }
