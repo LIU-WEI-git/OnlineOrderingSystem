@@ -1,4 +1,4 @@
-package ordering.domain;
+package ordering.model;
 
 import java.util.List;
 
