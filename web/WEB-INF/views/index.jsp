@@ -5,7 +5,10 @@
   Time: 20:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Home</title>
@@ -114,7 +117,7 @@
                         <li><a href="#">Music</a></li>
                         <li><a href="#">Office Supplies</a></li>
                         <li><a href="#">Printing</a></li>
-                        <li><a href="#">Software</a></li>
+                        <li><a href="<c:url value="/admin/alogin" />">Software</a></li>
                     </ul>
                 </div>
                 <ul class="product_reviews">

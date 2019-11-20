@@ -6,7 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
@@ -20,4 +21,9 @@ public class HelloController {
         model.addAttribute("admin", adminRepository.getAdminList().get(0));
         return "hello";
     }
+
+//    @RequestMapping(value = "/alogin", method = GET)
+//    public String showLoginForm() {
+//        return "adminlogin";
+//    }
 }

@@ -13,4 +13,7 @@ import java.util.List;
 public interface AdminRepository {
 
     List<Admin> getAdminList();
+
+    /*Admin findByUserName(String userName);*/
+    Admin findByUserName(String userName, String password);
 }
