@@ -48,7 +48,7 @@ CREATE TABLE `admin` (
   `admin_register_time` datetime NOT NULL,
   `admin_email` varchar(40) DEFAULT NULL,
   `admin_phone` varchar(11) DEFAULT NULL,
-  `delete_tag` tinyint(1) NOT NULL,
+  `delete_tag` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`admin_account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
