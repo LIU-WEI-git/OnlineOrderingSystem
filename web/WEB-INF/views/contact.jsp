@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: neilly
   Date: 2019/11/18
-  Time: 20:12
+  Time: 20:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Account</title>
+    <title>Contact</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -16,6 +16,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!----webfonts---->
@@ -26,10 +27,7 @@
     <div class="container">
         <div class="header_top">
             <ul class="phone">
-                <li class="phone_left">
-                    <i class="mobile"></i>
-                    <span>1-200-346-2986</span>
-                </li>
+                <li class="phone_left"><i class="mobile"> </i><span>1-200-346-2986</span></li>
                 <li class="phone_right">Free Ground Shipping for Products over $100</li>
                 <div class="clearfix"></div>
             </ul>
@@ -44,9 +42,9 @@
                 <li><a href="account.jsp">My Account</a></li>
             </ul>
             <ul class="shopping_cart">
-                <a href="#"><li class="shop_left"><i class="cart"></i><span>Shop</span></li></a>
+                <a href="#"><li class="shop_left"><i class="cart"> </i><span>Shop</span></li></a>
                 <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
-                <div class="clearfix"></div>
+                <div class="clearfix"> </div>
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -69,12 +67,12 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu1">
-                                <li class="active"><a href="index.jsp">Specials</a></li>
+                                <li><a href="index.jsp">Specials</a></li>
                                 <li><a href="fruits.jsp">Fruits & Veg</a></li>
                                 <li><a href="products.jsp">Food Products</a></li>
                                 <li><a href="store.jsp">Locate Store</a></li>
                                 <li><a href="club.jsp">Fan Club</a></li>
-                                <li><a href="contact.jsp">Contact</a></li>
+                                <li class="active"><a href="contact.jsp">Contact</a></li>
                             </ul>
                             <ul class="login">
                                 <a href="account.jsp"><li class="login_top"><i class="sign"> </i><span>Sign In</span></li></a>
@@ -122,31 +120,31 @@
                 <div class="col-md-9">
                     <div class="breadcrumb">
                         <a href="index.jsp">Home</a>
-                        &gt;&gt;  <span class="last">Account/Login</span>
+                        &gt;&gt;  <span class="last">Contact</span>
                     </div>
-                    <div class="account_grid">
-                        <div class="col-md-6 login-left">
-                            <h3>NEW CUSTOMERS</h3>
-                            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                            <a class="acount-btn" href="register.jsp">Creat an Account</a>
-                        </div>
-                        <div class="col-md-6 login-right">
-                            <h3>REGISTERED CUSTOMERS</h3>
-                            <p>If you have an account with us, please log in.</p>
-                            <form>
-                                <div>
-                                    <span>Email Address<label>*</label></span>
-                                    <input type="text">
-                                </div>
-                                <div>
-                                    <span>Password<label>*</label></span>
-                                    <input type="text">
-                                </div>
-                                <a class="forgot" href="#">Forgot Your Password?</a>
-                                <input type="submit" value="Login">
-                            </form>
-                        </div>
-                        <div class="clearfix"> </div>
+                    <div class="contact-form">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <form method="post" action="contact-post.jsp">
+                            <div>
+                                <span><label>Name</label></span>
+                                <span><input name="userName" type="text" class="textbox"></span>
+                            </div>
+                            <div>
+                                <span><label>E-Mail</label></span>
+                                <span><input name="userEmail" type="text" class="textbox"></span>
+                            </div>
+                            <div>
+                                <span><label>Subject</label></span>
+                                <span><input name="userPhone" type="text" class="textbox"></span>
+                            </div>
+                            <div>
+                                <span><label>Message</label></span>
+                                <span><textarea name="userMsg"> </textarea></span>
+                            </div>
+                            <div>
+                                <span><input type="submit" value="Submit"></span>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

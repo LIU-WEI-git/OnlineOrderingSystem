@@ -10,7 +10,7 @@
                 fit: true,
                 closed: false,
                 activate: function(){}
-            }
+            };
             //Variables
             var options = $.extend(defaults, options);            
             var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';

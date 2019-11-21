@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: neilly
   Date: 2019/11/18
-  Time: 20:12
+  Time: 20:41
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Account</title>
+    <title>Register</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -16,6 +16,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!----webfonts---->
@@ -26,10 +27,7 @@
     <div class="container">
         <div class="header_top">
             <ul class="phone">
-                <li class="phone_left">
-                    <i class="mobile"></i>
-                    <span>1-200-346-2986</span>
-                </li>
+                <li class="phone_left"><i class="mobile"> </i><span>1-200-346-2986</span></li>
                 <li class="phone_right">Free Ground Shipping for Products over $100</li>
                 <div class="clearfix"></div>
             </ul>
@@ -44,9 +42,9 @@
                 <li><a href="account.jsp">My Account</a></li>
             </ul>
             <ul class="shopping_cart">
-                <a href="#"><li class="shop_left"><i class="cart"></i><span>Shop</span></li></a>
+                <a href="#"><li class="shop_left"><i class="cart"> </i><span>Shop</span></li></a>
                 <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
-                <div class="clearfix"></div>
+                <div class="clearfix"> </div>
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -96,59 +94,45 @@
 <div class="main">
     <div class="container">
         <div class="Product_top">
-            <div class="row content">
-                <div class="col-md-3">
-                    <div class="category_box">
-                        <h3 class="cate_head">Categories</h3>
-                        <ul class="category">
-                            <li><a href="#">Arts</a></li>
-                            <li><a href="#">Beauty</a></li>
-                            <li><a href="#">Books</a></li>
-                            <li><a href="#">Cart Software</a></li>
-                            <li><a href="#">Electronics</a></li>
-                            <li><a href="#">Fashion / Clothing</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Furniture</a></li>
-                            <li><a href="#">Home Goods</a></li>
-                            <li><a href="#">Jewelry</a></li>
-                            <li><a href="#">Lingerie</a></li>
-                            <li><a href="#">Music</a></li>
-                            <li><a href="#">Office Supplies</a></li>
-                            <li><a href="#">Printing</a></li>
-                            <li><a href="#">Software</a></li>
-                        </ul>
+            <form>
+                <div class="register-top-grid">
+                    <h3>PERSONAL INFORMATION</h3>
+                    <div>
+                        <span>First Name<label>*</label></span>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <span>Last Name<label>*</label></span>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <span>Email Address<label>*</label></span>
+                        <input type="text">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <a class="news-letter" href="#">
+                        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
+                    </a>
+                </div>
+                <div class="clearfix"> </div>
+                <div class="register-bottom-grid">
+                    <h3>LOGIN INFORMATION</h3>
+                    <div>
+                        <span>Password<label>*</label></span>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <span>Confirm Password<label>*</label></span>
+                        <input type="text">
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="breadcrumb">
-                        <a href="index.jsp">Home</a>
-                        &gt;&gt;  <span class="last">Account/Login</span>
-                    </div>
-                    <div class="account_grid">
-                        <div class="col-md-6 login-left">
-                            <h3>NEW CUSTOMERS</h3>
-                            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                            <a class="acount-btn" href="register.jsp">Creat an Account</a>
-                        </div>
-                        <div class="col-md-6 login-right">
-                            <h3>REGISTERED CUSTOMERS</h3>
-                            <p>If you have an account with us, please log in.</p>
-                            <form>
-                                <div>
-                                    <span>Email Address<label>*</label></span>
-                                    <input type="text">
-                                </div>
-                                <div>
-                                    <span>Password<label>*</label></span>
-                                    <input type="text">
-                                </div>
-                                <a class="forgot" href="#">Forgot Your Password?</a>
-                                <input type="submit" value="Login">
-                            </form>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
+            </form>
+            <div class="clearfix"> </div>
+            <div class="register-but">
+                <form>
+                    <input type="submit" value="submit">
+                    <div class="clearfix"> </div>
+                </form>
             </div>
         </div>
     </div>

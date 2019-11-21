@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: neilly
   Date: 2019/11/18
-  Time: 20:12
+  Time: 20:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Account</title>
+    <title>Products</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -16,6 +16,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!----webfonts---->
@@ -26,10 +27,7 @@
     <div class="container">
         <div class="header_top">
             <ul class="phone">
-                <li class="phone_left">
-                    <i class="mobile"></i>
-                    <span>1-200-346-2986</span>
-                </li>
+                <li class="phone_left"><i class="mobile"> </i><span>1-200-346-2986</span></li>
                 <li class="phone_right">Free Ground Shipping for Products over $100</li>
                 <div class="clearfix"></div>
             </ul>
@@ -44,9 +42,9 @@
                 <li><a href="account.jsp">My Account</a></li>
             </ul>
             <ul class="shopping_cart">
-                <a href="#"><li class="shop_left"><i class="cart"></i><span>Shop</span></li></a>
+                <a href="#"><li class="shop_left"><i class="cart"> </i><span>Shop</span></li></a>
                 <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
-                <div class="clearfix"></div>
+                <div class="clearfix"> </div>
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -69,9 +67,9 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu1">
-                                <li class="active"><a href="index.jsp">Specials</a></li>
+                                <li><a href="index.jsp">Specials</a></li>
                                 <li><a href="fruits.jsp">Fruits & Veg</a></li>
-                                <li><a href="products.jsp">Food Products</a></li>
+                                <li class="active"><a href="products.jsp">Food Products</a></li>
                                 <li><a href="store.jsp">Locate Store</a></li>
                                 <li><a href="club.jsp">Fan Club</a></li>
                                 <li><a href="contact.jsp">Contact</a></li>
@@ -97,57 +95,94 @@
     <div class="container">
         <div class="Product_top">
             <div class="row content">
-                <div class="col-md-3">
-                    <div class="category_box">
-                        <h3 class="cate_head">Categories</h3>
-                        <ul class="category">
-                            <li><a href="#">Arts</a></li>
-                            <li><a href="#">Beauty</a></li>
-                            <li><a href="#">Books</a></li>
-                            <li><a href="#">Cart Software</a></li>
-                            <li><a href="#">Electronics</a></li>
-                            <li><a href="#">Fashion / Clothing</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Furniture</a></li>
-                            <li><a href="#">Home Goods</a></li>
-                            <li><a href="#">Jewelry</a></li>
-                            <li><a href="#">Lingerie</a></li>
-                            <li><a href="#">Music</a></li>
-                            <li><a href="#">Office Supplies</a></li>
-                            <li><a href="#">Printing</a></li>
-                            <li><a href="#">Software</a></li>
-                        </ul>
-                    </div>
-                </div>
+
                 <div class="col-md-9">
-                    <div class="breadcrumb">
-                        <a href="index.jsp">Home</a>
-                        &gt;&gt;  <span class="last">Account/Login</span>
-                    </div>
-                    <div class="account_grid">
-                        <div class="col-md-6 login-left">
-                            <h3>NEW CUSTOMERS</h3>
-                            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                            <a class="acount-btn" href="register.jsp">Creat an Account</a>
-                        </div>
-                        <div class="col-md-6 login-right">
-                            <h3>REGISTERED CUSTOMERS</h3>
-                            <p>If you have an account with us, please log in.</p>
-                            <form>
-                                <div>
-                                    <span>Email Address<label>*</label></span>
-                                    <input type="text">
-                                </div>
-                                <div>
-                                    <span>Password<label>*</label></span>
-                                    <input type="text">
-                                </div>
-                                <a class="forgot" href="#">Forgot Your Password?</a>
-                                <input type="submit" value="Login">
+                    <div id="sorter" class="tie2">
+                        <div class="tie2-indent">
+                            <form name="sorter_form" action="#" method="get"><input type="hidden" name="main_page" value="products_all"><label for="disp-order-sorter">Sort by: </label>
+                                <select name="disp_order" onchange="this.form.submit();" id="disp-order-sorter">
+                                    <option value="1" selected="selected">Product Name</option>
+                                    <option value="2">Product Name - desc</option>
+                                    <option value="3">Price - low to high</option>
+                                    <option value="4">Price - high to low</option>
+                                    <option value="5">Model</option>
+                                    <option value="6">Date Added - New to Old</option>
+                                    <option value="7">Date Added - Old to New</option>
+                                </select>
                             </form>
+                        </div>
+                    </div>
+                    <div class="pagenation">
+                        <div id="allProductsListingTopNumber" class="navSplitPagesResult back"><span>Displaying</span> 1 to 4 (of <span>20</span> products)</div>
+                        <div id="allProductsListingTopLinks" class="navSplitPagesLinks forward"> &nbsp;<strong class="current">1</strong>&nbsp;&nbsp;
+                            <a href="" title=" Page 2 ">2</a>&nbsp;&nbsp;
+                            <a href="" title=" Page 3 ">3</a>&nbsp;&nbsp;
+                            <a href="" title=" Page 4 ">4</a>&nbsp;&nbsp;
+                            <a href="" title=" Page 5 ">5</a>&nbsp;&nbsp;
+                            <a href="" title=" Next Page ">Next&nbsp;&gt;&gt;</a>&nbsp;
                         </div>
                         <div class="clearfix"> </div>
                     </div>
+                    <ul class="product_img">
+                        <li class="product_left"><img src="${order_item_info.picture_url}" class="img-responsive" alt=""/>
+                            <p>In Stock:999</p>
+                        </li>
+                        <li class="product_right">
+                            <h3>下单时间：${order.creat_time}</h3>
+                            <h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
+                            <span class="model"><strong>Model : </strong>Model6</span><br>
+                            <span class="model"><strong>Manufacturer : </strong>Example1</span>
+                            <div class="product_price">Price:
+                                <span class="actual">$12.00</span>
+                            </div>
+                            <div class="but1">
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </li>
+                        <div class="clearfix"> </div>
+                        <h5 class="detail">Details:</h5>
+                        <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>
+                    </ul>
+                    <ul class="product_img">
+                        <li class="product_left"><img src="${pageContext.request.contextPath}/resources/images/pic7.jpg" class="img-responsive" alt=""/>
+                            <p>In Stock:999</p>
+                        </li>
+                        <li class="product_right">
+                            <h3>Date Added: Wed 25 June, 2014</h3>
+                            <h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
+                            <span class="model"><strong>Model : </strong>Model6</span><br>
+                            <span class="model"><strong>Manufacturer : </strong>Example1</span>
+                            <div class="product_price">Price:
+                                <span class="actual">$12.00</span>
+                            </div>
+                            <div class="but1">
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </li>
+                        <div class="clearfix"> </div>
+                        <h5 class="detail">Details:</h5>
+                        <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>
+                    </ul>
+                    <ul class="product_img">
+                        <li class="product_left"><img src="${pageContext.request.contextPath}/resources/images/pic9.jpg" class="img-responsive" alt=""/>
+                            <p>In Stock:999</p>
+                        </li>
+                        <li class="product_right">
+                            <h3>Date Added: Wed 25 June, 2014</h3>
+                            <h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
+                            <span class="model"><strong>Model : </strong>Model6</span><br>
+                            <span class="model"><strong>Manufacturer : </strong>Example1</span>
+                            <div class="product_price">Price:
+                                <span class="actual">$12.00</span>
+                            </div>
+                            <div class="but1">
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </li>
+                        <div class="clearfix"> </div>
+                        <h5 class="detail">Details:</h5>
+                        <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>
+                    </ul>
                 </div>
             </div>
         </div>
