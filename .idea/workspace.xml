@@ -385,6 +385,17 @@
             <path>
               <item name="exc" type="b2602c69:ProjectViewProjectNode" />
               <item name="exc" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="exc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="exc" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="exc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="exc" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -636,7 +647,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49477000" />
+    <option name="totallyTimeSpent" value="49519000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
