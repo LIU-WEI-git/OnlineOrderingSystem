@@ -6,17 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/res/css1/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/res/css1/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/res/css1/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/res/css1/paper-dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/res/css1/themify-icons.css" beforeDir="false" />
-    </list>
+    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,6 +335,7 @@
     <MESSAGE value="创建两个视图对应的类" />
     <MESSAGE value="1.封装顾客页面的header和footer 2.完成category表访问操作 3.部分完成顾客欢迎页 4.更新数据库" />
     <MESSAGE value="1.封装admin页面的header和footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.封装admin页面的header和footer" />
+    <MESSAGE value="1.封装admin页面的header和footer2" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.封装admin页面的header和footer2" />
   </component>
 </project>
