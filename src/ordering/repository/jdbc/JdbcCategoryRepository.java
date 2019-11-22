@@ -26,7 +26,8 @@ public class JdbcCategoryRepository implements CategoryRepository {
     private static final String TOTAL_CATEGORY = "select count(*) from category";
     private static final String SELECT_CATEGORY = "select * from category";
     private static final String INSERT_CATEGORY = "insert into category (category_id,category_name) values (?,?)";
-    private static final String DELETE_CATEGORY = "delete from category where ";
+//    private static final String DELETE_CATEGORY = "delete from category where ";
+    private static final String DELETE_CATEGORY = "delete from category where category_id=?";
     private static final String RENAME_CATEGORY = "update category set category_name=? where category_name=?";
 
     @Autowired
@@ -36,9 +37,7 @@ public class JdbcCategoryRepository implements CategoryRepository {
 
     @Override
     public boolean isInDB(String category_name) {
-        if (jdbcTemplate.queryForObject(TOTAL_CATEGORY + " where category_name=" + category_name, Integer.class) == 0)
-            return false;
-        else return true;
+        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " where category_name=" + category_name, Integer.class) != 0;
     }
 
     @Override
@@ -67,17 +66,24 @@ public class JdbcCategoryRepository implements CategoryRepository {
         return true;
     }
 
-    @Override
-    public Category deleteCategoryById(String category_id) {
-        Category deletedCategory = getCategoryById(category_id);
-        jdbcTemplate.update(DELETE_CATEGORY + "category_id=" + category_id);
-        return deletedCategory;
-    }
+//    @Override
+//    public Category deleteCategoryById(String category_id) {
+//        Category deletedCategory = getCategoryById(category_id);
+//        jdbcTemplate.update(DELETE_CATEGORY + "category_id=" + category_id);
+//        return deletedCategory;
+//    }
+//
+//    @Override
+//    public Category deleteCategoryByName(String category_name) {
+//        Category deletedCategory = getCategoryById(category_name);
+//        jdbcTemplate.update(DELETE_CATEGORY + "category_name=" + category_name);
+//        return deletedCategory;
+//    }
 
     @Override
-    public Category deleteCategoryByName(String category_name) {
-        Category deletedCategory = getCategoryById(category_name);
-        jdbcTemplate.update(DELETE_CATEGORY + "category_name=" + category_name);
+    public Category deleteCategory(Category category) {
+        Category deletedCategory = getCategoryById(category.getCategory_id());
+        jdbcTemplate.update(DELETE_CATEGORY,category.getCategory_id());
         return deletedCategory;
     }
 

@@ -74,11 +74,18 @@ public interface CustomerRepository {
      */
     boolean resetCustomerInfo(String customer_account,String customer_name,String customer_password,String customer_email);
 
+//    /**
+//     * 删除一个customer
+//     *
+//     * @param customer_account
+//     * @return 被删除的customer
+//     */
+//    Customer deleteCustomerByAccount(String customer_account);
+
     /**
      * 删除一个customer
-     *
-     * @param customer_account
-     * @return 被删除的customer
+     * @param customer
+     * @return 被删除的customer对象
      */
-    Customer deleteCustomerByAccount(String customer_account);
+    Customer deleteCustomer(Customer customer);
 }
