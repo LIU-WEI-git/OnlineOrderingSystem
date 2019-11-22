@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="online_ordering_system@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.16">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>5.6.15</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -21,6 +21,7 @@
     </schema>
     <schema id="6" parent="1" name="online_ordering_system">
       <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="7" parent="1" name="performance_schema">
@@ -1006,6 +1007,7 @@
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="254" parent="230" name="PRIMARY">

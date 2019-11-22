@@ -36,7 +36,13 @@
             </ul>
             <ul class="shopping_cart">
                 <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-                <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+                <c:choose>
+                    <c:when test=""></c:when>
+                </c:choose>
+                <c:if test="${not empty sessionScope.shoppingCart}">
+                    <jsp:useBean id="shoppingCart" scope="session" type="ordering.utils.ShoppingCart"/>
+                    <a href="#"><li class="shop_right"><span>￥${shoppingCart.totalPrice}</span></li></a>
+                </c:if>
                 <div class="clearfix"> </div>
             </ul>
             <div class="clearfix"></div>
@@ -60,13 +66,13 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu1">
-                                <!-- TODO 修改类别 -->
-                                <li class="active"><a href="index.jsp">Specials</a></li>
-                                <li><a href="fruits.jsp">Fruits & Veg</a></li>
-                                <li><a href="products.jsp">Food Products</a></li>
-                                <li><a href="store.jsp">Locate Store</a></li>
-                                <li><a href="club.jsp">Fan Club</a></li>
-                                <li><a href="contact.jsp">Contact</a></li>
+                                <!-- TODO 修改链接 -->
+                                <li class="active"><a href="<c:url value="/"/>">首页</a></li>
+                                <li><a href="club.jsp">折扣活动</a></li>
+                                <li><a href="fruits.jsp">水果蔬菜</a></li>
+                                <li><a href="club.jsp">粉丝俱乐部</a></li>
+                                <li><a href="club.jsp">甜品饮品</a></li>
+                                <li><a href="contact.jsp">联系我们</a></li>
                             </ul>
                             <ul class="login">
                                 <a href="account.jsp"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>

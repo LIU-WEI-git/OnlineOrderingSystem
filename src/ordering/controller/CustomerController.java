@@ -3,14 +3,15 @@ package ordering.controller;
 import ordering.domain.Customer;
 import ordering.repository.CategoryRepository;
 import ordering.repository.CustomerRepository;
+import ordering.repository.DishRepository;
+import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,7 +25,7 @@ import java.sql.Timestamp;
  * Created in 2019/11/19 18:55
  */
 @Controller
-@SessionAttributes({"customer"})
+@SessionAttributes({"customer","shoppingCart"})
 @RequestMapping(value="/")
 public class CustomerController {
 
@@ -32,6 +33,8 @@ public class CustomerController {
     private CategoryRepository categoryRepository;
     @Autowired
     private CustomerRepository customerRepository;
+    @Autowired
+    private DishRepository dishRepository;
 
     /**
      * 顾客欢迎页
@@ -40,8 +43,10 @@ public class CustomerController {
      * @return 欢迎页
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String customerWelcome(Model model) {
+    public String customerWelcome(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo, @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,Model model) {
         model.addAttribute(categoryRepository.getCategoryList());
+        model.addAttribute(dishRepository.findByPage(pageNo,pageSize));
+        model.addAttribute(new ShoppingCart());
         return "customer_welcome";
     }
 
@@ -64,10 +69,11 @@ public class CustomerController {
      * @param errors
      * @param model
      * @param request
-     * @return
+     * @return 注册成功返回首页，注册失败返回注册页面
      */
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public String customerRegisterSubmit(@Valid Customer customer, Errors errors, Model model, HttpServletRequest request) {
+        //TODO error无法检测表单错误
         if (errors.hasErrors()) {
             return "customer_register";
         }

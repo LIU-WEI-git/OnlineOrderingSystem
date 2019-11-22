@@ -242,8 +242,7 @@ span.m_1{
 	text-transform: uppercase;
 	color: #fff !important;
 	padding:8px 15px;
-	font-size: 0.8125em;
-	margin: 0 10px;
+	margin: 0 15px;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   background: rgba(2, 113, 113, 0.35) !important;
@@ -667,9 +666,15 @@ ul.feature_grid li.grid1 img, ul.feature_grid li.grid2 img{
 .price{
 	font-size:0.8125em;
 }
+span.dish-name{
+	color: #000;
+	font-size:1.3em;
+	font-weight: bold;
+}
+
 span.actual {
 	color: #008180;
-	font-size:1em;
+	font-size: 1.3em;
 	font-weight:bold;
 }
 .but1 a {

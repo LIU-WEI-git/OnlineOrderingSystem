@@ -34,7 +34,7 @@ public class AdminController {
     public String processLogin(@RequestParam(value = "userName", defaultValue = "") String userName,
                                @RequestParam(value = "password", defaultValue = "") String password, HttpSession session) {
 
-        Admin admin = adminRepository.findByUserName(userName, password);
+        Admin admin = adminRepository.findAdminByUsername(userName);
         if (admin != null) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
