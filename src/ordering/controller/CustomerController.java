@@ -1,6 +1,7 @@
 package ordering.controller;
 
 import ordering.domain.Customer;
+import ordering.domain.Dish;
 import ordering.repository.CategoryRepository;
 import ordering.repository.CustomerRepository;
 import ordering.repository.DishRepository;
@@ -8,13 +9,10 @@ import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.sql.Timestamp;
 
@@ -25,7 +23,7 @@ import java.sql.Timestamp;
  * Created in 2019/11/19 18:55
  */
 @Controller
-@SessionAttributes({"customer","shoppingCart"})
+@SessionAttributes({"customer", "shoppingCart", "categoryList"})
 @RequestMapping(value="/")
 public class CustomerController {
 
@@ -82,5 +80,19 @@ public class CustomerController {
         model.addAttribute("customer", customer);
         return "customer_welcome";
 //        return "redirect:/{";
+    }
+
+    /**
+     * 查看菜品详情
+     *
+     * @param dishId
+     * @param model
+     * @return 菜品详情页
+     */
+    @RequestMapping(value = "dishDetail/{dishId}", method = RequestMethod.GET)
+    public String customerViewDishDetail(@PathVariable("dishId") String dishId, Model model) {
+        Dish dish = dishRepository.findById(dishId);
+        model.addAttribute(dish);
+        return "customer_dish_detail";
     }
 }

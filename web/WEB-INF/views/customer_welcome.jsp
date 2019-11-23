@@ -41,7 +41,7 @@
                     <c:forEach items="${paginationSupport.items}" var="dishCategorySupport">
                         <div class="col-md-3">
                                 <%-- TODO 修改链接到商品详情页--%>
-                            <div class="content_box"><a href="single.jsp">
+                            <div class="content_box"><a href="<c:url value="/dishDetail/${dishCategorySupport.dish.dish_id}"/>">
                                 <div class="view view-fifth">
                                     <img src="${pageContext.request.contextPath}/resources/${dishCategorySupport.dish.picture_url}" class="img-responsive" alt=""/>
                                     <div class="content_box-grid">
@@ -52,6 +52,7 @@
                                         </div>
                                         <ul class="product_but">
                                             <li class="but3">购买</li>
+                                            <div class="clearfix"> </div>
                                         </ul>
                                         <div class="mask">
                                             <div class="info">Quick View</div>

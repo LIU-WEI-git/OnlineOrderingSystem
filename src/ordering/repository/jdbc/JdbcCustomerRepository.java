@@ -82,12 +82,12 @@ public class JdbcCustomerRepository implements CustomerRepository {
         return true;
     }
 
-//    @Override
-//    public Customer deleteCustomerByAccount(String customer_account) {
-//        Customer deletedCustomer=getCustomerByAccount(customer_account);
-//        jdbcTemplate.update(DELETE_CUSTOMER,customer_account);
-//        return deletedCustomer;
-//    }
+    @Override
+    public Customer deleteCustomerByAccount(String customer_account) {
+        Customer deletedCustomer=getCustomerByAccount(customer_account);
+        jdbcTemplate.update(DELETE_CUSTOMER,customer_account);
+        return deletedCustomer;
+    }
 
 
     @Override

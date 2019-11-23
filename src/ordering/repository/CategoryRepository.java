@@ -58,26 +58,26 @@ public interface CategoryRepository {
      */
     boolean addCategory(Category category);
 
-//    /**
-//     * 通过Id删除一个菜品类别
-//     *
-//     * @param category_id
-//     * @return 返回被删除的类别
-//     */
-//    Category deleteCategoryById(String category_id);
-//
-//    /**
-//     * 通过类别名删除一个菜品类别
-//     *
-//     * @param category_name
-//     * @return 返回被删除的类别
-//     */
-//    Category deleteCategoryByName(String category_name);
+    /**
+     * 通过Id删除一个菜品类别
+     *
+     * @param category_id
+     * @return 返回被删除的类别
+     */
+    Category deleteCategoryById(String category_id);
+
+    /**
+     * 通过类别名删除一个菜品类别
+     *
+     * @param category_name
+     * @return 返回被删除的类别
+     */
+    Category deleteCategoryByName(String category_name);
 
     /**
      * 删除指定category
      *
-     * @param category
+     * @param category 需要被删除的category对象
      * @return 被删除的category对象
      */
     Category deleteCategory(Category category);

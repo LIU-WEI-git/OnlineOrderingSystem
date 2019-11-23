@@ -66,19 +66,19 @@ public class JdbcCategoryRepository implements CategoryRepository {
         return true;
     }
 
-//    @Override
-//    public Category deleteCategoryById(String category_id) {
-//        Category deletedCategory = getCategoryById(category_id);
-//        jdbcTemplate.update(DELETE_CATEGORY + "category_id=" + category_id);
-//        return deletedCategory;
-//    }
-//
-//    @Override
-//    public Category deleteCategoryByName(String category_name) {
-//        Category deletedCategory = getCategoryById(category_name);
-//        jdbcTemplate.update(DELETE_CATEGORY + "category_name=" + category_name);
-//        return deletedCategory;
-//    }
+    @Override
+    public Category deleteCategoryById(String category_id) {
+        Category deletedCategory = getCategoryById(category_id);
+        jdbcTemplate.update(DELETE_CATEGORY + "category_id=" + category_id);
+        return deletedCategory;
+    }
+
+    @Override
+    public Category deleteCategoryByName(String category_name) {
+        Category deletedCategory = getCategoryById(category_name);
+        jdbcTemplate.update(DELETE_CATEGORY + "category_name=" + category_name);
+        return deletedCategory;
+    }
 
     @Override
     public Category deleteCategory(Category category) {
