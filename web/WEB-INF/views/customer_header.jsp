@@ -35,13 +35,10 @@
                 </c:choose>
             </ul>
             <ul class="shopping_cart">
-                <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-                <c:choose>
-                    <c:when test=""></c:when>
-                </c:choose>
+                <a href="<c:url value="/shoppingCart"/>"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
                 <c:if test="${not empty sessionScope.shoppingCart}">
                     <jsp:useBean id="shoppingCart" scope="session" type="ordering.utils.ShoppingCart"/>
-                    <a href="#"><li class="shop_right"><span>￥${shoppingCart.totalPrice}</span></li></a>
+                    <a href="<c:url value="/shoppingCart"/>"><li class="shop_right"><span>￥${shoppingCart.totalPrice}</span></li></a>
                 </c:if>
                 <div class="clearfix"> </div>
             </ul>

@@ -95,4 +95,5 @@ public class CustomerController {
         model.addAttribute(dish);
         return "customer_dish_detail";
     }
+
 }

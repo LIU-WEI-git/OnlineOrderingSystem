@@ -14,14 +14,14 @@ import java.util.List;
  */
 public class ShoppingCart {
     private List<ShoppingCartItem> shoppingCartItemList;
-    private double totalPrice;
+    private float totalPrice;
 
     /**
      * 构造函数
      */
     public ShoppingCart() {
         this.shoppingCartItemList = new ArrayList<>();
-        this.totalPrice = 0.0;
+        this.totalPrice = 0;
     }
 
     /**
@@ -30,7 +30,7 @@ public class ShoppingCart {
      * @param shoppingCartItem
      * @param totalPrice
      */
-    public ShoppingCart(List<ShoppingCartItem> shoppingCartItem, double totalPrice) {
+    public ShoppingCart(List<ShoppingCartItem> shoppingCartItem, float totalPrice) {
         this.shoppingCartItemList = shoppingCartItem;
         this.totalPrice = totalPrice;
     }
@@ -94,11 +94,11 @@ public class ShoppingCart {
         this.shoppingCartItemList = shoppingCartItemList;
     }
 
-    public double getTotalPrice() {
+    public float getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(float totalPrice) {
         this.totalPrice = totalPrice;
     }
 }

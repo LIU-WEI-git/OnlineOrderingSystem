@@ -12,7 +12,7 @@ import ordering.domain.Dish;
 public class ShoppingCartItem {
     private Dish dish;
     private int amount;
-    private double itemPrice;
+    private float itemPrice;
 
     /**
      * 构造函数
@@ -38,7 +38,7 @@ public class ShoppingCartItem {
      * @param amount
      * @param itemPrice
      */
-    public ShoppingCartItem(Dish dish, int amount, double itemPrice) {
+    public ShoppingCartItem(Dish dish, int amount, float itemPrice) {
         this.dish = dish;
         this.amount = amount;
         this.itemPrice = itemPrice;
@@ -60,11 +60,11 @@ public class ShoppingCartItem {
         this.amount = amount;
     }
 
-    public double getItemPrice() {
+    public float getItemPrice() {
         return itemPrice;
     }
 
-    public void setItemPrice(double itemPrice) {
+    public void setItemPrice(float itemPrice) {
         this.itemPrice = itemPrice;
     }
 
