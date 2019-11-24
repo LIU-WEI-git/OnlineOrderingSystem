@@ -7,12 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="st" uri="SimpleTag" %>
 <div class="header">
     <div class="container">
         <div class="header_top">
             <ul class="phone">
                 <li class="phone_left"><i class="mobile"> </i><span>1-200-346-2986</span></li>
-                <li class="phone_right">订单超过50元免配送费</li>
+                <li class="phone_right">订单超过50元立减<st:discount/>元</li>
                 <div class="clearfix"></div>
             </ul>
             <ul class="social">
@@ -27,16 +28,19 @@
                     <c:when test="${not empty sessionScope.customer}">
                         <%--@elvariable id="customer" type="ordering.domain.Customer"--%>
 <%--                        TODO 修改链接--%>
-                        <li><a href="customer_account.jsp">${customer.customer_account}</a></li>
+                        <li><a href="<c:url value="/"/>">${customer.customer_name}</a></li>
                     </c:when>
                     <c:otherwise>
-                        <li><a href="<c:url value="/register"/>">我的账户</a></li>
+                        <li><a href="<c:url value="/login"/>">我的账户</a></li>
                     </c:otherwise>
                 </c:choose>
             </ul>
             <ul class="shopping_cart">
-                <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-                <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+                <a href="<c:url value="/shoppingCart"/>"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
+                <c:if test="${not empty sessionScope.shoppingCart}">
+                    <jsp:useBean id="shoppingCart" scope="session" type="ordering.utils.ShoppingCart"/>
+                    <a href="<c:url value="/shoppingCart"/>"><li class="shop_right"><span>￥${shoppingCart.totalPrice}</span></li></a>
+                </c:if>
                 <div class="clearfix"> </div>
             </ul>
             <div class="clearfix"></div>
@@ -60,19 +64,32 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu1">
-                                <!-- TODO 修改类别 -->
-                                <li class="active"><a href="index.jsp">Specials</a></li>
-                                <li><a href="fruits.jsp">Fruits & Veg</a></li>
-                                <li><a href="products.jsp">Food Products</a></li>
-                                <li><a href="store.jsp">Locate Store</a></li>
-                                <li><a href="club.jsp">Fan Club</a></li>
-                                <li><a href="contact.jsp">Contact</a></li>
+                                <!-- TODO 修改链接 -->
+                                <li><a href="<c:url value="/"/>">首页</a></li>
+                                <li><a href="club.jsp">折扣活动</a></li>
+                                <li><a href="fruits.jsp">水果蔬菜</a></li>
+                                <li><a href="club.jsp">粉丝俱乐部</a></li>
+                                <li><a href="club.jsp">甜品饮品</a></li>
+                                <li><a href="contact.jsp">联系我们</a></li>
                             </ul>
                             <ul class="login">
-                                <a href="account.jsp"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-                                <a href="<c:url value="/register" />">
-                                    <li class="login_bottom"><i class="register"> </i><span>注册</span></li>
-                                </a>
+                                <c:choose>
+                                    <c:when test="${not empty sessionScope.customer}">
+                                        <a href="<c:url value="/logout"/>">
+                                            <li class="login_top"><i class="sign">
+                                            </i><span>注销</span></li>
+                                        </a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="<c:url value="/login"/>">
+                                            <li class="login_top"><i class="sign">
+                                            </i><span>登录</span></li>
+                                        </a>
+                                        <a href="<c:url value="/register" />">
+                                            <li class="login_bottom"><i class="register"> </i><span>注册</span></li>
+                                        </a>
+                                    </c:otherwise>
+                                </c:choose>
                             </ul>
                             <div class="clearfix"></div>
                         </div><!-- /.navbar-collapse -->

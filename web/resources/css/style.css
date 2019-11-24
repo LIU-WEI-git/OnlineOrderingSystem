@@ -242,8 +242,7 @@ span.m_1{
 	text-transform: uppercase;
 	color: #fff !important;
 	padding:8px 15px;
-	font-size: 0.8125em;
-	margin: 0 10px;
+	margin: 0 15px;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   background: rgba(2, 113, 113, 0.35) !important;
@@ -667,9 +666,15 @@ ul.feature_grid li.grid1 img, ul.feature_grid li.grid2 img{
 .price{
 	font-size:0.8125em;
 }
+span.dish-name{
+	color: #000;
+	font-size:1.3em;
+	font-weight: bold;
+}
+
 span.actual {
 	color: #008180;
-	font-size:1em;
+	font-size: 1.3em;
 	font-weight:bold;
 }
 .but1 a {
@@ -1829,6 +1834,13 @@ p.c_m2{
 	font-size: 1em;
 	padding: 0.5em;
 }
+.login-right input[type="password"] {
+	border: 1px solid #EEE;
+	outline-color: #E45D5D;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+}
 .login-right input[type="submit"] {
 	background:#FE6847;
 	color: #FFF;
@@ -2001,6 +2013,30 @@ p.c_m2{
 }
 .register-but input[type="submit"]:hover {
 	background:#555;
+}
+
+.register-but a input[type="submit"] {
+	background: #FE6847;
+	color: #FFF;
+	font-size: 0.8em;
+	padding: 0.8em 2em;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-bottom: 4px solid #E94F2D;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	display: inline-block;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+}
+
+.register-but a input[type="submit"]:hover {
+	background: #555;
 }
 div.register-bottom-grid {
 	margin-top: 2em;
