@@ -27,10 +27,10 @@
                     <c:when test="${not empty sessionScope.customer}">
                         <%--@elvariable id="customer" type="ordering.domain.Customer"--%>
 <%--                        TODO 修改链接--%>
-                        <li><a href="customer_account.jsp">${customer.customer_account}</a></li>
+                        <li><a href="<c:url value="/"/>">${customer.customer_account}</a></li>
                     </c:when>
                     <c:otherwise>
-                        <li><a href="<c:url value="/register"/>">我的账户</a></li>
+                        <li><a href="<c:url value="/login"/>">我的账户</a></li>
                     </c:otherwise>
                 </c:choose>
             </ul>
@@ -64,7 +64,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu1">
                                 <!-- TODO 修改链接 -->
-                                <li class="active"><a href="<c:url value="/"/>">首页</a></li>
+                                <li><a href="<c:url value="/"/>">首页</a></li>
                                 <li><a href="club.jsp">折扣活动</a></li>
                                 <li><a href="fruits.jsp">水果蔬菜</a></li>
                                 <li><a href="club.jsp">粉丝俱乐部</a></li>
@@ -72,10 +72,23 @@
                                 <li><a href="contact.jsp">联系我们</a></li>
                             </ul>
                             <ul class="login">
-                                <a href="account.jsp"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-                                <a href="<c:url value="/register" />">
-                                    <li class="login_bottom"><i class="register"> </i><span>注册</span></li>
-                                </a>
+                                <c:choose>
+                                    <c:when test="${not empty sessionScope.customer}">
+                                        <a href="<c:url value="/logout"/>">
+                                            <li class="login_top"><i class="sign">
+                                            </i><span>注销</span></li>
+                                        </a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="<c:url value="/login"/>">
+                                            <li class="login_top"><i class="sign">
+                                            </i><span>登录</span></li>
+                                        </a>
+                                        <a href="<c:url value="/register" />">
+                                            <li class="login_bottom"><i class="register"> </i><span>注册</span></li>
+                                        </a>
+                                    </c:otherwise>
+                                </c:choose>
                             </ul>
                             <div class="clearfix"></div>
                         </div><!-- /.navbar-collapse -->

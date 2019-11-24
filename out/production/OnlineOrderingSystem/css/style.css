@@ -1834,6 +1834,13 @@ p.c_m2{
 	font-size: 1em;
 	padding: 0.5em;
 }
+.login-right input[type="password"] {
+	border: 1px solid #EEE;
+	outline-color: #E45D5D;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+}
 .login-right input[type="submit"] {
 	background:#FE6847;
 	color: #FFF;
