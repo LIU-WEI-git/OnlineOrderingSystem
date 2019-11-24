@@ -1,5 +1,6 @@
 package ordering.controller;
 
+import ordering.domain.Customer;
 import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,11 +48,11 @@ public class ShoppingCartController {
      */
     @RequestMapping(value = "/addDish", method = {RequestMethod.POST, RequestMethod.GET})
     public String addDishToShoppingCart(@RequestParam(value = "dish_id") String dish_id, Model model, HttpSession session){
-        ShoppingCart shoppingCart= (ShoppingCart) session.getAttribute("shoppingCart");
-        //如果session属性中还没有shoppingCart，说明顾客还未登录，则跳转到登录界面
-        if(shoppingCart==null){
+        //如果session属性中还没有customer，说明顾客还未登录，则跳转到登录界面
+        if(session.getAttribute("customer")==null){
             return "redirect:/login";
         }
+        ShoppingCart shoppingCart= (ShoppingCart) session.getAttribute("shoppingCart");
         shoppingCart.addItemToShoppingCart(dishRepository.findById(dish_id));
         model.addAttribute(shoppingCart);
         return "redirect:/shoppingCart";

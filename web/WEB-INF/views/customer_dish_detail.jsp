@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Single</title>
+    <title>详情</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -59,7 +59,7 @@
                     <div class="single_image">
                         <ul id="etalage">
                             <li>
-                                <a href="optionallink.jsp">
+                                <a href="">
                                     <img class="etalage_thumb_image" src="${pageContext.request.contextPath}/resources/${dish.picture_url}"  alt=""/>
                                     <img class="etalage_source_image"  src="${pageContext.request.contextPath}/resources/${dish.picture_url}" alt=""/>
                                 </a>

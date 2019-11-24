@@ -25,7 +25,7 @@ public class JdbcCustomerRepository implements CustomerRepository {
     private RowMapper<Customer> customerRowMapper = new BeanPropertyRowMapper<>(Customer.class);
 
     private static final String TOTAL_CUSTOMER = "select count(*) from customer";
-    private static final String SELECT_CUSTOMRE = "select * from customer";
+    private static final String SELECT_CUSTOMER = "select * from customer";
     private static final String SELECT_CUSTOMER_REGISTER_TIME = "select customer_register_time from customer";
     private static final String INSERT_CUSTOMER = "insert into customer " +
             "(customer_account, customer_name, customer_password, customer_register_time, customer_email) values (?,?,?,?,?)";
@@ -39,7 +39,7 @@ public class JdbcCustomerRepository implements CustomerRepository {
 
     @Override
     public boolean isInDB(String customer_account) {
-        return jdbcTemplate.queryForObject(TOTAL_CUSTOMER + " where customer_account=" + customer_account, Integer.class) != 0;
+        return jdbcTemplate.queryForObject(TOTAL_CUSTOMER + " where customer_account=\'" + customer_account+"\'", Integer.class) != 0;
     }
 
     @Override
@@ -49,17 +49,18 @@ public class JdbcCustomerRepository implements CustomerRepository {
 
     @Override
     public List<Customer> getCustomerList() {
-        return jdbcTemplate.query(SELECT_CUSTOMRE, customerRowMapper);
+        return jdbcTemplate.query(SELECT_CUSTOMER, customerRowMapper);
     }
 
     @Override
     public Customer getCustomerByAccount(String customer_account) {
-        return jdbcTemplate.queryForObject(SELECT_CUSTOMRE + " where customer_account=" + customer_account, Customer.class);
+        //return jdbcTemplate.queryForObject(SELECT_CUSTOMER + " where customer_account=\'" + customer_account+"\'", Customer.class);
+        return jdbcTemplate.queryForObject(SELECT_CUSTOMER+" where customer_account=?",customerRowMapper,customer_account);
     }
 
     @Override
     public List<Customer> getCustomerByName(String customer_name) {
-        return jdbcTemplate.query(SELECT_CUSTOMRE + " where customer_name=" + customer_name, customerRowMapper);
+        return jdbcTemplate.query(SELECT_CUSTOMER + " where customer_name=?", customerRowMapper,customer_name);
     }
 
     @Override
