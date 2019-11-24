@@ -36,15 +36,15 @@
                 </a>
             </li>
             <li>
-                <a href="table.html">
+                <a href="<c:url value="/admin/dishcategory"/>">
                     <i class="ti-view-list-alt"></i>
                     <p>菜品类</p>
                 </a>
             </li>
             <li>
-                <a href="typography.html">
+                <a href="<c:url value="/admin/dish" />">
                     <i class="ti-text"></i>
-                    <p>c菜品</p>
+                    <p>菜品</p>
                 </a>
             </li>
             <li>

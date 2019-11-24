@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
 
-        <%request.getAttribute("list");%>
+        <%request.getAttribute("alist");%>
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -68,7 +68,7 @@
                                     <th style="text-align: center">admin_steate</th>
                                     <th style="text-align: center">删除管理员</th>
                                 </tr>
-                                <c:forEach items="${list}" var="admin" varStatus="li">
+                                <c:forEach items="${alist}" var="admin" varStatus="li">
                                     <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
                                         <td align="center">${admin.getAdmin_account()}</td>
                                         <td align="center">${admin.getAdmin_name()}</td>

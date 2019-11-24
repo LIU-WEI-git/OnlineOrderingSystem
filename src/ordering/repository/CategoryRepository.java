@@ -1,14 +1,16 @@
 package ordering.repository;
 
 import ordering.domain.Category;
+import ordering.utils.CategoryDishSupport;
 
 import java.util.List;
 
 /**
  * category资源库接口
  *
- * @version: 1.0
- * Created in 2019/11/19 19:25
+ * @author 刘威 neilly
+ * @version 2.0
+ * @since 2019/11/19 19:25
  */
 public interface CategoryRepository {
 
@@ -58,26 +60,26 @@ public interface CategoryRepository {
      */
     boolean addCategory(Category category);
 
-//    /**
-//     * 通过Id删除一个菜品类别
-//     *
-//     * @param category_id
-//     * @return 返回被删除的类别
-//     */
-//    Category deleteCategoryById(String category_id);
-//
-//    /**
-//     * 通过类别名删除一个菜品类别
-//     *
-//     * @param category_name
-//     * @return 返回被删除的类别
-//     */
-//    Category deleteCategoryByName(String category_name);
+    /**
+     * 通过Id删除一个菜品类别
+     *
+     * @param category_id
+     * @return 返回被删除的类别
+     */
+    Category deleteCategoryById(String category_id);
+
+    /**
+     * 通过类别名删除一个菜品类别
+     *
+     * @param category_name
+     * @return 返回被删除的类别
+     */
+    Category deleteCategoryByName(String category_name);
 
     /**
      * 删除指定category
      *
-     * @param category
+     * @param category 需要被删除的category对象
      * @return 被删除的category对象
      */
     Category deleteCategory(Category category);
@@ -90,4 +92,12 @@ public interface CategoryRepository {
      * @return 返回是否修改成功的结果
      */
     boolean renameCategory(String oldName, String newName);
+
+    /**
+     * 列出指定类别下所有菜品
+     *
+     * @param category 指定类别
+     * @return 菜品列表
+     */
+    CategoryDishSupport listCategoryDishes(Category category);
 }

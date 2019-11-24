@@ -11,7 +11,13 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import ordering.domain.Admin;
+import ordering.domain.Category;
+import ordering.domain.Dish;
+import ordering.domain.DishCategory;
 import ordering.repository.AdminRepository;
+import ordering.repository.CategoryRepository;
+import ordering.repository.DishRepository;
+import ordering.utils.CategoryDishSupport;
 import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +34,11 @@ public class AdminController {
     @Autowired
     private AdminRepository adminRepository;
 
+    @Autowired
+    private DishRepository dishRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
     /**
      *
      * @return
@@ -67,8 +78,8 @@ public class AdminController {
      */
     @RequestMapping(value = "/user", method = GET)
     public String showadminlist(HttpSession session) {
-        List<Admin> list=adminRepository.findadminlsit();
-        session.setAttribute("list",list);
+        List<Admin> alist=adminRepository.findadminlsit();
+        session.setAttribute("alist",alist);
         return "admin_user";
     }
 
@@ -112,4 +123,77 @@ public class AdminController {
         admin=adminRepository.createAdmin(admin);
         return "admin_addsuccess";
     }
+
+    /**
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/dish", method = GET)
+    public String showdishlist(HttpSession session) {
+        List<Dish> list=dishRepository.getAll();
+        session.setAttribute("list",list);
+        return "admin_dish";
+    }
+
+    @RequestMapping(value = "/changedish", method = GET)
+    public String changdish(@RequestParam(value = "dish_id", defaultValue = "") String dishid,HttpSession session) {
+       Dish dish=dishRepository.findById(dishid);
+        session.setAttribute("dish",dish);
+        return "admin_dishchange";
+    }
+
+    @RequestMapping(value = "/searchdish", method = GET)
+    public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
+                             @RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
+        if(signal.equals("all")){
+            List<Dish> list=dishRepository.getAll();
+            session.setAttribute("list",list);
+            return "admin_dish";
+        }
+        else{
+        Category category=categoryRepository.getCategoryByName(signal);
+        CategoryDishSupport w=categoryRepository.listCategoryDishes(category);
+        List<Dish> list=w.getDishes();
+        session.setAttribute("list",list);
+
+        return "admin_dish";}
+    }
+
+    @RequestMapping(value = "/changedish", method = POST)
+    public String changdishac(){
+        return "";
+    }
+
+    @RequestMapping(value = "/dishcategory", method = GET)
+    public String showdishcategory(HttpSession session) {
+        List<Category> blist=categoryRepository.getCategoryList();
+        session.setAttribute("blist",blist);
+        return "admin_dishcategory";
+    }
+
+
+    @RequestMapping(value = "/person", method = GET)
+    public String personal(){
+        return "admin_person";
+    }
+
+
+    @RequestMapping(value = "/personmate", method = GET)
+    public String personmate(){
+        return "admin_pchange";
+    }
+
+    @RequestMapping(value = "/personma", method = GET)
+    public String changeperson(@RequestParam(value = "email", defaultValue = "") String email,
+                           @RequestParam(value = "phone", defaultValue = "") String phone, HttpSession session){
+
+ Admin admin= (Admin) session.getAttribute("admin");
+ adminRepository.updateAdmin(admin.getAdmin_name(),email,phone,admin);
+ admin.setAdmin_email(email);
+ admin.setAdmin_phone(phone);
+session.setAttribute("admin",admin);
+        return "admin_addsuccess";
+    }
+
 }

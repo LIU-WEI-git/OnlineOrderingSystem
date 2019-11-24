@@ -10,6 +10,8 @@
 
 <%--<div class="main-panel">--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -24,7 +26,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="<c:url value="/admin/person"/>"  class="dropdown-toggle" <%--data-toggle="dropdown"--%>>
                             <i class="ti-panel"></i>
                             <p>个人信息</p>
                         </a>

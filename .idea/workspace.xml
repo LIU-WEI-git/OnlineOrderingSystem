@@ -7,52 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_addsuccess.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_useradd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ordering/utils/CategoryDishSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishchange.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_passchange.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_pchange.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_person.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineOrderingSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineOrderingSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/dbconfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/META-INF/OnlineOrderingSystem.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/META-INF/OnlineOrderingSystem.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/DishController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/AdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/AdminRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/CategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/DishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/DishRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_sider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/dbconfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/META-INF/OnlineOrderingSystem.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/META-INF/OnlineOrderingSystem.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/DishController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/AdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/AdminRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/CategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/DishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/DishRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/domain/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/domain/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAdminRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_useradd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_useradd.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +78,7 @@
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="jsf" />
         <option value="Jsp File" />
       </list>
     </option>
@@ -144,7 +124,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../workspace/ex5/WebContent/WEB-INF/lib/hibernate-validator-5.0.1.Final.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ordering/utils" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,26 +133,27 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\resources" />
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\views" />
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\lib" />
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\src\ordering\controller" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="ordering.domian" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="ordering.domian" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\qiafan\src\ordering\utils" />
+      <recent name="G:\qiafan\src\ordering\repository" />
+      <recent name="G:\qiafan\src\ordering\repository\jdbc" />
+      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
+      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -189,7 +170,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.45" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.45" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/OnlineOrderingSystem_war_exploded/" />
+      <option name="BROWSER_ID" value="b2a9dca7-9d0b-4e1e-98a8-afb19c1328d2" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="OnlineOrderingSystem:war exploded">
@@ -285,7 +266,9 @@
       <workItem from="1574493487383" duration="2373000" />
       <workItem from="1574495886457" duration="9000" />
       <workItem from="1574497847080" duration="6223000" />
-      <workItem from="1574559513176" duration="2518000" />
+      <workItem from="1574559513176" duration="6471000" />
+      <workItem from="1574578098629" duration="9897000" />
+      <workItem from="1574588069792" duration="7099000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -350,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574262264490</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tianqing">
+      <created>1574562159832</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574562159833</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,17 +392,7 @@
     <MESSAGE value="合并了TIAN分支和admin分支" />
     <MESSAGE value="合并admin分支" />
     <MESSAGE value="准备合并TIAN分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="准备合并TIAN分支" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/WEB-INF/views/customer_header.jsp</url>
-          <line>36</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="tianqing" />
+    <option name="LAST_COMMIT_MESSAGE" value="tianqing" />
   </component>
 </project>
