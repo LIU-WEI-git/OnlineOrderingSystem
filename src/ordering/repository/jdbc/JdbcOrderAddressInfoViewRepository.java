@@ -13,7 +13,7 @@ public class JdbcOrderAddressInfoViewRepository implements OrderAddressInfoViewR
     private JdbcTemplate jdbcTemplate;
     private RowMapper<OrderAddressInfoView> OrderMapper=new BeanPropertyRowMapper<OrderAddressInfoView>(OrderAddressInfoView.class);
 
-    public static final String GET_ADDRESS="select * from order_address_info where order_id = ?";
+    public static final String GET_ADDRESS="select * from order_address_info where order_id = ";
 
     @Autowired
     public JdbcOrderAddressInfoViewRepository(JdbcTemplate jdbcTemplate)
@@ -23,6 +23,6 @@ public class JdbcOrderAddressInfoViewRepository implements OrderAddressInfoViewR
 
     @Override
     public OrderAddressInfoView getAddress(String order_id) {
-        return jdbcTemplate.queryForObject(GET_ADDRESS,OrderMapper,order_id);
+        return jdbcTemplate.queryForObject(GET_ADDRESS+order_id,OrderMapper);
     }
 }

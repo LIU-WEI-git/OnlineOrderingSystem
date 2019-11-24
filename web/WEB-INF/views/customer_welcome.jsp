@@ -45,7 +45,7 @@
                     <li>
                         <ul class="review1">
                             <li class="review1_img"><img src="${pageContext.request.contextPath}/resources/images/pic1.jpg" class="img-responsive" alt=""/></li>
-                            <li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
+                            <li class="review1_desc"><h3><a href="<c:url value="/order"/>">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
                             <div class="clearfix"> </div>
                         </ul>
                     </li>
@@ -307,6 +307,7 @@
         </div>
     </div>
 </div>
+<a href="<c:url value="/admin/alogin" />">登录</a> |
 <jsp:include page="customer_footer.jsp" flush="true"/>
 </body>
 </html>

@@ -3,6 +3,7 @@ package ordering.repository.jdbc;
 import ordering.domain.Admin;
 import ordering.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -38,8 +39,38 @@ public class JdbcAdminRepository implements AdminRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /*@Override
+    public Admin findByUserName(String userName) {
+        Admin manager = null;
+        try {
+            manager = jdbcTemplate.queryForObject(SELECT_ADMIN + " where admin_name=?", new AdminRowMapper(), userName);
+        } catch (DataAccessException e) {
+        }
+        return manager;
+    }*/
+
     @Override
     public List<Admin> getAdminList() {
         return jdbcTemplate.query(SELECT_ADMIN, new AdminRowMapper());
     }
+
+    @Override
+    public Admin findByUserName(String userName, String password) {
+        Admin admin = null;
+        try {
+            admin = jdbcTemplate.queryForObject(SELECT_ADMIN + " where admin_name=? and admin_password=?", new AdminRowMapper(),
+                    userName, password);
+        } catch (DataAccessException e) {
+        }
+        return admin;
+    }
+
+   /* private static class AdminRowMapper implements RowMapper<Admin> {
+        public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {
+            return new Admin(rs.getString("admin_acount"), rs.getString("admin_name"), rs.getString("password"), rs.getDate("admin_register_time"),
+                    rs.getString("admin_email"), rs.getString("admin_phone"),rs.getInt("delete_tag"));
+        }}*/
+
+
+    /*private static final String SELECT_ADMIN = "select admin_acount, admin_name, password from admind";*/
 }

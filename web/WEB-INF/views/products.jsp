@@ -95,7 +95,59 @@
     <div class="container">
         <div class="Product_top">
             <div class="row content">
-
+                <div class="col-md-3">
+                    <div class="category_box">
+                        <h3 class="cate_head">Categories</h3>
+                        <ul class="category">
+                            <li><a href="#">Arts</a></li>
+                            <li><a href="#">Beauty</a></li>
+                            <li><a href="#">Books</a></li>
+                            <li><a href="#">Cart Software</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Fashion / Clothing</a></li>
+                            <li><a href="#">Food</a></li>
+                            <li><a href="#">Furniture</a></li>
+                            <li><a href="#">Home Goods</a></li>
+                            <li><a href="#">Jewelry</a></li>
+                            <li><a href="#">Lingerie</a></li>
+                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Office Supplies</a></li>
+                            <li><a href="#">Printing</a></li>
+                            <li><a href="#">Software</a></li>
+                        </ul>
+                    </div>
+                    <ul class="product_reviews">
+                        <h3><i class="arrow"> </i><span>Product Reviews</span></h3>
+                        <li>
+                            <ul class="review1">
+                                <li class="review1_img"><img src="${pageContext.request.contextPath}/resources/images/pic1.jpg" class="img-responsive" alt=""/></li>
+                                <li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="review1">
+                                <li class="review1_img"><img src="${pageContext.request.contextPath}/resources/images/pic2.jpg" class="img-responsive" alt=""/></li>
+                                <li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="review1">
+                                <li class="review1_img"><img src="${pageContext.request.contextPath}/resources/images/pic3.jpg" class="img-responsive" alt=""/></li>
+                                <li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </li>
+                        <div class="but">
+                            <a href="#">More Reviews<i class="but_arrow"> </i></a>
+                        </div>
+                    </ul>
+                    <ul class="product_reviews">
+                        <h3><i class="arrow"> </i><span>Payment Methods</span></h3>
+                        <img src="${pageContext.request.contextPath}/resources/images/payment.png" class="img-responsive" alt=""/>
+                    </ul>
+                </div>
                 <div class="col-md-9">
                     <div id="sorter" class="tie2">
                         <div class="tie2-indent">
@@ -124,11 +176,11 @@
                         <div class="clearfix"> </div>
                     </div>
                     <ul class="product_img">
-                        <li class="product_left"><img src="${order_item_info.picture_url}" class="img-responsive" alt=""/>
+                        <li class="product_left"><img src="${pageContext.request.contextPath}/resources/images/pic8.jpg" class="img-responsive" alt=""/>
                             <p>In Stock:999</p>
                         </li>
                         <li class="product_right">
-                            <h3>下单时间：${order.creat_time}</h3>
+                            <h3>Date Added: Wed 25 June, 2014</h3>
                             <h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>
                             <span class="model"><strong>Model : </strong>Model6</span><br>
                             <span class="model"><strong>Manufacturer : </strong>Example1</span>

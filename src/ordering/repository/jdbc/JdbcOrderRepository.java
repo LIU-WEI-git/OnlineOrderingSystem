@@ -16,8 +16,8 @@ public class JdbcOrderRepository implements OrderRepository {
 
     private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<Order>(Order.class);
 
-    public static final String TOTAL_ORDERS="select count(*) from Order where customer_account = ?";
-    public static  final String CUSTOMER_ORDERS="select * from Order where customer_account = ?";
+    public static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    public static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
 
     @Autowired
     public JdbcOrderRepository(JdbcTemplate jdbcTemplate){
@@ -32,11 +32,11 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public int getCustomerTotalOrders(String customer_account) {
-        return jdbcTemplate.queryForObject(TOTAL_ORDERS,Integer.class,customer_account);
+        return jdbcTemplate.queryForObject(TOTAL_ORDERS+customer_account,Integer.class);
     }
 
     @Override
     public List<Order> getCustomerOrders(String customer_account) {
-        return jdbcTemplate.query(CUSTOMER_ORDERS,orderRowMapper,customer_account);
+        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"'",orderRowMapper);
     }
 }
