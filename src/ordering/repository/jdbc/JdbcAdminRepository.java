@@ -78,6 +78,10 @@ public class JdbcAdminRepository implements AdminRepository {
         return jdbc.queryForObject(SELECT_ADMIN_BY_NAME, new AdminRowMapper(), admin_name);
     }
 
+    @Override
+    public Admin findByUserName(String admin_account, String admin_password) {
+        return jdbc.queryForObject(SELECT_ADMIN_login, new AdminRowMapper(), admin_account,admin_password);
+    }
     /**
      * 依据页码和指定页面大小，返回管理员列表
      * @param pageNo 页码
@@ -93,6 +97,17 @@ public class JdbcAdminRepository implements AdminRepository {
 
         List<Admin> items = jdbc.query(SELECT_ADMIN_PAGE, new AdminRowMapper(), pageSize, startIndex);
         return new PaginationSupport<>(items, totalCount, pageSize, startIndex);
+    }
+    /**
+     * 返回管理员列表
+     * 由于模板问题不适宜页面大小
+     * @return 管理员列表
+     */
+
+    @Override
+    public  List<Admin> findadminlsit() {
+        List<Admin> items = jdbc.query(SELECT_ADMIN, new AdminRowMapper());
+        return items;
     }
 
     /**
@@ -162,4 +177,6 @@ public class JdbcAdminRepository implements AdminRepository {
     private static final String UPDATE_ADMIN = "UPDATE admin SET admin_name=?, admin_email=?, admin_phone=? WHERE admin_account=?";
     // 更新管理员密码
     private static final String UPDATE_ADMIN_PASSWORD = "UPDATE admin SET admin_password=? WHERE admin_account=?";
+    //登陆
+    private static final String SELECT_ADMIN_login = SELECT_ADMIN + " WHERE admin_account=?and admin_password=?";
 }

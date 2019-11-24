@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
 <div class="sidebar" data-background-color="white" data-active-color="danger">
 
     <!--
@@ -21,14 +23,14 @@
         </div>
 
         <ul class="nav">
-            <li class="active">
+            <li >
                 <a href="dashboard.html">
                     <i class="ti-panel"></i>
-                    <p>菜品</p>
+                    <p>总览</p>
                 </a>
             </li>
             <li>
-                <a href="user.html">
+                <a href="<c:url value="/admin/user" />">
                     <i class="ti-user"></i>
                     <p>管理员</p>
                 </a>
@@ -42,13 +44,13 @@
             <li>
                 <a href="typography.html">
                     <i class="ti-text"></i>
-                    <p>订单</p>
+                    <p>c菜品</p>
                 </a>
             </li>
             <li>
                 <a href="icons.html">
                     <i class="ti-pencil-alt2"></i>
-                    <p>Icons</p>
+                    <p>订单</p>
                 </a>
             </li>
             <li>

@@ -1,5 +1,10 @@
 package ordering.domain;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 import java.util.Date;
 
 /**
@@ -11,11 +16,27 @@ import java.util.Date;
  */
 public class Admin {
 
+    @NotNull
+    @Size(min=2, max=6, message = "{admin_account.size}")
     private String admin_account;
+
+    @NotNull
+    @Size(min=2, max=16,message = "{admin_name.size}")
     private String admin_name;
+
+    @NotNull
+    @Size(min=3, max=12,message = "{admin_password.size}")
     private String admin_password;
+
+
     private Date admin_register_time;
+
+    @NotNull
+    @Email
     private String admin_email;
+
+    @NotNull
+    @Size(min = 3, max = 15)
     private String admin_phone;
     private int delete_tag;
 
@@ -123,5 +144,8 @@ public class Admin {
 
     public void setDelete_tag(int delete_tag) {
         this.delete_tag = delete_tag;
+    }
+
+    public int getDelete_tag() {  return delete_tag;
     }
 }

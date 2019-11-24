@@ -47,7 +47,7 @@
         <img src="${pageContext.request.contextPath}/resources/images/avtar.png" />
     </div>
     <form method="post">
-        <input type="text"  name="userName" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" --%>>
+        <input type="text"  name="useraccount" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" --%>>
         <div class="key">
             <input type="password" name="password" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"--%>>
         </div>

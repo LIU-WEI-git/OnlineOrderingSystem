@@ -15,12 +15,12 @@ public class HelloController {
     @Autowired
     private AdminRepository adminRepository;
 
-    @RequestMapping(method = RequestMethod.GET)
+   /* @RequestMapping(method = RequestMethod.GET)
     public String hello(Model model) {
         //测试数据库连接，界面应当显示数据库第一个admin的account
         model.addAttribute("admin", adminRepository.getAdminList().get(0));
         return "hello";
-    }
+    }*/
 
 //    @RequestMapping(value = "/alogin", method = GET)
 //    public String showLoginForm() {
