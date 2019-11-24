@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ordering/repository/AddressRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,78 +96,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="55" column="127" selection-start-line="55" selection-start-column="127" selection-end-line="55" selection-end-column="127" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
-              <folding>
-                <element signature="e#1584#1585#0" expanded="true" />
-                <element signature="e#1619#1620#0" expanded="true" />
-                <element signature="e#1660#1661#0" expanded="true" />
-                <element signature="e#1687#1688#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1987#1988#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -512,7 +436,7 @@
       <workItem from="1574347193585" duration="9971000" />
       <workItem from="1574488983296" duration="9228000" />
       <workItem from="1574519785710" duration="1965000" />
-      <workItem from="1574578787713" duration="9243000" />
+      <workItem from="1574578787713" duration="9491000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -584,11 +508,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574581410775</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完善order接口，address接口">
+      <created>1574589489028</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574589489028</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90406000" />
+    <option name="totallyTimeSpent" value="90654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,9 +532,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.18297587" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.18297587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" sideWeight="0.5007949" side_tool="true" weight="0.15683647" />
       <window_info id="Designer" order="3" />
@@ -635,7 +565,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.22989276" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.22989276" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -705,7 +635,8 @@
     <MESSAGE value="合并admin分支" />
     <MESSAGE value="准备合并TIAN分支" />
     <MESSAGE value="完善查看订单" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善查看订单" />
+    <MESSAGE value="完善order接口，address接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善order接口，address接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1077,27 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="55" column="127" selection-start-line="55" selection-start-column="127" selection-end-line="55" selection-end-column="127" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1117,13 +1027,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
+        <state relative-caret-position="1216">
           <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
           <folding>
             <element signature="e#1584#1585#0" expanded="true" />
             <element signature="e#1619#1620#0" expanded="true" />
             <element signature="e#1660#1661#0" expanded="true" />
             <element signature="e#1687#1688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="55" column="127" selection-start-line="55" selection-start-column="127" selection-end-line="55" selection-end-column="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
