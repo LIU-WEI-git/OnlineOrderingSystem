@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Timestamp;
@@ -44,9 +45,20 @@ public class CustomerController {
     public String customerWelcome(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo, @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,Model model) {
         model.addAttribute(categoryRepository.getCategoryList());
         model.addAttribute(dishRepository.findByPage(pageNo,pageSize));
-        model.addAttribute(new ShoppingCart());
         return "customer_welcome";
     }
+
+    /**
+     * 显示顾客登录界面
+     *
+     * @param model
+     * @return 顾客登录界面
+     */
+    @RequestMapping(value = "login",method = RequestMethod.GET)
+    public String customerLogin(Model model){
+        return "customer_login";
+    }
+
 
     /**
      * 显示注册页面
@@ -78,6 +90,8 @@ public class CustomerController {
         customer.setCustomer_register_time(new Timestamp(System.currentTimeMillis()));
         customerRepository.addCustomer(customer);
         model.addAttribute("customer", customer);
+        //注册成功则自动登录，并在session中加入shoppingCart
+        model.addAttribute(new ShoppingCart());
         return "customer_welcome";
 //        return "redirect:/{";
     }

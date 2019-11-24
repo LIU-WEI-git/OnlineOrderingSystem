@@ -45,7 +45,7 @@
                             <th style="width:150px" align="center">单价</th>
                             <th style="width:150px" align="center">数量</th>
                             <th style="width:150px" align="center">小计</th>
-                            <th style="width:150px" align="center">操作</th>
+                            <th style="width:200px" align="center">操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -55,18 +55,24 @@
                             <td width="150" align="center">${shoppingCartItem.dish.price}</td>
                             <td width="150" align="center">${shoppingCartItem.amount}</td>
                             <td width="150"
-                                align="center">${shoppingCartItem.dish.price * shoppingCartItem.dish.price}</td>
-                            <td width="150" align="center">
-                                <input type="button" value="加一" href=""/>
+                                align="center">${shoppingCartItem.dish.price * shoppingCartItem.amount}</td>
+                            <td width="200" align="center">
+                                <a href="<c:url value="/shoppingCart/addDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
+                                    <input type="button" value="加一"/>
+                                </a>
                                 <c:choose>
                                     <c:when test="${shoppingCartItem.amount eq 1}">
-                                        <input type="button" value="减一" href="" disabled="true"/>
+                                        <input type="button" value="减一" disabled="disabled"/>
                                     </c:when>
                                     <c:otherwise>
-                                        <input type="button" value="减一" href=""/>
+                                        <a href="<c:url value="/shoppingCart/minusDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
+                                            <input type="button" value="减一"/>
+                                        </a>
                                     </c:otherwise>
                                 </c:choose>
-                                <input type="button" value="删除" href=""/>
+                                <a href="<c:url value="/shoppingCart/deleteDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
+                                    <input type="button" value="删除"/>
+                                </a>
                             </td>
                         </c:forEach>
                         </tbody>

@@ -39,9 +39,7 @@ public class JdbcCustomerRepository implements CustomerRepository {
 
     @Override
     public boolean isInDB(String customer_account) {
-        if (jdbcTemplate.queryForObject(TOTAL_CUSTOMER + " where customer_account=" + customer_account, Integer.class) == 0)
-            return false;
-        else return true;
+        return jdbcTemplate.queryForObject(TOTAL_CUSTOMER + " where customer_account=" + customer_account, Integer.class) != 0;
     }
 
     @Override
@@ -77,8 +75,8 @@ public class JdbcCustomerRepository implements CustomerRepository {
     }
 
     @Override
-    public boolean resetCustomerInfo(String customer_account, String customer_name, String customer_password, String customer_email) {
-        jdbcTemplate.update(UPDATE_CUSTOMER,customer_name,customer_password,customer_email,customer_account);
+    public boolean resetCustomerInfo(Customer customer) {
+        jdbcTemplate.update(UPDATE_CUSTOMER, customer.getCustomer_name(), customer.getCustomer_password(), customer.getCustomer_email(), customer.getCustomer_account());
         return true;
     }
 

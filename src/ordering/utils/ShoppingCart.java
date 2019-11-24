@@ -43,7 +43,7 @@ public class ShoppingCart {
     public void addItemToShoppingCart(Dish dish) {
         //购物车内已有同名商品，则其数量加一
         for (ShoppingCartItem shoppingCartItem : shoppingCartItemList) {
-            if (shoppingCartItem.equals(dish)) {
+            if (shoppingCartItem.getDish().getDish_id().equals(dish.getDish_id())) {
                 shoppingCartItem.plusOne();
                 totalPrice += dish.getPrice();
                 return;
@@ -57,14 +57,14 @@ public class ShoppingCart {
     /**
      * 删除一个购物车子项
      *
-     * @param dish
+     * @param dish_id
      */
-    public void deleteItemFromShoppingCart(Dish dish) {
+    public void deleteItemFromShoppingCart(String dish_id) {
         for (int i = 0; i < shoppingCartItemList.size(); i++) {
             ShoppingCartItem shoppingCartItem = shoppingCartItemList.get(i);
-            if (shoppingCartItem.equals(dish)) {
+            if (shoppingCartItem.getDish().getDish_id().equals(dish_id)) {
                 shoppingCartItemList.remove(i);
-                totalPrice -= dish.getPrice();
+                totalPrice -= shoppingCartItem.getDish().getPrice();
                 return;
             }
         }
@@ -73,14 +73,14 @@ public class ShoppingCart {
     /**
      * 购物车某一商品数量减一
      *
-     * @param dish
+     * @param dish_id
      */
-    public void minusItemFromShoppingCart(Dish dish) {
+    public void minusItemFromShoppingCart(String dish_id) {
         for (ShoppingCartItem shoppingCartItem : shoppingCartItemList) {
-            if (shoppingCartItem.equals(dish)) {
+            if (shoppingCartItem.getDish().getDish_id().equals(dish_id)) {
                 if (shoppingCartItem.getAmount() > 1) {
                     shoppingCartItem.minusOne();
-                    totalPrice -= dish.getPrice();
+                    totalPrice -= shoppingCartItem.getDish().getPrice();
                 }
             }
         }

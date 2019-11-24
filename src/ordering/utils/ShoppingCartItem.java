@@ -68,12 +68,6 @@ public class ShoppingCartItem {
         this.itemPrice = itemPrice;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        ShoppingCartItem shoppingCartItem = (ShoppingCartItem) obj;
-        return this.dish.getDish_id().equals(shoppingCartItem.dish.getDish_id());
-    }
-
     public void plusOne() {
         amount += 1;
         itemPrice += dish.getPrice();
