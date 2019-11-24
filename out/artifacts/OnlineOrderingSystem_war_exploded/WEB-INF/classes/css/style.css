@@ -2014,6 +2014,7 @@ p.c_m2{
 .register-but input[type="submit"]:hover {
 	background:#555;
 }
+
 .register-but a input[type="submit"] {
 	background: #FE6847;
 	color: #FFF;
@@ -2030,11 +2031,12 @@ p.c_m2{
 	-o-transition: 0.5s all;
 	display: inline-block;
 	text-transform: uppercase;
-	border:none;
-	outline:none;
+	border: none;
+	outline: none;
 }
+
 .register-but a input[type="submit"]:hover {
-	background:#555;
+	background: #555;
 }
 div.register-bottom-grid {
 	margin-top: 2em;

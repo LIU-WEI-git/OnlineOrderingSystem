@@ -83,7 +83,7 @@
                         总价：￥${shoppingCart.totalPrice}
                         <div class="register-but">
                             <a href="<c:url value="/createOrder"/>">
-                            <input type="submit" value="结算"/>
+                                <input type="submit" value="结算"/>
                             </a>
                         </div>
                     </div>

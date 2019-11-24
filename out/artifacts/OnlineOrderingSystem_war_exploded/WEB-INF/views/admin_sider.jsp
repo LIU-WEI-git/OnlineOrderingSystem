@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li class="active-pro">
-                <a href="upgrade.html">
+                <a href="<c:url value="/admin/logout" />">
                     <i class="ti-export"></i>
                     <p>管理员登出</p>
                 </a>

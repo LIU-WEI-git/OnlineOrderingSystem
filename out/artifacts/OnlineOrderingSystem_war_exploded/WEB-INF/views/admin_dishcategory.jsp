@@ -75,7 +75,7 @@
                                     </tr>
                                 </c:forEach>
                             </table>
-                            <a href="<c:url value="" />">添加管理员</a>
+                            <a href="<c:url value="" />">添加菜品类</a>
                             <%-- <button type="submit" class="btn btn-info btn-fill btn-wd" href="<c:url value="/admin/addadmin" />">添加管理员</button>--%>
 
                         </div>

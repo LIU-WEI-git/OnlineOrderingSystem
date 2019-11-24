@@ -196,4 +196,10 @@ session.setAttribute("admin",admin);
         return "admin_addsuccess";
     }
 
+    @RequestMapping(value = "/logout", method = GET)
+    public String logout(HttpSession session){
+    session.removeAttribute("admin");
+    return "adminlogin";
+    }
+
 }
