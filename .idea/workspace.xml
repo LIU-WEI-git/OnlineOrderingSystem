@@ -7,385 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/etalage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/fonts/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/fonts/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/fonts/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/fonts/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/body_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/c9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/cat_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/category_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/footer_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/img-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/img-sprite.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/label_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/marker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/marker1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/mobile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/order.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/p8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/payment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/pic9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/s1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/s2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/s3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/secure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/tick1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/wish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/images/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap-checkbox-radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/easyResponsiveTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery-1.10.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery.etalage.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/paper-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/DishController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/DishCategorySupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/DishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository$CategoryRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository$DishRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_fruits.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_products.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_account.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/css/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/css/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/fonts/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/fonts/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/fonts/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/fonts/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/bootstrap-checkbox-radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/jquery-1.10.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/res/js/paper-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/images/pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/etalage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/fonts/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/fonts/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/fonts/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/fonts/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/body_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/c9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/cat_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/category_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/footer_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/img-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/img-sprite.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/label_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/logo.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/marker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/marker1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/mobile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/order.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/p8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/payment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/pic9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/s1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/s2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/s3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/secure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/tick1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/wish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/images/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap-checkbox-radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/easyResponsiveTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery-1.10.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery.etalage.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/paper-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/DishController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/DishCategorySupport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/DishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository$CategoryRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository$DishRowMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/controller/DishController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/domain/PaginationSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/utils/DishCategorySupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/utils/PaginationSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_fruits.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_products.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_welcome.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_account.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_order_item.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/paper-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/css/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/fonts/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/bootstrap-checkbox-radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/jquery-1.10.2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/js/paper-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/css/use.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/adm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/avtar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/images/pass.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02c077d2-4a2f-4d43-96da-93240f374755.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/02c077d2-4a2f-4d43-96da-93240f374755.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ordering/repository/AddressRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineOrderingSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineOrderingSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/config/dbconfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/domain/Dish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/AdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/AdminRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcOrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcOrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/css/etalage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/body_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/c9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/cat_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/category_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/f2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/f3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/footer_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/header_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/img-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/img-sprite.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/label_new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/logo.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/marker.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/marker1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/mobile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/order.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/p8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/payment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/pic9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/s1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/s2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/s3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/secure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/tick1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/wish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/images/zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/js/easyResponsiveTabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/js/jquery.etalage.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/js/jquery.magnific-popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resource/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/config/dbconfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/domain/Dish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/AdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/AdminRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcOrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcOrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/controller/CustomerOrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/domain/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/domain/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/domain/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/网上订餐系统物理ER图.png" beforeDir="false" afterPath="$PROJECT_DIR$/网上订餐系统物理ER图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/网上订餐系统物理模型图.png" beforeDir="false" afterPath="$PROJECT_DIR$/网上订餐系统物理模型图.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -433,6 +60,22 @@
         <item name="online_ordering_system@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="online_ordering_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="address: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="online_ordering_system@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="online_ordering_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="order: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="online_ordering_system@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="online_ordering_system: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="views" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
@@ -460,88 +103,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="33" column="48" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAdminRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/domain/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2478">
-              <caret line="185" column="69" lean-forward="true" selection-start-line="185" selection-start-column="69" selection-end-line="185" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            <state relative-caret-position="428">
+              <caret line="55" column="127" selection-start-line="55" selection-start-column="127" selection-end-line="55" selection-end-column="127" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -550,10 +133,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ordering/controller/CustomerController.java">
+        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="95" column="74" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="74" />
+            <state relative-caret-position="409">
+              <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+              <folding>
+                <element signature="e#1584#1585#0" expanded="true" />
+                <element signature="e#1619#1620#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1987#1988#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -582,6 +196,7 @@
       <find>su</find>
       <find>register-but</find>
       <find>haser</find>
+      <find>order</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -634,12 +249,16 @@
         <option value="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java" />
         <option value="$PROJECT_DIR$/src/ordering/domain/Order.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp" />
-        <option value="$PROJECT_DIR$/src/ordering/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/database.sql" />
-        <option value="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" />
         <option value="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/customer_order_item.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp" />
+        <option value="$PROJECT_DIR$/src/ordering/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/src/ordering/repository/AddressRepository.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp" />
+        <option value="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java" />
+        <option value="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" />
+        <option value="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" />
       </list>
     </option>
   </component>
@@ -893,7 +512,7 @@
       <workItem from="1574347193585" duration="9971000" />
       <workItem from="1574488983296" duration="9228000" />
       <workItem from="1574519785710" duration="1965000" />
-      <workItem from="1574578787713" duration="2279000" />
+      <workItem from="1574578787713" duration="9243000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -958,11 +577,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574262264490</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完善查看订单">
+      <created>1574581410775</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574581410775</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83442000" />
+    <option name="totallyTimeSpent" value="90406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,7 +603,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.18297587" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.18297587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" sideWeight="0.5007949" side_tool="true" weight="0.15683647" />
       <window_info id="Designer" order="3" />
@@ -1009,7 +635,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.22989276" />
+      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.22989276" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1078,7 +704,8 @@
     <MESSAGE value="合并了TIAN分支和admin分支" />
     <MESSAGE value="合并admin分支" />
     <MESSAGE value="准备合并TIAN分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="准备合并TIAN分支" />
+    <MESSAGE value="完善查看订单" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善查看订单" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1089,44 +716,18 @@
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java</url>
+          <line>47</line>
+          <properties class="ordering.repository.jdbc.JdbcCustomerRepository" method="totalCustomers">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/网上订餐系统物理模型图.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/domain/OrderAddressInfoView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1381#1382#0" expanded="true" />
-            <element signature="e#1439#1440#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequestWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="91" column="28" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
-          <folding>
-            <element signature="e#2580#2581#0" expanded="true" />
-            <element signature="e#2648#2649#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-webmvc-4.3.18.RELEASE.jar!/META-INF/spring-form.tld">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1237,13 +838,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/02c077d2-4a2f-4d43-96da-93240f374755/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/AdminRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/repository/CustomerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="827">
@@ -1317,13 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_welcome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/domain/OrderItemInfoView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1341,34 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderItemInfoViewRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderAddressInfoViewRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/domain/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1400,31 +963,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order_item.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="93" lean-forward="true" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/domain/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2478">
-          <caret line="185" column="69" lean-forward="true" selection-start-line="185" selection-start-column="69" selection-end-line="185" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1435,27 +977,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderItemInfoViewRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="33" column="48" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1469,20 +994,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/ordering/controller/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        <state relative-caret-position="224">
+          <caret line="126" column="58" selection-start-line="126" selection-start-column="58" selection-end-line="126" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order_item.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="150" column="42" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="150" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/AddressRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_welcome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/AdminRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderAddressInfoViewRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/AddressRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ordering/controller/CustomerController.java">
+    <entry file="file://$PROJECT_DIR$/src/ordering/domain/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="95" column="74" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="74" />
+        <state relative-caret-position="304">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcCustomerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="55" column="127" selection-start-line="55" selection-start-column="127" selection-end-line="55" selection-end-column="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderAddressInfoViewRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+          <folding>
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
