@@ -35,4 +35,11 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+<!--    配置自定义标签-->
+    <jsp-config>
+        <taglib>
+            <taglib-uri>SimpleTag</taglib-uri>
+            <taglib-location>/WEB-INF/tld/SimpleTag.tld</taglib-location>
+        </taglib>
+    </jsp-config>
 </web-app>

@@ -7,12 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="st" uri="SimpleTag" %>
 <div class="header">
     <div class="container">
         <div class="header_top">
             <ul class="phone">
                 <li class="phone_left"><i class="mobile"> </i><span>1-200-346-2986</span></li>
-                <li class="phone_right">订单超过50元免配送费</li>
+                <li class="phone_right">订单超过50元立减<st:discount/>元</li>
                 <div class="clearfix"></div>
             </ul>
             <ul class="social">

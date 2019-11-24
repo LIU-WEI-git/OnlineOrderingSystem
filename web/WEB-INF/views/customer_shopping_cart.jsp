@@ -51,38 +51,40 @@
                         <tbody>
                         <jsp:useBean id="shoppingCart" scope="session" type="ordering.utils.ShoppingCart"/>
                         <c:forEach items="${shoppingCart.shoppingCartItemList}" var="shoppingCartItem" varStatus="li">
-                            <td width="150" align="center">${shoppingCartItem.dish.dish_name}</td>
-                            <td width="150" align="center">${shoppingCartItem.dish.price}</td>
-                            <td width="150" align="center">${shoppingCartItem.amount}</td>
-                            <td width="150"
-                                align="center">${shoppingCartItem.dish.price * shoppingCartItem.amount}</td>
-                            <td width="200" align="center">
-                                <a href="<c:url value="/shoppingCart/addDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
-                                    <input type="button" value="加一"/>
-                                </a>
-                                <c:choose>
-                                    <c:when test="${shoppingCartItem.amount eq 1}">
-                                        <input type="button" value="减一" disabled="disabled"/>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <a href="<c:url value="/shoppingCart/minusDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
-                                            <input type="button" value="减一"/>
-                                        </a>
-                                    </c:otherwise>
-                                </c:choose>
-                                <a href="<c:url value="/shoppingCart/deleteDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
-                                    <input type="button" value="删除"/>
-                                </a>
-                            </td>
+                            <tr>
+                                <td width="150" align="center">${shoppingCartItem.dish.dish_name}</td>
+                                <td width="150" align="center">${shoppingCartItem.dish.price}</td>
+                                <td width="150" align="center">${shoppingCartItem.amount}</td>
+                                <td width="150"
+                                    align="center">${shoppingCartItem.dish.price * shoppingCartItem.amount}</td>
+                                <td width="200" align="center">
+                                    <a href="<c:url value="/shoppingCart/addDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
+                                        <input type="button" value="加一"/>
+                                    </a>
+                                    <c:choose>
+                                        <c:when test="${shoppingCartItem.amount eq 1}">
+                                            <input type="button" value="减一" disabled="disabled"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="<c:url value="/shoppingCart/minusDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
+                                                <input type="button" value="减一"/>
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <a href="<c:url value="/shoppingCart/deleteDish?dish_id=${shoppingCartItem.dish.dish_id}"/>">
+                                        <input type="button" value="删除"/>
+                                    </a>
+                                </td>
+                            </tr>
                         </c:forEach>
                         </tbody>
                     </table>
                     <div>
                         总价：￥${shoppingCart.totalPrice}
                         <div class="register-but">
-                            <%--                            <div class="clearfix"></div>--%>
-                            <input type="submit" value="结算" href=""/>
-                            <%--                            <div class="clearfix"></div>--%>
+                            <a href="<c:url value="/createOrder"/>">
+                                <input type="submit" value="结算"/>
+                            </a>
                         </div>
                     </div>
                     <%--                    <ul class="product_img">--%>

@@ -2014,6 +2014,28 @@ p.c_m2{
 .register-but input[type="submit"]:hover {
 	background:#555;
 }
+.register-but a input[type="submit"] {
+	background: #FE6847;
+	color: #FFF;
+	font-size: 0.8em;
+	padding: 0.8em 2em;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-bottom: 4px solid #E94F2D;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	display: inline-block;
+	text-transform: uppercase;
+	border:none;
+	outline:none;
+}
+.register-but a input[type="submit"]:hover {
+	background:#555;
+}
 div.register-bottom-grid {
 	margin-top: 2em;
 }

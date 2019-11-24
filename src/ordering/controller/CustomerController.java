@@ -1,21 +1,16 @@
 package ordering.controller;
 
-import com.mysql.cj.Session;
+import ordering.domain.Customer;
 import ordering.domain.Dish;
-import ordering.domain.*;
+import ordering.domain.Order;
 import ordering.repository.*;
-import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
 
-import javax.jws.WebParam;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.List;
@@ -229,4 +224,8 @@ public class CustomerController {
         return "customer_order_item";
     }
 
+    @RequestMapping(value = "createOrder", method = RequestMethod.GET)
+    public String createOrder(Model model) {
+        return "customer_create_order";
+    }
 }
