@@ -1,9 +1,9 @@
 package ordering.controller;
 
-import ordering.domain.Customer;
+import com.mysql.cj.Session;
 import ordering.domain.Dish;
-import ordering.repository.CategoryRepository;
-import ordering.repository.CustomerRepository;
+import ordering.domain.*;
+import ordering.repository.*;
 import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
+import javax.jws.WebParam;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * 顾客相关页面控制类
@@ -33,6 +38,12 @@ public class CustomerController {
     @Autowired
     private DishRepository dishRepository;
 
+    @Autowired
+    private OrderRepository orderRepository;
+    @Autowired
+    private OrderItemInfoViewRepository orderItemInfoViewRepository;
+    @Autowired
+    private OrderAddressInfoViewRepository orderAddressInfoViewRepository;
     /**
      * 顾客欢迎页
      *
@@ -170,6 +181,52 @@ public class CustomerController {
         Dish dish = dishRepository.findById(dishId);
         model.addAttribute(dish);
         return "customer_dish_detail";
+    }
+
+
+    /**
+     * 用户查看自己的订单记录
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="order",method = RequestMethod.GET)
+    public String viewCustomerOrder(Model model,HttpSession session)
+    {
+        if(session.getAttribute("customer")==null){
+            return "redirect:/login";
+        }
+        List<Order> orders;
+        orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+        //orders = orderRepository.getCustomerOrders(String.valueOf(10086123));
+        model.addAttribute("orders",orders);
+        return "customer_order";
+    }
+
+    /**
+     * 查看订单的地址详情
+     * @param order_id
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "address_info",method = RequestMethod.GET)
+    public String viewOrderAddressInfo(@RequestParam(value ="order_id" )String order_id,Model model)
+    {
+        model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));
+        return "customer_order_address";
+    }
+
+    /**
+     * 查看订单所选菜品
+     * @param order_id
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="order_item",method=RequestMethod.GET)
+    public String viewOrderItemInfo(@RequestParam(value="order_id" ) String order_id ,Model model)
+    {
+        model.addAttribute("orderitems",orderItemInfoViewRepository.getOrderItems(order_id));
+        return "customer_order_item";
     }
 
 }

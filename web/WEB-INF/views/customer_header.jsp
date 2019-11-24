@@ -27,7 +27,7 @@
                     <c:when test="${not empty sessionScope.customer}">
                         <%--@elvariable id="customer" type="ordering.domain.Customer"--%>
 <%--                        TODO 修改链接--%>
-                        <li><a href="<c:url value="/"/>">${customer.customer_account}</a></li>
+                        <li><a href="<c:url value="/"/>">${customer.customer_name}</a></li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="<c:url value="/login"/>">我的账户</a></li>
