@@ -2,11 +2,10 @@
   Created by IntelliJ IDEA.
   User: owner
   Date: 2019/11/25
-  Time: 16:50
+  Time: 20:15
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 <html lang="en">
@@ -49,30 +48,22 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-            <form method="POST" >
-
-                菜品编号：<input type="text"  name="id" minlength="2" maxlength="6" required/><br/><br/>
-                菜品名称：<input type="text"  name="name" minlength="2" maxlength="8" required/><br/><br/>
-                菜品价格：<input type="number" name="price"  minlength="1" maxlength="6" required/><br/><br/>
-                菜品图片：<input  type="text" name="url" required/><br/><br/>
-                菜品描述：<input  type="text"  name="description"  minlength="2" maxlength="20" required/><br/><br/>
-
-                <input type="submit" value="添加" />
+            <%request.getSession().getAttribute("admin");%>
+            <form method="post">
+                 原密码：  <input type="password"  name="p_1"    required/><br/><br/>
+                 新密码：  <input type="password"  name="p_2"    required/><br/><br/>
+                确认密码：<input type="password"  name="p_3"   required/><br/><br/>
+                <input type="submit" value="修改" />
             </form>
-            <%request.getSession().getAttribute("f");%>
-            <p>${f}</p>
-
+            <a href="<c:url value="/admin/person"/>">返回</a>
+            <%request.getSession().getAttribute("x");%>
+            <p>${x}</p>
         </div>
-    </div>
-</div>
-
-
-
-</div>
-</div>
-
+    </div></div>
 
 </body>
+
+<!--   Core JS Files   -->
 <script src="${pageContext.request.contextPath}/res/js/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -93,4 +84,6 @@
 
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
+
+
 </html>

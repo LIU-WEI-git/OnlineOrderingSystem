@@ -53,7 +53,7 @@
             <h4>您的邮箱为：  ${admin.getAdmin_email()}</h4><br>
             <h4>您的电话为：  ${admin.getAdmin_phone()}</h4><br>
             <h4>您的注册时间为： ${admin.getAdmin_register_date()}</h4><br>
-      <a href="<c:url value="/admin/person"/>">修改密码</a>
+      <a href="<c:url value="/admin/turnpass"/>">修改密码</a>
       <a href="<c:url value="/admin/personmate"/>">修改个人信息</a>
         </div>
     </div></div>

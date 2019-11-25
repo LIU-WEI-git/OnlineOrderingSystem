@@ -7,19 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_categoryadd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_categorychange.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_changepassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_pchange.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_pchange.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_person.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_person.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_pchange.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_pchange.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishadd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishadd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_person.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_person.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +257,7 @@
       <workItem from="1574559513176" duration="6471000" />
       <workItem from="1574578098629" duration="9897000" />
       <workItem from="1574588069792" duration="7099000" />
-      <workItem from="1574663607721" duration="8061000" />
+      <workItem from="1574663607721" duration="16445000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -343,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574610910220</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="前3功能80%">
+      <created>1574671841539</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574671841539</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +405,7 @@
     <MESSAGE value="tianqing" />
     <MESSAGE value="提交2" />
     <MESSAGE value="登出" />
-    <option name="LAST_COMMIT_MESSAGE" value="登出" />
+    <MESSAGE value="前3功能80%" />
+    <option name="LAST_COMMIT_MESSAGE" value="前3功能80%" />
   </component>
 </project>

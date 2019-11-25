@@ -59,6 +59,7 @@ public class AdminController {
     public String processLogin(@RequestParam(value = "useraccount", defaultValue = "") String useraccount,
                                @RequestParam(value = "password", defaultValue = "") String password, HttpSession session) {
         Admin admin=null;
+        String l=null;
         try{
         admin = adminRepository.findByUserName(useraccount, password);}
         catch(Exception e){
@@ -70,6 +71,8 @@ public class AdminController {
             return "admin_welcome";
         }
         else{
+            l="用户名和密码不匹配";
+            session.setAttribute("l",l);
             return "redirect:/admin/alogin";}
 
 
@@ -217,7 +220,7 @@ public class AdminController {
  admin.setAdmin_email(email);
  admin.setAdmin_phone(phone);
 session.setAttribute("admin",admin);
-        return "admin_addsuccess";
+        return "redirect:/admin/person";
     }
 
     /**
@@ -228,7 +231,7 @@ session.setAttribute("admin",admin);
     @RequestMapping(value = "/logout", method = GET)
     public String logout(HttpSession session){
     session.removeAttribute("admin");
-    return "adminlogin";
+    return "redirect:/admin/alogin";
     }
 
     /**
@@ -302,13 +305,15 @@ session.setAttribute("admin",admin);
                               @RequestParam(value = "name", defaultValue = "") String name,HttpSession session){
         Category a=null;
         Category b=null;
-        try{a=categoryRepository.getCategoryById(id);}catch(Exception e){}
-        try{a=categoryRepository.getCategoryByName(name);}catch(Exception e){}
+        try{a=categoryRepository.getCategoryById(id);}
+        catch(Exception e){}
+        try{b=categoryRepository.getCategoryByName(name);
+        }catch(Exception e){}
         if(a==null&&b==null){
-        Category category=new Category(id,name);
-        categoryRepository.addCategory(category);
-        session.setAttribute("u", null);
-        return "redirect:/admin/dishcategory";}
+            Category category=new Category(id,name);
+            categoryRepository.addCategory(category);
+            session.setAttribute("u", null);
+            return "redirect:/admin/dishcategory";}
         else{
 
             String  u="提示：添加失败，该编号或名称已被使用";
@@ -326,4 +331,79 @@ session.setAttribute("admin",admin);
         /*Dish dish=dishRepository.findById(id);*/
         dishRepository.deleteDish(id);
         return "redirect:/admin/dish";}
+
+
+    /**
+     * 添加菜品
+     * @return
+     */
+    @RequestMapping(value = "/adddish" , method = GET)
+    public String addadish(){
+        return "admin_dishadd";
+    }
+
+    /**
+     * 添加菜品
+     * @param id
+     * @param name
+     * @param price
+     * @param url
+     * @param description
+     * @param session
+     * @return
+     */
+
+    @RequestMapping(value = "/adddish", method = POST)
+    public String adddish(@RequestParam(value = "id", defaultValue = "") String id,
+                          @RequestParam(value = "name", defaultValue = "") String name,
+                          @RequestParam(value = "price", defaultValue = "") float price,
+                          @RequestParam(value = "url", defaultValue = "") String url,
+                          @RequestParam(value = "description", defaultValue = "") String description,HttpSession session){
+        Dish a=null;
+        try{a=dishRepository.findById(id);}catch(Exception e){}
+        if(a==null){
+            Dish dish=new Dish(id,name,url,price,description);
+            dishRepository.save(dish);
+            session.setAttribute("f", null);
+            return "redirect:/admin/dish";}
+        else{
+
+            String  f="提示：添加失败，该菜品编号已被使用";
+            session.setAttribute("f", f);
+            return "redirect:/admin/adddish";
+        }
+    }
+
+    /**
+     * 修改本人密码
+     * @return
+     */
+    @RequestMapping(value = "/turnpass", method = GET)
+    public String turnpass(){
+        return "admin_changepassword";
+    }
+
+    @RequestMapping(value = "/turnpass", method = POST)
+    public String passwordchange(@RequestParam(value = "p_1", defaultValue = "") String p_1,
+                                 @RequestParam(value = "p_2", defaultValue = "") String p_2,
+                                 @RequestParam(value = "p_3", defaultValue = "") String p_3,HttpSession session){
+        String  x=null;
+        Admin admin= (Admin) session.getAttribute("admin");
+        if(!admin.getAdmin_password().equals(p_1)){
+            x="原密码错误";
+            session.setAttribute("x",x);
+            return "redirect:/admin/turnpass";
+        }
+        else if(!p_2.equals(p_3)){
+            x="两次密码不一致";
+            session.setAttribute("x",x);
+            return "redirect:/admin/turnpass";
+        }
+      else{
+      adminRepository.updateAdminPassword(p_2,admin);
+            session.setAttribute("x",null);
+            return "admin_addsuccess";
+        }
+
+    }
 }

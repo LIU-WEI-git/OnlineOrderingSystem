@@ -67,7 +67,7 @@
         </form>
 
 <div>
-    <a href="<c:url value="/admin/deletedish?dish_id=${dish.getDish_id()}"  />" style="font-size:30px" >添加菜品</a>
+    <a href="<c:url value="/admin/adddish"  />" style="font-size:30px" >添加菜品</a>
 </div>
             <div class="content table-responsive table-full-width">
             <table class="table table-striped">
