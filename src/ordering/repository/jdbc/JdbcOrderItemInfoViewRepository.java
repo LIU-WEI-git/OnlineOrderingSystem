@@ -27,12 +27,12 @@ public class JdbcOrderItemInfoViewRepository implements OrderItemInfoViewReposit
     @Override
     public int totalItems(String order_id)
     {
-        return jdbcTemplate.queryForObject(TOTAL_ITEMS+order_id,Integer.class);
+        return jdbcTemplate.queryForObject(TOTAL_ITEMS+"\'"+order_id+"\'",Integer.class);
     }
 
     @Override
     public List<OrderItemInfoView> getOrderItems(String order_id)
     {
-        return jdbcTemplate.query(GET_ORDERITEMS+order_id,item);
+        return jdbcTemplate.query(GET_ORDERITEMS+"\'"+order_id+"\'",item);
     }
 }

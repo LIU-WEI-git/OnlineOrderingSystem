@@ -15,8 +15,8 @@ public class DiscountTag extends SimpleTagSupport {
 
     private float totalPrice;
     private static ResourceBundle resource = ResourceBundle.getBundle("ordering.config.discount");
-    private static float TARGET_PRICE = Float.valueOf(resource.getString("TARGET_PRICE"));
-    private static float DISCOUNT = Float.valueOf(resource.getString("DISCOUNT"));
+    public static float TARGET_PRICE = Float.valueOf(resource.getString("TARGET_PRICE"));
+    public static float DISCOUNT = Float.valueOf(resource.getString("DISCOUNT"));
 
     @Override
     public void doTag() throws IOException {

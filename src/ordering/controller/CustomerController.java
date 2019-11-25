@@ -1,23 +1,24 @@
 package ordering.controller;
 
+import com.oogway.cat.security.MD5Utils;
 import ordering.domain.Customer;
 import ordering.domain.Dish;
 import ordering.domain.Order;
+import ordering.domain.OrderItem;
 import ordering.repository.*;
-import ordering.repository.DishRepository;
+import ordering.utils.DiscountTag;
 import ordering.utils.ShoppingCart;
+import ordering.utils.ShoppingCartItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
 
-import javax.jws.WebParam;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,7 +38,6 @@ public class CustomerController {
     private CustomerRepository customerRepository;
     @Autowired
     private DishRepository dishRepository;
-
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
@@ -46,6 +46,9 @@ public class CustomerController {
     private OrderAddressInfoViewRepository orderAddressInfoViewRepository;
     @Autowired
     private AddressRepository addressRepository;
+    @Autowired
+    private OrderItemRepository orderItemRepository;
+
     /**
      * 顾客欢迎页
      *
@@ -240,8 +243,46 @@ public class CustomerController {
      * @return
      */
     @RequestMapping(value = "createOrder", method = RequestMethod.GET)
-    public String createOrder(Model model) {
+    public String createOrder(Model model, HttpSession session) {
+        model.addAttribute(addressRepository.getCustomerAddress(((Customer) session.getAttribute("customer")).getCustomer_account()));
         return "customer_create_order";
+    }
+
+    /**
+     * 处理创建订单的信息
+     *
+     * @param address_id
+     * @param remark
+     * @param model
+     * @param session
+     * @return 成功跳转到创建订单成功页面
+     */
+    @RequestMapping(value = "createOrder", method = RequestMethod.POST)
+    public String createOrderSubmit(@RequestParam("address_id") String address_id,
+                                    @RequestParam(value = "remark",required = false) String remark,
+                                    Model model, HttpSession session) {
+        Date create_time = new Date();
+        //通过创建的订单的时间生成12位订单号
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = simpleDateFormat.format(create_time);
+        String order_id = MD5Utils.Md5(formattedDate, 16);
+        //获取顾客账号
+        String customer_account = ((Customer) session.getAttribute("customer")).getCustomer_account();
+        //获取折扣信息和订单总价
+        ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
+        Order order = null;
+        if (shoppingCart.getTotalPrice() > DiscountTag.TARGET_PRICE) {
+            order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()),
+                    remark, DiscountTag.DISCOUNT, shoppingCart.getTotalPrice() - DiscountTag.DISCOUNT);
+        } else {
+            order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()), remark, 0, shoppingCart.getTotalPrice());
+        }
+        orderRepository.addOrder(order);
+        for (ShoppingCartItem shoppingCartItem : shoppingCart.getShoppingCartItemList()) {
+            orderItemRepository.insertItem(new OrderItem(order_id, shoppingCartItem.getDish().getDish_id(), shoppingCartItem.getAmount()));
+        }
+        model.addAttribute(new ShoppingCart());
+        return "customer_payment_success";
     }
     /**
      * 顾客地址管理
