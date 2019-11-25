@@ -66,7 +66,9 @@
                     </span>
         </form>
 
-
+<div>
+    <a href="<c:url value="/admin/deletedish?dish_id=${dish.getDish_id()}"  />" style="font-size:30px" >添加菜品</a>
+</div>
             <div class="content table-responsive table-full-width">
             <table class="table table-striped">
                 <thead>
@@ -75,6 +77,7 @@
                 <th style="text-align: center">price</th>
                 <th style="text-align: center">description</th>
                 <th style="text-align: center">picture</th>
+                <th style="text-align: center">删除菜品</th>
                 <th style="text-align: center">修改菜品</th>
                 </thead>
                 <tbody>
@@ -84,7 +87,10 @@
                     <td align="center">${dish.getDish_name()}</td>
                     <td align="center">${dish.getPrice()}</td>
                     <td align="center">${dish.getDescription()}</td>
-                    <td align="center"><img src="${pageContext.request.contextPath}/resources/images/p1.jpg"</td>
+                    <td align="center"><img src="${pageContext.request.contextPath}/resources/images/p1.jpg"></td>
+                    <td align="center">
+                    <a href="<c:url value="/admin/deletedish?dish_id=${dish.getDish_id()}" />">删除</a>
+                    </td>
                     <td align="center">
                         <a href="<c:url value="/admin/changedish?dish_id=${dish.getDish_id()}" />">修改</a>
                     </td>

@@ -40,7 +40,7 @@ public class AdminController {
     @Autowired
     private CategoryRepository categoryRepository;
     /**
-     *
+     * 管理员登陆
      * @return
      */
     @RequestMapping(value = "/alogin", method = GET)
@@ -49,7 +49,7 @@ public class AdminController {
     }
 
     /**
-     *
+     *管理员登陆
      * @param useraccount
      * @param password
      * @param session
@@ -58,21 +58,28 @@ public class AdminController {
     @RequestMapping(value = "/alogin", method = POST)
     public String processLogin(@RequestParam(value = "useraccount", defaultValue = "") String useraccount,
                                @RequestParam(value = "password", defaultValue = "") String password, HttpSession session) {
+        Admin admin=null;
+        try{
+        admin = adminRepository.findByUserName(useraccount, password);}
+        catch(Exception e){
 
-        Admin admin = adminRepository.findByUserName(useraccount, password);
-        if (admin != null) {
+        }
+        if (admin != null&&admin.getDelete_tag()==0) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
             return "admin_welcome";
-        } else {
-            return "store";}
+        }
+        else{
+            return "redirect:/admin/alogin";}
+
+
 
 
     }
 
 
     /**
-     *
+     *管理员列表
      * @param session
      * @return
      */
@@ -84,7 +91,7 @@ public class AdminController {
     }
 
     /**
-     *
+     *删除管理员
      * @param userName
      * @return
      */
@@ -95,7 +102,7 @@ public class AdminController {
     }
 
     /**
-     *
+     *添加管理员
      * @param model
      * @return
      */
@@ -108,7 +115,7 @@ public class AdminController {
 
     /**
      *
-     *
+     *添加管理员
      *
      * @return
      */
@@ -125,7 +132,7 @@ public class AdminController {
     }
 
     /**
-     *
+     *显示菜品
      * @param session
      * @return
      */
@@ -136,6 +143,12 @@ public class AdminController {
         return "admin_dish";
     }
 
+    /**
+     * 修改菜品
+     * @param dishid
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/changedish", method = GET)
     public String changdish(@RequestParam(value = "dish_id", defaultValue = "") String dishid,HttpSession session) {
        Dish dish=dishRepository.findById(dishid);
@@ -143,6 +156,13 @@ public class AdminController {
         return "admin_dishchange";
     }
 
+    /**
+     * 分类展示菜品
+     * @param signal
+     * @param message
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/searchdish", method = GET)
     public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
                              @RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
@@ -160,6 +180,10 @@ public class AdminController {
         return "admin_dish";}
     }
 
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "/changedish", method = POST)
     public String changdishac(){
         return "";
@@ -196,10 +220,110 @@ session.setAttribute("admin",admin);
         return "admin_addsuccess";
     }
 
+    /**
+     * 管理员登出
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/logout", method = GET)
     public String logout(HttpSession session){
     session.removeAttribute("admin");
     return "adminlogin";
     }
 
+    /**
+     * 删除菜品类
+     * @param id
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/deletecategory", method = GET)
+    public String deletecategory(@RequestParam(value = "category_id", defaultValue = "") String id,HttpSession session) {
+        Category category=categoryRepository.getCategoryById(id);
+        CategoryDishSupport w=categoryRepository.listCategoryDishes(category);
+        List<Dish> list=w.getDishes();
+        if(list.isEmpty()){
+        categoryRepository.deleteCategory(categoryRepository.getCategoryById(id));
+        session.setAttribute("a",null);}
+   else{
+       String  a="提示：删除失败要删除的菜品类还包含菜品";
+       session.setAttribute("a", a);
+    }
+   return "redirect:/admin/dishcategory";}
+
+    /**
+     * 菜品类更改
+     * @param id
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/turnchange", method = GET)
+    public String turnchange(@RequestParam(value = "category_id", defaultValue = "") String id,HttpSession session){
+        Category category=categoryRepository.getCategoryById(id);
+        session.setAttribute("category",category);
+        return "admin_categorychange";
+    }
+
+    /**
+     * 菜品类更改
+     * @param name
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/categorychange", method = GET)
+    public String changecategory(@RequestParam(value = "name", defaultValue = "") String name, HttpSession session){
+
+        Category category= (Category) session.getAttribute("category");
+        categoryRepository.renameCategory(category.getCategory_name(),name);
+
+        return "redirect:/admin/dishcategory";
+    }
+
+
+    /**
+     * 添加菜品类
+     * @return
+     */
+    @RequestMapping(value = "/addcategory" , method = GET)
+    public String addacategory(){
+        return "admin_categoryadd";
+    }
+
+    /**
+     * 添加菜品类
+     * @param id
+     * @param name
+     * @param session
+     * @return
+     */
+
+    @RequestMapping(value = "/addcategory", method = POST)
+    public String addcategory(@RequestParam(value = "id", defaultValue = "") String id,
+                              @RequestParam(value = "name", defaultValue = "") String name,HttpSession session){
+        Category a=null;
+        Category b=null;
+        try{a=categoryRepository.getCategoryById(id);}catch(Exception e){}
+        try{a=categoryRepository.getCategoryByName(name);}catch(Exception e){}
+        if(a==null&&b==null){
+        Category category=new Category(id,name);
+        categoryRepository.addCategory(category);
+        session.setAttribute("u", null);
+        return "redirect:/admin/dishcategory";}
+        else{
+
+            String  u="提示：添加失败，该编号或名称已被使用";
+            session.setAttribute("u", u);
+            return "redirect:/admin/addcategory";
+        }
+
+
+    }
+
+
+
+    @RequestMapping(value = "/deletedish", method = GET)
+    public String deletedish(@RequestParam(value = "dish_id", defaultValue = "") String id) {
+        /*Dish dish=dishRepository.findById(id);*/
+        dishRepository.deleteDish(id);
+        return "redirect:/admin/dish";}
 }

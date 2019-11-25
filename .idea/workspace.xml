@@ -7,463 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_categoryadd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_categorychange.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/artifacts/OnlineOrderingSystem_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/junitgenerator-prj-settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/libraries/Spring_4_3_18_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/libraries/Spring_MVC_4_3_18_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/OnlineOrderingSystem.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/byte-buddy-1.9.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/commons-dbcp2-2.7.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/commons-pool2-2.7.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/dom4j-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/hibernate-core-5.4.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/mysql-connector-java-5.1.48.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/mysql-connector-java-8.0.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/servlet-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-aop-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-aspects-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-beans-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-context-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-context-support-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-core-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-expression-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-instrument-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-jdbc-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-jms-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-messaging-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-orm-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-oxm-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-test-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-tx-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-web-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-webmvc-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-webmvc-portlet-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/spring-websocket-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/stax-ex-1.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/txw2-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/lib/validation-api-1.1.0.Final.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcAdminRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcCategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/utils/DeliveryTimeTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/utils/DeliveryTimeTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/utils/DiscountTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/utils/DiscountTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/utils/OrderPriceTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/utils/OrderPriceTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/config/OrderingWebAppInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/config/RootConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/config/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/config/dbconfig.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/controller/CustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/controller/DishController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/Dish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/DishCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/OrderAddressInfoView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/OrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/domain/OrderItemInfoView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/AdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/CategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/CustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/DishRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/jdbc/JdbcAdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/jdbc/JdbcCategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/jdbc/JdbcCustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/repository/jdbc/JdbcDishRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/utils/CategoryDishSupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/utils/DishCategorySupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/src/ordering/utils/PaginationSupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/account.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_addsuccess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_dishchange.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_fruits.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_passchange.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_pchange.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_person.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_products.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_sider.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_user.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_useradd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/admin_welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/club.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/contact.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/customer_account.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/customer_footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/customer_header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/customer_register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/customer_welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/fruits.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/hello.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/products.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/single.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/views/store.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/css/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/css/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/css/paper-dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/css/themify-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/fonts/themify.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/fonts/themify.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/fonts/themify.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/fonts/themify.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/bootstrap-checkbox-radio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/bootstrap-notify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/chartist.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/jquery-1.10.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/res/js/paper-dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/css/etalage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/css/use.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/adm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/avtar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/body_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/c9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/cat_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/category_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/f2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/f3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/footer_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/header_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/img-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/img-sprite.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/key.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/label_new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/logo.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/marker.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/marker1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/mobile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/order.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/p8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/payment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/pic9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/s1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/s2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/s3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/secure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/tick1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/wish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/images/zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/js/easyResponsiveTabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/js/jquery.etalage.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/js/jquery.magnific-popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/web/resources/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/网上订餐系统物理ER图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/网上订餐系统物理模型图.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_sider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_sider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_create_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_create_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_shopping_cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_shopping_cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/artifacts/OnlineOrderingSystem_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/junitgenerator-prj-settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/libraries/Spring_4_3_18_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/libraries/Spring_MVC_4_3_18_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/OnlineOrderingSystem.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/byte-buddy-1.9.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/commons-dbcp2-2.7.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/commons-pool2-2.7.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/dom4j-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/hibernate-core-5.4.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/mysql-connector-java-5.1.48.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/mysql-connector-java-8.0.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/servlet-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-aop-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-aspects-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-beans-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-context-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-context-support-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-core-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-expression-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-instrument-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-jdbc-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-jms-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-messaging-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-orm-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-oxm-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-test-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-tx-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-web-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-webmvc-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-webmvc-portlet-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/spring-websocket-4.3.18.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/stax-ex-1.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/txw2-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/lib/validation-api-1.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_pchange.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_pchange.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository$AdminRowMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcAdminRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcCategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/repository/jdbc/JdbcDishRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/utils/DeliveryTimeTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/utils/DeliveryTimeTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/utils/DiscountTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/utils/DiscountTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/utils/OrderPriceTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/utils/OrderPriceTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/config/OrderingWebAppInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/config/RootConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/config/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/config/dbconfig.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/controller/CustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/controller/DishController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/Dish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/DishCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/OrderAddressInfoView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/OrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/domain/OrderItemInfoView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/AdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/CategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/CustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/DishRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/jdbc/JdbcAdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/jdbc/JdbcCategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/jdbc/JdbcCustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/repository/jdbc/JdbcDishRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/utils/CategoryDishSupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/utils/DishCategorySupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/src/ordering/utils/PaginationSupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/account.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_addsuccess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_dishchange.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_fruits.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_passchange.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_pchange.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_person.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_products.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_sider.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_user.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_useradd.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/admin_welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/club.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/contact.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/customer_account.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/customer_footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/customer_header.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/customer_register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/customer_welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/fruits.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/hello.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/products.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/single.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/views/store.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/css/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/css/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/css/paper-dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/css/themify-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/fonts/themify.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/fonts/themify.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/fonts/themify.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/fonts/themify.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/bootstrap-checkbox-radio.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/bootstrap-notify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/chartist.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/jquery-1.10.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/res/js/paper-dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/css/etalage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/css/use.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/adm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/avtar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/body_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/c9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/cat_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/category_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/f2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/f3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/footer_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/header_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/img-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/img-sprite.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/key.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/label_new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/logo.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/marker.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/marker1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/mobile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/order.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/p8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/payment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/pic9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/s1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/s2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/s3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/secure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/tick1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/wish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/images/zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/js/easyResponsiveTabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/js/jquery.etalage.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/js/jquery.magnific-popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/web/resources/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/网上订餐系统物理ER图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/网上订餐系统物理模型图.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_sider.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_pchange.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_pchange.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -566,7 +122,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -701,6 +257,7 @@
       <workItem from="1574559513176" duration="6471000" />
       <workItem from="1574578098629" duration="9897000" />
       <workItem from="1574588069792" duration="7099000" />
+      <workItem from="1574663607721" duration="8061000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -779,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574604885285</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="登出">
+      <created>1574610910220</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1574610910220</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -833,6 +397,7 @@
     <MESSAGE value="准备合并TIAN分支" />
     <MESSAGE value="tianqing" />
     <MESSAGE value="提交2" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交2" />
+    <MESSAGE value="登出" />
+    <option name="LAST_COMMIT_MESSAGE" value="登出" />
   </component>
 </project>

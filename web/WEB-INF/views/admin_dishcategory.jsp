@@ -64,18 +64,24 @@
                                     <th style="text-align: center">category_name</th>
 
                                     <th style="text-align: center">修改</th>
+                                    <th style="text-align: center">删除</th>
                                 </tr>
                                 <c:forEach items="${blist}" var="category" varStatus="li">
                                     <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
                                         <td align="center">${category.getCategory_id()}</td>
                                         <td align="center">${category.getCategory_name()}</td>
                                         <td align="center">
-                                            <a href="<c:url value="" />">删除</a>
+                                            <a href="<c:url value="/admin/turnchange?category_id=${category.getCategory_id()}" />">修改</a>
+                                        </td>
+                                        <td align="center">
+                                            <a href="<c:url value="/admin/deletecategory?category_id=${category.getCategory_id()}" />">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
                             </table>
-                            <a href="<c:url value="" />">添加菜品类</a>
+                            <%request.getSession().getAttribute("a");%>
+                            <p>${a}</p>
+                            <a href="<c:url value="/admin/addcategory" />">添加菜品类</a>
                             <%-- <button type="submit" class="btn btn-info btn-fill btn-wd" href="<c:url value="/admin/addadmin" />">添加管理员</button>--%>
 
                         </div>

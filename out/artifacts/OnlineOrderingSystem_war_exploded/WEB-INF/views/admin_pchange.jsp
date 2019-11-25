@@ -50,8 +50,8 @@
         <div class="content">
                 <%request.getSession().getAttribute("admin");%>
             <form action="<c:url value="/admin/personma"/>">
-                <input type="text"  name="phone" value="${admin.getAdmin_phone()}" minlength="2" maxlength="15" required/><br/><br/>
-                <input type="email"  name="email" value="${admin.getAdmin_email()}"  required/><br/><br/>
+                电话： <input type="text"  name="phone" value="${admin.getAdmin_phone()}" minlength="2" maxlength="15" required/><br/><br/>
+                邮箱： <input type="email"  name="email" value="${admin.getAdmin_email()}"  required/><br/><br/>
                 <input type="submit" value="修改" />
             </form>
             <a href="<c:url value="/admin/person"/>">返回</a>
