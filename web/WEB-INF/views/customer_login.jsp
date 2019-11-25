@@ -69,8 +69,9 @@
 </div>
 <jsp:include page="customer_footer.jsp"/>
 <script>
-    var info = '<%=request.getParameter("info")%>';
-    if (info == 'failure') {
+    var url= new URL(window.location.href);
+    var info=url.searchParams.get("info");
+    if (info === 'failure') {
         alert("账号或密码错误!");
     }
 </script>

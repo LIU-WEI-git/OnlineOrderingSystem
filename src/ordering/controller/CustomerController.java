@@ -1,6 +1,8 @@
 package ordering.controller;
 
+import com.oogway.cat.security.AESUtils;
 import com.oogway.cat.security.MD5Utils;
+import ordering.config.RootConfig;
 import ordering.domain.Customer;
 import ordering.domain.Dish;
 import ordering.domain.Order;
@@ -56,7 +58,11 @@ public class CustomerController {
      * @return 欢迎页
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String customerWelcome(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo, @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,Model model) {
+    public String customerWelcome(@RequestParam(value = "category_id", required = false) String category,
+                                  @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                                  @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,
+                                  Model model) {
+        //TODO 按菜品类别查看菜品
         model.addAttribute(categoryRepository.getCategoryList());
         model.addAttribute(dishRepository.findByPage(pageNo,pageSize));
         if (!model.containsAttribute("shoppingCart"))
@@ -93,7 +99,7 @@ public class CustomerController {
             return "redirect:/login?info=failure";
         }
         Customer customer = customerRepository.getCustomerByAccount(customer_account);
-        if (customer.getCustomer_password().equals(customer_password)) {
+        if (AESUtils.decodes(customer.getCustomer_password(),RootConfig.SECRET_KEY,128).equals(customer_password)) {
             model.addAttribute(customer);
             return "redirect:/";
         }
@@ -168,7 +174,9 @@ public class CustomerController {
                                          Model model) {
         if (customerRepository.isInDB(customer_account))
             return "redirect:/register?info=existed_account";
-        Customer customer = new Customer(customer_account, customer_name, customer_password, new Timestamp(System.currentTimeMillis()), customer_email);
+        //对顾客输入的密码进行加密操作
+        String encode_password= AESUtils.ecodes(customer_password, RootConfig.SECRET_KEY,128);
+        Customer customer = new Customer(customer_account, customer_name, encode_password, new Timestamp(System.currentTimeMillis()), customer_email);
         customerRepository.addCustomer(customer);
         model.addAttribute(customer);
         return "redirect:/";
@@ -271,9 +279,9 @@ public class CustomerController {
         //获取折扣信息和订单总价
         ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
         Order order = null;
-        if (shoppingCart.getTotalPrice() > DiscountTag.TARGET_PRICE) {
+        if (shoppingCart.getTotalPrice() > RootConfig.TARGET_PRICE) {
             order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()),
-                    remark, DiscountTag.DISCOUNT, shoppingCart.getTotalPrice() - DiscountTag.DISCOUNT);
+                    remark, RootConfig.DISCOUNT, shoppingCart.getTotalPrice() - RootConfig.DISCOUNT);
         } else {
             order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()), remark, 0, shoppingCart.getTotalPrice());
         }
