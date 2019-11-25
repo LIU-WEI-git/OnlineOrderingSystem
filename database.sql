@@ -48,7 +48,7 @@ CREATE TABLE `admin` (
   `admin_register_time` datetime NOT NULL,
   `admin_email` varchar(40) DEFAULT NULL,
   `admin_phone` varchar(11) DEFAULT NULL,
-  `delete_tag` tinyint(1) NOT NULL,
+  `delete_tag` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`admin_account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -93,9 +93,18 @@ CREATE TABLE `customer` (
 /*Data for the table `customer` */
 
 insert  into `customer`(`customer_account`,`customer_name`,`customer_password`,`customer_register_time`,`customer_email`) values 
+('','ss','','2019-11-22 11:55:41',''),
 ('10086001','customer','123','2019-09-01 09:02:26','customer@163.com'),
 ('10086123','吴东杰','wdj123','2019-11-18 21:10:51','wdj@163.com'),
-('10086223','商学伟','sxw123','2019-11-13 21:11:26','sxw@163.com');
+('10086223','商学伟','sxw123','2019-11-13 21:11:26','sxw@163.com'),
+('11','','','2019-11-22 11:31:07',''),
+('22','','','2019-11-22 11:36:12',''),
+('333','','','2019-11-22 11:49:54',''),
+('4','','','2019-11-22 15:07:17',''),
+('44','','','2019-11-22 11:54:11',''),
+('ll','j','jjj','2019-11-22 11:18:32','k@qq.com'),
+('s','','','2019-11-22 11:14:54',''),
+('ss','ll','sss','2019-11-22 11:28:34','j@1.com');
 
 /*Table structure for table `dish` */
 
@@ -113,10 +122,12 @@ CREATE TABLE `dish` (
 /*Data for the table `dish` */
 
 insert  into `dish`(`dish_id`,`dish_name`,`picture_url`,`price`,`description`) values 
-('10001','芝士焗饭',NULL,10,'学生最爱'),
-('10002','芝士焗面',NULL,12,'上班族最爱'),
-('10003','刘威牌果汁',NULL,15,'好喝得不得了'),
-('10004','炸薯条',NULL,8,'好吃');
+('10001','芝士焗饭','images/p1.jpg',10,'学生最爱'),
+('10002','芝士焗面','images/p2.jpg',12,'上班族最爱'),
+('10003','刘威牌果汁','images/p3.jpg',15,'好喝得不得了'),
+('10004','炸薯条','images/p4.jpg',8,'好吃'),
+('10005','烤肉拌饭','images/p5.jpg',11,'肉多'),
+('10006','炸鸡拌饭','images/p6.jpg',11,'脆爽炸鸡');
 
 /*Table structure for table `dish_category` */
 

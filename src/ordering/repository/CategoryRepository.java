@@ -75,6 +75,14 @@ public interface CategoryRepository {
     Category deleteCategoryByName(String category_name);
 
     /**
+     * 删除指定category
+     *
+     * @param category 需要被删除的category对象
+     * @return 被删除的category对象
+     */
+    Category deleteCategory(Category category);
+
+    /**
      * 修改一个菜品类别的名字
      *
      * @param oldName

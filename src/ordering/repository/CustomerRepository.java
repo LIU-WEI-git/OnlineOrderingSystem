@@ -66,19 +66,23 @@ public interface CustomerRepository {
     /**
      * 修改指定账户的customer信息，只能修改用户名，密码，邮箱
      *
-     * @param customer_account
-     * @param customer_name
-     * @param customer_password
-     * @param customer_email
+     * @param customer 包含了新信息的customer
      * @return 结果
      */
-    boolean resetCustomerInfo(String customer_account,String customer_name,String customer_password,String customer_email);
+    boolean resetCustomerInfo(Customer customer);
 
     /**
-     * 删除一个customer
+     * 通过账号删除一个customer
      *
      * @param customer_account
      * @return 被删除的customer
      */
     Customer deleteCustomerByAccount(String customer_account);
+
+    /**
+     * 删除一个customer
+     * @param customer 需要被删除customer对象
+     * @return 被删除的customer对象
+     */
+    Customer deleteCustomer(Customer customer);
 }

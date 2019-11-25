@@ -18,8 +18,8 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String hello(Model model) {
         //测试数据库连接，界面应当显示数据库第一个admin的account
-        model.addAttribute("admin", adminRepository.getAdminList().get(0));
-        return "account";
+        model.addAttribute("adminCount", adminRepository.count());
+        return "hello";
     }
 
 //    @RequestMapping(value = "/alogin", method = GET)

@@ -16,7 +16,7 @@
 <body>
 Hello World!
 <br>
-${admin.admin_account}
+${adminCount}
 <a href="<c:url value="/admin/alogin" />">管理员登陆</a>
 </body>
 </html>
