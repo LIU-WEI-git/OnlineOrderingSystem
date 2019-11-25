@@ -29,7 +29,7 @@
     <div class="container">
         <div class="Product_top">
             <div class="row content">
-                <div class="col-md-9">
+                <div class="col-md-9" style="height: auto">
                     <div id="sorter" class="tie2">
                         <div class="tie2-indent">
                             <form name="sorter_form" action="#" method="get"><input type="hidden" name="main_page" value="products_all"><label for="disp-order-sorter">Sort by: </label>
@@ -58,36 +58,35 @@
                     </div>
                     <c:forEach items="${orders}" var="order">
                         <ul class="product_img">
-                            <li class="product_left"><img src="images/pic8.jpg" class="img-responsive" alt=""/>
-                                <p>In Stock:999</p>
-                            </li>
                             <li class="product_right">
                                 <h3>下单时间：${order.create_time}</h3>
-                                <h4>订单状态：
+                                <a href="<c:url value="/order/order_item?order_id=${order.order_id}"/>"><h4 style="color:blue"><strong>订单详情</strong></h4></a>
+                                <h4 class="model"><strong>订单价格: </strong>${order.order_price}</h4>
+                                <h4 class="model"><strong>折扣: ${order.discount}</strong></h4><br>
+                                <h4>订单状态:
                                     <c:choose>
                                         <c:when test="${order.order_state ==0}">商家暂未接单</c:when>
                                         <c:when test="${order.order_state ==1}">商家已接单</c:when>
                                         <c:when test="${order.order_state ==2}">订单已结束</c:when>
                                     </c:choose>
                                 </h4>
-                                <span class="model"><strong>订单价格: </strong>${order.order_price}</span><br>
-                                <span class="model"><strong>折扣: ${order.discount}</strong></span>
-                                <div class="product_price">配送状态:
-                                    <c:choose>
-                                        <c:when test="${order.delivery_state ==0}">
-                                            <span class="actual">未配送</span>
-                                        </c:when>
-                                        <c:when test="${order.delivery_state==1}">配送中</c:when>
-                                        <c:when test="${order.delivery_state==2}">已送达</c:when>
-                                    </c:choose>
+                                <div class="product_price">
+                                    <h4>配送状态:
+                                        <c:choose>
+                                            <c:when test="${order.delivery_state ==0}">未配送</c:when>
+                                            <c:when test="${order.delivery_state==1}">配送中</c:when>
+                                            <c:when test="${order.delivery_state==2}">已送达</c:when>
+                                        </c:choose>
+                                    </h4>
                                 </div>
                                 <div class="but1">
-                                    <a href="<c:url value="/order/address_info?order_id=${order.order_id}" />">订单地址详情</a>
+                                    <a href="<c:url value="/order/address_info?order_id=${order.order_id}" />"><h4 style="color:blue">订单地址详情</h4></a>
                                 </div>
+                                <h4>备注：</h4><span>${order.remark}</span>
+
                             </li>
-                            <div class="clearfix"> </div>
-                            <h5 class="detail">备注:</h5>
-                            <p class="detail_desc">${order.remark}<a href="<c:url value="/order/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
+                            <h4 class="detail"> </h4>
+                            <p class="detail_desc "> </p>
                         </ul>
                     </c:forEach>
 

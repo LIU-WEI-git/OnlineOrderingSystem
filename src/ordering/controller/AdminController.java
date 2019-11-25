@@ -1,31 +1,24 @@
 package ordering.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
 import ordering.domain.Admin;
 import ordering.domain.Category;
 import ordering.domain.Dish;
-import ordering.domain.DishCategory;
 import ordering.repository.AdminRepository;
 import ordering.repository.CategoryRepository;
 import ordering.repository.DishRepository;
 import ordering.utils.CategoryDishSupport;
-import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+
+import javax.servlet.http.HttpSession;
+import java.util.Date;
+import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @Controller
@@ -188,11 +181,11 @@ public class AdminController {
     public String changeperson(@RequestParam(value = "email", defaultValue = "") String email,
                            @RequestParam(value = "phone", defaultValue = "") String phone, HttpSession session){
 
- Admin admin= (Admin) session.getAttribute("admin");
- adminRepository.updateAdmin(admin.getAdmin_name(),email,phone,admin);
- admin.setAdmin_email(email);
- admin.setAdmin_phone(phone);
-session.setAttribute("admin",admin);
+        Admin admin = (Admin) session.getAttribute("admin");
+        adminRepository.updateAdmin(admin.getAdmin_name(), email, phone, admin);
+        admin.setAdmin_email(email);
+        admin.setAdmin_phone(phone);
+        session.setAttribute("admin", admin);
         return "admin_addsuccess";
     }
 

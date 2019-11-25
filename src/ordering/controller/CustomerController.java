@@ -4,13 +4,18 @@ import ordering.domain.Customer;
 import ordering.domain.Dish;
 import ordering.domain.Order;
 import ordering.repository.*;
+import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
+import javax.jws.WebParam;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.List;
@@ -39,6 +44,8 @@ public class CustomerController {
     private OrderItemInfoViewRepository orderItemInfoViewRepository;
     @Autowired
     private OrderAddressInfoViewRepository orderAddressInfoViewRepository;
+    @Autowired
+    private AddressRepository addressRepository;
     /**
      * 顾客欢迎页
      *
@@ -235,5 +242,37 @@ public class CustomerController {
     @RequestMapping(value = "createOrder", method = RequestMethod.GET)
     public String createOrder(Model model) {
         return "customer_create_order";
+    }
+    /**
+     * 顾客地址管理
+     * @param model
+     * @param session
+     * @return
+     */
+    @RequestMapping(value="myaddress",method = RequestMethod.GET)
+    public String managerMyAddress(Model model,HttpSession session)
+    {
+        model.addAttribute("addresses",addressRepository.getCustomerAddress(((Customer)session.getAttribute("customer")).getCustomer_account()));
+        return "customer_address";
+    }
+
+    /**
+     * 删除用户的一条地址
+     * @param address_id
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="delete_address",method = RequestMethod.GET)
+    public String deleteAddress(@RequestParam(value = "address_id")String address_id,Model model)
+    {
+        addressRepository.deleteAddress(address_id);
+        return "redirect:/myaddress";
+    }
+
+    @RequestMapping(value="edit_address",method = RequestMethod.GET)
+    public String editAddress(@RequestParam(value="address_id")String address_id,Model model)
+    {
+        model.addAttribute("address",addressRepository.getCustomerAddress(address_id));
+        return "customer_edit_address";
     }
 }
