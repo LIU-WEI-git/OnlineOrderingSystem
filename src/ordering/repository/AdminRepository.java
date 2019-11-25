@@ -3,6 +3,8 @@ package ordering.repository;
 import ordering.domain.Admin;
 import ordering.utils.PaginationSupport;
 
+import java.util.List;
+
 /**
  * 管理员资源库接口
  *
@@ -74,5 +76,18 @@ public interface AdminRepository {
      * @param admin 指定管理员
      */
     void updateAdminPassword(String admin_password, Admin admin);
+
+    /**
+     * 登陆
+     *
+     * @param admin_account 登陆名
+     * @param admin_password 密码
+     */
+     Admin findByUserName(String admin_account, String admin_password);
+
+     /**
+     * 获取列表
+     */
+     List<Admin> findadminlsit();
 
 }
