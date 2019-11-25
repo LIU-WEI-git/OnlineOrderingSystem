@@ -38,7 +38,7 @@
         <div class="Product_top">
             <div class="row content">
                 <div class="col-md-9">
-<%--                    TODO 选择配送地址--%>
+                    <%--                    TODO 选择配送地址--%>
                     地址<br>
                     配送时间：<st:deliveryTime/><br>
                     <table border="1">
@@ -67,9 +67,8 @@
                     <div>
                         总价：￥<st:orderPrice totalPrice="${shoppingCart.totalPrice}"/>
                         <div class="register-but">
-                            <%--                            <div class="clearfix"></div>--%>
+<%--                            TODO 修改链接--%>
                             <input type="submit" value="确认下单" href=""/>
-                            <%--                            <div class="clearfix"></div>--%>
                         </div>
                     </div>
                 </div>

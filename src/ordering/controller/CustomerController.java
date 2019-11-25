@@ -188,6 +188,7 @@ public class CustomerController {
     @RequestMapping(value="order",method = RequestMethod.GET)
     public String viewCustomerOrder(Model model,HttpSession session)
     {
+        //如果用户未登录，重定向到登录界面
         if(session.getAttribute("customer")==null){
             return "redirect:/login";
         }
@@ -204,7 +205,7 @@ public class CustomerController {
      * @param model
      * @return
      */
-    @RequestMapping(value = "address_info",method = RequestMethod.GET)
+    @RequestMapping(value = "order/address_info",method = RequestMethod.GET)
     public String viewOrderAddressInfo(@RequestParam(value ="order_id" )String order_id,Model model)
     {
         model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));
@@ -213,17 +214,24 @@ public class CustomerController {
 
     /**
      * 查看订单所选菜品
+     *
      * @param order_id
      * @param model
      * @return
      */
-    @RequestMapping(value="order_item",method=RequestMethod.GET)
+    @RequestMapping(value="order/order_item",method=RequestMethod.GET)
     public String viewOrderItemInfo(@RequestParam(value="order_id" ) String order_id ,Model model)
     {
         model.addAttribute("orderitems",orderItemInfoViewRepository.getOrderItems(order_id));
         return "customer_order_item";
     }
 
+    /**
+     * 显示创建订单页面
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "createOrder", method = RequestMethod.GET)
     public String createOrder(Model model) {
         return "customer_create_order";

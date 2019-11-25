@@ -82,12 +82,12 @@
                                     </c:choose>
                                 </div>
                                 <div class="but1">
-                                    <a href="<c:url value="/address_info?order_id=${order.order_id}" />">订单地址详情</a>
+                                    <a href="<c:url value="/order/address_info?order_id=${order.order_id}" />">订单地址详情</a>
                                 </div>
                             </li>
                             <div class="clearfix"> </div>
                             <h5 class="detail">备注:</h5>
-                            <p class="detail_desc">${order.remark}<a href="<c:url value="/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
+                            <p class="detail_desc">${order.remark}<a href="<c:url value="/order/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
                         </ul>
                     </c:forEach>
 
