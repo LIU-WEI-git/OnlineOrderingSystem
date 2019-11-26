@@ -71,21 +71,16 @@
             <%--                    <div class="clearfix"></div>--%>
             <%--                </div>--%>
             <%--            </sf:form>--%>
-            <form method="post" action="<c:url value="/update_address"/>">
+            <form method="post" action="<c:url value="/add_address"/> ">
                 <div class="register-top-grid">
                     <h3>地址信息</h3>
                     <div>
                         <span>地址<label>*</label></span>
                         <label>
-                            <input type="text" name="address_info" value="${address.info}" minlength="3" maxlength="20"/>
+                            <input type="text" name="address_info" minlength="3" maxlength="20"/>
                         </label>
                     </div>
-                    <div hidden>
-                        <span >address_id<label>*</label></span>
-                        <label>
-                            <input type="text" name="address_id" value="${address.address_id}"/>
-                        </label>
-                    </div>
+
                 </div>
                 <div class="clearfix"></div>
                 <div class="register-bottom-grid">
@@ -93,24 +88,18 @@
                     <div>
                         <span>联系人<label>*</label></span>
                         <label>
-                            <input type="text" name="contact" value="${address.contact}" minlength="3" maxlength="20"/>
+                            <input type="text" name="contact" minlength="3" maxlength="20"/>
                         </label>
                     </div>
                     <div>
                         <span>电话<label>*</label></span>
                         <label>
-                            <input type="tel" name="phone" value="${address.phone}"/>
+                            <input type="tel" name="phone"/>
                         </label>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="register-but">
-                    <div hidden>
-                        <span>customer_account<label>*</label></span>
-                        <label>
-                            <input type="text" name="customer_account" value="${address.customer_account}" minlength="3" maxlength="20"/>
-                        </label>
-                    </div>
                     <div class="clearfix"></div>
                     <input type="submit" value="确认添加"/>
                     <div class="clearfix"></div>

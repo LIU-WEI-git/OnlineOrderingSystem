@@ -1,6 +1,7 @@
 package ordering.controller;
 
 import com.mysql.cj.Session;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import ordering.domain.Dish;
 import ordering.domain.*;
 import ordering.repository.*;
@@ -18,6 +19,7 @@ import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -257,10 +259,65 @@ public class CustomerController {
         return "redirect:/myaddress";
     }
 
+    /**
+     * 编辑一条地址
+     * @param address_id
+     * @param model
+     * @return
+     */
     @RequestMapping(value="edit_address",method = RequestMethod.GET)
     public String editAddress(@RequestParam(value="address_id")String address_id,Model model)
     {
-        model.addAttribute("address",addressRepository.getCustomerAddress(address_id));
+        model.addAttribute("address",addressRepository.getAddress(address_id));
         return "customer_edit_address";
+    }
+    @RequestMapping(value = "update_address",method = RequestMethod.POST)
+    public String updateAddress(@RequestParam(value = "address_id")String address_id,
+                                @RequestParam(value = "customer_account")String customer_account,
+                                @RequestParam(value = "contact")String contact,
+                                @RequestParam(value="phone")String phone,
+                                @RequestParam(value = "address_info")String info,
+                                Model model)
+    {
+        Address address=new Address(address_id,customer_account,contact,phone,info);
+        addressRepository.resetAddress(address);
+        return "redirect:/myaddress";
+    }
+    /**
+     * 添加一条新的收货地址
+     * @param contact
+     * @param phone
+     * @param info
+     * @param session
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "add_address",method = RequestMethod.POST)
+    public String addAddress(@RequestParam(value = "contact")String contact,
+                             @RequestParam(value = "phone")String phone,
+                             @RequestParam(value = "address_info")String info,
+                             HttpSession session, Model model)
+    {
+        System.out.println(contact);
+        Date date =new Date();
+        String address_id=String.valueOf(date.getDay())+String.valueOf(date.getHours())+String.valueOf(date.getMinutes())+String.valueOf(date.getSeconds())
+                +contact.substring(0,4);
+        if(addressRepository.isInDB(address_id))
+        {
+            return "redirect:/add_address?info=添加失败，请重新添加";
+        }
+        Address address=new Address(address_id,((Customer) session.getAttribute("customer")).getCustomer_account(),contact,phone,info);
+        addressRepository.addAddress(address);
+        return "redirect:/myaddress";
+    }
+
+    @RequestMapping(value = "add_address",method = RequestMethod.GET)
+    public String addressRegister(Model model,@RequestParam(value = "info")String info)
+    {
+        if(info!=null)
+        {
+            model.addAttribute(info);
+        }
+        return "customer_address_register";
     }
 }

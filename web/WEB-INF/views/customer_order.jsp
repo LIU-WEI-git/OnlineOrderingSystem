@@ -30,32 +30,6 @@
         <div class="Product_top">
             <div class="row content">
                 <div class="col-md-9" style="height: auto">
-                    <div id="sorter" class="tie2">
-                        <div class="tie2-indent">
-                            <form name="sorter_form" action="#" method="get"><input type="hidden" name="main_page" value="products_all"><label for="disp-order-sorter">Sort by: </label>
-                                <select name="disp_order" onchange="this.form.submit();" id="disp-order-sorter">
-                                    <option value="1" selected="selected">Product Name</option>
-                                    <option value="2">Product Name - desc</option>
-                                    <option value="3">Price - low to high</option>
-                                    <option value="4">Price - high to low</option>
-                                    <option value="5">Model</option>
-                                    <option value="6">Date Added - New to Old</option>
-                                    <option value="7">Date Added - Old to New</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="pagenation">
-                        <div id="allProductsListingTopNumber" class="navSplitPagesResult back"><span>Displaying</span> 1 to 4 (of <span>20</span> products)</div>
-                        <div id="allProductsListingTopLinks" class="navSplitPagesLinks forward"> &nbsp;<strong class="current">1</strong>&nbsp;&nbsp;
-                            <a href="" title=" Page 2 ">2</a>&nbsp;&nbsp;
-                            <a href="" title=" Page 3 ">3</a>&nbsp;&nbsp;
-                            <a href="" title=" Page 4 ">4</a>&nbsp;&nbsp;
-                            <a href="" title=" Page 5 ">5</a>&nbsp;&nbsp;
-                            <a href="" title=" Next Page ">Next&nbsp;&gt;&gt;</a>&nbsp;
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
                     <c:forEach items="${orders}" var="order">
                         <ul class="product_img">
                             <li class="product_right">

@@ -26,6 +26,12 @@ public class JdbcAddressRepository implements AddressRepository {
     {
         this.jdbcTemplate=jdbcTemplate;
     }
+
+    @Override
+    public boolean isInDB(String address_id)
+    {
+        return jdbcTemplate.queryForObject(TOTAL_ADDRESS + " where address_id=\'" + address_id+"\'", Integer.class) != 0;
+    }
     @Override
     public int getTotalCustomerAddress(String customer_account) {
         return jdbcTemplate.queryForObject(TOTAL_ADDRESS+" where customer_account ="+customer_account,Integer.class);
@@ -55,5 +61,10 @@ public class JdbcAddressRepository implements AddressRepository {
         jdbcTemplate.update("update address set customer_account =?,contact=?,phone = ?,info =? where address_id = ?",
                 address.getCustomer_account(),address.getContact(),address.getPhone(),address.getInfo(),address.getAddress_id());
         return true;
+    }
+
+    @Override
+    public Address getAddress(String address_id) {
+        return jdbcTemplate.queryForObject("select * from address where address_id ="+address_id,addressRowMapper);
     }
 }
