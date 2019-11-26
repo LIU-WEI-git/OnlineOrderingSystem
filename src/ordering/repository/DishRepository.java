@@ -1,5 +1,6 @@
 package ordering.repository;
 
+import ordering.domain.Category;
 import ordering.domain.Dish;
 import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
@@ -7,6 +8,8 @@ import ordering.utils.PaginationSupport;
 import java.util.List;
 
 /**
+ * 菜品资源库接口
+ *
  * @author neilly
  * @version 1.0
  * @since 2019/11/19 10:48
@@ -62,8 +65,20 @@ public interface DishRepository {
     /**
      * 新建一个菜品
      *
-     * @param dish 菜品
+     * @param dishCategorySupport 菜品
      * @return 保存的菜品
      */
-    Dish save(Dish dish);
+    void addDish(DishCategorySupport dishCategorySupport);
+
+    /**
+     * 更新菜品
+     *
+     * @param dish_name
+     * @param picture_url
+     * @param price
+     * @param description
+     * @param dishCategorySupport
+     */
+    void updateDish(String dish_name, String picture_url, List<Category> categories, float price, String description, DishCategorySupport dishCategorySupport);
+
 }
