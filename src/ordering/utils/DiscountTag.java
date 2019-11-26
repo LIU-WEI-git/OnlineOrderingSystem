@@ -1,5 +1,8 @@
 package ordering.utils;
 
+import ordering.config.RootConfig;
+
+import javax.persistence.criteria.Root;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -14,16 +17,13 @@ import java.util.ResourceBundle;
 public class DiscountTag extends SimpleTagSupport {
 
     private float totalPrice;
-    private static ResourceBundle resource = ResourceBundle.getBundle("ordering.config.discount");
-    private static float TARGET_PRICE = Float.valueOf(resource.getString("TARGET_PRICE"));
-    private static float DISCOUNT = Float.valueOf(resource.getString("DISCOUNT"));
 
     @Override
     public void doTag() throws IOException {
         //如果标签没有给totalPrice赋值，则默认输出折扣
-        if (totalPrice == 0.0) getJspContext().getOut().println(DISCOUNT);
-        else if (totalPrice > TARGET_PRICE)
-            getJspContext().getOut().println(DISCOUNT);
+        if (totalPrice == 0.0) getJspContext().getOut().println(RootConfig.DISCOUNT);
+        else if (totalPrice > RootConfig.TARGET_PRICE)
+            getJspContext().getOut().println(RootConfig.DISCOUNT);
         else getJspContext().getOut().println("0.0");
     }
 

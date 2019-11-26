@@ -113,5 +113,12 @@
     </div>
 </div>
 <jsp:include page="customer_footer.jsp"/>
+<script>
+    var url= new URL(window.location.href);
+    var info=url.searchParams.get("info");
+    if (info === 'existed_account') {
+        alert("账号已被注册过!");
+    }
+</script>
 </body>
 </html>

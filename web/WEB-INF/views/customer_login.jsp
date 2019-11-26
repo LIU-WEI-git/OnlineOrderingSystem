@@ -31,7 +31,7 @@
                 <jsp:include page="customer_sider.jsp"/>
                 <div class="col-md-9">
                     <div class="breadcrumb">
-                        <a href="<c:url value="/"/>">首页</a>
+                        <a href="<c:url value="/"/>">返回首页</a>
                     </div>
                     <div class="account_grid">
                         <div class="col-md-6 login-left">
@@ -68,5 +68,12 @@
     </div>
 </div>
 <jsp:include page="customer_footer.jsp"/>
+<script>
+    var url= new URL(window.location.href);
+    var info=url.searchParams.get("info");
+    if (info === 'failure') {
+        alert("账号或密码错误!");
+    }
+</script>
 </body>
 </html>

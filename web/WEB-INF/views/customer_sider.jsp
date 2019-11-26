@@ -11,10 +11,9 @@
     <div class="category_box">
         <h3 class="cate_head">菜品类别</h3>
         <ul class="category">
-<%--            TODO 如果用户通过url直接访问其他页面，则其他页面的控制方法还没有加入categoryList属性，可能无法显示category--%>
             <jsp:useBean id="categoryList" scope="session" type="java.util.List"/>
             <c:forEach var="category" items="${categoryList}">
-                <li><a href="#">${category.category_name}</a></li>
+                <li><a href="<c:url value="/?category_id=${category.category_id}"/>">${category.category_name}</a></li>
             </c:forEach>
         </ul>
     </div>

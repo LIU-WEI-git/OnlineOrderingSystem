@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 public class RootConfig {
 
     // 读取数据库配置文件
-    private static ResourceBundle resource = ResourceBundle.getBundle("ordering.config.dbconfig");
+    private static ResourceBundle resource = ResourceBundle.getBundle("ordering.config.config");
 
     // 获取数据库配置
     private static String DRIVER = resource.getString("DRIVER");
@@ -32,6 +32,13 @@ public class RootConfig {
     private static String DBCONFIG = resource.getString("DBCONFIG");
     private static String USER = resource.getString("USER");
     private static String PASSWORD = resource.getString("PASSWORD");
+
+    //获取AES加密的密钥
+    public static String SECRET_KEY=resource.getString("SECRET_KEY");
+
+    //获取配置的折扣信息
+    public static float TARGET_PRICE = Float.valueOf(resource.getString("TARGET_PRICE"));
+    public static float DISCOUNT = Float.valueOf(resource.getString("DISCOUNT"));
 
     /**
      * 数据源设置，采用MySQL数据库，此处运用了数据源连接池BasicDataSource

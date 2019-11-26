@@ -40,7 +40,6 @@
                 <div class="row content_bottom">
                     <c:forEach items="${paginationSupport.items}" var="dishCategorySupport">
                         <div class="col-md-3">
-                                <%-- TODO 修改链接到商品详情页--%>
                             <div class="content_box"><a href="<c:url value="/dishDetail/${dishCategorySupport.dish.dish_id}"/>">
                                 <div class="view view-fifth">
                                     <img src="${pageContext.request.contextPath}/resources/${dishCategorySupport.dish.picture_url}" class="img-responsive" alt=""/>

@@ -1,5 +1,7 @@
 package ordering.utils;
 
+import ordering.config.RootConfig;
+
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -14,13 +16,10 @@ import java.util.ResourceBundle;
 public class OrderPriceTag extends SimpleTagSupport {
 
     private float totalPrice;
-    private static ResourceBundle resource = ResourceBundle.getBundle("ordering.config.discount");
-    private static float TARGET_PRICE = Float.valueOf(resource.getString("TARGET_PRICE"));
-    private static float DISCOUNT = Float.valueOf(resource.getString("DISCOUNT"));
 
     @Override
     public void doTag() throws IOException {
-        if (totalPrice > TARGET_PRICE) totalPrice -= DISCOUNT;
+        if (totalPrice > RootConfig.TARGET_PRICE) totalPrice -= RootConfig.DISCOUNT;
         getJspContext().getOut().println(totalPrice);
     }
 

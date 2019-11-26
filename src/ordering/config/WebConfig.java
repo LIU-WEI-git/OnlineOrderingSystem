@@ -62,6 +62,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //TODO
+        registry.addInterceptor(new OrderingInterceptor()).
+                addPathPatterns("/admin","/admin/**","/shoppingCart/deleteDish","/order","/order/**",
+                        "shoppingCart/minusDish","/createOrder","/createOrder/**").
+                excludePathPatterns("/admin/alogin");
         super.addInterceptors(registry);
     }
 }

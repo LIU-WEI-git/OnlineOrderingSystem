@@ -39,12 +39,53 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public List<Order> getCustomerOrders(String customer_account) {
-        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"'",orderRowMapper);
+        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"' order by create_time DESC ",orderRowMapper);
+    }
+
+    @Override
+    public int getTotalOrder() {
+        return jdbcTemplate.queryForObject("select count(*) from `order` ",Integer.class);
+    }
+
+    @Override
+    public List<Order> getOrders() {
+        return jdbcTemplate.query("select * from `order` ",orderRowMapper);
+    }
+
+    @Override
+    public boolean deleteOrder(String order_id) {
+        jdbcTemplate.update("delete from `order` where order_id ="+order_id);
+        return true;
+    }
+
+    @Override
+    public Order getOrder(String order_id) {
+        return jdbcTemplate.queryForObject("select * from `order` where order_id = "+order_id,orderRowMapper);
     }
 
     @Override
     public List<Order> findall() {
         return jdbcTemplate.query(AdMIN_ORDERS,orderRowMapper);
     }
+
+
+    @Override
+    public boolean resetOrder(Order order) {
+        jdbcTemplate.update("update `order` set customer_account=?,address_id=?," +
+                "create_time=?,remark=?,order_state=?,delivery_state=?,discount=?,order_price=? where order_id =?",
+                order.getCustomer_account(),order.getAddress_id(),order.getCreate_time(),order.getRemark(),
+                order.getOrder_state(),order.getDelivery_state(),order.getDiscount(),order.getOrder_price());
+        return true;
+    }
+
+    @Override
+    public boolean addOrder(Order order) {
+        jdbcTemplate.update("insert into `order` (order_id, customer_account, address_id, create_time, remark, order_state, delivery_state, discount, order_price) VALUE "
+                            +"(?,?,?,?,?,?,?,?,?)",order.getOrder_id(),order.getCustomer_account(),order.getAddress_id(),
+                            order.getCreate_time(),order.getRemark(),order.getOrder_state(),order.getDelivery_state(),order.getDiscount(),
+                            order.getOrder_price());
+        return true;
+    }
+
 
 }
