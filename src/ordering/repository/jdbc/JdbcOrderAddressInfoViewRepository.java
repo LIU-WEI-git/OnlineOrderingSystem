@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class JdbcOrderAddressInfoViewRepository implements OrderAddressInfoViewRepository {
     private JdbcTemplate jdbcTemplate;
-    private RowMapper<OrderAddressInfoView> OrderMapper=new BeanPropertyRowMapper<OrderAddressInfoView>(OrderAddressInfoView.class);
+    private RowMapper<OrderAddressInfoView> OrderMapper=new BeanPropertyRowMapper<>(OrderAddressInfoView.class);
 
-    public static final String GET_ADDRESS="select * from order_address_info where order_id = ";
+    private static final String GET_ADDRESS="select * from order_address_info where order_id = ";
 
     @Autowired
     public JdbcOrderAddressInfoViewRepository(JdbcTemplate jdbcTemplate)

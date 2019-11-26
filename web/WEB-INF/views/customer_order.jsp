@@ -30,6 +30,7 @@
         <div class="Product_top">
             <div class="row content">
                 <div class="col-md-9" style="height: auto">
+                    <a href="<c:url value="/account"/>" style="color: #3071a9">返回我的账户</a><br/><br/>
                     <c:forEach items="${orders}" var="order">
                             <li class="product_right">
                                 <h3>下单时间：${order.create_time}</h3>

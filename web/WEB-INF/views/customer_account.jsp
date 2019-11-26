@@ -53,8 +53,8 @@
                         </div>
                         <div class="col-md-6 login-right">
                             <h3>个人订单信息</h3>
-                            <a class="acount-btn" href="<c:url value="/order"/>">查看订单</a><br/>
-                            <a class="acount-btn" href="<c:url value="/myaddress"/>">查看个人地址信息</a><br/>
+                            <a class="acount-btn" href="<c:url value="/order"/>">查看订单</a><br/><br/><br/>
+                            <a class="acount-btn" href="<c:url value="/myAddress"/>">查看个人地址信息</a><br/>
                         </div>
                         <div class="clearfix"></div>
                     </div>

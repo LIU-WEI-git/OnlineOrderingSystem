@@ -1,16 +1,16 @@
-<jsp:useBean id="customer" scope="session" type="ordering.domain.Customer"/>
 <%--
   Created by IntelliJ IDEA.
   User: 97718
-  Date: 2019/11/26
-  Time: 20:00
+  Date: 2019/11/20
+  Time: 17:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>个人信息修改</title>
+    <title>登记地址</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -36,49 +36,44 @@
 <div class="main">
     <div class="container">
         <div class="Product_top">
-            <form method="post">
+            <form method="post" action="<c:url value="/myAddress/add_address"/> ">
                 <div class="register-top-grid">
-                    <h3>账户信息修改</h3>
+                    <h3>地址信息</h3>
                     <div>
-                        <span>原密码</span>
+                        <span>地址<label>*</label></span>
                         <label>
-                            <input type="password" name="old_password"/>
+                            <input type="text" name="address_info" minlength="3" maxlength="20"/>
                         </label>
                     </div>
-                    <div>
-                        <span>新密码</span>
-                        <label>
-                            <input type="password" name="new_password"/>
-                        </label>
-                    </div>
-                    <div>
-                        <span>密码确认</span>
-                        <label>
-                            <input type="password" name="confirm_password"/>
-                        </label>
-                    </div>
+
                 </div>
                 <div class="clearfix"></div>
+                <div class="register-bottom-grid">
+                    <h3>个人信息</h3>
+                    <div>
+                        <span>联系人<label>*</label></span>
+                        <label>
+                            <input type="text" name="contact" minlength="3" maxlength="20"/>
+                        </label>
+                    </div>
+                    <div>
+                        <span>电话<label>*</label></span>
+                        <label>
+                            <input type="tel" name="phone"/>
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
                 <div class="register-but">
                     <div class="clearfix"></div>
-                    <input type="submit" value="确认修改"/>
+<%--                    TODO 没有返回按钮--%>
+                    <input type="submit" value="确认添加"/>
                     <div class="clearfix"></div>
                 </div>
             </form>
         </div>
-<%--        TODO　没有返回按钮--%>
     </div>
 </div>
 <jsp:include page="customer_footer.jsp"/>
-<script>
-    var url = new URL(window.location.href);
-    var info = url.searchParams.get("info");
-    if (info === 'wrong_old_password') {
-        alert("原密码错误!");
-    }
-    if (info === 'wrong_confirm_password') {
-        alert("确认密码与新密码不一致!");
-    }
-</script>
 </body>
 </html>

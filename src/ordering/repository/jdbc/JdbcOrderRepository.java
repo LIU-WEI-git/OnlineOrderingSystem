@@ -14,10 +14,10 @@ import java.util.List;
 public class JdbcOrderRepository implements OrderRepository {
     private JdbcTemplate jdbcTemplate;
 
-    private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<Order>(Order.class);
+    private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<>(Order.class);
 
-    public static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
-    public static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
+    private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    private static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
 
     @Autowired
     public JdbcOrderRepository(JdbcTemplate jdbcTemplate){
@@ -25,9 +25,7 @@ public class JdbcOrderRepository implements OrderRepository {
     }
     @Override
     public boolean isCustomerInDB(String customer_account) {
-        if(jdbcTemplate.queryForObject(TOTAL_ORDERS+customer_account,Integer.class)==0)
-            return false;
-        else return true;
+        return jdbcTemplate.queryForObject(TOTAL_ORDERS + customer_account, Integer.class) != 0;
     }
 
     @Override

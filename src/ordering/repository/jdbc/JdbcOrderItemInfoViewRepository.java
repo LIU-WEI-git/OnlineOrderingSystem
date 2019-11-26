@@ -14,10 +14,10 @@ import java.util.List;
 public class JdbcOrderItemInfoViewRepository implements OrderItemInfoViewRepository {
 
     private JdbcTemplate jdbcTemplate;
-    private RowMapper<OrderItemInfoView> item=new BeanPropertyRowMapper<OrderItemInfoView>(OrderItemInfoView.class);
+    private RowMapper<OrderItemInfoView> item=new BeanPropertyRowMapper<>(OrderItemInfoView.class);
 
-    public static  final String TOTAL_ITEMS="select count(*) from order_item_info where order_id = ";
-    public static final String GET_ORDERITEMS="select * from order_item_info where order_id = ";
+    private static  final String TOTAL_ITEMS="select count(*) from order_item_info where order_id = ";
+    private static final String GET_ORDERITEMS="select * from order_item_info where order_id = ";
 
     @Autowired
     public JdbcOrderItemInfoViewRepository(JdbcTemplate jdbcTemplate)
