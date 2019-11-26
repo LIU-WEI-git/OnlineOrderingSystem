@@ -18,6 +18,8 @@ public class JdbcOrderRepository implements OrderRepository {
 
     public static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
     public static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
+    public static  final String AdMIN_ORDERS="select * from `order` ";
+
 
     @Autowired
     public JdbcOrderRepository(JdbcTemplate jdbcTemplate){
@@ -39,4 +41,10 @@ public class JdbcOrderRepository implements OrderRepository {
     public List<Order> getCustomerOrders(String customer_account) {
         return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"'",orderRowMapper);
     }
+
+    @Override
+    public List<Order> findall() {
+        return jdbcTemplate.query(AdMIN_ORDERS,orderRowMapper);
+    }
+
 }

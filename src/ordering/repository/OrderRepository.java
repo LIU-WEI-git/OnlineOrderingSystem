@@ -33,4 +33,9 @@ public interface OrderRepository {
     List<Order> getCustomerOrders(String customer_account);
 
 
+    /**
+     *
+     * @return
+     */
+    List<Order> findall();
 }

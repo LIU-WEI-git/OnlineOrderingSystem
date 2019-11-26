@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="icons.html">
+                <a href="<c:url value="/admin/order" />">
                     <i class="ti-pencil-alt2"></i>
                     <p>订单</p>
                 </a>

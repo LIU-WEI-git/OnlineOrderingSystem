@@ -10,13 +10,11 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import ordering.domain.Admin;
-import ordering.domain.Category;
-import ordering.domain.Dish;
-import ordering.domain.DishCategory;
+import ordering.domain.*;
 import ordering.repository.AdminRepository;
 import ordering.repository.CategoryRepository;
 import ordering.repository.DishRepository;
+import ordering.repository.OrderRepository;
 import ordering.utils.CategoryDishSupport;
 import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +22,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -39,6 +38,9 @@ public class AdminController {
 
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
     /**
      * 管理员登陆
      * @return
@@ -406,4 +408,15 @@ session.setAttribute("admin",admin);
         }
 
     }
+
+
+    @RequestMapping(value="/order",method = GET)
+    public String viewCustomerOrder(Model model,HttpSession session)
+    {
+
+        List<Order> orders=orderRepository.findall();
+        model.addAttribute("orders",orders);
+        return "admin_orderlist";
+    }
+
 }
