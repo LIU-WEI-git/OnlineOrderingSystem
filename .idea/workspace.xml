@@ -6,23 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="Merge branch 'newMaster' of https://github.com/LIU-WEI-git/OnlineOrderingSystem into niejunjie&#10;添加address和orderitem数据接口，编辑和删除用户地址的方法&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_address_register.jsp" afterDir="false" />
+    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/CustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order_address.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order_item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order_item.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/dbconfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/AddressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcAddressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_edit_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_edit_address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_order_address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/customer_order_item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/customer_order_item.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -563,7 +553,7 @@
       <workItem from="1574648327958" duration="8604000" />
       <workItem from="1574691049413" duration="884000" />
       <workItem from="1574736838592" duration="10408000" />
-      <workItem from="1574768223312" duration="852000" />
+      <workItem from="1574768223312" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -649,11 +639,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574658540914</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge branch 'newMaster' of https://github.com/LIU-WEI-git/OnlineOrderingSystem into niejunjie&#10;添加address和orderitem数据接口，编辑和删除用户地址的方法&#10;个人地址的管理有关的前端页面完成&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp">
+      <created>1574769326818</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574769326818</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113453000" />
+    <option name="totallyTimeSpent" value="113754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,7 +769,8 @@
     <MESSAGE value="完善查看订单" />
     <MESSAGE value="完善order接口，address接口" />
     <MESSAGE value="Merge branch 'newMaster' of https://github.com/LIU-WEI-git/OnlineOrderingSystem into niejunjie&#10;添加address和orderitem数据接口，编辑和删除用户地址的方法&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'newMaster' of https://github.com/LIU-WEI-git/OnlineOrderingSystem into niejunjie&#10;添加address和orderitem数据接口，编辑和删除用户地址的方法&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp" />
+    <MESSAGE value="Merge branch 'newMaster' of https://github.com/LIU-WEI-git/OnlineOrderingSystem into niejunjie&#10;添加address和orderitem数据接口，编辑和删除用户地址的方法&#10;个人地址的管理有关的前端页面完成&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'newMaster' of https://github.com/LIU-WEI-git/OnlineOrderingSystem into niejunjie&#10;添加address和orderitem数据接口，编辑和删除用户地址的方法&#10;个人地址的管理有关的前端页面完成&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/customer_order.jsp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
