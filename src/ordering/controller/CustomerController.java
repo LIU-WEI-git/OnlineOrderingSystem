@@ -8,7 +8,6 @@ import ordering.domain.Dish;
 import ordering.domain.Order;
 import ordering.domain.OrderItem;
 import ordering.repository.*;
-import ordering.utils.DiscountTag;
 import ordering.utils.ShoppingCart;
 import ordering.utils.ShoppingCartItem;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -270,7 +269,7 @@ public class CustomerController {
                                     @RequestParam(value = "remark",required = false) String remark,
                                     Model model, HttpSession session) {
         Date create_time = new Date();
-        //通过创建的订单的时间生成12位订单号
+        //通过创建的订单的时间生成16位订单号
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = simpleDateFormat.format(create_time);
         String order_id = MD5Utils.Md5(formattedDate, 16);
@@ -323,5 +322,77 @@ public class CustomerController {
     {
         model.addAttribute("address",addressRepository.getCustomerAddress(address_id));
         return "customer_edit_address";
+    }
+
+    /**
+     * 查看个人信息页面
+     *
+     * @return 个人信息页面
+     */
+    @RequestMapping(value = "account", method = RequestMethod.GET)
+    public String viewCustomerAccount() {
+        return "customer_account";
+    }
+
+    /**
+     * 显示账户信息设置页面
+     *
+     * @return 账户设置页面
+     */
+    @RequestMapping(value = "account/resetAccount", method = RequestMethod.GET)
+    public String resetAccount() {
+        return "customer_reset_account";
+    }
+
+    /**
+     * 处理用户在账户设置页面提交的表单
+     *
+     * @param model
+     * @return 成功修改信息则重定向到个人账户页面
+     */
+    @RequestMapping(value = "account/resetAccount", method = RequestMethod.POST)
+    public String resetAccountSubmit(@RequestParam("new_customer_name") String new_customer_name,
+                                     @RequestParam("new_customer_email") String new_customer_email,
+                                     HttpSession session, Model model) {
+        Customer customer = (Customer) session.getAttribute("customer");
+        customer.setCustomer_name(new_customer_name);
+        customer.setCustomer_email(new_customer_email);
+        customerRepository.resetCustomerInfo(customer);
+        model.addAttribute(customer);
+        return "redirect:/account?info=reset_account_success";
+    }
+
+    /**
+     * 显示密码设置页面
+     *
+     * @return 密码设置页面
+     */
+    @RequestMapping(value = "account/resetPassword", method = RequestMethod.GET)
+    public String resetPassword() {
+        return "customer_reset_password";
+    }
+
+    /**
+     * 处理用户在密码设置页面提交的表单
+     *
+     * @param model
+     * @return 成功修改密码则重定向到个人账户页面，失败则返回密码设置页面并给出提示
+     */
+    @RequestMapping(value = "account/resetPassword", method = RequestMethod.POST)
+    public String resetPasswordSubmit(@RequestParam("old_password") String old_password,
+                                      @RequestParam("new_password") String new_password,
+                                      @RequestParam("confirm_password") String confirm_password,
+                                      HttpSession session, Model model) {
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (!AESUtils.decodes(customer.getCustomer_password(), RootConfig.SECRET_KEY, 128).equals(old_password)) {
+            return "redirect:/account/resetPassword?info=wrong_old_password";
+        }
+        if (!new_password.equals(confirm_password)) {
+            return "redirect:/account/resetPassword?info=wrong_confirm_password";
+        }
+        //将新密码加密后存储到数据库
+        customer.setCustomer_password(AESUtils.ecodes(new_password, RootConfig.SECRET_KEY, 128));
+        customerRepository.resetCustomerInfo(customer);
+        return "redirect:/account?info=reset_password_success";
     }
 }

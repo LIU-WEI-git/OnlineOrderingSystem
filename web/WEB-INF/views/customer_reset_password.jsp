@@ -1,16 +1,16 @@
 <jsp:useBean id="customer" scope="session" type="ordering.domain.Customer"/>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 97718
   Date: 2019/11/26
-  Time: 9:24
+  Time: 20:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <html>
 <head>
-    <title>个人账号管理</title>
+    <title>个人信息修改</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -18,6 +18,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
@@ -35,31 +36,35 @@
 <div class="main">
     <div class="container">
         <div class="Product_top">
-            <div class="row content">
-                <jsp:include page="customer_sider.jsp"/>
-                <div class="col-md-9">
-                    <div class="breadcrumb">
-                        <a href="<c:url value="/"/>">返回首页</a>
+            <form method="post">
+                <div class="register-top-grid">
+                    <h3>账户信息修改</h3>
+                    <div>
+                        <span>原密码</span>
+                        <label>
+                            <input type="password" name="old_password"/>
+                        </label>
                     </div>
-                    <div class="account_grid">
-                        <div class="col-md-6 login-left">
-                            <h3>个人信息</h3>
-                            <p>账号：${customer.customer_account}</p>
-                            <p>用户名：${customer.customer_name}</p>
-                            <p>邮箱：${customer.customer_email}</p>
-                            <P>注册时间：${customer.customer_register_time}</P>
-                            <a class="acount-btn" href="<c:url value="/account/resetAccount"/>">修改个人信息</a>
-                            <a class="acount-btn" href="<c:url value="/account/resetPassword"/>">修改密码</a>
-                        </div>
-                        <div class="col-md-6 login-right">
-                            <h3>个人订单信息</h3>
-                            <a class="acount-btn" href="<c:url value="/order"/>">查看订单</a><br/>
-                            <a class="acount-btn" href="<c:url value="/myaddress"/>">查看个人地址信息</a><br/>
-                        </div>
-                        <div class="clearfix"></div>
+                    <div>
+                        <span>新密码</span>
+                        <label>
+                            <input type="password" name="new_password"/>
+                        </label>
+                    </div>
+                    <div>
+                        <span>密码确认</span>
+                        <label>
+                            <input type="password" name="confirm_password"/>
+                        </label>
                     </div>
                 </div>
-            </div>
+                <div class="clearfix"></div>
+                <div class="register-but">
+                    <div class="clearfix"></div>
+                    <input type="submit" value="确认修改"/>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -67,11 +72,11 @@
 <script>
     var url = new URL(window.location.href);
     var info = url.searchParams.get("info");
-    if (info === 'reset_account_success') {
-        alert("成功修改账户信息!");
+    if (info === 'wrong_old_password') {
+        alert("原密码错误!");
     }
-    if (info === 'reset_password_success') {
-        alert("成功修改密码!");
+    if (info === 'wrong_confirm_password') {
+        alert("确认密码与新密码不一致!");
     }
 </script>
 </body>

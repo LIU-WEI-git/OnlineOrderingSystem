@@ -49,7 +49,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        //TODO 还不了解静态资源，暂且采用老师的方法
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
         super.addResourceHandlers(registry);
     }
@@ -61,10 +60,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //TODO
         registry.addInterceptor(new OrderingInterceptor()).
                 addPathPatterns("/admin","/admin/**","/shoppingCart/deleteDish","/order","/order/**",
-                        "shoppingCart/minusDish","/createOrder","/createOrder/**").
+                        "shoppingCart/minusDish", "/createOrder", "/createOrder/**", "/account", "/account/**").
                 excludePathPatterns("/admin/alogin");
         super.addInterceptors(registry);
     }
