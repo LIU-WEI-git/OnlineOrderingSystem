@@ -49,8 +49,8 @@
                             <hr>
                         </c:forEach>
                     </ul>
-                    <a href="<c:url value="/myAddress/add_address?info="/> " style="color: #3071a9">新增地址</a>
-<%--                   TODO 没有返回按钮--%>
+                    <a href="<c:url value="/myAddress/add_address"/> " style="color: #3071a9">新增地址</a>&nbsp;&nbsp;&nbsp;
+                    <a href="<c:url value="/account"/> " style="color: #3071a9">返回我的账户</a>
                 </div>
             </div>
         </div>

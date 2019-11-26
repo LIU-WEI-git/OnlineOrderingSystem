@@ -8,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>个人信息修改</title>
@@ -56,11 +57,13 @@
                     <div class="register-but">
                         <div class="clearfix"></div>
                         <input type="submit" value="确认修改"/>
+                        <a href="<c:url value="/account"/>">
+                            <input type="button" value="返回">
+                        </a>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </form>
-<%--          TODO  没有返回按钮--%>
         </div>
     </div>
 </div>

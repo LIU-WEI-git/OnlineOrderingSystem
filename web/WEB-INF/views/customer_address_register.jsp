@@ -66,8 +66,10 @@
                 </div>
                 <div class="register-but">
                     <div class="clearfix"></div>
-<%--                    TODO 没有返回按钮--%>
                     <input type="submit" value="确认添加"/>
+                    <a href="<c:url value="/myAddress"/>">
+                        <input type="button" value="返回">
+                    </a>
                     <div class="clearfix"></div>
                 </div>
             </form>

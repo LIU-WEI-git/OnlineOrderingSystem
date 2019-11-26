@@ -77,8 +77,10 @@
                         </label>
                     </div>
                     <div class="clearfix"></div>
-<%--                    TODO 没有返回按钮--%>
                     <input type="submit" value="确认修改"/>
+                    <a href="<c:url value="/myAddress"/>">
+                        <input type="button" value="返回">
+                    </a>
                     <div class="clearfix"></div>
                 </div>
             </form>

@@ -26,6 +26,7 @@ CREATE TABLE `address` (
   `contact` varchar(20) NOT NULL,
   `phone` varchar(11) NOT NULL,
   `info` varchar(100) NOT NULL,
+  `delete_tag` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `FK_own` (`customer_account`),
   CONSTRAINT `FK_own` FOREIGN KEY (`customer_account`) REFERENCES `customer` (`customer_account`)
@@ -33,9 +34,9 @@ CREATE TABLE `address` (
 
 /*Data for the table `address` */
 
-insert  into `address`(`address_id`,`customer_account`,`contact`,`phone`,`info`) values 
-('252525252525','10086123','吴先生','10086','云A358'),
-('262626262626','10086223','商先生','10000','云B358');
+insert  into `address`(`address_id`,`customer_account`,`contact`,`phone`,`info`,`delete_tag`) values 
+('252525252525','10086123','吴先生','10086','云A358',0),
+('262626262626','10086223','商先生','10000','云B358',0);
 
 /*Table structure for table `admin` */
 
@@ -44,7 +45,7 @@ DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `admin_account` varchar(20) NOT NULL,
   `admin_name` varchar(20) DEFAULT NULL,
-  `admin_password` varchar(20) NOT NULL,
+  `admin_password` varchar(128) NOT NULL,
   `admin_register_time` datetime NOT NULL,
   `admin_email` varchar(40) DEFAULT NULL,
   `admin_phone` varchar(11) DEFAULT NULL,
@@ -84,7 +85,7 @@ DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `customer_account` varchar(20) NOT NULL,
   `customer_name` varchar(20) DEFAULT NULL,
-  `customer_password` varchar(20) NOT NULL,
+  `customer_password` varchar(128) NOT NULL,
   `customer_register_time` datetime NOT NULL,
   `customer_email` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`customer_account`)
@@ -166,7 +167,10 @@ CREATE TABLE `order` (
 
 insert  into `order`(`order_id`,`customer_account`,`address_id`,`create_time`,`remark`,`order_state`,`delivery_state`,`discount`,`order_price`) values 
 ('121212121212','10086123','252525252525','2019-11-13 21:25:56','麻烦配送快一点',0,0,-10,40),
-('121212121213','10086223','262626262626','2019-11-19 21:26:39',NULL,2,2,0,72);
+('121212121213','10086223','262626262626','2019-11-19 21:26:39',NULL,2,2,0,72),
+('1f61c4fd61d7d357','10086123','252525252525','2019-11-25 19:11:27','',0,0,10,43),
+('63f3e094a826c72f','10086123','252525252525','2019-11-25 19:52:26','',0,0,0,8),
+('af0aec2aafa8ec71','10086223','262626262626','2019-11-25 20:14:14','1111',0,0,0,18);
 
 /*Table structure for table `order_item` */
 
@@ -186,7 +190,14 @@ CREATE TABLE `order_item` (
 
 insert  into `order_item`(`order_id`,`dish_id`,`amount`) values 
 ('121212121212','10001',5),
-('121212121213','10002',6);
+('121212121213','10002',6),
+('1f61c4fd61d7d357','10001',1),
+('1f61c4fd61d7d357','10002',1),
+('1f61c4fd61d7d357','10003',1),
+('1f61c4fd61d7d357','10004',2),
+('63f3e094a826c72f','10004',1),
+('af0aec2aafa8ec71','10001',1),
+('af0aec2aafa8ec71','10004',1);
 
 /*Table structure for table `order_address_info` */
 
