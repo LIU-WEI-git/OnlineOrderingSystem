@@ -66,6 +66,29 @@ public class JdbcDishRepository implements DishRepository {
         }
     }
 
+    /**
+     * 模糊搜索菜品名称，分页列出
+     *
+     * @param dish_name 菜品名称关键词
+     * @param pageNo 起始位置
+     * @param PageSize 每页数量
+     * @return 分页菜品
+     */
+    @Override
+    public PaginationSupport<DishCategorySupport> searchByNamePage(String dish_name, int pageNo, int PageSize) {
+        int totalCount = (int) count();
+        int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
+        if (totalCount < 1)
+            return new PaginationSupport<>(new ArrayList<>(0), 0);
+
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " WHERE dish_name LIKE '%" + dish_name + "%'" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<DishCategorySupport> items = new ArrayList<>();
+        for (Dish dish : dishes) {
+            items.add(listDishCategories(dish));
+        }
+        return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
+    }
+
     @Override
     public List<Dish> getAll() {
         return jdbc.query(SELECT_FROM_DISH, new DishRowMapper());
@@ -85,7 +108,7 @@ public class JdbcDishRepository implements DishRepository {
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
 
-        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
         List<DishCategorySupport> items = new ArrayList<>();
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
@@ -214,8 +237,8 @@ public class JdbcDishRepository implements DishRepository {
      */
     // 取得所有菜品
     private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish";
-    // 分页取得菜品
-    private static final String SELECT_FROM_DISH_PAGE = SELECT_FROM_DISH + " order by dish_id limit ? offset ?";
+    // 分页
+    private static final String SELECT_PAGE = " order by dish_id limit ? offset ?";
     // 根据菜品ID取得对应菜品类别列表
     private static final String SELECT_DISH_CATEGORY = "SELECT dc.dish_id, c.category_id, c.category_name FROM category c JOIN dish_category dc WHERE c.category_id=dc.category_id AND dish_id=?";
     // 删除菜品类别

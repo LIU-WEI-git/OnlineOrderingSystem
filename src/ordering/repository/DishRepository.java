@@ -31,6 +31,16 @@ public interface DishRepository {
     Dish findById(String dish_id);
 
     /**
+     * 模糊搜索菜品名称，分页列出
+     *
+     * @param dish_name 菜品名称关键词
+     * @param pageNo 起始位置
+     * @param PageSize 每页数量
+     * @return 分页菜品
+     */
+    PaginationSupport<DishCategorySupport> searchByNamePage(String dish_name, int pageNo, int PageSize);
+
+    /**
      * 获取全部菜品
      *
      * @return 菜品列表
