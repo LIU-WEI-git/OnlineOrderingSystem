@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="" />
+    <list default="true" id="3662dc75-14f7-4f91-91c6-66ff78a308f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,20 +115,25 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ordering.repository.jdbc" />
+      <recent name="ordering.repository" />
+      <recent name="ordering.utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web" />
+      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
+      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="ordering.domian" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\resources" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\views" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\lib" />
       <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\src\ordering\controller" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="ordering.domian" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web" />
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF\resources" />
-      <recent name="D:\大学资料\大三上\企业级应用软件开发技术\大作业\OnlineOrderingSystem\web\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574262264490</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完成dish的add、update、delete方法">
+      <created>1574789021474</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574789021475</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -357,7 +373,8 @@
     <MESSAGE value="合并了TIAN分支和admin分支" />
     <MESSAGE value="合并admin分支" />
     <MESSAGE value="准备合并TIAN分支" />
-    <option name="LAST_COMMIT_MESSAGE" value="准备合并TIAN分支" />
+    <MESSAGE value="完成dish的add、update、delete方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成dish的add、update、delete方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
