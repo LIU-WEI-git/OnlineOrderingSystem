@@ -76,13 +76,13 @@
                     <div>
                         <span>账号<label>*</label></span>
                         <label>
-                            <input type="text" name="customer_account" minlength="3" maxlength="20"/>
+                            <input type="text" name="customer_account" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
                     <div>
                         <span>密码<label>*</label></span>
                         <label>
-                            <input type="password" name="customer_password"/>
+                            <input type="password" name="customer_password" required/>
                         </label>
                     </div>
                 </div>
@@ -92,13 +92,13 @@
                     <div>
                         <span>用户名<label>*</label></span>
                         <label>
-                            <input type="text" name="customer_name" minlength="3" maxlength="20"/>
+                            <input type="text" name="customer_name" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
                     <div>
                         <span>电子邮箱地址<label>*</label></span>
                         <label>
-                            <input type="email" name="customer_email"/>
+                            <input type="email" name="customer_email" required/>
                         </label>
                     </div>
                     <div class="clearfix"></div>

@@ -29,8 +29,6 @@ public class AddressController {
     @Autowired
     private AddressRepository addressRepository;
 
-    private static final int DELETED =1;
-    private static final int UNDELETE=0;
     /**
      * 顾客地址管理
      *
@@ -55,7 +53,6 @@ public class AddressController {
     @RequestMapping(value="/delete_address",method = RequestMethod.GET)
     public String deleteAddress(@RequestParam(value = "address_id")String address_id, Model model)
     {
-        //TODO order表的address_id有外键约束，需要判断地址信息是否可删，或者修改address表，新增delete_tag属性
         addressRepository.deleteAddress(address_id);
         return "redirect:/myAddress";
     }
@@ -93,7 +90,7 @@ public class AddressController {
                                 @RequestParam(value = "address_info")String info,
                                 Model model)
     {
-        Address address=new Address(address_id,customer_account,contact,phone,info,UNDELETE);
+        Address address = new Address(address_id, customer_account, contact, phone, info);
         addressRepository.resetAddress(address);
         return "redirect:/myAddress";
     }
@@ -114,7 +111,6 @@ public class AddressController {
                              @RequestParam(value = "address_info")String info,
                              HttpSession session, Model model)
     {
-        //TODO 输入为空的时候会报错，页面显示500
         System.out.println(contact);
         Date date =new Date();
         String address_id=String.valueOf(date.getDay())+String.valueOf(date.getHours())+String.valueOf(date.getMinutes())+String.valueOf(date.getSeconds())
@@ -123,7 +119,7 @@ public class AddressController {
         {
             return "redirect:/myAddress/add_address?info=fail to register,please try again";
         }
-        Address address=new Address(address_id,((Customer) session.getAttribute("customer")).getCustomer_account(),contact,phone,info,UNDELETE);
+        Address address = new Address(address_id, ((Customer) session.getAttribute("customer")).getCustomer_account(), contact, phone, info);
         addressRepository.addAddress(address);
         return "redirect:/myAddress";
     }

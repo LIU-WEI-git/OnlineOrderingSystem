@@ -43,19 +43,19 @@
                     <div>
                         <span>原密码</span>
                         <label>
-                            <input type="password" name="old_password"/>
+                            <input type="password" name="old_password" required/>
                         </label>
                     </div>
                     <div>
                         <span>新密码</span>
                         <label>
-                            <input type="password" name="new_password"/>
+                            <input type="password" name="new_password" required/>
                         </label>
                     </div>
                     <div>
                         <span>密码确认</span>
                         <label>
-                            <input type="password" name="confirm_password"/>
+                            <input type="password" name="confirm_password" required/>
                         </label>
                     </div>
                 </div>

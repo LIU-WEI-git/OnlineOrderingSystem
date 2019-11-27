@@ -44,13 +44,13 @@
                         <span>用户名</span>
                         <label>
                             <input type="text" name="new_customer_name" minlength="3" maxlength="20"
-                                   value="${customer.customer_name}"/>
+                                   value="${customer.customer_name}" required/>
                         </label>
                     </div>
                     <div>
                         <span>电子邮箱地址</span>
                         <label>
-                            <input type="email" name="new_customer_email" value="${customer.customer_email}"/>
+                            <input type="email" name="new_customer_email" value="${customer.customer_email}" required/>
                         </label>
                     </div>
                     <div class="clearfix"></div>
