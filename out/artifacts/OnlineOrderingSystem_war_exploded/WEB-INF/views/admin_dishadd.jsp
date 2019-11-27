@@ -56,7 +56,10 @@
                 菜品价格：<input type="number" name="price"  minlength="1" maxlength="6" required/><br/><br/>
                 菜品图片：<input  type="text" name="url" required/><br/><br/>
                 菜品描述：<input  type="text"  name="description"  minlength="2" maxlength="20" required/><br/><br/>
-
+                菜品类：
+                <c:forEach items="${pcategories}" var="category" varStatus="li">
+                    <input type="checkbox" name="cate" value="${category.getCategory_id()}">${category.getCategory_name()}
+                </c:forEach>
                 <input type="submit" value="添加" />
             </form>
             <%request.getSession().getAttribute("f");%>

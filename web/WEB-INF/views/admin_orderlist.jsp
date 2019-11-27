@@ -48,19 +48,23 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-            <form class="input-group col-md-12" style="margin: 10px;position: relative" action="<c:url value="/admin/searchdish"/>">
-                    <span class="input-group-btn">
-                        <select  name="signal" class="btn btn-info btn-search">
-                            <option>all</option>
-                            <option>pizza</option>
-                            <option>bakedrice</option>
-                            <option>bakednoodles</option>
-                            <option>snack</option>
-                            <option>drink</option>
-                        </select>
+           <form action="<c:url value="/admin/ordertype"/>">
+            <select  name="signal" class="btn btn-info btn-search">
+                <option>all</option>
+                <option>nodelivery</option>
+                <option>deliverying</option>
+                <option>deliveried</option> </select>
+                <span class="input-group-btn">
+                        <button type="submit" class="btn btn-info btn-search">operation</button>
                     </span>
+           </form>
+
+            <form class="input-group col-md-12" style="margin: 10px;position: relative" action="<c:url value="/admin/searchorder"/>">
+
+
+
                 <input type="text" class="form-control" name="message"
-                       placeholder="Please enter the content you are searching for">
+                       placeholder="Please enter the customer_acount">
                 <span class="input-group-btn">
                         <button type="submit" class="btn btn-info btn-search">search</button>
                     </span>
@@ -97,9 +101,20 @@
                         </div>
                     </li>
                     <div class="clearfix"> </div>
-                    <h5 class="detail">备注:</h5>
-                    <p class="detail_desc"><%--${order.remark}--%><a href="<c:url value="/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
-                    <p class="detail_desc"><%--${order.remark}--%><a href="<c:url value="/order_item?order_id=${order.order_id}"/>">确认订单</a></p>
+                    <h5 class="detail">备注:${order.remark}</h5>
+                    <c:choose>
+                        <c:when test="${order.delivery_state ==0&&order.order_state==0}">
+                            <p class="detail_desc"><a href="<c:url value="/admin/confirmorder?order_id=${order.order_id}"/>">确认订单</a></p>
+                        </c:when>
+                        <c:when test="${order.delivery_state ==0&&order.order_state==1}">
+                            <p class="detail_desc"><a href="<c:url value="/admin/begindeliver?order_id=${order.order_id}"/>">开始配送</a></p>
+                        </c:when>
+                        <c:when test="${order.delivery_state==1&&order.order_state==1}">
+                            <p class="detail_desc"><a href="<c:url value="/admin/enddeliver?order_id=${order.order_id}"/>">完成配送</a></p>
+                        </c:when>
+
+                    </c:choose>
+                    <p class="detail_desc"><a href="<c:url value="/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
                 </ul>
             </c:forEach>
             </div>

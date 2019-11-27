@@ -2,9 +2,9 @@ package ordering.repository.jdbc;
 
 import ordering.domain.Category;
 import ordering.domain.Dish;
-import ordering.repository.DishRepository;
 import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
+import ordering.repository.DishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -152,12 +152,6 @@ public class JdbcDishRepository implements DishRepository {
         return new DishCategorySupport(categories, dish);
     }
 
-    /**
-     * 删除菜品
-     *      包括：删除dish表、dish_category表信息
-     *
-     * @param dish_id 菜品ID
-     */
 
     @Override
     public List<Dish> searchDish(String a) {
@@ -165,6 +159,16 @@ public class JdbcDishRepository implements DishRepository {
         List<Dish> dishes = jdbc.query(SELECT_DISH, new DishRowMapper(), a,a);
         return  dishes;
     }
+
+
+    /**
+     * 删除菜品
+     *      包括：删除dish表、dish_category表信息
+     *
+     * @param dish_id 菜品ID
+     */
+
+
 
     @Override
     public void deleteDish(String dish_id) {
@@ -193,7 +197,7 @@ public class JdbcDishRepository implements DishRepository {
         jdbcInsertDish.execute(dishArgs);
 
         // 添加dish_category表
-        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withCatalogName("dish_category");
+        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withTableName("dish_category");
         Map<String, Object> dish_categoryArgs = new HashMap<>();
         for (Category category : dishCategorySupport.getCategories()) {
             dish_categoryArgs.put("category_id", category.getCategory_id());

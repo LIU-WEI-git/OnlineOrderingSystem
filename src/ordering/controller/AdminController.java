@@ -4,6 +4,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +18,7 @@ import ordering.repository.CategoryRepository;
 import ordering.repository.DishRepository;
 import ordering.repository.OrderRepository;
 import ordering.utils.CategoryDishSupport;
+import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -144,7 +147,9 @@ public class AdminController {
     @RequestMapping(value = "/dish", method = GET)
     public String showdishlist(HttpSession session) {
         List<Dish> list=dishRepository.getAll();
+        List<Category> categories=categoryRepository.getCategoryList();
         session.setAttribute("list",list);
+        session.setAttribute("categories",categories);
         return "admin_dish";
     }
 
@@ -170,14 +175,20 @@ public class AdminController {
      */
     @RequestMapping(value = "/searchdish", method = GET)
     public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
-                             @RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
+                             @RequestParam(value = "message", defaultValue = "") String message,@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                             @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,HttpSession session) {
         if(signal.equals("all")){
-            if(message.equals(null)){
+            if(message.equals("")){
             List<Dish> list=dishRepository.getAll();
             session.setAttribute("list",list);
             return "admin_dish";}
             else{
-                List<Dish> list=dishRepository.searchDish(message);
+                List<Dish> list=new ArrayList<>();
+                PaginationSupport<DishCategorySupport> p=dishRepository.searchByKeywordsPage(message,pageNo,pageSize);
+                for (int i = 0; i < p.getItems().size(); i++) {
+                    Dish dish=p.getItems().get(i).getDish();
+                    list.add(dish);
+                }
                 session.setAttribute("list",list);
                 return "admin_dish";}
         }
@@ -345,7 +356,10 @@ session.setAttribute("admin",admin);
      * @return
      */
     @RequestMapping(value = "/adddish" , method = GET)
-    public String addadish(){
+    public String addadish(HttpSession session){
+        List<Category> pcategories=categoryRepository.getCategoryList();
+        session.setAttribute("pcategories",pcategories);
+
         return "admin_dishadd";
     }
 
@@ -365,12 +379,27 @@ session.setAttribute("admin",admin);
                           @RequestParam(value = "name", defaultValue = "") String name,
                           @RequestParam(value = "price", defaultValue = "") float price,
                           @RequestParam(value = "url", defaultValue = "") String url,
-                          @RequestParam(value = "description", defaultValue = "") String description,HttpSession session){
+                          @RequestParam(value = "description", defaultValue = "") String description,
+                          @RequestParam(value = "cate", defaultValue = "") String [] cate,Model model,HttpSession session){
         Dish a=null;
         try{a=dishRepository.findById(id);}catch(Exception e){}
+        List<Category> categories=new ArrayList<>();
         if(a==null){
+            String t = Arrays.toString(cate);
+            String t2=t.substring(1,t.length()-1);
+            String[] split = t2.split(", ");
+            for (int i = 0; i < split.length; i++) {
+                String c=split[i];
+                try{
+                Category m=categoryRepository.getCategoryById(c);
+                categories.add(m);}catch(Exception e){}
+
+            }
+
             Dish dish=new Dish(id,name,url,price,description);
-            dishRepository.save(dish);
+            DishCategorySupport p=new DishCategorySupport(categories, dish);
+            dishRepository.addDish(p);
+            /*dishRepository.save(dish);*/
             session.setAttribute("f", null);
             return "redirect:/admin/dish";}
         else{
@@ -419,10 +448,10 @@ session.setAttribute("admin",admin);
     public String viewCustomerOrder(HttpSession session)
     {
         List<Order> orders=null;
-/*try{*/
+
          orders=orderRepository.findall();
-       /* }catch(Exception e){
-    }*/
+
+
         session.setAttribute("orders",orders);
         return "admin_orderlist";
     }
@@ -436,4 +465,88 @@ session.setAttribute("admin",admin);
 
         return "admin_orderlist";
     }
+
+    @RequestMapping(value="/overall",method = GET)
+    public String overalll(HttpSession session)
+    {
+ double income=orderRepository.getTotalIncome();
+ long totalorder=orderRepository.getTotalCompletedOrdersNum();
+ session.setAttribute("income",income);
+ session.setAttribute("totalorder",totalorder);
+
+        return "admin_allview";
+    }
+
+
+    /**
+     * 按type查找order
+     * @param signal
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/ordertype", method = GET)
+    public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
+                            HttpSession session) {
+
+        List<Order> orders=new ArrayList<>();
+        if(signal.equals("deliverying")){
+            orders=orderRepository.getDeliveringOrder();
+
+          }
+       else if(signal.equals("deliveried")){
+         orders=orderRepository.getCompletedOrder();
+
+
+       }
+       else if(signal.equals("nodelivery")){
+             orders=orderRepository.getConfirmedAndUndeliveredOrder();
+
+        }else if(signal.equals("all")){
+            orders=orderRepository.findall();
+
+        }
+        session.setAttribute("orders",orders);
+       return "admin_orderlist";
+        }
+
+
+    @RequestMapping(value = "/searchorder", method = GET)
+    public String searchorderbycustomer(@RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
+        List<Order> orders=new ArrayList<>();
+        orders=orderRepository.getCustomerOrders(message);
+
+       session.setAttribute("orders",orders);
+
+
+            return "admin_orderlist";
+    }
+
+
+
+    @RequestMapping(value="/confirmorder",method = GET)
+    public String confirmorder(@RequestParam(value = "order_id", defaultValue = "") String id)
+    {
+        Order order=orderRepository.getOrder(id);
+        orderRepository.confirmOrder(order);
+        return "redirect:/admin/order";
+    }
+
+    @RequestMapping(value="/begindeliver",method = GET)
+    public String begindeliver(@RequestParam(value = "order_id", defaultValue = "") String id)
+    {
+        Order order=orderRepository.getOrder(id);
+        orderRepository.confirmDelivery(order);
+        return "redirect:/admin/order";
+    }
+
+    @RequestMapping(value="/enddeliver",method = GET)
+    public String enddeliver(@RequestParam(value = "order_id", defaultValue = "") String id)
+    {
+        Order order=orderRepository.getOrder(id);
+        orderRepository.completeDelivery(order);
+        orderRepository.completeOrder(order);
+        return "redirect:/admin/order";
+    }
+
+
 }

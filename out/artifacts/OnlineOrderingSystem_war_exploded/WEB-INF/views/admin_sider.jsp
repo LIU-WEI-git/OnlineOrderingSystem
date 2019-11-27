@@ -24,7 +24,7 @@
 
         <ul class="nav">
             <li >
-                <a href="dashboard.html">
+                <a href="<c:url value="/admin/overall" />">
                     <i class="ti-panel"></i>
                     <p>总览</p>
                 </a>
@@ -53,7 +53,7 @@
                     <p>订单</p>
                 </a>
             </li>
-            <li>
+            <%--<li>
                 <a href="maps.html">
                     <i class="ti-map"></i>
                     <p>Maps</p>
@@ -64,7 +64,7 @@
                     <i class="ti-bell"></i>
                     <p>Notifications</p>
                 </a>
-            </li>
+            </li>--%>
             <li class="active-pro">
                 <a href="<c:url value="/admin/logout" />">
                     <i class="ti-export"></i>

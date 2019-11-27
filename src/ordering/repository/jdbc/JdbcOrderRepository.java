@@ -35,8 +35,8 @@ public class JdbcOrderRepository implements OrderRepository {
     public static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
     public static  final String AdMIN_ORDERS="select * from `order`";
 
-    private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
-    private static final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
+   /* private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    private static final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";*/
 
     // 设置订单折扣
     private static final String SET_DISCOUNT = "UPDATE `order` SET discount=? WHERE order_id=?";

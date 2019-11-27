@@ -52,11 +52,14 @@
                     <span class="input-group-btn">
                         <select  name="signal" class="btn btn-info btn-search">
                             <option>all</option>
-                            <option>pizza</option>
+<c:forEach items="${categories}" var="category" varStatus="li">
+    <option>${category.getCategory_name()}</option>
+</c:forEach>
+                            <%--<option>pizza</option>
                             <option>bakedrice</option>
                             <option>bakednoodles</option>
                             <option>snack</option>
-                            <option>drink</option>
+                            <option>drink</option>--%>
                         </select>
                     </span>
                 <input type="text" class="form-control" name="message"
