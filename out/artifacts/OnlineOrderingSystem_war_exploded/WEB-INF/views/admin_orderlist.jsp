@@ -51,7 +51,7 @@
            <form action="<c:url value="/admin/ordertype"/>">
             <select  name="signal" class="btn btn-info btn-search">
                 <option>all</option>
-                <option>noconfrimed</option>
+                <option>noconfirmed</option>
                 <option>nodelivery</option>
                 <option>deliverying</option>
                 <option>deliveried</option>

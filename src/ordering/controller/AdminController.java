@@ -43,9 +43,9 @@ public class AdminController {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
-    OrderItemInfoViewRepository orderItemInfoViewRepository;
+    private  OrderItemInfoViewRepository orderItemInfoViewRepository;
     @Autowired
-    JdbcAddressRepository orderAddressInfoViewRepository;
+    private  OrderAddressInfoViewRepository orderAddressInfoViewRepository;
     /**
      * 管理员登陆
      * @return
@@ -503,7 +503,7 @@ session.setAttribute("admin",admin);
        else if(signal.equals("nodelivery")){
              orders=orderRepository.getConfirmedAndUndeliveredOrder();
 
-        }else if(signal.equals("noconfrimed")){
+        }else if(signal.equals("noconfirmed")){
             orders=orderRepository.getUncomfirmedOrder();
 
         }
@@ -566,8 +566,8 @@ session.setAttribute("admin",admin);
     @RequestMapping(value = "/address_info",method = GET)
     public String viewOrderAddressInfo(@RequestParam(value ="order_id" )String order_id, Model model)
     {
-try{
-        model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));}catch(Exception e){}
+
+        model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));
         return "admin_orderadress";
     }
 }
