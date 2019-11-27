@@ -76,4 +76,90 @@ public interface OrderRepository {
      * @return
      */
     boolean addOrder(Order order);
+
+    /**
+     * 设置订单折扣
+     *
+     * @param order
+     */
+    void setOrderDiscount(float discount, Order order);
+
+    /**
+     * 确认订单,尚未配送
+     *
+     * @param order
+     */
+    void confirmOrder(Order order);
+
+    /**
+     * 订单开始配送
+     *
+     * @param order
+     */
+    void confirmDelivery(Order order);
+
+    /**
+     * 完成配送
+     *
+     * @param order
+     */
+    void completeDelivery(Order order);
+
+    /**
+     * 完成订单
+     *
+     * @param order
+     */
+    void completeOrder(Order order);
+
+    /**
+     * 获取已确认但未配送的订单
+     *
+     * @return
+     */
+    List<Order> getConfirmedAndUndeliveredOrder();
+
+    /**
+     * 获取正在配送的订单
+     *
+     * @return
+     */
+    List<Order> getDeliveringOrder();
+
+    /**
+     * 获取已完成的订单
+     *
+     * @return
+     */
+    List<Order> getCompletedOrder();
+
+    /**
+     * 获取某天已完成的订单数（日期格式：yyyy-MM-dd，类型为string）
+     *
+     * @param day
+     * @return
+     */
+    long getTotalCompletedOrdersByDayNum(String day);
+
+    /**
+     * 获取所有已完成订单数
+     *
+     * @return
+     */
+    long getTotalCompletedOrdersNum();
+
+    /**
+     * 获取某日收入总计（日期格式：yyyy-MM-dd，类型为string）
+     *
+     * @return
+     */
+    double getTotalIncomeByDay(String day);
+
+    /**
+     * 获取总收入
+     *
+     * @return
+     */
+    double getTotalIncome();
+
 }

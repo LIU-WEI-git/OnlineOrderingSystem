@@ -49,7 +49,7 @@ public class DishCategorySupport {
      *
      * @param categories 菜品类别
      */
-    private void setCategories(List<Category> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 
@@ -61,7 +61,7 @@ public class DishCategorySupport {
         return dish;
     }
 
-    private void setDish(Dish dish) {
+    public void setDish(Dish dish) {
         this.dish = dish;
     }
 }
