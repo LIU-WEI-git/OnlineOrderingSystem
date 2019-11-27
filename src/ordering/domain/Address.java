@@ -14,6 +14,7 @@ public class Address {
     private String contact;
     private String phone;
     private String info;
+    private int delete_tag;
 
     /**
      * 无参构造函数
@@ -30,12 +31,13 @@ public class Address {
      * @param phone
      * @param info
      */
-    public Address(String address_id, String customer_account, String contact, String phone, String info) {
+    public Address(String address_id, String customer_account, String contact, String phone, String info,int delete_tag) {
         this.address_id = address_id;
         this.customer_account = customer_account;
         this.contact = contact;
         this.phone = phone;
         this.info = info;
+        this.delete_tag=delete_tag;
     }
 
     public String getAddress_id() {
@@ -76,5 +78,13 @@ public class Address {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public int getDelete_tag() {
+        return delete_tag;
+    }
+
+    public void setDelete_tag(int delete_tag) {
+        this.delete_tag = delete_tag;
     }
 }

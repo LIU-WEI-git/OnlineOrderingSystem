@@ -42,7 +42,7 @@
                     <div>
                         <span>地址<label>*</label></span>
                         <label>
-                            <input type="text" name="address_info" value="${address.info}" minlength="3" maxlength="20"/>
+                            <input type="text" name="address_info" value="${address.info}" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
 <%--                    <div hidden>--%>
@@ -58,7 +58,7 @@
                     <div>
                         <span>联系人<label>*</label></span>
                         <label>
-                            <input type="text" name="contact" value="${address.contact}" minlength="3" maxlength="20"/>
+                            <input type="text" name="contact" value="${address.contact}" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
                     <div>
@@ -73,7 +73,7 @@
                     <div hidden>
                         <span>customer_account<label>*</label></span>
                         <label>
-                            <input type="text" name="customer_account" value="${address.customer_account}" minlength="3" maxlength="20"/>
+                            <input type="text" name="customer_account" value="${address.customer_account}" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
                     <div class="clearfix"></div>

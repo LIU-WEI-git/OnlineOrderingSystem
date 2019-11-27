@@ -18,7 +18,7 @@ public class JdbcAddressRepository implements AddressRepository {
 
     private static final String SELECT_ADDRESS="select * from address";
     private static final String TOTAL_ADDRESS="select count(*) from address";
-    private static final String INSERT_ADDRESS="insert into address (address_id, customer_account, contact, phone, info) value (?,?,?,?,?)";
+    private static final String INSERT_ADDRESS="insert into address (address_id, customer_account, contact, phone, info,delete_tag) value (?,?,?,?,?,?)";
     @Autowired
     public JdbcAddressRepository(JdbcTemplate jdbcTemplate)
     {
@@ -32,25 +32,25 @@ public class JdbcAddressRepository implements AddressRepository {
     }
     @Override
     public int getTotalCustomerAddress(String customer_account) {
-        return jdbcTemplate.queryForObject(TOTAL_ADDRESS+" where customer_account ="+customer_account,Integer.class);
+        return jdbcTemplate.queryForObject(TOTAL_ADDRESS+" where customer_account ="+customer_account+" and delete_tag = 0",Integer.class);
     }
 
     @Override
     public List<Address> getCustomerAddress(String customer_account) {
-        return jdbcTemplate.query(SELECT_ADDRESS+" where customer_account ="+customer_account,addressRowMapper);
+        return jdbcTemplate.query(SELECT_ADDRESS+" where customer_account ="+customer_account+" and delete_tag = 0",addressRowMapper);
     }
 
     @Override
     public boolean addAddress(Address address) {
         jdbcTemplate.update(INSERT_ADDRESS,address.getAddress_id(),
                 address.getCustomer_account(),address.getContact(),
-                address.getPhone(),address.getInfo());
+                address.getPhone(),address.getInfo(),address.getDelete_tag());
         return true;
     }
 
     @Override
     public boolean deleteAddress(String address_id) {
-        jdbcTemplate.update("delete from address where address_id = \'"+address_id+"\'");
+        jdbcTemplate.update("update address set delete_tag = 1 where address_id = \'"+address_id+"\'");
         return true;
     }
 

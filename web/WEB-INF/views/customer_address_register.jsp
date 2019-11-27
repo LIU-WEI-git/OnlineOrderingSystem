@@ -42,7 +42,7 @@
                     <div>
                         <span>地址<label>*</label></span>
                         <label>
-                            <input type="text" name="address_info" minlength="3" maxlength="20"/>
+                            <input type="text" name="address_info" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
 
@@ -53,13 +53,13 @@
                     <div>
                         <span>联系人<label>*</label></span>
                         <label>
-                            <input type="text" name="contact" minlength="3" maxlength="20"/>
+                            <input type="text" name="contact" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
                     <div>
                         <span>电话<label>*</label></span>
                         <label>
-                            <input type="tel" name="phone"/>
+                            <input type="tel" name="phone" required/>
                         </label>
                     </div>
                     <div class="clearfix"></div>

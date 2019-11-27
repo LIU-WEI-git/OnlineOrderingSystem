@@ -29,6 +29,8 @@ public class AddressController {
     @Autowired
     private AddressRepository addressRepository;
 
+    private static final int DELETED =1;
+    private static final int UNDELETE=0;
     /**
      * 顾客地址管理
      *
@@ -91,7 +93,7 @@ public class AddressController {
                                 @RequestParam(value = "address_info")String info,
                                 Model model)
     {
-        Address address=new Address(address_id,customer_account,contact,phone,info);
+        Address address=new Address(address_id,customer_account,contact,phone,info,UNDELETE);
         addressRepository.resetAddress(address);
         return "redirect:/myAddress";
     }
@@ -116,12 +118,12 @@ public class AddressController {
         System.out.println(contact);
         Date date =new Date();
         String address_id=String.valueOf(date.getDay())+String.valueOf(date.getHours())+String.valueOf(date.getMinutes())+String.valueOf(date.getSeconds())
-                +contact.substring(0,4);
+                +((Customer)session.getAttribute("customer")).getCustomer_account().substring(0,4);
         if(addressRepository.isInDB(address_id))
         {
-            return "redirect:/myAddress/add_address?info=添加失败，请重新添加";
+            return "redirect:/myAddress/add_address?info=fail to register,please try again";
         }
-        Address address=new Address(address_id,((Customer) session.getAttribute("customer")).getCustomer_account(),contact,phone,info);
+        Address address=new Address(address_id,((Customer) session.getAttribute("customer")).getCustomer_account(),contact,phone,info,UNDELETE);
         addressRepository.addAddress(address);
         return "redirect:/myAddress";
     }

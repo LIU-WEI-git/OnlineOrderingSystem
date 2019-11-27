@@ -46,7 +46,7 @@
                                 <a style="width: 10%;margin-right: 5%;float: right;color: #E8360F" href="<c:url value="/myAddress/delete_address?address_id=${address.address_id}" /> ">删除</a>
                                 <a style="width: 10%;margin-right: 5%;float: right;color: #3071a9" href="<c:url value="/myAddress/edit_address?address_id=${address.address_id}" />">编辑</a>
                             </li>
-                            <hr>
+                            <hr/>
                         </c:forEach>
                     </ul>
                     <a href="<c:url value="/myAddress/add_address"/> " style="color: #3071a9">新增地址</a>&nbsp;&nbsp;&nbsp;
