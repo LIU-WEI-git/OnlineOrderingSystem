@@ -54,6 +54,8 @@ public class JdbcOrderRepository implements OrderRepository {
     private static final String SELECT_ORDER = "SELECT * FROM `order`";
     // 排序
     private static final String ORDER_BY = " ORDER BY create_time DESC";
+    //未确认 未配送
+    private static final String SELECT_UNCONFIRMED_UNDELIVERED_ORDER = SELECT_ORDER + " WHERE order_state=0 AND delivery_state=0";
     // 查询已确认但未配送的订单
     private static final String SELECT_CONFIRMED_UNDELIVERED_ORDER = SELECT_ORDER + " WHERE order_state=1 AND delivery_state=0";
     // 查询正在配送的订单
@@ -65,8 +67,8 @@ public class JdbcOrderRepository implements OrderRepository {
     private static final String SELECT_COMPLETED_COUNT = "SELECT COUNT(*) FROM `order` WHERE order_state=2 AND delivery_state=2";
     // 获取收入
     private static final String TOTAL_INCOME = "SELECT COALESCE(SUM(v.per_income), 0) AS income FROM (SELECT order_id, create_time, (order_price + discount) AS per_income FROM `order` WHERE order_state=2 AND delivery_state=2) AS v";
-    private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
-    private static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
+    /*private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    private static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";*/
 
     @Autowired
     public JdbcOrderRepository(JdbcTemplate jdbcTemplate){
@@ -171,6 +173,11 @@ public class JdbcOrderRepository implements OrderRepository {
     public List<Order> getCompletedOrder() {
         return jdbcTemplate.query(SELECT_COMPLETED_ORDER + ORDER_BY, orderRowMapper);
     }
+    @Override
+    public List<Order> getUncomfirmedOrder() {
+        return jdbcTemplate.query(SELECT_UNCONFIRMED_UNDELIVERED_ORDER + ORDER_BY, orderRowMapper);
+    }
+
 
     @Override
     public long getTotalCompletedOrdersByDayNum(String day) {

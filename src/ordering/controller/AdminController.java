@@ -13,10 +13,8 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import ordering.domain.*;
-import ordering.repository.AdminRepository;
-import ordering.repository.CategoryRepository;
-import ordering.repository.DishRepository;
-import ordering.repository.OrderRepository;
+import ordering.repository.*;
+import ordering.repository.jdbc.JdbcAddressRepository;
 import ordering.utils.CategoryDishSupport;
 import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
@@ -44,6 +42,10 @@ public class AdminController {
 
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    OrderItemInfoViewRepository orderItemInfoViewRepository;
+    @Autowired
+    JdbcAddressRepository orderAddressInfoViewRepository;
     /**
      * 管理员登陆
      * @return
@@ -73,7 +75,7 @@ public class AdminController {
         if (admin != null&&admin.getDelete_tag()==admin.UNDELETED) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
-            return "admin_welcome";
+            return "redirect:/admin/overall";
         }
         else{
             l="用户名和密码不匹配";
@@ -501,7 +503,11 @@ session.setAttribute("admin",admin);
        else if(signal.equals("nodelivery")){
              orders=orderRepository.getConfirmedAndUndeliveredOrder();
 
-        }else if(signal.equals("all")){
+        }else if(signal.equals("noconfrimed")){
+            orders=orderRepository.getUncomfirmedOrder();
+
+        }
+       else if(signal.equals("all")){
             orders=orderRepository.findall();
 
         }
@@ -548,5 +554,20 @@ session.setAttribute("admin",admin);
         return "redirect:/admin/order";
     }
 
+    @RequestMapping(value="/order_item",method=GET)
+    public String viewOrderItemInfo(@RequestParam(value="order_id" ) String order_id ,Model model)
+    {
 
+        model.addAttribute("orderitems",orderItemInfoViewRepository.getOrderItems(order_id));
+        return "admin_orderitem";
+    }
+
+
+    @RequestMapping(value = "/address_info",method = GET)
+    public String viewOrderAddressInfo(@RequestParam(value ="order_id" )String order_id, Model model)
+    {
+try{
+        model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));}catch(Exception e){}
+        return "admin_orderadress";
+    }
 }

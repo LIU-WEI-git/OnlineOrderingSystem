@@ -162,4 +162,10 @@ public interface OrderRepository {
      */
     double getTotalIncome();
 
+    /**
+     * 未确认订单
+     * @return
+     */
+    List<Order> getUncomfirmedOrder();
+
 }

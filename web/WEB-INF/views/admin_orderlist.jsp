@@ -51,12 +51,15 @@
            <form action="<c:url value="/admin/ordertype"/>">
             <select  name="signal" class="btn btn-info btn-search">
                 <option>all</option>
+                <option>noconfrimed</option>
                 <option>nodelivery</option>
                 <option>deliverying</option>
-                <option>deliveried</option> </select>
-                <span class="input-group-btn">
+                <option>deliveried</option>
+
+            </select>
+                <br><br>
                         <button type="submit" class="btn btn-info btn-search">operation</button>
-                    </span>
+
            </form>
 
             <form class="input-group col-md-12" style="margin: 10px;position: relative" action="<c:url value="/admin/searchorder"/>">
@@ -97,7 +100,7 @@
                             </c:choose>
                         </div>
                         <div class="but1">
-                            <a href="<c:url value="/address_info?order_id=${order.order_id}" />">订单地址详情</a>
+                            <a href="<c:url value="/admin/address_info?order_id=${order.order_id}" />">订单地址详情</a>
                         </div>
                     </li>
                     <div class="clearfix"> </div>
@@ -114,7 +117,7 @@
                         </c:when>
 
                     </c:choose>
-                    <p class="detail_desc"><a href="<c:url value="/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
+                    <p class="detail_desc"><a href="<c:url value="/admin/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
                 </ul>
             </c:forEach>
             </div>
