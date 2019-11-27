@@ -67,7 +67,7 @@ public class AdminController {
         catch(Exception e){
 
         }
-        if (admin != null&&admin.getDelete_tag()==0) {
+        if (admin != null&&admin.getDelete_tag()==admin.UNDELETED) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
             return "admin_welcome";
@@ -172,9 +172,14 @@ public class AdminController {
     public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
                              @RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
         if(signal.equals("all")){
+            if(message.equals(null)){
             List<Dish> list=dishRepository.getAll();
             session.setAttribute("list",list);
-            return "admin_dish";
+            return "admin_dish";}
+            else{
+                List<Dish> list=dishRepository.searchDish(message);
+                session.setAttribute("list",list);
+                return "admin_dish";}
         }
         else{
         Category category=categoryRepository.getCategoryByName(signal);
@@ -411,12 +416,24 @@ session.setAttribute("admin",admin);
 
 
     @RequestMapping(value="/order",method = GET)
-    public String viewCustomerOrder(Model model,HttpSession session)
+    public String viewCustomerOrder(HttpSession session)
     {
-
-        List<Order> orders=orderRepository.findall();
-        model.addAttribute("orders",orders);
+        List<Order> orders=null;
+/*try{*/
+         orders=orderRepository.findall();
+       /* }catch(Exception e){
+    }*/
+        session.setAttribute("orders",orders);
         return "admin_orderlist";
     }
 
+
+    @RequestMapping(value="/ordered",method = GET)
+    public String Odered(@RequestParam(value = "id", defaultValue = "") String id)
+    {
+        Order order=orderRepository.getOrder(id);
+
+
+        return "admin_orderlist";
+    }
 }

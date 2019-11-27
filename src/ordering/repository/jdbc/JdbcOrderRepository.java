@@ -1,5 +1,6 @@
 package ordering.repository.jdbc;
 
+import ordering.domain.Admin;
 import ordering.domain.Order;
 import ordering.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -16,9 +19,21 @@ public class JdbcOrderRepository implements OrderRepository {
 
     private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<Order>(Order.class);
 
+    private static class orderRowMapper implements RowMapper<Order> {
+
+        @Override
+        public Order mapRow(ResultSet rs, int i) throws SQLException {
+            return new Order(rs.getString("order_id"), rs.getString("customer_account"),
+                    rs.getString("address_id"), rs.getTimestamp("create_time"),
+                    rs.getString("remark"), rs.getInt("order_state"), rs.getInt("delivery_state"),
+                    rs.getFloat("discount"),
+                    rs.getFloat("order_price"));
+        }
+    }
+
     public static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
     public static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
-    public static  final String AdMIN_ORDERS="select * from `order` ";
+    public static  final String AdMIN_ORDERS="select * from `order`";
 
 
     @Autowired
@@ -65,7 +80,7 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public List<Order> findall() {
-        return jdbcTemplate.query(AdMIN_ORDERS,orderRowMapper);
+        return jdbcTemplate.query(AdMIN_ORDERS,new orderRowMapper());
     }
 
 

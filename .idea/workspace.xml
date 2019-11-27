@@ -6,7 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="" />
+    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_4_3_18_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_4_3_18_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/config/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +93,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="G:\qiafan\.idea" />
+      </set>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -244,7 +265,9 @@
       <workItem from="1574578098629" duration="9897000" />
       <workItem from="1574588069792" duration="7099000" />
       <workItem from="1574663607721" duration="16467000" />
-      <workItem from="1574762542599" duration="2942000" />
+      <workItem from="1574762542599" duration="8106000" />
+      <workItem from="1574782418956" duration="608000" />
+      <workItem from="1574784714293" duration="395000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -351,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574765451842</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="87">
+      <created>1574765642223</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1574765642223</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +439,7 @@
     <MESSAGE value="前3功能80%" />
     <MESSAGE value="前3功能85%" />
     <MESSAGE value="86" />
-    <option name="LAST_COMMIT_MESSAGE" value="86" />
+    <MESSAGE value="87" />
+    <option name="LAST_COMMIT_MESSAGE" value="87" />
   </component>
 </project>

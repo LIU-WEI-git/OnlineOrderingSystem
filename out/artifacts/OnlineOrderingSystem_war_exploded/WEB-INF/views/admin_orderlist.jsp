@@ -65,10 +65,11 @@
                         <button type="submit" class="btn btn-info btn-search">search</button>
                     </span>
             </form>
-
+<% request.getSession().getAttribute("orders");%>
+            <div class="content table-responsive table-full-width">
             <c:forEach items="${orders}" var="order">
-                <ul class="product_img">
-                    <li class="product_left"><img src="images/pic8.jpg" class="img-responsive" alt=""/>
+                <ul class="">
+                    <li class=""><img src="${pageContext.request.contextPath}/resources/images/pic8.jpg" class="img-responsive" alt=""/>
                         <p>In Stock:999</p>
                     </li>
                     <li class="product_right">
@@ -97,9 +98,11 @@
                     </li>
                     <div class="clearfix"> </div>
                     <h5 class="detail">备注:</h5>
-                    <p class="detail_desc">${order.remark}<a href="<c:url value="/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
+                    <p class="detail_desc"><%--${order.remark}--%><a href="<c:url value="/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
+                    <p class="detail_desc"><%--${order.remark}--%><a href="<c:url value="/order_item?order_id=${order.order_id}"/>">确认订单</a></p>
                 </ul>
             </c:forEach>
+            </div>
         </div>
     </div></div>
 

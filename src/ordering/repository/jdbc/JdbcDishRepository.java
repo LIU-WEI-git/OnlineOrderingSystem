@@ -74,6 +74,14 @@ public class JdbcDishRepository implements DishRepository {
         return new DishCategorySupport(categories, dish);
     }
 
+
+    @Override
+    public List<Dish> searchDish(String a) {
+
+        List<Dish> dishes = jdbc.query(SELECT_DISH, new DishRowMapper(), a,a);
+        return  dishes;
+    }
+
     @Override
     public void deleteDish(String dish_id) {
 
@@ -106,7 +114,7 @@ public class JdbcDishRepository implements DishRepository {
             return new Category(category_id, category_name);
         }
     }
-
+    private static final String SELECT_DISH="SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE dish_id  like ? or dish_name like ?";
     private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish";
     private static final String SELECT_FROM_DISH_PAGE = SELECT_FROM_DISH + " order by dish_id limit ? offset ?";
     private static final String SELECT_DISH_CATEGORY = "SELECT dc.dish_id, c.category_id, c.category_name FROM category c JOIN dish_category dc WHERE c.category_id=dc.category_id AND dish_id=?";

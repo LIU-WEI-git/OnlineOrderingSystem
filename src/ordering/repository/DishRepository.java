@@ -66,4 +66,7 @@ public interface DishRepository {
      * @return 保存的菜品
      */
     Dish save(Dish dish);
+
+
+    List<Dish> searchDish(String a);
 }
