@@ -7,6 +7,13 @@ import ordering.domain.Address;
 import java.util.List;
 
 public interface AddressRepository {
+
+    /**
+     * 查看是否address_id已存在
+     * @param address_id
+     * @return
+     */
+    boolean isInDB(String address_id);
     /**
      * 查看指定用户的地址总数
      * @param customer_account
@@ -42,5 +49,10 @@ public interface AddressRepository {
      */
     boolean resetAddress(Address address);
 
-
+    /**
+     * 通过address_id获取地址
+     * @param address_id
+     * @return
+     */
+    Address getAddress(String address_id);
 }

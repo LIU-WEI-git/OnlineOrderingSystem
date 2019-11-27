@@ -1,6 +1,5 @@
 package ordering.controller;
 
-import ordering.domain.Customer;
 import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -89,6 +87,4 @@ public class ShoppingCartController {
         model.addAttribute(shoppingCart);
         return "redirect:/shoppingCart";
     }
-
-    //TODO 生成订单
 }

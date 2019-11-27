@@ -3,12 +3,9 @@ package ordering.controller;
 import com.oogway.cat.security.AESUtils;
 import com.oogway.cat.security.MD5Utils;
 import ordering.config.RootConfig;
-import ordering.domain.Customer;
-import ordering.domain.Dish;
-import ordering.domain.Order;
-import ordering.domain.OrderItem;
+import ordering.domain.*;
 import ordering.repository.*;
-import ordering.utils.DiscountTag;
+import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
 import ordering.utils.ShoppingCartItem;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,17 +37,6 @@ public class CustomerController {
     private CustomerRepository customerRepository;
     @Autowired
     private DishRepository dishRepository;
-    @Autowired
-    private OrderRepository orderRepository;
-    @Autowired
-    private OrderItemInfoViewRepository orderItemInfoViewRepository;
-    @Autowired
-    private OrderAddressInfoViewRepository orderAddressInfoViewRepository;
-    @Autowired
-    private AddressRepository addressRepository;
-    @Autowired
-    private OrderItemRepository orderItemRepository;
-
     /**
      * 顾客欢迎页
      *
@@ -196,132 +182,75 @@ public class CustomerController {
         return "customer_dish_detail";
     }
 
+    /**
+     * 查看个人信息页面
+     *
+     * @return 个人信息页面
+     */
+    @RequestMapping(value = "account", method = RequestMethod.GET)
+    public String viewCustomerAccount() {
+        return "customer_account";
+    }
 
     /**
-     * 用户查看自己的订单记录
+     * 显示账户信息设置页面
+     *
+     * @return 账户设置页面
+     */
+    @RequestMapping(value = "account/resetAccount", method = RequestMethod.GET)
+    public String resetAccount() {
+        return "customer_reset_account";
+    }
+
+    /**
+     * 处理用户在账户设置页面提交的表单
      *
      * @param model
-     * @return
+     * @return 成功修改信息则重定向到个人账户页面
      */
-    @RequestMapping(value="order",method = RequestMethod.GET)
-    public String viewCustomerOrder(Model model,HttpSession session)
-    {
-        //如果用户未登录，重定向到登录界面
-        if(session.getAttribute("customer")==null){
-            return "redirect:/login";
+    @RequestMapping(value = "account/resetAccount", method = RequestMethod.POST)
+    public String resetAccountSubmit(@RequestParam("new_customer_name") String new_customer_name,
+                                     @RequestParam("new_customer_email") String new_customer_email,
+                                     HttpSession session, Model model) {
+        Customer customer = (Customer) session.getAttribute("customer");
+        customer.setCustomer_name(new_customer_name);
+        customer.setCustomer_email(new_customer_email);
+        customerRepository.resetCustomerInfo(customer);
+        model.addAttribute(customer);
+        return "redirect:/account?info=reset_account_success";
+    }
+
+    /**
+     * 显示密码设置页面
+     *
+     * @return 密码设置页面
+     */
+    @RequestMapping(value = "account/resetPassword", method = RequestMethod.GET)
+    public String resetPassword() {
+        return "customer_reset_password";
+    }
+
+    /**
+     * 处理用户在密码设置页面提交的表单
+     *
+     * @param model
+     * @return 成功修改密码则重定向到个人账户页面，失败则返回密码设置页面并给出提示
+     */
+    @RequestMapping(value = "account/resetPassword", method = RequestMethod.POST)
+    public String resetPasswordSubmit(@RequestParam("old_password") String old_password,
+                                      @RequestParam("new_password") String new_password,
+                                      @RequestParam("confirm_password") String confirm_password,
+                                      HttpSession session, Model model) {
+        Customer customer = (Customer) session.getAttribute("customer");
+        if (!AESUtils.decodes(customer.getCustomer_password(), RootConfig.SECRET_KEY, 128).equals(old_password)) {
+            return "redirect:/account/resetPassword?info=wrong_old_password";
         }
-        List<Order> orders;
-        orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
-        //orders = orderRepository.getCustomerOrders(String.valueOf(10086123));
-        model.addAttribute("orders",orders);
-        return "customer_order";
-    }
-
-    /**
-     * 查看订单的地址详情
-     * @param order_id
-     * @param model
-     * @return
-     */
-    @RequestMapping(value = "order/address_info",method = RequestMethod.GET)
-    public String viewOrderAddressInfo(@RequestParam(value ="order_id" )String order_id,Model model)
-    {
-        model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));
-        return "customer_order_address";
-    }
-
-    /**
-     * 查看订单所选菜品
-     *
-     * @param order_id
-     * @param model
-     * @return
-     */
-    @RequestMapping(value="order/order_item",method=RequestMethod.GET)
-    public String viewOrderItemInfo(@RequestParam(value="order_id" ) String order_id ,Model model)
-    {
-        model.addAttribute("orderitems",orderItemInfoViewRepository.getOrderItems(order_id));
-        return "customer_order_item";
-    }
-
-    /**
-     * 显示创建订单页面
-     *
-     * @param model
-     * @return
-     */
-    @RequestMapping(value = "createOrder", method = RequestMethod.GET)
-    public String createOrder(Model model, HttpSession session) {
-        model.addAttribute(addressRepository.getCustomerAddress(((Customer) session.getAttribute("customer")).getCustomer_account()));
-        return "customer_create_order";
-    }
-
-    /**
-     * 处理创建订单的信息
-     *
-     * @param address_id
-     * @param remark
-     * @param model
-     * @param session
-     * @return 成功跳转到创建订单成功页面
-     */
-    @RequestMapping(value = "createOrder", method = RequestMethod.POST)
-    public String createOrderSubmit(@RequestParam("address_id") String address_id,
-                                    @RequestParam(value = "remark",required = false) String remark,
-                                    Model model, HttpSession session) {
-        Date create_time = new Date();
-        //通过创建的订单的时间生成12位订单号
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = simpleDateFormat.format(create_time);
-        String order_id = MD5Utils.Md5(formattedDate, 16);
-        //获取顾客账号
-        String customer_account = ((Customer) session.getAttribute("customer")).getCustomer_account();
-        //获取折扣信息和订单总价
-        ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
-        Order order = null;
-        if (shoppingCart.getTotalPrice() > RootConfig.TARGET_PRICE) {
-            order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()),
-                    remark, RootConfig.DISCOUNT, shoppingCart.getTotalPrice() - RootConfig.DISCOUNT);
-        } else {
-            order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()), remark, 0, shoppingCart.getTotalPrice());
+        if (!new_password.equals(confirm_password)) {
+            return "redirect:/account/resetPassword?info=wrong_confirm_password";
         }
-        orderRepository.addOrder(order);
-        for (ShoppingCartItem shoppingCartItem : shoppingCart.getShoppingCartItemList()) {
-            orderItemRepository.insertItem(new OrderItem(order_id, shoppingCartItem.getDish().getDish_id(), shoppingCartItem.getAmount()));
-        }
-        model.addAttribute(new ShoppingCart());
-        return "customer_payment_success";
-    }
-    /**
-     * 顾客地址管理
-     * @param model
-     * @param session
-     * @return
-     */
-    @RequestMapping(value="myaddress",method = RequestMethod.GET)
-    public String managerMyAddress(Model model,HttpSession session)
-    {
-        model.addAttribute("addresses",addressRepository.getCustomerAddress(((Customer)session.getAttribute("customer")).getCustomer_account()));
-        return "customer_address";
-    }
-
-    /**
-     * 删除用户的一条地址
-     * @param address_id
-     * @param model
-     * @return
-     */
-    @RequestMapping(value="delete_address",method = RequestMethod.GET)
-    public String deleteAddress(@RequestParam(value = "address_id")String address_id,Model model)
-    {
-        addressRepository.deleteAddress(address_id);
-        return "redirect:/myaddress";
-    }
-
-    @RequestMapping(value="edit_address",method = RequestMethod.GET)
-    public String editAddress(@RequestParam(value="address_id")String address_id,Model model)
-    {
-        model.addAttribute("address",addressRepository.getCustomerAddress(address_id));
-        return "customer_edit_address";
+        //将新密码加密后存储到数据库
+        customer.setCustomer_password(AESUtils.ecodes(new_password, RootConfig.SECRET_KEY, 128));
+        customerRepository.resetCustomerInfo(customer);
+        return "redirect:/account?info=reset_password_success";
     }
 }

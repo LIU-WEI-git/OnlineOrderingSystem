@@ -17,7 +17,7 @@ import java.util.List;
 public class JdbcOrderRepository implements OrderRepository {
     private JdbcTemplate jdbcTemplate;
 
-    private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<Order>(Order.class);
+    private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<>(Order.class);
 
     private static class orderRowMapper implements RowMapper<Order> {
 
@@ -65,6 +65,8 @@ public class JdbcOrderRepository implements OrderRepository {
     private static final String SELECT_COMPLETED_COUNT = "SELECT COUNT(*) FROM `order` WHERE order_state=2 AND delivery_state=2";
     // 获取收入
     private static final String TOTAL_INCOME = "SELECT COALESCE(SUM(v.per_income), 0) AS income FROM (SELECT order_id, create_time, (order_price + discount) AS per_income FROM `order` WHERE order_state=2 AND delivery_state=2) AS v";
+    private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    private static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
 
     @Autowired
     public JdbcOrderRepository(JdbcTemplate jdbcTemplate){
@@ -72,9 +74,7 @@ public class JdbcOrderRepository implements OrderRepository {
     }
     @Override
     public boolean isCustomerInDB(String customer_account) {
-        if(jdbcTemplate.queryForObject(TOTAL_ORDERS+customer_account,Integer.class)==0)
-            return false;
-        else return true;
+        return jdbcTemplate.queryForObject(TOTAL_ORDERS + customer_account, Integer.class) != 0;
     }
 
     @Override

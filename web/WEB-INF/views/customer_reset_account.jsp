@@ -1,3 +1,4 @@
+<jsp:useBean id="customer" scope="session" type="ordering.domain.Customer"/>
 <%--
   Created by IntelliJ IDEA.
   User: 97718
@@ -10,7 +11,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>编辑地址</title>
+    <title>个人信息修改</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -38,50 +39,29 @@
         <div class="Product_top">
             <form method="post">
                 <div class="register-top-grid">
-                    <h3>地址信息</h3>
+                    <h3>个人信息修改</h3>
                     <div>
-                        <span>地址<label>*</label></span>
+                        <span>用户名</span>
                         <label>
-                            <input type="text" name="address_info" value="${address.info}" minlength="3" maxlength="20"/>
-                        </label>
-                    </div>
-<%--                    <div hidden>--%>
-<%--                        <span >address_id<label>*</label></span>--%>
-<%--                        <label>--%>
-<%--                            <input type="text" name="address_id" value="${address.address_id}"/>--%>
-<%--                        </label>--%>
-<%--                    </div>--%>
-                </div>
-                <div class="clearfix"></div>
-                <div class="register-bottom-grid">
-                    <h3>联系人信息</h3>
-                    <div>
-                        <span>联系人<label>*</label></span>
-                        <label>
-                            <input type="text" name="contact" value="${address.contact}" minlength="3" maxlength="20"/>
+                            <input type="text" name="new_customer_name" minlength="3" maxlength="20"
+                                   value="${customer.customer_name}"/>
                         </label>
                     </div>
                     <div>
-                        <span>电话<label>*</label></span>
+                        <span>电子邮箱地址</span>
                         <label>
-                            <input type="tel" name="phone" value="${address.phone}"/>
+                            <input type="email" name="new_customer_email" value="${customer.customer_email}"/>
                         </label>
                     </div>
                     <div class="clearfix"></div>
-                </div>
-                <div class="register-but">
-                    <div hidden>
-                        <span>customer_account<label>*</label></span>
-                        <label>
-                            <input type="text" name="customer_account" value="${address.customer_account}" minlength="3" maxlength="20"/>
-                        </label>
+                    <div class="register-but">
+                        <div class="clearfix"></div>
+                        <input type="submit" value="确认修改"/>
+                        <a href="<c:url value="/account"/>">
+                            <input type="button" value="返回">
+                        </a>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="clearfix"></div>
-                    <input type="submit" value="确认修改"/>
-                    <a href="<c:url value="/myAddress"/>">
-                        <input type="button" value="返回">
-                    </a>
-                    <div class="clearfix"></div>
                 </div>
             </form>
         </div>

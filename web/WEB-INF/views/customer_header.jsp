@@ -26,9 +26,8 @@
             <ul class="account">
                 <c:choose>
                     <c:when test="${not empty sessionScope.customer}">
-                        <%--@elvariable id="customer" type="ordering.domain.Customer"--%>
-<%--                        TODO 修改链接--%>
-                        <li><a href="<c:url value="/"/>">${customer.customer_name}</a></li>
+                        <jsp:useBean id="customer" scope="session" type="ordering.domain.Customer"/>
+                        <li><a href="<c:url value="/account"/>">${customer.customer_name}</a></li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="<c:url value="/login"/>">我的账户</a></li>
@@ -64,13 +63,12 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav menu1">
-                                <!-- TODO 修改链接 -->
                                 <li><a href="<c:url value="/"/>">首页</a></li>
-                                <li><a href="club.jsp">折扣活动</a></li>
-                                <li><a href="fruits.jsp">水果蔬菜</a></li>
-                                <li><a href="club.jsp">粉丝俱乐部</a></li>
-                                <li><a href="club.jsp">甜品饮品</a></li>
-                                <li><a href="contact.jsp">联系我们</a></li>
+                                <li><a href="<c:url value="/"/>">折扣活动</a></li>
+                                <li><a href="<c:url value="/"/>">水果蔬菜</a></li>
+                                <li><a href="<c:url value="/"/>">粉丝俱乐部</a></li>
+                                <li><a href="<c:url value="/"/>">甜品饮品</a></li>
+                                <li><a href="<c:url value="/"/>">联系我们</a></li>
                             </ul>
                             <ul class="login">
                                 <c:choose>

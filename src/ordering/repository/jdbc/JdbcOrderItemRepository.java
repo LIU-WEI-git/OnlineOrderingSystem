@@ -12,13 +12,13 @@ import java.util.List;
 
 @Repository
 public class JdbcOrderItemRepository implements OrderItemRepository {
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
     private RowMapper<OrderItem> item =new BeanPropertyRowMapper<>(OrderItem.class);
 
-    public static final String SELECT_ORDER_ITEM="select * from order_item ";
-    public static final String TOTAL_ORDER_ITEM="select count(*) from order_item ";
-    public static final String INSERT_ORDER_ITEM="insert into order_item (order_id, dish_id, amount) value(?,?,?)";
-    public static final String SELECT_DISH="select dish_id from dish ";
+    private static final String SELECT_ORDER_ITEM="select * from order_item ";
+    private static final String TOTAL_ORDER_ITEM="select count(*) from order_item ";
+    private static final String INSERT_ORDER_ITEM="insert into order_item (order_id, dish_id, amount) value(?,?,?)";
+    private static final String SELECT_DISH="select dish_id from dish ";
     @Autowired
     public JdbcOrderItemRepository(JdbcTemplate jdbcTemplate)
     {

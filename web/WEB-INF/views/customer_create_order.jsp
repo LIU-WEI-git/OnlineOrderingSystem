@@ -51,14 +51,14 @@
                                         </c:forEach>
                                     </select>
                                 </label>
-                                <a href="<c:url value="/myaddress"/>" style="color: #3071a9">
+                                <a href="<c:url value="/myAddress"/>" style="color: #3071a9">
                                     管理个人配送信息
                                 </a>
                                 <br/>
                             </c:when>
                             <c:otherwise>
                                 您还没有设置个人配送信息<br>
-                                <a href="<c:url value="/myaddress"/>" style="color: #E8360F">
+                                <a href="<c:url value="/myAddress"/>" style="color: #E8360F">
                                     新增配送信息
                                 </a>
                                 <br/>
