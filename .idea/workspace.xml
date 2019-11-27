@@ -7,9 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3662dc75-14f7-4f91-91c6-66ff78a308f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02c077d2-4a2f-4d43-96da-93240f374755.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/02c077d2-4a2f-4d43-96da-93240f374755.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/DishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcOrderRepository.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +93,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProjectId" id="1UBXX85lMFibvZvQJkrZ4OHOQMR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -231,7 +235,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="" />
+      <changelist id="3662dc75-14f7-4f91-91c6-66ff78a308f8" name="Default Changelist" comment="" />
       <created>1573980977825</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -241,6 +245,7 @@
       <workItem from="1574123211834" duration="7385000" />
       <workItem from="1574160628973" duration="13822000" />
       <workItem from="1574237082093" duration="823000" />
+      <workItem from="1574830999735" duration="2130000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -312,7 +317,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574789021475</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="基本完成管理员订单操作（设置订单状态、配送状态、取三种状态的订单、计算订单数量、计算收入）">
+      <created>1574799405042</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574799405042</updated>
+    </task>
+    <task id="LOCAL-00012" summary="新增根据菜品名称模糊搜索">
+      <created>1574799490556</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1574799490556</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -374,7 +393,9 @@
     <MESSAGE value="合并admin分支" />
     <MESSAGE value="准备合并TIAN分支" />
     <MESSAGE value="完成dish的add、update、delete方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成dish的add、update、delete方法" />
+    <MESSAGE value="基本完成管理员订单操作（设置订单状态、配送状态、取三种状态的订单、计算订单数量、计算收入）" />
+    <MESSAGE value="新增根据菜品名称模糊搜索" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增根据菜品名称模糊搜索" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

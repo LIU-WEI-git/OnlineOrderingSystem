@@ -72,6 +72,13 @@ public interface OrderRepository {
     boolean addOrder(Order order);
 
     /**
+     * 设置订单折扣
+     *
+     * @param order
+     */
+    void setOrderDiscount(float discount, Order order);
+
+    /**
      * 确认订单,尚未配送
      *
      * @param order

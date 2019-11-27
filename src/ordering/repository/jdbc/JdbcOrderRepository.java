@@ -19,6 +19,9 @@ public class JdbcOrderRepository implements OrderRepository {
     private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
     private static final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
 
+    // 设置订单折扣
+    private static final String SET_DISCOUNT = "UPDATE `order` SET discount=? WHERE order_id=?";
+
     // 确认订单
     private static final String CONFIRM_ORDER = "UPDATE `order` SET order_state=1 WHERE order_id=?";
     // 完成订单
@@ -102,6 +105,11 @@ public class JdbcOrderRepository implements OrderRepository {
                             order.getCreate_time(),order.getRemark(),order.getOrder_state(),order.getDelivery_state(),order.getDiscount(),
                             order.getOrder_price());
         return true;
+    }
+
+    @Override
+    public void setOrderDiscount(float discount, Order order) {
+        jdbcTemplate.update(SET_DISCOUNT, discount, order.getOrder_id());
     }
 
     @Override

@@ -67,21 +67,21 @@ public class JdbcDishRepository implements DishRepository {
     }
 
     /**
-     * 模糊搜索菜品名称，分页列出
+     * 模糊搜索菜品名称，或直接搜索完整的菜品ID，分页列出
      *
-     * @param dish_name 菜品名称关键词
+     * @param keywords 菜品关键词（菜品名称、菜品ID）
      * @param pageNo 起始位置
      * @param PageSize 每页数量
      * @return 分页菜品
      */
     @Override
-    public PaginationSupport<DishCategorySupport> searchByNamePage(String dish_name, int pageNo, int PageSize) {
+    public PaginationSupport<DishCategorySupport> searchByKeywordsPage(String keywords, int pageNo, int PageSize) {
         int totalCount = (int) count();
         int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
 
-        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " WHERE dish_name LIKE '%" + dish_name + "%'" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " WHERE dish_name LIKE '%" + keywords + "%' OR dish_id='" + keywords + "'" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
         List<DishCategorySupport> items = new ArrayList<>();
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
@@ -92,6 +92,29 @@ public class JdbcDishRepository implements DishRepository {
     @Override
     public List<Dish> getAll() {
         return jdbc.query(SELECT_FROM_DISH, new DishRowMapper());
+    }
+
+    /**
+     * 搜索菜品类别列出所有菜品
+     *
+     * @param category 选择的菜品类别
+     * @param pageNo 起始位置
+     * @param PageSize 每页数量
+     * @return 分页菜品
+     */
+    @Override
+    public PaginationSupport<DishCategorySupport> searchByCategoryPage(Category category, int pageNo, int PageSize) {
+        int totalCount = (int) count();
+        int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
+        if (totalCount < 1)
+            return new PaginationSupport<>(new ArrayList<>(0), 0);
+
+        List<Dish> dishes = jdbc.query(SELECT_CATEGORY_DISH + SELECT_PAGE, new DishRowMapper(), category.getCategory_id(), PageSize, startIndex);
+        List<DishCategorySupport> items = new ArrayList<>();
+        for (Dish dish : dishes) {
+            items.add(listDishCategories(dish));
+        }
+        return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
     }
 
     /**
@@ -172,16 +195,15 @@ public class JdbcDishRepository implements DishRepository {
     }
 
     /**
-     * 更新菜品信息
+     * 更新菜品
      *      包括：更新dish信息、更新dish_category信息（先删除原有的，重新添加）
      *
-     * @param dish_name
-     * @param picture_url
-     * @param price
-     * @param description
-     * @param dishCategorySupport
+     * @param dish_name 新菜品名称
+     * @param picture_url 新图片url
+     * @param price 新价格
+     * @param description 新菜品描述
+     * @param dishCategorySupport 菜品类别辅助对象
      */
-
     @Override
     public void updateDish(String dish_name, String picture_url, List<Category> categories, float price, String description, DishCategorySupport dishCategorySupport) {
         // 更新dish表
@@ -247,4 +269,6 @@ public class JdbcDishRepository implements DishRepository {
     private static final String DELETE_DISH = "DELETE FROM dish WHERE dish_id=?";
     // 更新菜品
     private static final String UPDATE_DISH = "UPDATE dish SET dish_name=?, picture_url=?, price=?, description=? WHERE dish_id=?";
+    // 搜索菜品类别
+    private static final String SELECT_CATEGORY_DISH = "SELECT dc.category_id, d.dish_id, d.dish_name, d.picture_url, d.price, d.description FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id=?";
 }
