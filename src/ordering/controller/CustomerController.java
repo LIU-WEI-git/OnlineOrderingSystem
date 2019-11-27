@@ -1,13 +1,14 @@
 package ordering.controller;
 
 import com.oogway.cat.security.AESUtils;
-import com.oogway.cat.security.MD5Utils;
 import ordering.config.RootConfig;
-import ordering.domain.*;
-import ordering.repository.*;
+import ordering.domain.Category;
+import ordering.domain.Customer;
+import ordering.domain.Dish;
+import ordering.repository.CategoryRepository;
+import ordering.repository.CustomerRepository;
 import ordering.repository.DishRepository;
 import ordering.utils.ShoppingCart;
-import ordering.utils.ShoppingCartItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +17,6 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 /**
  * 顾客相关页面控制类
@@ -37,6 +35,9 @@ public class CustomerController {
     private CustomerRepository customerRepository;
     @Autowired
     private DishRepository dishRepository;
+
+    //设置一个私有变量用于搜索菜品翻页时和按类别查看菜品翻页时存储之前传入的参数
+    private String urlParam = null;
     /**
      * 顾客欢迎页
      *
@@ -51,8 +52,76 @@ public class CustomerController {
         //TODO 按菜品类别查看菜品
         model.addAttribute(categoryRepository.getCategoryList());
         model.addAttribute(dishRepository.findByPage(pageNo,pageSize));
+        model.addAttribute("url", "/");
         if (!model.containsAttribute("shoppingCart"))
             model.addAttribute(new ShoppingCart());
+        return "customer_welcome";
+    }
+
+    /**
+     * 顾客通过关键词搜索菜品
+     *
+     * @param keyword
+     * @param pageNo
+     * @param pageSize
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "searchByKeyword", method = RequestMethod.POST)
+    public String searchDish(@RequestParam(value = "keyword", required = false) String keyword,
+                             @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                             @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,
+                             Model model) {
+        if (keyword.equals("")) {
+            model.addAttribute(dishRepository.findByPage(pageNo, pageSize));
+            model.addAttribute("url", "/");
+        } else {
+            model.addAttribute("paginationSupport", dishRepository.searchByKeywordsPage(keyword, pageNo, pageSize));
+            model.addAttribute("url", "/searchByKeyword");
+            urlParam = keyword;
+        }
+        return "customer_welcome";
+    }
+
+    /**
+     * 用户通过关键词搜索后翻页
+     *
+     * @param pageNo
+     * @param pageSize
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "searchByKeyword", method = RequestMethod.GET)
+    public String searchDishTurnPage(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                                     @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,
+                                     Model model) {
+        model.addAttribute("paginationSupport", dishRepository.searchByKeywordsPage(urlParam, pageNo, pageSize));
+        return "customer_welcome";
+    }
+
+    /**
+     * 顾客按类别查看菜品
+     *
+     * @param category_id
+     * @param pageNo
+     * @param pageSize
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "searchByCategory", method = RequestMethod.GET)
+    public String searchDishByCategory(@RequestParam(value = "category_id", required = false) String category_id,
+                                       @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                                       @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,
+                                       Model model, HttpSession session) {
+        //如果category_id不为null，则将用户传入的category_id存入私有变量中urlParam中，为翻页做准备
+        //如果category_id为null说明用户发送翻页请求，此时从存储变量中取出他之前查询的category_id
+        if (category_id == null)
+            category_id = urlParam;
+        else urlParam = category_id;
+        Category category = categoryRepository.getCategoryById(category_id);
+        model.addAttribute("paginationSupport", dishRepository.searchByCategoryPage(category, pageNo, pageSize));
+        model.addAttribute("url", "/searchByCategory");
+
         return "customer_welcome";
     }
 

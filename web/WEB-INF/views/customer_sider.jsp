@@ -13,7 +13,7 @@
         <ul class="category">
             <jsp:useBean id="categoryList" scope="session" type="java.util.List"/>
             <c:forEach var="category" items="${categoryList}">
-                <li><a href="<c:url value="/?category_id=${category.category_id}"/>">${category.category_name}</a></li>
+                <li><a href="<c:url value="/searchByCategory?category_id=${category.category_id}"/>">${category.category_name}</a></li>
             </c:forEach>
         </ul>
     </div>

@@ -63,37 +63,13 @@
                         </div>
                     </c:forEach>
                 </div>
-<%--                <div class="row content_bottom1">--%>
-<%--                    <div class="col-md-3">--%>
-<%--                        <div class="content_box"><a href="single.jsp">--%>
-<%--                            <div class="view view-fifth">--%>
-<%--                                <img src="${pageContext.request.contextPath}/resources/images/p8.jpg" class="img-responsive" alt=""/>--%>
-<%--                                <div class="content_box-grid">--%>
-<%--                                    <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>--%>
-<%--                                    <div class="price">Price:--%>
-<%--                                        <span class="actual">$12.00</span>--%>
-<%--                                    </div>--%>
-<%--                                    <ul class="product_but">--%>
-<%--                                        <li class="but3">Buy</li>--%>
-<%--                                        <li class="like"><span>120</span><i class="like1"> </i></li>--%>
-<%--                                        <div class="clearfix"> </div>--%>
-<%--                                    </ul>--%>
-<%--                                    <div class="mask">--%>
-<%--                                        <div class="info">Quick View</div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </a>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
                 <ul class="dc_pagination dc_paginationA dc_paginationA06">
                     <c:if test="${paginationSupport.previousPage}">
-                        <a href="<c:url value="/?pageNo=${paginationSupport.currentPageNo-1}" />">上一页</a>
+                        <a href="<c:url value="${url}?pageNo=${paginationSupport.currentPageNo-1}" />">上一页</a>
                     </c:if>
                     第${paginationSupport.currentPageNo}页，共${paginationSupport.totalPageCount}页
                     <c:if test="${paginationSupport.nextPage}">
-                        <a href="<c:url value="/?pageNo=${paginationSupport.currentPageNo+1}" />">下一页</a>
+                        <a href="<c:url value="${url}?pageNo=${paginationSupport.currentPageNo+1}" />">下一页</a>
                     </c:if>
                 </ul>
             </div>

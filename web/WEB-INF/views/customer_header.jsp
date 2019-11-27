@@ -96,10 +96,13 @@
                 <div class="clearfix"></div>
             </div>
             <div class="search">
-                <label>
-                    <input type="text" class="text" value="美味搜索" onfocus="this.value = '';" onblur="if (this.value === '') {this.value = '美味搜索';}">
-                </label>
-                <input type="submit" value="搜索">
+                <form method="post" action="<c:url value="/searchByKeyword"/>">
+                    <label>
+                        <input type="text" name="keyword" class="text" value="美味搜索" onfocus="this.value = '';"
+                               onblur="if (this.value === '') {this.value = '美味搜索';}">
+                    </label>
+                    <input type="submit" value="搜索">
+                </form>
             </div>
         </div>
     </div>

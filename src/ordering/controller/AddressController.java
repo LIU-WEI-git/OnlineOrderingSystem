@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -113,10 +114,26 @@ public class AddressController {
     {
         System.out.println(contact);
         Date date =new Date();
-        String address_id=String.valueOf(date.getDay())+String.valueOf(date.getHours())+String.valueOf(date.getMinutes())+String.valueOf(date.getSeconds())
-                +((Customer)session.getAttribute("customer")).getCustomer_account().substring(0,4);
-        if(addressRepository.isInDB(address_id))
-        {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        if (calendar.get(Calendar.DAY_OF_MONTH) < 10) {
+            day = "0" + day;
+        }
+        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
+        if (calendar.get(Calendar.HOUR_OF_DAY) < 10) {
+            hour = "0" + hour;
+        }
+        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
+        if (calendar.get(Calendar.MINUTE) < 10) {
+            minute = "0" + minute;
+        }
+        String second = String.valueOf(calendar.get(Calendar.SECOND));
+        if (calendar.get(Calendar.SECOND) < 10) {
+            second = "0" + second;
+        }
+        String address_id = day + hour + minute + second + ((Customer) session.getAttribute("customer")).getCustomer_account().substring(0, 4);
+        if (addressRepository.isInDB(address_id)) {
             return "redirect:/myAddress/add_address?info=fail to register,please try again";
         }
         Address address = new Address(address_id, ((Customer) session.getAttribute("customer")).getCustomer_account(), contact, phone, info);

@@ -77,6 +77,9 @@
                             <form method="post" action="<c:url value="/shoppingCart/addDish?dish_id=${dish.dish_id}"/>">
                                 <input type="submit" value="加入购物车"/>
                             </form>
+                            <a href="<c:url value="/"/>">
+                                <input type="button" value="返回首页"/>
+                            </a>
                         </div>
 <%--                        TODO 挑战项1：可以选择发送链接给好友，也可以以邮件形式发送--%>
 <%--                        <div class="col-xs-12  col-sm-6  col-md-4">--%>
