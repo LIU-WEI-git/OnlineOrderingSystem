@@ -156,4 +156,19 @@ public interface OrderRepository {
      */
     double getTotalIncome();
 
+    /**
+     * 获取顾客已完成的订单
+     *
+     * @param customer_account
+     * @return
+     */
+    List<Order> completedOrders(String customer_account);
+
+    /**
+     * 获取顾客未完成的订单
+     *
+     * @param customer_account
+     * @return
+     */
+    List<Order> uncompletedOrders(String customer_account);
 }

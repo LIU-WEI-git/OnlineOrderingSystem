@@ -30,7 +30,10 @@
         <div class="Product_top">
             <div class="row content">
                 <div class="col-md-9" style="height: auto">
-                    <a href="<c:url value="/account"/>" style="color: #3071a9">返回我的账户</a><br/><br/>
+                    <a href="<c:url value="/account"/>" style="color: #3071a9">返回我的账户</a>&nbsp;&nbsp;&nbsp;
+                    <a href="<c:url value="/order?complete=2"/> " style="color: #3071a9">查看已完成订单</a>&nbsp;&nbsp;&nbsp;
+                    <a href="<c:url value="/order?complete=0"/> " style="color: #3071a9">查看未完成的订单</a>
+                    <br/><br/>
                     <c:forEach items="${orders}" var="order">
                             <li class="product_right">
                                 <h3>下单时间：${order.create_time}</h3>
