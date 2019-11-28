@@ -1,6 +1,5 @@
 package ordering.repository.jdbc;
 
-import ordering.domain.Admin;
 import ordering.domain.Order;
 import ordering.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,7 +106,7 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public Order getOrder(String order_id) {
-        return jdbcTemplate.queryForObject("select * from `order` where order_id = "+order_id,orderRowMapper);
+        return jdbcTemplate.queryForObject("select * from `order` where order_id = \'" + order_id + "\'", orderRowMapper);
     }
 
     @Override
