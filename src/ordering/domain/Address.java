@@ -16,6 +16,8 @@ public class Address {
     private String info;
     private int delete_tag;
 
+    public static final int DELETED = 1;
+    public static final int UNDELETED=0;
     /**
      * 无参构造函数
      */
