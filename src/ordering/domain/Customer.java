@@ -1,5 +1,6 @@
 package ordering.domain;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -17,12 +18,11 @@ import java.sql.Timestamp;
  */
 public class Customer {
 
-    @NotNull(message = "账号不能为空")
+    @NotBlank(message = "账号不能为空")
     @Size(min = 4, max = 20, message = "账号长度必须在4到20之间")
-    @NotBlank
     private String customer_account;
 
-    @NotNull(message = "用户名不能为空")
+    @NotBlank(message = "用户名不能为空")
     @Size(min = 4, max = 20, message = "用户名长度必须在4到20之间")
     private String customer_name;
 
@@ -31,9 +31,8 @@ public class Customer {
 
     private Timestamp customer_register_time;
 
-    @NotNull(message = "电子邮箱不能为空")
-    @Pattern(regexp = "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$", message = "请输入正确的电子邮箱地址")
-    @Size(min = 5, max = 20, message = "电子邮箱长度必须在5到20之间")
+    @NotBlank(message = "电子邮箱不能为空")
+    @Email
     private String customer_email;
 
     /**
