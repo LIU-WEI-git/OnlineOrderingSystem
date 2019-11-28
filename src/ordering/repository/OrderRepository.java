@@ -1,6 +1,7 @@
 package ordering.repository;
 
 import ordering.domain.Order;
+import ordering.domain.OrderItem;
 
 import java.util.List;
 
@@ -57,6 +58,11 @@ public interface OrderRepository {
      */
     Order getOrder(String order_id);
 
+    /**
+     *
+     * @return
+     */
+    List<Order> findall();
     /**
      * 更新一条订单记录
      * @param order
@@ -155,6 +161,12 @@ public interface OrderRepository {
      * @return
      */
     double getTotalIncome();
+
+    /**
+     * 未确认订单
+     * @return
+     */
+    List<Order> getUncomfirmedOrder();
 
     /**
      * 获取顾客已完成的订单

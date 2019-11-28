@@ -1,5 +1,6 @@
 package ordering.repository.jdbc;
 
+import ordering.domain.Admin;
 import ordering.domain.Order;
 import ordering.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -16,8 +19,24 @@ public class JdbcOrderRepository implements OrderRepository {
 
     private RowMapper<Order> orderRowMapper=new BeanPropertyRowMapper<>(Order.class);
 
+    private static class orderRowMapper implements RowMapper<Order> {
+
+        @Override
+        public Order mapRow(ResultSet rs, int i) throws SQLException {
+            return new Order(rs.getString("order_id"), rs.getString("customer_account"),
+                    rs.getString("address_id"), rs.getTimestamp("create_time"),
+                    rs.getString("remark"), rs.getInt("order_state"), rs.getInt("delivery_state"),
+                    rs.getFloat("discount"),
+                    rs.getFloat("order_price"));
+        }
+    }
+
     private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
-    private static final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
+    private static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";
+    private static  final String AdMIN_ORDERS="select * from `order`";
+
+   /* private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    private static final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";*/
 
     // 设置订单折扣
     private static final String SET_DISCOUNT = "UPDATE `order` SET discount=? WHERE order_id=?";
@@ -35,6 +54,8 @@ public class JdbcOrderRepository implements OrderRepository {
     private static final String SELECT_ORDER = "SELECT * FROM `order`";
     // 排序
     private static final String ORDER_BY = " ORDER BY create_time DESC";
+    //未确认 未配送
+    private static final String SELECT_UNCONFIRMED_UNDELIVERED_ORDER = SELECT_ORDER + " WHERE order_state=0 AND delivery_state=0";
     // 查询已确认但未配送的订单
     private static final String SELECT_CONFIRMED_UNDELIVERED_ORDER = SELECT_ORDER + " WHERE order_state=1 AND delivery_state=0";
     // 查询正在配送的订单
@@ -46,6 +67,8 @@ public class JdbcOrderRepository implements OrderRepository {
     private static final String SELECT_COMPLETED_COUNT = "SELECT COUNT(*) FROM `order` WHERE order_state=2 AND delivery_state=2";
     // 获取收入
     private static final String TOTAL_INCOME = "SELECT COALESCE(SUM(v.per_income), 0) AS income FROM (SELECT order_id, create_time, (order_price + discount) AS per_income FROM `order` WHERE order_state=2 AND delivery_state=2) AS v";
+    /*private static final String TOTAL_ORDERS="select count(*) from `order` where customer_account = ";
+    private static  final String CUSTOMER_ORDERS="select * from `order` where customer_account = ";*/
 
     @Autowired
     public JdbcOrderRepository(JdbcTemplate jdbcTemplate){
@@ -86,6 +109,12 @@ public class JdbcOrderRepository implements OrderRepository {
     public Order getOrder(String order_id) {
         return jdbcTemplate.queryForObject("select * from `order` where order_id = "+order_id,orderRowMapper);
     }
+
+    @Override
+    public List<Order> findall() {
+        return jdbcTemplate.query(AdMIN_ORDERS,new orderRowMapper());
+    }
+
 
     @Override
     public boolean resetOrder(Order order) {
@@ -144,6 +173,11 @@ public class JdbcOrderRepository implements OrderRepository {
     public List<Order> getCompletedOrder() {
         return jdbcTemplate.query(SELECT_COMPLETED_ORDER + ORDER_BY, orderRowMapper);
     }
+    @Override
+    public List<Order> getUncomfirmedOrder() {
+        return jdbcTemplate.query(SELECT_UNCONFIRMED_UNDELIVERED_ORDER + ORDER_BY, orderRowMapper);
+    }
+
 
     @Override
     public long getTotalCompletedOrdersByDayNum(String day) {

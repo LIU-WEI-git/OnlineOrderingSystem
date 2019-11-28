@@ -101,4 +101,8 @@ public interface DishRepository {
      */
     void updateDish(String dish_name, String picture_url, List<Category> categories, float price, String description, DishCategorySupport dishCategorySupport);
 
+   /* Dish save(Dish dish);*/
+
+
+    List<Dish> searchDish(String a);
 }

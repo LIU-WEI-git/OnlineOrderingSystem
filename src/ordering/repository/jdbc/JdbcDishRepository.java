@@ -2,9 +2,9 @@ package ordering.repository.jdbc;
 
 import ordering.domain.Category;
 import ordering.domain.Dish;
-import ordering.repository.DishRepository;
 import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
+import ordering.repository.DishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -154,12 +154,23 @@ public class JdbcDishRepository implements DishRepository {
         return new DishCategorySupport(categories, dish);
     }
 
+
+    @Override
+    public List<Dish> searchDish(String a) {
+
+        return jdbc.query(SELECT_DISH, new DishRowMapper(), a,a);
+    }
+
+
     /**
      * 删除菜品
      * 包括：删除dish表、dish_category表信息
      *
      * @param dish_id 菜品ID
      */
+
+
+
     @Override
     public void deleteDish(String dish_id) {
         // 在dish_category内删除
@@ -187,7 +198,7 @@ public class JdbcDishRepository implements DishRepository {
         jdbcInsertDish.execute(dishArgs);
 
         // 添加dish_category表
-        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withCatalogName("dish_category");
+        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withTableName("dish_category");
         Map<String, Object> dish_categoryArgs = new HashMap<>();
         for (Category category : dishCategorySupport.getCategories()) {
             dish_categoryArgs.put("category_id", category.getCategory_id());
@@ -260,6 +271,7 @@ public class JdbcDishRepository implements DishRepository {
      * SQL语句
      */
     // 取得所有菜品
+    private static final String SELECT_DISH="SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE dish_id  like ? or dish_name like ?";
     private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish";
     // 分页
     private static final String SELECT_PAGE = " order by dish_id limit ? offset ?";

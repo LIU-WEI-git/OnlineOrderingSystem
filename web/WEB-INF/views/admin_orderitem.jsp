@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: owner
-  Date: 2019/11/24
-  Time: 19:22
+  Date: 2019/11/27
+  Time: 18:53
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
@@ -48,13 +49,20 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-                <%request.getSession().getAttribute("admin");%>
-            <form action="<c:url value="/admin/personma"/>">
-                电话： <input type="text"  name="phone" value="${admin.getAdmin_phone()}" minlength="2" maxlength="15" required/><br/><br/>
-                邮箱： <input type="email"  name="email" value="${admin.getAdmin_email()}"  required/><br/><br/>
-                <input type="submit" value="修改" />
-            </form>
-            <a href="<c:url value="/admin/person"/>">返回</a>
+            <c:forEach items="${orderitems}" var="item">
+                <div style="margin-top:20px;">
+                    <div style="width: 40%;height: auto;">
+                        <img src="${pageContext.request.contextPath}/resources/${item.picture_url}"/>
+                    </div>
+                    <div style="width: 60%;font-size:1.5em">
+                        <span style="margin-top: 5px;">菜品名称：${item.dish_name}</span><br>
+                        <span style="margin-top: 5px;">菜品单价：${item.price}</span><br>
+                        <span style="margin-top: 5px;">菜品数量：${item.amount}</span><br>
+                        <span style="margin-top: 5px;">总计：${item.total_price}</span><br>
+                        <a href="<c:url value="/order"/> ">返回</a>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
     </div></div>
 
@@ -62,25 +70,26 @@
 
 <!--   Core JS Files   -->
 <script src="${pageContext.request.contextPath}/res/js/jquery-1.10.2.js" type="text/javascript"></script>
-            <script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js" type="text/javascript"></script>
 
-            <!--  Checkbox, Radio & Switch Plugins -->
-            <script src="${pageContext.request.contextPath}/res/js/bootstrap-checkbox-radio.js"></script>
+<!--  Checkbox, Radio & Switch Plugins -->
+<script src="${pageContext.request.contextPath}/res/js/bootstrap-checkbox-radio.js"></script>
 
-            <!--  Charts Plugin -->
-            <script src="${pageContext.request.contextPath}/res/js/chartist.min.js"></script>
+<!--  Charts Plugin -->
+<script src="${pageContext.request.contextPath}/res/js/chartist.min.js"></script>
 
-            <!--  Notifications Plugin    -->
-            <script src="${pageContext.request.contextPath}/res/js/bootstrap-notify.js"></script>
+<!--  Notifications Plugin    -->
+<script src="${pageContext.request.contextPath}/res/js/bootstrap-notify.js"></script>
 
-            <!--  Google Maps Plugin    -->
-            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
-            <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-            <script src="${pageContext.request.contextPath}/res/js/paper-dashboard.js"></script>
+<!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+<script src="${pageContext.request.contextPath}/res/js/paper-dashboard.js"></script>
 
-            <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-            <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
+<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+<script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
 
 
 </html>
+

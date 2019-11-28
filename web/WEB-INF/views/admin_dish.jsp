@@ -52,11 +52,14 @@
                     <span class="input-group-btn">
                         <select  name="signal" class="btn btn-info btn-search">
                             <option>all</option>
-                            <option>pizza</option>
+<c:forEach items="${categories}" var="category" varStatus="li">
+    <option>${category.getCategory_name()}</option>
+</c:forEach>
+                            <%--<option>pizza</option>
                             <option>bakedrice</option>
                             <option>bakednoodles</option>
                             <option>snack</option>
-                            <option>drink</option>
+                            <option>drink</option>--%>
                         </select>
                     </span>
                 <input type="text" class="form-control" name="message"
@@ -66,7 +69,9 @@
                     </span>
         </form>
 
-
+<div>
+    <a href="<c:url value="/admin/adddish"  />" style="font-size:30px" >添加菜品</a>
+</div>
             <div class="content table-responsive table-full-width">
             <table class="table table-striped">
                 <thead>
@@ -75,6 +80,7 @@
                 <th style="text-align: center">price</th>
                 <th style="text-align: center">description</th>
                 <th style="text-align: center">picture</th>
+                <th style="text-align: center">删除菜品</th>
                 <th style="text-align: center">修改菜品</th>
                 </thead>
                 <tbody>
@@ -84,7 +90,10 @@
                     <td align="center">${dish.getDish_name()}</td>
                     <td align="center">${dish.getPrice()}</td>
                     <td align="center">${dish.getDescription()}</td>
-                    <td align="center"><img src="${pageContext.request.contextPath}/resources/images/p1.jpg"</td>
+                    <td align="center"><img src="${pageContext.request.contextPath}/resources/${dish.getPicture_url()}"></td>
+                    <td align="center">
+                    <a href="<c:url value="/admin/deletedish?dish_id=${dish.getDish_id()}" />">删除</a>
+                    </td>
                     <td align="center">
                         <a href="<c:url value="/admin/changedish?dish_id=${dish.getDish_id()}" />">修改</a>
                     </td>
@@ -144,21 +153,6 @@
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
 
-        demo.initChartist();
-
-        $.notify({
-            icon: 'ti-gift',
-            message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-        },{
-            type: 'success',
-            timer: 4000
-        });
-
-    });
-</script>
 
 </html>

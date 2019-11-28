@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: owner
-  Date: 2019/11/24
-  Time: 16:51
+  Date: 2019/11/25
+  Time: 16:50
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 <html lang="en">
@@ -47,53 +48,30 @@
     <jsp:include page="admin_sider.jsp" flush="true"/>
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
-
-        <%request.getAttribute("blist");%>
         <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="card">
-                        <div class="header">
-                            <h4 class="title">Dish Category</h4>
-                        </div>
-                        <div class="content">
+            <form method="POST" >
 
-                            <table style="width:100%;border:1px white solid">
-                                <tr bgcolor="#4F81BD"style="color: #fff;">
-                                    <th style="text-align: center">category_id</th>
-                                    <th style="text-align: center">category_name</th>
+                菜品编号：<input type="text"  name="id" minlength="2" maxlength="6" required/><br/><br/>
+                菜品名称：<input type="text"  name="name" minlength="2" maxlength="8" required/><br/><br/>
+                菜品价格：<input type="number" name="price"  minlength="1" maxlength="6" required/><br/><br/>
+                菜品图片：<input  type="text" name="url" required/><br/><br/>
+                菜品描述：<input  type="text"  name="description"  minlength="2" maxlength="20" required/><br/><br/>
+                菜品类：
+                <c:forEach items="${pcategories}" var="category" varStatus="li">
+                    <input type="checkbox" name="cate" value="${category.getCategory_id()}">${category.getCategory_name()}
+                </c:forEach>
+                <input type="submit" value="添加" />
+            </form>
+            <%request.getSession().getAttribute("f");%>
+            <p>${f}</p>
 
-                                    <th style="text-align: center">修改</th>
-                                    <th style="text-align: center">删除</th>
-                                </tr>
-                                <c:forEach items="${blist}" var="category" varStatus="li">
-                                    <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
-                                        <td align="center">${category.getCategory_id()}</td>
-                                        <td align="center">${category.getCategory_name()}</td>
-                                        <td align="center">
-                                            <a href="<c:url value="/admin/turnchange?category_id=${category.getCategory_id()}" />">修改</a>
-                                        </td>
-                                        <td align="center">
-                                            <a href="<c:url value="/admin/deletecategory?category_id=${category.getCategory_id()}" />">删除</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </table>
-                            <%request.getSession().getAttribute("a");%>
-                            <p>${a}</p>
-                            <a href="<c:url value="/admin/addcategory" />">添加菜品类</a>
-                            <%-- <button type="submit" class="btn btn-info btn-fill btn-wd" href="<c:url value="/admin/addadmin" />">添加管理员</button>--%>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
-
-
-
     </div>
+</div>
+
+
+
+</div>
 </div>
 
 
@@ -118,22 +96,4 @@
 
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
-
-<%--<script type="text/javascript">
-    $(document).ready(function(){
-
-        demo.initChartist();
-
-        $.notify({
-            icon: 'ti-gift',
-            message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-        },{
-            type: 'success',
-            timer: 4000
-        });
-
-    });
-</script>--%>
 </html>
-
