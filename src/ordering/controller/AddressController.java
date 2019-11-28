@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
-import java.util.Calendar;
 import java.util.Date;
+import java.util.Calendar;
 
 /**
  * 顾客地址信息操作相关的控制类
@@ -54,7 +54,6 @@ public class AddressController {
     @RequestMapping(value="/delete_address",method = RequestMethod.GET)
     public String deleteAddress(@RequestParam(value = "address_id")String address_id, Model model)
     {
-        //TODO order表的address_id有外键约束，需要判断地址信息是否可删，或者修改address表，新增delete_tag属性
         addressRepository.deleteAddress(address_id);
         return "redirect:/myAddress";
     }
@@ -92,7 +91,7 @@ public class AddressController {
                                 @RequestParam(value = "address_info")String info,
                                 Model model)
     {
-        Address address=new Address(address_id,customer_account,contact,phone,info,Address.UNDELETED);
+        Address address = new Address(address_id, customer_account, contact, phone, info);
         addressRepository.resetAddress(address);
         return "redirect:/myAddress";
     }
@@ -113,37 +112,31 @@ public class AddressController {
                              @RequestParam(value = "address_info")String info,
                              HttpSession session, Model model)
     {
-        //TODO 输入为空的时候会报错，页面显示500
         System.out.println(contact);
         Date date =new Date();
-        Calendar calendar=Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        String day=String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
-        if(calendar.get(Calendar.DAY_OF_MONTH)<10)
-        {
-            day="0"+day;
+        String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        if (calendar.get(Calendar.DAY_OF_MONTH) < 10) {
+            day = "0" + day;
         }
-        String hour=String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
-        if(calendar.get(Calendar.HOUR_OF_DAY)<10)
-        {
-            hour="0"+hour;
+        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
+        if (calendar.get(Calendar.HOUR_OF_DAY) < 10) {
+            hour = "0" + hour;
         }
-        String minute=String.valueOf(calendar.get(Calendar.MINUTE));
-        if(calendar.get(Calendar.MINUTE)<10)
-        {
-            minute="0"+minute;
+        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
+        if (calendar.get(Calendar.MINUTE) < 10) {
+            minute = "0" + minute;
         }
-        String second =String.valueOf(calendar.get(Calendar.SECOND));
-        if(calendar.get(Calendar.SECOND)<10)
-        {
-            second="0"+second;
+        String second = String.valueOf(calendar.get(Calendar.SECOND));
+        if (calendar.get(Calendar.SECOND) < 10) {
+            second = "0" + second;
         }
-        String address_id=day+hour+minute+second +((Customer)session.getAttribute("customer")).getCustomer_account().substring(0,4);
-        if(addressRepository.isInDB(address_id))
-        {
+        String address_id = day + hour + minute + second + ((Customer) session.getAttribute("customer")).getCustomer_account().substring(0, 4);
+        if (addressRepository.isInDB(address_id)) {
             return "redirect:/myAddress/add_address?info=fail to register,please try again";
         }
-        Address address=new Address(address_id,((Customer) session.getAttribute("customer")).getCustomer_account(),contact,phone,info,Address.UNDELETED);
+        Address address = new Address(address_id, ((Customer) session.getAttribute("customer")).getCustomer_account(), contact, phone, info);
         addressRepository.addAddress(address);
         return "redirect:/myAddress";
     }

@@ -82,31 +82,11 @@
                     <div>
                         总价：￥${shoppingCart.totalPrice}
                         <div class="register-but">
-                            <a href="<c:url value="/order/createOrder"/>">
+                            <a href="<c:url value="order/createOrder"/>">
                                 <input type="submit" value="结算"/>
                             </a>
                         </div>
                     </div>
-                    <%--                    <ul class="product_img">--%>
-                    <%--                        <li class="product_left"><img src="${pageContext.request.contextPath}/resources/" class="img-responsive" alt=""/>--%>
-                    <%--                            <p>In Stock:999</p>--%>
-                    <%--                        </li>--%>
-                    <%--                        <li class="product_right">--%>
-                    <%--                            <h3>Date Added: Wed 25 June, 2014</h3>--%>
-                    <%--                            <h4><a href="#">nostrud exerci tation ullamcorper suscipit </a></h4>--%>
-                    <%--                            <span class="model"><strong>Model : </strong>Model6</span><br>--%>
-                    <%--                            <span class="model"><strong>Manufacturer : </strong>Example1</span>--%>
-                    <%--                            <div class="product_price">Price:--%>
-                    <%--                                <span class="actual">$12.00</span>--%>
-                    <%--                            </div>--%>
-                    <%--                            <div class="but1">--%>
-                    <%--                                <a href="#">Buy Now</a>--%>
-                    <%--                            </div>--%>
-                    <%--                        </li>--%>
-                    <%--                        <div class="clearfix"> </div>--%>
-                    <%--                        <h5 class="detail">Details:</h5>--%>
-                    <%--                        <p class="detail_desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie<a href="#">...More Info</a></p>--%>
-                    <%--                    </ul>--%>
                 </div>
             </div>
         </div>

@@ -16,12 +16,31 @@ public class Address {
     private String info;
     private int delete_tag;
 
-    public static final int DELETED = 1;
-    public static final int UNDELETED=0;
+    public static int ADDRESS_UNDELETED = 0;
+    public static int ADDRESS_DELETED = 1;
+
     /**
      * 无参构造函数
      */
     public Address() {
+    }
+
+    /**
+     * 构造函数，默认删除状态为为删除
+     *
+     * @param address_id
+     * @param customer_account
+     * @param contact
+     * @param phone
+     * @param info
+     */
+    public Address(String address_id, String customer_account, String contact, String phone, String info) {
+        this.address_id = address_id;
+        this.customer_account = customer_account;
+        this.contact = contact;
+        this.phone = phone;
+        this.info = info;
+        this.delete_tag = ADDRESS_UNDELETED;
     }
 
     /**
@@ -32,6 +51,7 @@ public class Address {
      * @param contact
      * @param phone
      * @param info
+     * @param delete_tag
      */
     public Address(String address_id, String customer_account, String contact, String phone, String info,int delete_tag) {
         this.address_id = address_id;
