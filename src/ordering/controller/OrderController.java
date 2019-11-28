@@ -52,19 +52,28 @@ public class OrderController {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String viewCustomerOrder(Model model, HttpSession session)
+    public String viewCustomerOrder(@RequestParam(value = "complete",required = false)String complete ,Model model, HttpSession session)
     {
         //如果用户未登录，重定向到登录界面
         if(session.getAttribute("customer")==null){
             return "redirect:/login";
         }
         List<Order> orders;
-        orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+        if(complete==null)
+        {
+            orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+        }
+        else if(complete.equals("2"))
+        {
+            orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+        }
+        else{
+            orders=orderRepository.uncompletedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+        }
         //orders = orderRepository.getCustomerOrders(String.valueOf(10086123));
         model.addAttribute("orders",orders);
         return "customer_order";
     }
-
     /**
      * 查看订单的地址详情
      *

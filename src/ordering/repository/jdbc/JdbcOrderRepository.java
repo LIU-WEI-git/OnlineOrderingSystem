@@ -165,5 +165,15 @@ public class JdbcOrderRepository implements OrderRepository {
         return jdbcTemplate.queryForObject(TOTAL_INCOME, double.class);
     }
 
+    @Override
+    public List<Order> completedOrders(String customer_account) {
+        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"' and order_state =2 order by create_time DESC ",orderRowMapper);
+    }
+
+    @Override
+    public List<Order> uncompletedOrders(String customer_account) {
+        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"' and (order_state =0 or order_state = 1 )order by create_time DESC ",orderRowMapper);
+    }
+
 
 }
