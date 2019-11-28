@@ -76,8 +76,8 @@
             <div class="content table-responsive table-full-width">
             <c:forEach items="${orders}" var="order">
                 <ul class="">
-                    <li class=""><img src="${pageContext.request.contextPath}/resources/images/pic8.jpg" class="img-responsive" alt=""/>
-                        <p>In Stock:999</p>
+                    <li class=""><img src="" class="img-responsive" alt=""/>
+                        <p>订单流水号：${order.order_id}</p>
                     </li>
                     <li class="product_right">
                         <h3>下单时间：${order.create_time}</h3>

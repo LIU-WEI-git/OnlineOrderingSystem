@@ -90,7 +90,7 @@
                     <td align="center">${dish.getDish_name()}</td>
                     <td align="center">${dish.getPrice()}</td>
                     <td align="center">${dish.getDescription()}</td>
-                    <td align="center"><img src="${pageContext.request.contextPath}/resources/images/p1.jpg"></td>
+                    <td align="center"><img src="${pageContext.request.contextPath}/resources/${dish.getPicture_url()}"></td>
                     <td align="center">
                     <a href="<c:url value="/admin/deletedish?dish_id=${dish.getDish_id()}" />">删除</a>
                     </td>
@@ -153,21 +153,6 @@
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
 
-        demo.initChartist();
-
-        $.notify({
-            icon: 'ti-gift',
-            message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-        },{
-            type: 'success',
-            timer: 4000
-        });
-
-    });
-</script>
 
 </html>

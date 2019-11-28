@@ -46,6 +46,8 @@ public class AdminController {
     private  OrderItemInfoViewRepository orderItemInfoViewRepository;
     @Autowired
     private  OrderAddressInfoViewRepository orderAddressInfoViewRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
     /**
      * 管理员登陆
      * @return
@@ -204,7 +206,7 @@ public class AdminController {
     }
 
     /**
-     *
+     *改变菜品
      * @return
      */
     @RequestMapping(value = "/changedish", method = POST)
@@ -219,18 +221,32 @@ public class AdminController {
         return "admin_dishcategory";
     }
 
+    /**
+     * 个人信息
+     * @return
+     */
 
     @RequestMapping(value = "/person", method = GET)
     public String personal(){
         return "admin_person";
     }
 
-
+    /**
+     * 个人信息修改跳转
+     * @return
+     */
     @RequestMapping(value = "/personmate", method = GET)
     public String personmate(){
         return "admin_pchange";
     }
 
+    /**
+     * 个人信息修改
+     * @param email
+     * @param phone
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/personma", method = GET)
     public String changeperson(@RequestParam(value = "email", defaultValue = "") String email,
                            @RequestParam(value = "phone", defaultValue = "") String phone, HttpSession session){
@@ -345,7 +361,11 @@ session.setAttribute("admin",admin);
     }
 
 
-
+    /**
+     * 删除菜品
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/deletedish", method = GET)
     public String deletedish(@RequestParam(value = "dish_id", defaultValue = "") String id) {
         /*Dish dish=dishRepository.findById(id);*/
@@ -445,7 +465,11 @@ session.setAttribute("admin",admin);
 
     }
 
-
+    /**
+     * 订单页跳转
+     * @param session
+     * @return
+     */
     @RequestMapping(value="/order",method = GET)
     public String viewCustomerOrder(HttpSession session)
     {
@@ -458,7 +482,11 @@ session.setAttribute("admin",admin);
         return "admin_orderlist";
     }
 
-
+    /**
+     * 订单id搜素
+     * @param id
+     * @return
+     */
     @RequestMapping(value="/ordered",method = GET)
     public String Odered(@RequestParam(value = "id", defaultValue = "") String id)
     {
@@ -468,14 +496,23 @@ session.setAttribute("admin",admin);
         return "admin_orderlist";
     }
 
+
+    /**
+     * 总览页面
+     * @param session
+     * @return
+     */
     @RequestMapping(value="/overall",method = GET)
     public String overalll(HttpSession session)
     {
  double income=orderRepository.getTotalIncome();
  long totalorder=orderRepository.getTotalCompletedOrdersNum();
+ int cs=customerRepository.totalCustomers();
+ long as=adminRepository.count();
  session.setAttribute("income",income);
  session.setAttribute("totalorder",totalorder);
-
+ session.setAttribute("cs",cs);
+ session.setAttribute("as",as);
         return "admin_allview";
     }
 
@@ -515,7 +552,12 @@ session.setAttribute("admin",admin);
        return "admin_orderlist";
         }
 
-
+    /**
+     * 搜索订单
+     * @param message
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/searchorder", method = GET)
     public String searchorderbycustomer(@RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
         List<Order> orders=new ArrayList<>();
@@ -528,7 +570,11 @@ session.setAttribute("admin",admin);
     }
 
 
-
+    /**
+     * 确认订单
+     * @param id
+     * @return
+     */
     @RequestMapping(value="/confirmorder",method = GET)
     public String confirmorder(@RequestParam(value = "order_id", defaultValue = "") String id)
     {
@@ -537,6 +583,11 @@ session.setAttribute("admin",admin);
         return "redirect:/admin/order";
     }
 
+    /**
+     * 开始配送
+     * @param id
+     * @return
+     */
     @RequestMapping(value="/begindeliver",method = GET)
     public String begindeliver(@RequestParam(value = "order_id", defaultValue = "") String id)
     {
@@ -545,6 +596,11 @@ session.setAttribute("admin",admin);
         return "redirect:/admin/order";
     }
 
+    /**
+     * 结束配送
+     * @param id
+     * @return
+     */
     @RequestMapping(value="/enddeliver",method = GET)
     public String enddeliver(@RequestParam(value = "order_id", defaultValue = "") String id)
     {
@@ -554,6 +610,12 @@ session.setAttribute("admin",admin);
         return "redirect:/admin/order";
     }
 
+    /**
+     * 订单详情
+     * @param order_id
+     * @param model
+     * @return
+     */
     @RequestMapping(value="/order_item",method=GET)
     public String viewOrderItemInfo(@RequestParam(value="order_id" ) String order_id ,Model model)
     {
@@ -562,7 +624,12 @@ session.setAttribute("admin",admin);
         return "admin_orderitem";
     }
 
-
+    /**
+     * 订单地址详情
+     * @param order_id
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/address_info",method = GET)
     public String viewOrderAddressInfo(@RequestParam(value ="order_id" )String order_id, Model model)
     {

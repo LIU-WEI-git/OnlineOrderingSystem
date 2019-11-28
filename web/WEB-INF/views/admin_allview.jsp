@@ -56,7 +56,9 @@
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
 <%request.getSession().getAttribute("income");
-request.getSession().getAttribute("totalorder");%>
+request.getSession().getAttribute("totalorder");
+    request.getSession().getAttribute("cs");
+    request.getSession().getAttribute("as");%>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
@@ -123,8 +125,8 @@ request.getSession().getAttribute("totalorder");%>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Errors</p>
-                                            23
+                                            <p>customer count</p>
+                                            ${cs}
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +153,7 @@ request.getSession().getAttribute("totalorder");%>
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>admin number</p>
-                                            3
+                                            ${as}
                                         </div>
                                     </div>
                                 </div>
