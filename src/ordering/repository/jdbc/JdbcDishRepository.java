@@ -202,8 +202,9 @@ public class JdbcDishRepository implements DishRepository {
         for (Category category : dishCategorySupport.getCategories()) {
             dish_categoryArgs.put("category_id", category.getCategory_id());
             dish_categoryArgs.put("dish_id", dishCategorySupport.getDish().getDish_id());
+            jdbcInsertDish_Category.execute(dish_categoryArgs);
         }
-        jdbcInsertDish_Category.execute(dish_categoryArgs);
+
     }
 
     /**
@@ -228,13 +229,14 @@ public class JdbcDishRepository implements DishRepository {
         // 保存添加后状态
         dishCategorySupport.setCategories(categories);
         // jdbc添加
-        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withCatalogName("dish_category");
+        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withTableName("dish_category");
         Map<String, Object> dish_categoryArgs = new HashMap<>();
         for (Category category : categories) {
             dish_categoryArgs.put("category_id", category.getCategory_id());
             dish_categoryArgs.put("dish_id", dishCategorySupport.getDish().getDish_id());
+            jdbcInsertDish_Category.execute(dish_categoryArgs);
         }
-        jdbcInsertDish_Category.execute(dish_categoryArgs);
+
     }
 
     /**

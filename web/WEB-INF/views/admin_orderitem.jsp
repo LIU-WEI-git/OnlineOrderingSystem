@@ -59,7 +59,7 @@
                         <span style="margin-top: 5px;">菜品单价：${item.price}</span><br>
                         <span style="margin-top: 5px;">菜品数量：${item.amount}</span><br>
                         <span style="margin-top: 5px;">总计：${item.total_price}</span><br>
-                        <a href="<c:url value="/order"/> ">返回</a>
+                        <%--<a href="<c:url value="/order"/> ">返回</a>--%>
                     </div>
                 </div>
             </c:forEach>

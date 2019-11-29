@@ -9,13 +9,13 @@
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_allview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_allview.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_addsuccess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_addsuccess.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishchange.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishchange.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderitem.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderitem.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_useradd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_useradd.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +266,8 @@
       <workItem from="1574784714293" duration="395000" />
       <workItem from="1574834923470" duration="19360000" />
       <workItem from="1574869158899" duration="1619000" />
-      <workItem from="1574914183169" duration="1238000" />
+      <workItem from="1574914183169" duration="1363000" />
+      <workItem from="1574993350294" duration="5272000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -408,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574870775841</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="99">
+      <created>1574915482010</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574915482010</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,32 +479,20 @@
     <MESSAGE value="93" />
     <MESSAGE value="96" />
     <MESSAGE value="97" />
-    <option name="LAST_COMMIT_MESSAGE" value="97" />
+    <MESSAGE value="99" />
+    <option name="LAST_COMMIT_MESSAGE" value="99" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java</url>
-          <line>189</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java</url>
-          <line>196</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ordering/repository/jdbc/JdbcDishRepository.java</url>
-          <line>201</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="orderAddressInfoViewRepository" language="JAVA" />
         <watch expression="this" />
+        <watch expression="category" />
+        <watch expression="category" />
+        <watch expression="((String)((HashMap.Node)((HashMap)dish_categoryArgs).entrySet().toArray()[1]).getKey()).hash" custom="java.util.HashMap.Node,java.lang.String,java.util.HashMap" />
+        <watch expression="((String)((HashMap.Node)((HashMap)dish_categoryArgs).entrySet().toArray()[1]).getKey()).hash" language="JAVA" custom="java.util.HashMap.Node,java.lang.String,java.util.HashMap" />
+        <watch expression="((String)((HashMap.Node)((HashMap)dish_categoryArgs).entrySet().toArray()[1]).getKey()).value" custom="java.util.HashMap.Node,java.lang.String,java.util.HashMap" />
+        <watch expression="((String)((HashMap.Node)((HashMap)dish_categoryArgs).entrySet().toArray()[1]).getKey()).value" language="JAVA" custom="java.util.HashMap.Node,java.lang.String,java.util.HashMap" />
       </configuration>
     </watches-manager>
   </component>
