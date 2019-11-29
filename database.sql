@@ -66,17 +66,18 @@ DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `category_id` varchar(20) NOT NULL,
   `category_name` varchar(20) NOT NULL,
+  `delete_tag` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `category` */
 
-insert  into `category`(`category_id`,`category_name`) values 
-('201','披萨'),
-('202','汉堡'),
-('203','面食'),
-('204','小吃'),
-('205','饮料');
+insert  into `category`(`category_id`,`category_name`,`delete_tag`) values 
+('201','披萨',0),
+('202','汉堡',0),
+('203','面食',0),
+('204','小吃',0),
+('205','饮料',0);
 
 /*Table structure for table `customer` */
 
@@ -108,21 +109,22 @@ CREATE TABLE `dish` (
   `picture_url` varchar(100) DEFAULT NULL,
   `price` float NOT NULL,
   `description` varchar(200) DEFAULT NULL,
+  `delete_tag` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`dish_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `dish` */
 
-insert  into `dish`(`dish_id`,`dish_name`,`picture_url`,`price`,`description`) values 
-('10001','芝士焗饭','images/p1.jpg',10,'学生最爱'),
-('10002','芝士焗面','images/p2.jpg',12,'上班族最爱'),
-('10003','刘威牌果汁','images/p3.jpg',15,'好喝得不得了'),
-('10004','炸薯条','images/p4.jpg',8,'好吃'),
-('10005','烤肉拌饭','images/p5.jpg',11,'肉多'),
-('10006','炸鸡拌饭','images/p6.jpg',11,'脆爽炸鸡'),
-('10007','孜然炒饭','images/p7.jpg',9,'分量足'),
-('10008','大盘鸡拌面','images/p8.jpg',8,'地道大盘鸡'),
-('10009','一盒好饭','images/p1.jpg',14,'真的是一盒好饭');
+insert  into `dish`(`dish_id`,`dish_name`,`picture_url`,`price`,`description`,`delete_tag`) values 
+('10001','芝士焗饭','images/p1.jpg',10,'学生最爱',0),
+('10002','芝士焗面','images/p2.jpg',12,'上班族最爱',0),
+('10003','刘威牌果汁','images/p3.jpg',15,'好喝得不得了',0),
+('10004','炸薯条','images/p4.jpg',8,'好吃',0),
+('10005','烤肉拌饭','images/p5.jpg',11,'肉多',0),
+('10006','炸鸡拌饭','images/p6.jpg',11,'脆爽炸鸡',0),
+('10007','孜然炒饭','images/p7.jpg',9,'分量足',0),
+('10008','大盘鸡拌面','images/p8.jpg',8,'地道大盘鸡',0),
+('10009','一盒好饭','images/p1.jpg',14,'真的是一盒好饭',0);
 
 /*Table structure for table `dish_category` */
 
@@ -176,7 +178,7 @@ CREATE TABLE `order` (
 
 insert  into `order`(`order_id`,`customer_account`,`address_id`,`create_time`,`remark`,`order_state`,`delivery_state`,`discount`,`order_price`) values 
 ('121212121212','10086123','252525252525','2019-11-13 21:25:56','麻烦配送快一点',0,0,-10,40),
-('121212121213','10086223','262626262626','2019-11-19 21:26:39',NULL,2,2,0,72),
+('121212121213','10086223','262626262626','2019-11-19 21:26:39','',2,2,0,72),
 ('1f61c4fd61d7d357','10086123','252525252525','2019-11-25 19:11:27','',1,1,10,43),
 ('63f3e094a826c72f','10086123','252525252525','2019-11-25 19:52:26','',2,2,0,8),
 ('af0aec2aafa8ec71','10086223','262626262626','2019-11-25 20:14:14','1111',0,0,0,18);
