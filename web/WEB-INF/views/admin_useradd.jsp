@@ -55,7 +55,7 @@
                 姓名：<input type="text"  name="admin_name" minlength="2" maxlength="4" required/><br/><br/>
                 密码：<input type="password" name="admin_password"  minlength="2" maxlength="6" required/><br/><br/>
                 邮箱：<input  type="email" name="admin_email" required/><br/><br/>
-                电话：<input  type="text"  name="admin_phone"  minlength="2" maxlength="4" required/><br/><br/>
+                电话：<input type="text" name="admin_phone" minlength="2" maxlength="15" required/><br/><br/>
 
                 <input type="submit" value="添加" />
             </form>
@@ -135,11 +135,6 @@
 
         </div>
     </div>
-</div>
-
-
-
-</div>
 </div>
 
 

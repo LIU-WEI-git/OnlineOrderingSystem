@@ -52,14 +52,14 @@
             <c:forEach items="${orderitems}" var="item">
                 <div style="margin-top:20px;">
                     <div style="width: 40%;height: auto;">
-                        <img src="${pageContext.request.contextPath}/resources/${item.picture_url}"/>
+                        <img src="${pageContext.request.contextPath}/resources/${item.picture_url}" alt=""/>
                     </div>
                     <div style="width: 60%;font-size:1.5em">
                         <span style="margin-top: 5px;">菜品名称：${item.dish_name}</span><br>
                         <span style="margin-top: 5px;">菜品单价：${item.price}</span><br>
                         <span style="margin-top: 5px;">菜品数量：${item.amount}</span><br>
                         <span style="margin-top: 5px;">总计：${item.total_price}</span><br>
-                        <a href="<c:url value="/order"/> ">返回</a>
+                            <%--<a href="<c:url value="/order"/> ">返回</a>--%>
                     </div>
                 </div>
             </c:forEach>

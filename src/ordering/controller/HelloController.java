@@ -8,6 +8,7 @@ import ordering.domain.Dish;
 import ordering.repository.CategoryRepository;
 import ordering.repository.CustomerRepository;
 import ordering.repository.DishRepository;
+import ordering.utils.CustomerRegisterForm;
 import ordering.utils.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -204,31 +205,32 @@ public class HelloController {
     public String customerRegister(Model model, @RequestParam(value = "info", required = false) String info) {
         if (info != null)
             model.addAttribute(info);
-        model.addAttribute(new Customer());
+        model.addAttribute(new CustomerRegisterForm());
         return "customer_register";
     }
 
     /**
      * 处理用户提交的注册信息
      *
-     * @param customer
+     * @param customerRegisterForm
      * @param errors
      * @param model
      * @return 注册成功返回首页，注册失败返回注册页面
      */
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String customerRegisterSubmit(@Valid @ModelAttribute Customer customer, Errors errors, Model model) {
+    public String customerRegisterSubmit(@Valid @ModelAttribute CustomerRegisterForm customerRegisterForm, Errors errors, Model model) {
         //检测表单错误
         if (errors.hasErrors()) {
             return "customer_register";
         }
         //检测账户是否存在
-        if (customerRepository.isInDB(customer.getCustomer_account())) {
+        if (customerRepository.isInDB(customerRegisterForm.getCustomer_account())) {
             return "redirect:/register?info=existed_account";
         }
         //对顾客密码加密后存储到数据库
-        customer.setCustomer_password(AESUtils.ecodes(customer.getCustomer_password(), RootConfig.SECRET_KEY, 128));
-        customer.setCustomer_register_time(new Timestamp(System.currentTimeMillis()));
+        Customer customer = new Customer(customerRegisterForm.getCustomer_account(), customerRegisterForm.getCustomer_name(),
+                AESUtils.ecodes(customerRegisterForm.getCustomer_password(), RootConfig.SECRET_KEY, 128),
+                new Timestamp(System.currentTimeMillis()), customerRegisterForm.getCustomer_email());
         customerRepository.addCustomer(customer);
         model.addAttribute(customer);
         return "redirect:/";

@@ -1,31 +1,27 @@
 package ordering.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
-import ordering.domain.*;
+import ordering.domain.Admin;
+import ordering.domain.Category;
+import ordering.domain.Dish;
+import ordering.domain.Order;
 import ordering.repository.*;
-import ordering.repository.jdbc.JdbcAddressRepository;
 import ordering.utils.CategoryDishSupport;
 import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @Controller
@@ -166,7 +162,9 @@ public class AdminController {
     @RequestMapping(value = "/changedish", method = GET)
     public String changdish(@RequestParam(value = "dish_id", defaultValue = "") String dishid,HttpSession session) {
        Dish dish=dishRepository.findById(dishid);
+        /*List<Category> tcategories=categoryRepository.getCategoryList();*/
         session.setAttribute("dish",dish);
+        /* session.setAttribute(" tcategories", tcategories);*/
         return "admin_dishchange";
     }
 
@@ -210,8 +208,27 @@ public class AdminController {
      * @return
      */
     @RequestMapping(value = "/changedish", method = POST)
-    public String changdishac(){
-        return "";
+    public String changdishac(@RequestParam(value = "m_id", defaultValue = "") String id,
+                              @RequestParam(value = "dish_name", defaultValue = "") String name,
+                              @RequestParam(value = "dish_price", defaultValue = "") float price,
+                              @RequestParam(value = "dish_description", defaultValue = "") String description,
+                              @RequestParam(value = "pic", defaultValue = "") String pic,
+                              @RequestParam(value = "cate", defaultValue = "") String[] cate) {
+
+        String t = Arrays.toString(cate);
+        String t2 = t.substring(1, t.length() - 1);
+        List<Category> categories = new ArrayList<>();
+        String[] split = t2.split(", ");
+        for (int i = 0; i < split.length; i++) {
+            String c = split[i];
+            Category m = categoryRepository.getCategoryById(c);
+            categories.add(m);
+        }
+        Dish dish = new Dish(id, name, pic, price, description);
+        DishCategorySupport p = new DishCategorySupport(categories, dish);
+
+        dishRepository.updateDish(name, pic, categories, price, description, p);
+        return "redirect:/admin/dish";
     }
 
     @RequestMapping(value = "/dishcategory", method = GET)
@@ -412,9 +429,8 @@ session.setAttribute("admin",admin);
             String[] split = t2.split(", ");
             for (int i = 0; i < split.length; i++) {
                 String c=split[i];
-                try{
                 Category m=categoryRepository.getCategoryById(c);
-                categories.add(m);}catch(Exception e){}
+                categories.add(m);
 
             }
 
@@ -636,5 +652,11 @@ session.setAttribute("admin",admin);
 
         model.addAttribute("address",orderAddressInfoViewRepository.getAddress(order_id));
         return "admin_orderadress";
+    }
+
+    @RequestMapping(value = "/reo", method = GET)
+    public String Reo() {
+
+        return "redirect:/admin/overall";
     }
 }

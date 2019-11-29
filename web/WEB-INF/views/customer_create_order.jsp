@@ -109,27 +109,33 @@
                                         <div class="modal-footer">
                                             <div class="register-but">
                                                 <a href="<c:url value="/"/>">
-                                                    <input type="button" value="返回首页" />
+                                                    <input type="button" value="返回首页购物"/>
                                                 </a>
-                                                <input type="button" value="取消" id="closeBtn1"/>
-                                            </div>
-                                        </div>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <div class="modal-body">
-                                            <img src="${pageContext.request.contextPath}/resources/images/QRCode.png" class="img-responsive" alt=""/>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <div class="register-but">
-                                                <p>完成扫码支付后请点击“支付完成”按钮</p>
-                                                <input type="submit" value="支付完成"/>
-                                                <input type="button" value="取消" id="closeBtn"/>
-                                            </div>
-                                        </div>
-                                    </c:otherwise>
-                                </c:choose>
-                            </div>
-                        </div>
+                                                </c:when>
+                                                <c:when test="${empty addressList}">
+                                                <h3>您还没有设置地址信息，无法下单，请先设置地址信息</h3>
+                                                <div class="modal-footer">
+                                                    <div class="register-but">
+                                                        <a href="<c:url value="/myAddress/add_address"/>">
+                                                            <input type="button" value="设置地址信息"/>
+                                                        </a>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                        <div class="modal-body">
+                                                            <img src="${pageContext.request.contextPath}/resources/images/QRCode.png"
+                                                                 class="img-responsive" alt=""/>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div class="register-but">
+                                                                <p>完成扫码支付后请点击“支付完成”按钮</p>
+                                                                <input type="submit" value="支付完成"/>
+                                                                </c:otherwise>
+                                                                </c:choose>
+                                                                <input type="button" value="取消" id="closeBtn"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                         <script type="text/javascript"
                                 src="${pageContext.request.contextPath}/resources/js/modalBox.js"></script>
                     </form>
@@ -139,5 +145,47 @@
     </div>
 </div>
 <jsp:include page="customer_footer.jsp"/>
+<%--<script>--%>
+<%--    (function() {--%>
+<%--        /*建立模态框对象*/--%>
+<%--        var modalBox = {};--%>
+<%--        /*获取模态框*/--%>
+<%--        modalBox.modal = document.getElementById("myModal");--%>
+<%--        /*获得trigger按钮*/--%>
+<%--        modalBox.triggerBtn = document.getElementById("triggerBtn");--%>
+<%--        /*获得关闭按钮*/--%>
+<%--        modalBox.closeBtn = document.getElementById("closeBtn");--%>
+<%--        /*模态框显示*/--%>
+<%--        modalBox.show = function() {--%>
+<%--            console.log(this.modal);--%>
+<%--            this.modal.style.display = "block";--%>
+<%--        }--%>
+<%--        /*模态框关闭*/--%>
+<%--        modalBox.close = function() {--%>
+<%--            this.modal.style.display = "none";--%>
+<%--        }--%>
+<%--        /*当用户点击模态框内容之外的区域，模态框也会关闭*/--%>
+<%--        modalBox.outsideClick = function() {--%>
+<%--            var modal = this.modal;--%>
+<%--            window.onclick = function(event) {--%>
+<%--                if(event.target == modal) {--%>
+<%--                    modal.style.display = "none";--%>
+<%--                }--%>
+<%--            }--%>
+<%--        }--%>
+<%--        /*模态框初始化*/--%>
+<%--        modalBox.init = function() {--%>
+<%--            var that = this;--%>
+<%--            this.triggerBtn.onclick = function() {--%>
+<%--                that.show();--%>
+<%--            }--%>
+<%--            this.closeBtn.onclick = function() {--%>
+<%--                that.close();--%>
+<%--            }--%>
+<%--            this.outsideClick();--%>
+<%--        }--%>
+<%--        modalBox.init();--%>
+<%--    })();--%>
+<%-- </script> --%>
 </body>
 </html>

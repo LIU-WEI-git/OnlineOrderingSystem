@@ -49,14 +49,20 @@
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
             <form method="POST" >
-                <%  request.getSession().getAttribute("dish");%>
+                <% request.getSession().getAttribute("dish");
+                    request.getSession().getAttribute("categories");%>
 <%--<c:forEach items="${dish}" var="dish" varStatus="li">--%>
-                菜品编号：<input type="text"  name="dish_id" value="${dish.getDish_id()}" minlength="2" maxlength="10" required/><br/><br/>
+                菜品编号：${dish.getDish_id()}"<input type="hidden" name="m_id" value="${dish.getDish_id()}"/><br/><br/>
                 菜品名称：<input type="text"  name="dish_name"  value="${dish.getDish_name()}" minlength="2" maxlength="10" required/><br/><br/>
-                菜品价格：<input type="text" name="dish_price"  value="${dish.getPrice()}" minlength="2" maxlength="10" required/><br/><br/>
+                菜品价格：<input type="number" name="dish_price" value="${dish.getPrice()}" minlength="2" maxlength="10"
+                            required/><br/><br/>
                 菜品描述：<input  type="text" name="dish_description" value="${dish.getDescription()}" required/><br/><br/>
                 菜品图片：<input  type="text"  name="pic"  value="${dish.getPicture_url()}" minlength="2" maxlength="10" required/><br/><br/>
-
+                菜品类：
+                <c:forEach items="${categories}" var="category" varStatus="li">
+                    <input type="checkbox" name="cate"
+                           value="${category.getCategory_id()}">${category.getCategory_name()}
+                </c:forEach>
                 <input type="submit" value="修改" />
             </form>
 

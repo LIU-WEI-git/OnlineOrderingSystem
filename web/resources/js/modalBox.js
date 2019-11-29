@@ -16,7 +16,6 @@
     /*获得关闭按钮*/
 
     modalBox.closeBtn = document.getElementById("closeBtn");
-    modalBox.closeBtn= document.getElementById("closeBtn1");
 
     /*模态框显示*/
 
@@ -44,7 +43,7 @@
 
         window.onclick = function(event) {
 
-            if(event.target == modal) {
+            if (event.target === modal) {
 
                 modal.style.display = "none";
 

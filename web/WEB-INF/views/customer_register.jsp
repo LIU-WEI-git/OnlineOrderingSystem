@@ -35,7 +35,8 @@
 <div class="main">
     <div class="container">
         <div class="Product_top">
-            <sf:form method="post" commandName="customer">
+            <sf:form method="post" commandName="customerRegisterForm" name="register_form"
+                     onsubmit="return checkPassword()">
                 <div class="register-top-grid">
                     <h3>账户信息</h3>
                     <div>
@@ -45,8 +46,15 @@
                     </div>
                     <div>
                         <span>密码<label>*</label></span>
-                        <sf:input path="customer_password" type="password"/>
+                        <sf:input path="customer_password" type="password" name="password" id="password"/>
                         <sf:errors path="customer_password" cssStyle="color: red"/>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div>
+                        <span>确认密码<label>*</label></span>
+                        <sf:input path="confirm_password" type="password" name="confirm_password"
+                                  id="confirm_password"/>
+                        <sf:errors path="confirm_password" cssStyle="color: red"/>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -79,6 +87,18 @@
     var info=url.searchParams.get("info");
     if (info === 'existed_account') {
         alert("账号已被注册过!");
+    }
+</script>
+<script>
+    function checkPassword() {
+        var password = document.getElementById("password");
+        var confirm_password = document.getElementById("confirm_password");
+        if (password.value !== confirm_password.value) {
+            alert("两次输入的密码不一致");
+            confirm_password.focus();
+            return false;
+        }
+        return true;
     }
 </script>
 </body>
