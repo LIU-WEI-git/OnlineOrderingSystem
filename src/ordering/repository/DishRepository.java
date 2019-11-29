@@ -41,7 +41,7 @@ public interface DishRepository {
     PaginationSupport<DishCategorySupport> searchByKeywordsPage(String keywords, int pageNo, int PageSize);
 
     /**
-     * 获取全部菜品（弃用）
+     * 获取全部菜品，未分页
      *
      * @return 菜品列表
      */
@@ -86,7 +86,6 @@ public interface DishRepository {
      * 新建一个菜品
      *
      * @param dishCategorySupport 菜品
-     * @return 保存的菜品
      */
     void addDish(DishCategorySupport dishCategorySupport);
 
@@ -102,4 +101,8 @@ public interface DishRepository {
      */
     void updateDish(String dish_name, String picture_url, List<Category> categories, float price, String description, DishCategorySupport dishCategorySupport);
 
+   /* Dish save(Dish dish);*/
+
+
+//    List<Dish> searchDish(String a);
 }

@@ -48,7 +48,7 @@ public class JdbcDishRepository implements DishRepository {
      */
     @Override
     public long count() {
-        return jdbc.queryForObject("select count(dish_id) from Dish", long.class);
+        return jdbc.queryForObject("SELECT COUNT(dish_id) FROM dish WHERE delete_tag=0", long.class);
     }
 
     /**
@@ -60,7 +60,7 @@ public class JdbcDishRepository implements DishRepository {
     @Override
     public Dish findById(String dish_id) {
         try {
-            return jdbc.queryForObject(SELECT_FROM_DISH + " where dish_id=?", new DishRowMapper(), dish_id);
+            return jdbc.queryForObject(SELECT_FROM_DISH + " AND dish_id=?", new DishRowMapper(), dish_id);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -70,7 +70,7 @@ public class JdbcDishRepository implements DishRepository {
      * 模糊搜索菜品名称，或直接搜索完整的菜品ID，分页列出
      *
      * @param keywords 菜品关键词（菜品名称、菜品ID）
-     * @param pageNo 起始位置
+     * @param pageNo   起始位置
      * @param PageSize 每页数量
      * @return 分页菜品
      */
@@ -81,14 +81,20 @@ public class JdbcDishRepository implements DishRepository {
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
 
-        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " WHERE dish_name LIKE '%" + keywords + "%' OR dish_id='" + keywords + "'" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " AND (dish_name LIKE '%" + keywords + "%' OR dish_id='" + keywords + "')" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
         List<DishCategorySupport> items = new ArrayList<>();
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
         }
+        totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM Dish WHERE dish.delete_tag=0 AND (dish_name like '%" + keywords + "%' or dish_id='" + keywords + "')", int.class);
         return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
     }
 
+    /**
+     * 获取全部菜品，未分页
+     *
+     * @return 菜品列表
+     */
     @Override
     public List<Dish> getAll() {
         return jdbc.query(SELECT_FROM_DISH, new DishRowMapper());
@@ -98,7 +104,7 @@ public class JdbcDishRepository implements DishRepository {
      * 搜索菜品类别列出所有菜品
      *
      * @param category 选择的菜品类别
-     * @param pageNo 起始位置
+     * @param pageNo   起始位置
      * @param PageSize 每页数量
      * @return 分页菜品
      */
@@ -114,13 +120,14 @@ public class JdbcDishRepository implements DishRepository {
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
         }
+        totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id='" + category.getCategory_id() + "'", int.class);
         return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
     }
 
     /**
      * 分页获取所有菜品
      *
-     * @param pageNo 起始位置
+     * @param pageNo   起始位置
      * @param PageSize 每页数量
      * @return 菜品列表
      */
@@ -152,9 +159,17 @@ public class JdbcDishRepository implements DishRepository {
         return new DishCategorySupport(categories, dish);
     }
 
+
+//    @Override
+//    public List<Dish> searchDish(String keywords) {
+//
+//        return jdbc.query(SELECT_DISH, new DishRowMapper(), keywords, keywords);
+//    }
+
+
     /**
      * 删除菜品
-     *      包括：删除dish表、dish_category表信息
+     * 包括：删除dish表、dish_category表信息
      *
      * @param dish_id 菜品ID
      */
@@ -185,23 +200,24 @@ public class JdbcDishRepository implements DishRepository {
         jdbcInsertDish.execute(dishArgs);
 
         // 添加dish_category表
-        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withCatalogName("dish_category");
+        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withTableName("dish_category");
         Map<String, Object> dish_categoryArgs = new HashMap<>();
         for (Category category : dishCategorySupport.getCategories()) {
             dish_categoryArgs.put("category_id", category.getCategory_id());
             dish_categoryArgs.put("dish_id", dishCategorySupport.getDish().getDish_id());
+            jdbcInsertDish_Category.execute(dish_categoryArgs);
         }
-        jdbcInsertDish_Category.execute(dish_categoryArgs);
+
     }
 
     /**
      * 更新菜品
-     *      包括：更新dish信息、更新dish_category信息（先删除原有的，重新添加）
+     * 包括：更新dish信息、更新dish_category信息（先删除原有的，重新添加）
      *
-     * @param dish_name 新菜品名称
-     * @param picture_url 新图片url
-     * @param price 新价格
-     * @param description 新菜品描述
+     * @param dish_name           新菜品名称
+     * @param picture_url         新图片url
+     * @param price               新价格
+     * @param description         新菜品描述
      * @param dishCategorySupport 菜品类别辅助对象
      */
     @Override
@@ -216,13 +232,14 @@ public class JdbcDishRepository implements DishRepository {
         // 保存添加后状态
         dishCategorySupport.setCategories(categories);
         // jdbc添加
-        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withCatalogName("dish_category");
+        SimpleJdbcInsert jdbcInsertDish_Category = new SimpleJdbcInsert(jdbc).withTableName("dish_category");
         Map<String, Object> dish_categoryArgs = new HashMap<>();
         for (Category category : categories) {
             dish_categoryArgs.put("category_id", category.getCategory_id());
             dish_categoryArgs.put("dish_id", dishCategorySupport.getDish().getDish_id());
+            jdbcInsertDish_Category.execute(dish_categoryArgs);
         }
-        jdbcInsertDish_Category.execute(dish_categoryArgs);
+
     }
 
     /**
@@ -258,15 +275,17 @@ public class JdbcDishRepository implements DishRepository {
      * SQL语句
      */
     // 取得所有菜品
-    private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish";
+//    private static final String SELECT_DISH="SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE dish_id  LIKE ? OR dish_name LIKE ?";
+    private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE delete_tag=0";
     // 分页
-    private static final String SELECT_PAGE = " order by dish_id limit ? offset ?";
+    private static final String SELECT_PAGE = " ORDER BY dish_id LIMIT ? OFFSET ?";
     // 根据菜品ID取得对应菜品类别列表
     private static final String SELECT_DISH_CATEGORY = "SELECT dc.dish_id, c.category_id, c.category_name FROM category c JOIN dish_category dc WHERE c.category_id=dc.category_id AND dish_id=?";
     // 删除菜品类别
     private static final String DELETE_DISH_CATEGORY = "DELETE FROM dish_category WHERE dish_id=?";
     // 删除菜品
-    private static final String DELETE_DISH = "DELETE FROM dish WHERE dish_id=?";
+//    private static final String DELETE_DISH = "DELETE FROM dish WHERE dish_id=?";
+    private static final String DELETE_DISH = "UPDATE dish SET delete_tag=1 WHERE dish_id=?";
     // 更新菜品
     private static final String UPDATE_DISH = "UPDATE dish SET dish_name=?, picture_url=?, price=?, description=? WHERE dish_id=?";
     // 搜索菜品类别

@@ -22,7 +22,7 @@
     <link href='http://fonts.useso.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
     <!--//webfonts-->
-    <script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/res/js/jquery-1.10.2.js"></script>
 </head>
 <body>
 <script>$(document).ready(function(c) {
