@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Paper Dashboard by Creative Tim</title>
+    <title>添加菜品</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -58,7 +58,9 @@
                 菜品描述：<input  type="text"  name="description"  minlength="2" maxlength="20" required/><br/><br/>
                 菜品类：
                 <c:forEach items="${pcategories}" var="category" varStatus="li">
-                    <input type="checkbox" name="cate" value="${category.getCategory_id()}">${category.getCategory_name()}
+                    <label>
+                        <input type="checkbox" name="cate" value="${category.getCategory_id()}">
+                    </label>${category.getCategory_name()}
                 </c:forEach>
                 <input type="submit" value="添加" />
             </form>
@@ -68,13 +70,6 @@
         </div>
     </div>
 </div>
-
-
-
-</div>
-</div>
-
-
 </body>
 <script src="${pageContext.request.contextPath}/res/js/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js" type="text/javascript"></script>

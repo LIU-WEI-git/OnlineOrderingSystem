@@ -25,13 +25,13 @@ import java.util.List;
 public class JdbcCategoryRepository implements CategoryRepository {
 
     private JdbcTemplate jdbcTemplate;
-    private RowMapper<Category> categoryRowMapper = new BeanPropertyRowMapper<>(Category.class);
 
-    private static final String TOTAL_CATEGORY = "select count(*) from category";
-    private static final String SELECT_CATEGORY = "select * from category";
+    private static final String TOTAL_CATEGORY = "select count(*) from category where delete_tag=0";
+    private static final String SELECT_CATEGORY = "select * from category where delete_tag=0";
     private static final String INSERT_CATEGORY = "insert into category (category_id,category_name) values (?,?)";
 //    private static final String DELETE_CATEGORY = "delete from category where ";
-    private static final String DELETE_CATEGORY = "delete from category where category_id=?";
+//    private static final String DELETE_CATEGORY = "delete from category where category_id=?";
+    private static final String DELETE_CATEGORY = "update category set delete_tag=1";
     private static final String RENAME_CATEGORY = "update category set category_name=? where category_name=?";
 
     private static final String SELECT_CATEGORY_DISH = "SELECT dc.category_id, d.dish_id, d.dish_name, d.picture_url, d.price, d.description FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id=?";
@@ -43,7 +43,7 @@ public class JdbcCategoryRepository implements CategoryRepository {
 
     @Override
     public boolean isInDB(String category_name) {
-        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " where category_name=" + category_name, Integer.class) != 0;
+        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_name=" + category_name, Integer.class) != 0;
     }
 
     @Override
@@ -53,17 +53,17 @@ public class JdbcCategoryRepository implements CategoryRepository {
 
     @Override
     public List<Category> getCategoryList() {
-        return jdbcTemplate.query(SELECT_CATEGORY, categoryRowMapper);
+        return jdbcTemplate.query(SELECT_CATEGORY, new CategoryRowMapper());
     }
 
     @Override
     public Category getCategoryById(String category_id) {
-        return jdbcTemplate.queryForObject(SELECT_CATEGORY + " where category_id=?",categoryRowMapper,category_id);
+        return jdbcTemplate.queryForObject(SELECT_CATEGORY + " and category_id=?",new CategoryRowMapper(),category_id);
     }
 
     @Override
     public Category getCategoryByName(String category_name) {
-        return jdbcTemplate.queryForObject(SELECT_CATEGORY + " where category_name=?", categoryRowMapper, category_name);
+        return jdbcTemplate.queryForObject(SELECT_CATEGORY + " and category_name=?", new CategoryRowMapper(), category_name);
     }
 
     @Override
@@ -75,21 +75,21 @@ public class JdbcCategoryRepository implements CategoryRepository {
     @Override
     public Category deleteCategoryById(String category_id) {
         Category deletedCategory = getCategoryById(category_id);
-        jdbcTemplate.update(DELETE_CATEGORY + "category_id=" + category_id);
+        jdbcTemplate.update(DELETE_CATEGORY + " and category_id=" + category_id);
         return deletedCategory;
     }
 
     @Override
     public Category deleteCategoryByName(String category_name) {
         Category deletedCategory = getCategoryById(category_name);
-        jdbcTemplate.update(DELETE_CATEGORY + "category_name=" + category_name);
+        jdbcTemplate.update(DELETE_CATEGORY + " and category_name=" + category_name);
         return deletedCategory;
     }
 
     @Override
     public Category deleteCategory(Category category) {
         Category deletedCategory = getCategoryById(category.getCategory_id());
-        jdbcTemplate.update(DELETE_CATEGORY,category.getCategory_id());
+        jdbcTemplate.update(DELETE_CATEGORY + " and category_id=" + category.getCategory_id());
         return deletedCategory;
     }
 

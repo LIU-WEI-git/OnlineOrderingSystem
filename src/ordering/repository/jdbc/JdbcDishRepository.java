@@ -48,7 +48,7 @@ public class JdbcDishRepository implements DishRepository {
      */
     @Override
     public long count() {
-        return jdbc.queryForObject("select count(dish_id) from Dish", long.class);
+        return jdbc.queryForObject("SELECT COUNT(dish_id) FROM dish WHERE delete_tag=0", long.class);
     }
 
     /**
@@ -60,7 +60,7 @@ public class JdbcDishRepository implements DishRepository {
     @Override
     public Dish findById(String dish_id) {
         try {
-            return jdbc.queryForObject(SELECT_FROM_DISH + " where dish_id=?", new DishRowMapper(), dish_id);
+            return jdbc.queryForObject(SELECT_FROM_DISH + " AND dish_id=?", new DishRowMapper(), dish_id);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -76,20 +76,24 @@ public class JdbcDishRepository implements DishRepository {
      */
     @Override
     public PaginationSupport<DishCategorySupport> searchByKeywordsPage(String keywords, int pageNo, int PageSize) {
-        int totalCount = (int) count();
+        int totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM Dish WHERE dish.delete_tag=0 AND (dish_name like '%" + keywords + "%' or dish_id='" + keywords + "')", int.class);
         int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
 
-        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " WHERE dish_name LIKE '%" + keywords + "%' OR dish_id='" + keywords + "'" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " AND (dish_name LIKE '%" + keywords + "%' OR dish_id='" + keywords + "')" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
         List<DishCategorySupport> items = new ArrayList<>();
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
         }
-        totalCount = jdbc.queryForObject("select count(*) from Dish where dish_name like '%" + keywords + "%' or dish_id='" + keywords + "'", int.class);
         return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
     }
 
+    /**
+     * 获取全部菜品，未分页
+     *
+     * @return 菜品列表
+     */
     @Override
     public List<Dish> getAll() {
         return jdbc.query(SELECT_FROM_DISH, new DishRowMapper());
@@ -105,7 +109,7 @@ public class JdbcDishRepository implements DishRepository {
      */
     @Override
     public PaginationSupport<DishCategorySupport> searchByCategoryPage(Category category, int pageNo, int PageSize) {
-        int totalCount = (int) count();
+        int totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id='" + category.getCategory_id() + "'", int.class);
         int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
@@ -115,7 +119,6 @@ public class JdbcDishRepository implements DishRepository {
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
         }
-        totalCount = jdbc.queryForObject("SELECT count(*) FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id='" + category.getCategory_id() + "'", int.class);
         return new PaginationSupport<>(items, totalCount, PageSize, startIndex);
     }
 
@@ -155,11 +158,11 @@ public class JdbcDishRepository implements DishRepository {
     }
 
 
-    @Override
-    public List<Dish> searchDish(String a) {
-
-        return jdbc.query(SELECT_DISH, new DishRowMapper(), a,a);
-    }
+//    @Override
+//    public List<Dish> searchDish(String keywords) {
+//
+//        return jdbc.query(SELECT_DISH, new DishRowMapper(), keywords, keywords);
+//    }
 
 
     /**
@@ -168,9 +171,6 @@ public class JdbcDishRepository implements DishRepository {
      *
      * @param dish_id 菜品ID
      */
-
-
-
     @Override
     public void deleteDish(String dish_id) {
         // 在dish_category内删除
@@ -273,16 +273,17 @@ public class JdbcDishRepository implements DishRepository {
      * SQL语句
      */
     // 取得所有菜品
-    private static final String SELECT_DISH="SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE dish_id  like ? or dish_name like ?";
-    private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish";
+//    private static final String SELECT_DISH="SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE dish_id  LIKE ? OR dish_name LIKE ?";
+    private static final String SELECT_FROM_DISH = "SELECT dish_id, dish_name, picture_url, price, description FROM dish WHERE delete_tag=0";
     // 分页
-    private static final String SELECT_PAGE = " order by dish_id limit ? offset ?";
+    private static final String SELECT_PAGE = " ORDER BY dish_id LIMIT ? OFFSET ?";
     // 根据菜品ID取得对应菜品类别列表
     private static final String SELECT_DISH_CATEGORY = "SELECT dc.dish_id, c.category_id, c.category_name FROM category c JOIN dish_category dc WHERE c.category_id=dc.category_id AND dish_id=?";
     // 删除菜品类别
     private static final String DELETE_DISH_CATEGORY = "DELETE FROM dish_category WHERE dish_id=?";
     // 删除菜品
-    private static final String DELETE_DISH = "DELETE FROM dish WHERE dish_id=?";
+//    private static final String DELETE_DISH = "DELETE FROM dish WHERE dish_id=?";
+    private static final String DELETE_DISH = "UPDATE dish SET delete_tag=1 WHERE dish_id=?";
     // 更新菜品
     private static final String UPDATE_DISH = "UPDATE dish SET dish_name=?, picture_url=?, price=?, description=? WHERE dish_id=?";
     // 搜索菜品类别

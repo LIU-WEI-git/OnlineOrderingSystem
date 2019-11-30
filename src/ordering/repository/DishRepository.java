@@ -41,7 +41,7 @@ public interface DishRepository {
     PaginationSupport<DishCategorySupport> searchByKeywordsPage(String keywords, int pageNo, int PageSize);
 
     /**
-     * 获取全部菜品（弃用）
+     * 获取全部菜品，未分页
      *
      * @return 菜品列表
      */
@@ -104,5 +104,5 @@ public interface DishRepository {
    /* Dish save(Dish dish);*/
 
 
-    List<Dish> searchDish(String a);
+//    List<Dish> searchDish(String a);
 }
