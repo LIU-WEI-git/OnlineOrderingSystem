@@ -72,7 +72,7 @@ request.getSession().getAttribute("totalorder");
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Income</p>
+                                            <p>总收入</p>
                                             ${income}
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@ request.getSession().getAttribute("totalorder");
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>order-count</p>
+                                            <p>完成订单总数</p>
                                             ${totalorder}
                                         </div>
                                     </div>
@@ -125,7 +125,7 @@ request.getSession().getAttribute("totalorder");
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>customer count</p>
+                                            <p>顾客数量</p>
                                             ${cs}
                                         </div>
                                     </div>
@@ -152,7 +152,7 @@ request.getSession().getAttribute("totalorder");
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>admin number</p>
+                                            <p>管理员数量</p>
                                             ${as}
                                         </div>
                                     </div>

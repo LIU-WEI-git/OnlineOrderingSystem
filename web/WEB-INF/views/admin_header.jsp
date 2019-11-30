@@ -34,20 +34,21 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="ti-bell"></i>
-                            <p class="notification">5</p>
-                            <p>通知提醒</p>
+                            <p class="notification">6</p>
+                            <p>开发人</p>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Notification 1</a></li>
-                            <li><a href="#">Notification 2</a></li>
-                            <li><a href="#">Notification 3</a></li>
-                            <li><a href="#">Notification 4</a></li>
-                            <li><a href="#">Another notification</a></li>
+                            <li><a href="#">刘威</a></li>
+                            <li><a href="#">盛佳煜</a></li>
+                            <li><a href="#">田皓哲</a></li>
+                            <li><a href="#">吴东杰</a></li>
+                            <li><a href="#">聂俊杰</a></li>
+                            <li><a href="#">赵辰龙</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<c:url value="/admin/explain"/>">
                             <i class="ti-settings"></i>
                             <p>系统设置</p>
                         </a>

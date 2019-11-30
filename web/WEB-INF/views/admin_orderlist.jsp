@@ -58,7 +58,7 @@
 
             </select>
                 <br><br>
-                        <button type="submit" class="btn btn-info btn-search">operation</button>
+                        <button type="submit" class="btn btn-info btn-search">类别查询</button>
 
            </form>
 
@@ -67,9 +67,9 @@
 
 
                 <input type="text" class="form-control" name="message"
-                       placeholder="Please enter the customer_acount">
+                       placeholder="请输入要查询的顾客账号">
                 <span class="input-group-btn">
-                        <button type="submit" class="btn btn-info btn-search">search</button>
+                        <button type="submit" class="btn btn-info btn-search">账号查询</button>
                     </span>
             </form>
 <% request.getSession().getAttribute("orders");%>

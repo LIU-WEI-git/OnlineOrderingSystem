@@ -664,4 +664,11 @@ session.setAttribute("admin",admin);
 
         return "redirect:/admin/overall";
     }
+
+    @RequestMapping(value = "/explain",method = GET)
+    public String explain()
+    {
+
+        return "admin_qiye";
+    }
 }
