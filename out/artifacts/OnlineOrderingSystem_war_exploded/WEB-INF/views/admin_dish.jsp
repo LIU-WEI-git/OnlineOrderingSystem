@@ -63,9 +63,9 @@
                         </select>
                     </span>
                 <input type="text" class="form-control" name="message"
-                       placeholder="Please enter the content you are searching for">
+                       placeholder="请输入要查询的菜品关键字">
                 <span class="input-group-btn">
-                        <button type="submit" class="btn btn-info btn-search">search</button>
+                        <button type="submit" class="btn btn-info btn-search">搜索</button>
                     </span>
         </form>
 
@@ -75,16 +75,16 @@
             <div class="content table-responsive table-full-width">
             <table class="table table-striped">
                 <thead>
-                <th style="text-align: center">dish_id</th>
-                <th style="text-align: center">dish_name</th>
-                <th style="text-align: center">price</th>
-                <th style="text-align: center">description</th>
-                <th style="text-align: center">picture</th>
+                <th style="text-align: center">菜品编号</th>
+                <th style="text-align: center">菜品名称</th>
+                <th style="text-align: center">价格</th>
+                <th style="text-align: center">描述</th>
+                <th style="text-align: center">图片</th>
                 <th style="text-align: center">删除菜品</th>
                 <th style="text-align: center">修改菜品</th>
                 </thead>
                 <tbody>
-                <c:forEach items="${list}" var="dish" varStatus="li">
+                <c:forEach items="${list.items}" var="dish" varStatus="li">
                 <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
                     <td align="center">${dish.getDish_id()}</td>
                     <td align="center">${dish.getDish_name()}</td>
@@ -99,7 +99,12 @@
                     </td>
                 </tr>
                 </c:forEach></tbody></table></div>
-
+            <c:if test="${list.previousPage}">
+                <a href="<c:url value="/admin/dish?pageNo=${list.currentPageNo-1}" />" >上一页</a>
+            </c:if>
+            <c:if test="${list.nextPage}">
+                <a href="<c:url value="/admin/dish?pageNo=${list.currentPageNo+1}" />" >下一页</a>
+            </c:if>
              <%--   <table style="width:100%;border:1px white solid">
                     <tr bgcolor="#4F81BD"style="color: #fff;">
                         <th style="text-align: center">dish_id</th>

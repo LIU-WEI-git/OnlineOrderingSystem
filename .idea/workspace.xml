@@ -7,20 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="问题解决">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_qiye.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_allview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_allview.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +270,10 @@
       <workItem from="1574869158899" duration="1619000" />
       <workItem from="1574914183169" duration="1363000" />
       <workItem from="1574993350294" duration="6264000" />
-      <workItem from="1575078234445" duration="1436000" />
+      <workItem from="1575078234445" duration="1569000" />
+      <workItem from="1575094447366" duration="210000" />
+      <workItem from="1575097531679" duration="2154000" />
+      <workItem from="1575117633544" duration="4680000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
@@ -429,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574998684621</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="问题解决">
+      <created>1575079774599</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1575079774599</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

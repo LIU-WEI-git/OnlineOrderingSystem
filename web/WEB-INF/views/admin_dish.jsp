@@ -84,7 +84,7 @@
                 <th style="text-align: center">修改菜品</th>
                 </thead>
                 <tbody>
-                <c:forEach items="${list}" var="dish" varStatus="li">
+                <c:forEach items="${list.items}" var="dish" varStatus="li">
                 <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
                     <td align="center">${dish.getDish_id()}</td>
                     <td align="center">${dish.getDish_name()}</td>
@@ -99,7 +99,12 @@
                     </td>
                 </tr>
                 </c:forEach></tbody></table></div>
-
+            <c:if test="${list.previousPage}">
+                <a href="<c:url value="/admin/dish?pageNo=${list.currentPageNo-1}" />" >上一页</a>
+            </c:if>
+            <c:if test="${list.nextPage}">
+                <a href="<c:url value="/admin/dish?pageNo=${list.currentPageNo+1}" />" >下一页</a>
+            </c:if>
              <%--   <table style="width:100%;border:1px white solid">
                     <tr bgcolor="#4F81BD"style="color: #fff;">
                         <th style="text-align: center">dish_id</th>

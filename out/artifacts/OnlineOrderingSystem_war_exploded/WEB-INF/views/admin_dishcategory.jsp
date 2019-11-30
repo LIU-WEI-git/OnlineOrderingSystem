@@ -54,14 +54,14 @@
                 <div class="row">
                     <div class="card">
                         <div class="header">
-                            <h4 class="title">Dish Category</h4>
+                            <h4 class="title">菜品类管理</h4>
                         </div>
                         <div class="content">
 
                             <table style="width:100%;border:1px white solid">
                                 <tr bgcolor="#4F81BD"style="color: #fff;">
-                                    <th style="text-align: center">category_id</th>
-                                    <th style="text-align: center">category_name</th>
+                                    <th style="text-align: center">菜品类编号</th>
+                                    <th style="text-align: center">菜品类名称</th>
 
                                     <th style="text-align: center">修改</th>
                                     <th style="text-align: center">删除</th>

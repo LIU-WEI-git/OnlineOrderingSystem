@@ -77,6 +77,7 @@ public class AdminController {
         if (admin != null&&admin.getDelete_tag()==admin.UNDELETED) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
+            session.setAttribute("l",null);
             return "redirect:/admin/overall";
         }
         else{
@@ -150,7 +151,8 @@ public class AdminController {
      */
     @RequestMapping(value = "/dish", method = GET)
     public String showdishlist(HttpSession session) {
-        List<Dish> list=dishRepository.getAll();
+       /* List<Dish> list=dishRepository.getAll();*/
+       PaginationSupport<DishCategorySupport> list=dishRepository.findByPage(1,10);
         List<Category> categories=categoryRepository.getCategoryList();
         session.setAttribute("list",list);
         session.setAttribute("categories",categories);
@@ -533,6 +535,8 @@ session.setAttribute("admin",admin);
  session.setAttribute("totalorder",totalorder);
  session.setAttribute("cs",cs);
  session.setAttribute("as",as);
+ session.removeAttribute("dayincome");
+ session.removeAttribute("dayorder");
         return "admin_allview";
     }
 
@@ -589,6 +593,14 @@ session.setAttribute("admin",admin);
             return "admin_orderlist";
     }
 
+    @RequestMapping(value = "/searchincome", method = GET)
+    public String searchincome(@RequestParam(value = "date", defaultValue = "") String date,Model model,HttpSession session) {
+       double dayincome= orderRepository.getTotalIncomeByDay(date);
+       long   dayorder=orderRepository.getTotalCompletedOrdersByDayNum(date);
+        session.setAttribute("dayincome",dayincome);
+        session.setAttribute("dayorder",dayorder);
+        return "admin_allview";
+    }
 
     /**
      * 确认订单
