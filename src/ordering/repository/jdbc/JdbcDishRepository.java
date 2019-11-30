@@ -195,6 +195,7 @@ public class JdbcDishRepository implements DishRepository {
         dishArgs.put("picture_url", dishCategorySupport.getDish().getPicture_url());
         dishArgs.put("price", dishCategorySupport.getDish().getPrice());
         dishArgs.put("description", dishCategorySupport.getDish().getDescription());
+        dishArgs.put("delete_tag",0);
         jdbcInsertDish.execute(dishArgs);
 
         // 添加dish_category表

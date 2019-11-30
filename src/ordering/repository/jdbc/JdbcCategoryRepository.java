@@ -41,8 +41,8 @@ public class JdbcCategoryRepository implements CategoryRepository {
     }
 
     @Override
-    public boolean isInDB(String category_name) {
-        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_name=\'" + category_name + "\'", Integer.class) != 0;
+    public boolean isInDB(String category_id) {
+        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_id=\'" + category_id + "\'", Integer.class) != 0;
     }
 
     @Override

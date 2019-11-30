@@ -51,7 +51,7 @@
         <div class="key">
             <input type="password" name="password" <%--onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"--%>>
         </div>
-
+        <div style="color:red">${l}</div>
     <div class="signin">
         <input type="submit" value="Login" >
     </div> </form>

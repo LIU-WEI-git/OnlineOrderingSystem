@@ -26,8 +26,8 @@
 </head>
 <body>
 <h1>服务器开小差</h1>
-<p>状态码：${errorInfo.code}</p><br/>
-<p>异常信息：${errorInfo.message}</p><br/>
-<p>发送错误的URL：${errorInfo.url}</p><br/>
+<%--<p>状态码：${errorInfo.code}</p><br/>--%>
+<%--<p>异常信息：${errorInfo.message}</p><br/>--%>
+<%--<p>发送错误的URL：${errorInfo.url}</p><br/>--%>
 </body>
 </html>

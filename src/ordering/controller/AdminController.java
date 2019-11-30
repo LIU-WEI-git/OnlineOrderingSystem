@@ -73,6 +73,7 @@ public class AdminController {
         if (admin != null&&admin.getDelete_tag()== Admin.UNDELETED) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
+            session.setAttribute("l", null);
             return "redirect:/admin/overall";
         }
         else{
@@ -221,8 +222,10 @@ public class AdminController {
         String[] split = t2.split(", ");
         for (int i = 0; i < split.length; i++) {
             String c = split[i];
-            Category m = categoryRepository.getCategoryById(c);
-            categories.add(m);
+            if (categoryRepository.isInDB(c)) {
+                Category m = categoryRepository.getCategoryById(c);
+                categories.add(m);
+            }
         }
         Dish dish = new Dish(id, name, pic, price, description);
         DishCategorySupport p = new DishCategorySupport(categories, dish);
@@ -284,6 +287,7 @@ session.setAttribute("admin",admin);
     @RequestMapping(value = "/logout", method = GET)
     public String logout(HttpSession session){
     session.removeAttribute("admin");
+    session.removeAttribute("l");
     return "redirect:/admin/alogin";
     }
 
@@ -429,9 +433,10 @@ session.setAttribute("admin",admin);
             String[] split = t2.split(", ");
             for (int i = 0; i < split.length; i++) {
                 String c=split[i];
-                Category m=categoryRepository.getCategoryById(c);
-                categories.add(m);
-
+                if (categoryRepository.isInDB(c)) {
+                    Category m = categoryRepository.getCategoryById(c);
+                    categories.add(m);
+                }
             }
 
             Dish dish=new Dish(id,name,url,price,description);
