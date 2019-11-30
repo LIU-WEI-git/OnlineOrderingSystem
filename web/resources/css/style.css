@@ -1138,6 +1138,29 @@ span.actual1 {
 .btn_form form input[type="submit"]:hover {
 	background:#F34D28;
 }
+.btn_form a input[type="button"] {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	display: inline-block;
+	font-size: 0.85em;
+	padding: 10px 34px;
+	background:#fe6847;
+	border-bottom: 4px solid #E94F2D;
+	color: #FFF;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+.btn_form a input[type="button"]:hover {
+	background:#F34D28;
+}
 .btn_form form a input[type="button"] {
 	cursor: pointer;
 	border: none;

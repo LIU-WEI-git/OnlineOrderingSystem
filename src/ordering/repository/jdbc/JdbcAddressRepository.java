@@ -37,7 +37,7 @@ public class JdbcAddressRepository implements AddressRepository {
 
     @Override
     public List<Address> getCustomerAddress(String customer_account) {
-        return jdbcTemplate.query(SELECT_ADDRESS+" where customer_account ="+customer_account+" and delete_tag = 0",addressRowMapper);
+        return jdbcTemplate.query(SELECT_ADDRESS + " where customer_account =\'" + customer_account + "\' and delete_tag = 0", addressRowMapper);
     }
 
     @Override

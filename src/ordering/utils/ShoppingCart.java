@@ -64,7 +64,7 @@ public class ShoppingCart {
             ShoppingCartItem shoppingCartItem = shoppingCartItemList.get(i);
             if (shoppingCartItem.getDish().getDish_id().equals(dish_id)) {
                 shoppingCartItemList.remove(i);
-                totalPrice -= shoppingCartItem.getDish().getPrice();
+                totalPrice -= shoppingCartItem.getDish().getPrice() * shoppingCartItem.getAmount();
                 return;
             }
         }

@@ -97,6 +97,11 @@
                         <div class="register-but">
                             <input type="button" value="确认下单" id="triggerBtn"/>
                         </div>
+                        <div class="register-but">
+                            <a href="<c:url value="/shoppingCart"/>">
+                                <input type="button" value="返回购物车"/>
+                            </a>
+                        </div>
                         <!-- 模态框 -->
                         <div id="myModal" class="modal">
                             <div class="modal-content">

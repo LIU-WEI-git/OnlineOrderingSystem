@@ -96,8 +96,9 @@ CREATE TABLE `customer` (
 
 insert  into `customer`(`customer_account`,`customer_name`,`customer_password`,`customer_register_time`,`customer_email`) values 
 ('10086001','customer','123','2019-09-01 09:02:26','customer@163.com'),
-('10086123','吴东杰','wdj123','2019-11-18 21:10:51','wdj@163.com'),
-('10086223','商学伟','sxw123','2019-11-13 21:11:26','sxw@163.com');
+('10086123','吴东杰','4CA5F80F285635167AAA4343DC481E96','2019-11-18 21:10:51','wdj@163.com'),
+('10086223','商学伟','sxw123','2019-11-13 21:11:26','sxw@163.com'),
+('test','1233','C1523C29FC523CCD695A3C086F447449','2019-11-30 14:23:53','123@11.com');
 
 /*Table structure for table `dish` */
 
@@ -118,7 +119,7 @@ CREATE TABLE `dish` (
 insert  into `dish`(`dish_id`,`dish_name`,`picture_url`,`price`,`description`,`delete_tag`) values 
 ('10001','芝士焗饭','images/p1.jpg',10,'学生最爱',0),
 ('10002','芝士焗面','images/p2.jpg',12,'上班族最爱',0),
-('10003','刘威牌果汁','images/p3.jpg',15,'好喝得不得了',0),
+('10003','果汁','images/p3.jpg',15,'好喝',0),
 ('10004','炸薯条','images/p4.jpg',8,'好吃',0),
 ('10005','烤肉拌饭','images/p5.jpg',11,'肉多',0),
 ('10006','炸鸡拌饭','images/p6.jpg',11,'脆爽炸鸡',0),
@@ -142,11 +143,8 @@ CREATE TABLE `dish_category` (
 /*Data for the table `dish_category` */
 
 insert  into `dish_category`(`category_id`,`dish_id`) values 
-('201','10001'),
-('202','10001'),
-('203','10001'),
-('203','10002'),
-('204','10003'),
+('201','10003'),
+('203','10003'),
 ('204','10004'),
 ('204','10005'),
 ('204','10006'),

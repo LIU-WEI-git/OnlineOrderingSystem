@@ -5,7 +5,6 @@ import ordering.domain.Dish;
 import ordering.repository.CategoryRepository;
 import ordering.utils.CategoryDishSupport;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -43,7 +42,7 @@ public class JdbcCategoryRepository implements CategoryRepository {
 
     @Override
     public boolean isInDB(String category_name) {
-        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_name=" + category_name, Integer.class) != 0;
+        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_name=\'" + category_name + "\'", Integer.class) != 0;
     }
 
     @Override
@@ -75,21 +74,21 @@ public class JdbcCategoryRepository implements CategoryRepository {
     @Override
     public Category deleteCategoryById(String category_id) {
         Category deletedCategory = getCategoryById(category_id);
-        jdbcTemplate.update(DELETE_CATEGORY + " and category_id=" + category_id);
+        jdbcTemplate.update(DELETE_CATEGORY + " where category_id=\'" + category_id + "\'");
         return deletedCategory;
     }
 
     @Override
     public Category deleteCategoryByName(String category_name) {
         Category deletedCategory = getCategoryById(category_name);
-        jdbcTemplate.update(DELETE_CATEGORY + " and category_name=" + category_name);
+        jdbcTemplate.update(DELETE_CATEGORY + " where category_name=\'" + category_name + "\'");
         return deletedCategory;
     }
 
     @Override
     public Category deleteCategory(Category category) {
         Category deletedCategory = getCategoryById(category.getCategory_id());
-        jdbcTemplate.update(DELETE_CATEGORY + " and category_id=" + category.getCategory_id());
+        jdbcTemplate.update(DELETE_CATEGORY + " where category_id=\'" + category.getCategory_id() + "\'");
         return deletedCategory;
     }
 

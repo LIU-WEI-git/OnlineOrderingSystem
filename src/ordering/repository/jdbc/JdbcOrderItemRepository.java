@@ -26,7 +26,7 @@ public class JdbcOrderItemRepository implements OrderItemRepository {
     }
     @Override
     public int getTotalOrderItem(String order_id) {
-        return jdbcTemplate.queryForObject(TOTAL_ORDER_ITEM+" where order_id ="+order_id,Integer.class);
+        return jdbcTemplate.queryForObject(TOTAL_ORDER_ITEM + " where order_id =\'" + order_id + "\'", Integer.class);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class JdbcOrderItemRepository implements OrderItemRepository {
 
     @Override
     public List<OrderItem> itemsOfOrder(String order_id) {
-        return jdbcTemplate.query(SELECT_ORDER_ITEM+"where order_id = "+order_id,item);
+        return jdbcTemplate.query(SELECT_ORDER_ITEM + "where order_id = \'" + order_id + "\'", item);
     }
 
     @Override
