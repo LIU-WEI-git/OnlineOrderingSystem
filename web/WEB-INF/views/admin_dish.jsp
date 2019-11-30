@@ -63,9 +63,9 @@
                         </select>
                     </span>
                 <input type="text" class="form-control" name="message"
-                       placeholder="Please enter the content you are searching for">
+                       placeholder="请输入要查询的菜品关键字">
                 <span class="input-group-btn">
-                        <button type="submit" class="btn btn-info btn-search">search</button>
+                        <button type="submit" class="btn btn-info btn-search">搜索</button>
                     </span>
         </form>
 
@@ -75,11 +75,11 @@
             <div class="content table-responsive table-full-width">
             <table class="table table-striped">
                 <thead>
-                <th style="text-align: center">dish_id</th>
-                <th style="text-align: center">dish_name</th>
-                <th style="text-align: center">price</th>
-                <th style="text-align: center">description</th>
-                <th style="text-align: center">picture</th>
+                <th style="text-align: center">菜品编号</th>
+                <th style="text-align: center">菜品名称</th>
+                <th style="text-align: center">价格</th>
+                <th style="text-align: center">描述</th>
+                <th style="text-align: center">图片</th>
                 <th style="text-align: center">删除菜品</th>
                 <th style="text-align: center">修改菜品</th>
                 </thead>

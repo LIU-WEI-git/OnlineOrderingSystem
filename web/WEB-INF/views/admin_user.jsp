@@ -54,18 +54,18 @@
         <div class="row">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Team Members</h4>
+                        <h4 class="title">管理员管理</h4>
                     </div>
                     <div class="content">
 
                             <table style="width:100%;border:1px white solid">
                                 <tr bgcolor="#4F81BD"style="color: #fff;">
-                                    <th style="text-align: center">admin_account</th>
-                                    <th style="text-align: center">admin_name</th>
-                                    <th style="text-align: center">admin_register_time</th>
-                                    <th style="text-align: center">admin_email</th>
-                                    <th style="text-align: center">admin_phone</th>
-                                    <th style="text-align: center">admin_steate</th>
+                                    <th style="text-align: center">管理员账号</th>
+                                    <th style="text-align: center">管理员名字</th>
+                                    <th style="text-align: center">管理员注册时间</th>
+                                    <th style="text-align: center">邮箱</th>
+                                    <th style="text-align: center">电话</th>
+                                    <th style="text-align: center">管理员权限状态</th>
                                     <th style="text-align: center">删除管理员</th>
                                 </tr>
                                 <c:forEach items="${alist}" var="admin" varStatus="li">
