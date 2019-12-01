@@ -26,7 +26,7 @@ public class JdbcOrderItemRepository implements OrderItemRepository {
     }
     @Override
     public int getTotalOrderItem(String order_id) {
-        return jdbcTemplate.queryForObject(TOTAL_ORDER_ITEM + " where order_id =\'" + order_id + "\'", Integer.class);
+        return jdbcTemplate.queryForObject(TOTAL_ORDER_ITEM + " where order_id =?", Integer.class, order_id);
     }
 
     @Override
@@ -42,21 +42,21 @@ public class JdbcOrderItemRepository implements OrderItemRepository {
 
     @Override
     public List<OrderItem> itemsOfOrder(String order_id) {
-        return jdbcTemplate.query(SELECT_ORDER_ITEM + "where order_id = \'" + order_id + "\'", item);
+        return jdbcTemplate.query(SELECT_ORDER_ITEM + "where order_id = ?", item, order_id);
     }
 
     @Override
     public List<OrderItem> searchByDish_name(String dish_name) {
-        return jdbcTemplate.query(SELECT_ORDER_ITEM+"where dish_id in ("+SELECT_DISH+"where dish_name LIKE '%"+dish_name+"%')",item);
+        return jdbcTemplate.query(SELECT_ORDER_ITEM+"where dish_id in ("+SELECT_DISH+"where dish_name LIKE '%?%')",item,dish_name);
     }
 
     @Override
     public List<OrderItem> searchByDish_id(String dish_id) {
-        return jdbcTemplate.query(SELECT_ORDER_ITEM +"where dish_id in ("+SELECT_DISH+"where dish_id = '"+dish_id+"')",item);
+        return jdbcTemplate.query(SELECT_ORDER_ITEM + "where dish_id in (" + SELECT_DISH + "where dish_id = ?)", item, dish_id);
     }
 
     @Override
     public int amountOfDish(String dish_id) {
-        return jdbcTemplate.queryForObject("select sum(amount) from order_item where dish_id = '"+dish_id+"'",Integer.class);
+        return jdbcTemplate.queryForObject("select sum(amount) from order_item where dish_id =?", Integer.class, dish_id);
     }
 }

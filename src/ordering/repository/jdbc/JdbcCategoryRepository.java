@@ -42,7 +42,7 @@ public class JdbcCategoryRepository implements CategoryRepository {
 
     @Override
     public boolean isInDB(String category_id) {
-        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_id=\'" + category_id + "\'", Integer.class) != 0;
+        return jdbcTemplate.queryForObject(TOTAL_CATEGORY + " and category_id=?", Integer.class, category_id) != 0;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class JdbcCategoryRepository implements CategoryRepository {
 
     @Override
     public Category getCategoryById(String category_id) {
-        return jdbcTemplate.queryForObject(SELECT_CATEGORY + " and category_id=?",new CategoryRowMapper(),category_id);
+        return jdbcTemplate.queryForObject(SELECT_CATEGORY + " and category_id=?", new CategoryRowMapper(), category_id);
     }
 
     @Override
@@ -74,21 +74,21 @@ public class JdbcCategoryRepository implements CategoryRepository {
     @Override
     public Category deleteCategoryById(String category_id) {
         Category deletedCategory = getCategoryById(category_id);
-        jdbcTemplate.update(DELETE_CATEGORY + " where category_id=\'" + category_id + "\'");
+        jdbcTemplate.update(DELETE_CATEGORY + " where category_id=?", category_id);
         return deletedCategory;
     }
 
     @Override
     public Category deleteCategoryByName(String category_name) {
         Category deletedCategory = getCategoryById(category_name);
-        jdbcTemplate.update(DELETE_CATEGORY + " where category_name=\'" + category_name + "\'");
+        jdbcTemplate.update(DELETE_CATEGORY + " where category_name=?", category_name);
         return deletedCategory;
     }
 
     @Override
     public Category deleteCategory(Category category) {
         Category deletedCategory = getCategoryById(category.getCategory_id());
-        jdbcTemplate.update(DELETE_CATEGORY + " where category_id=\'" + category.getCategory_id() + "\'");
+        jdbcTemplate.update(DELETE_CATEGORY + " where category_id=?", category.getCategory_id());
         return deletedCategory;
     }
 

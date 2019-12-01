@@ -23,6 +23,6 @@ public class JdbcOrderAddressInfoViewRepository implements OrderAddressInfoViewR
 
     @Override
     public OrderAddressInfoView getAddress(String order_id) {
-        return jdbcTemplate.queryForObject(GET_ADDRESS+"\'"+order_id+"\'",OrderMapper);
+        return jdbcTemplate.queryForObject(GET_ADDRESS + "?", OrderMapper, order_id);
     }
 }

@@ -76,12 +76,13 @@ public class JdbcDishRepository implements DishRepository {
      */
     @Override
     public PaginationSupport<DishCategorySupport> searchByKeywordsPage(String keywords, int pageNo, int PageSize) {
-        int totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM Dish WHERE dish.delete_tag=0 AND (dish_name like '%" + keywords + "%' or dish_id='" + keywords + "')", int.class);
+        keywords = "%" + keywords + "%";
+        int totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM Dish WHERE dish.delete_tag=0 AND (dish_name like ? or dish_id=?)", int.class, keywords, keywords);
         int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);
 
-        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " AND (dish_name LIKE '%" + keywords + "%' OR dish_id='" + keywords + "')" + SELECT_PAGE, new DishRowMapper(), PageSize, startIndex);
+        List<Dish> dishes = jdbc.query(SELECT_FROM_DISH + " AND (dish_name LIKE ? OR dish_id=?)" + SELECT_PAGE, new DishRowMapper(), keywords, keywords, PageSize, startIndex);
         List<DishCategorySupport> items = new ArrayList<>();
         for (Dish dish : dishes) {
             items.add(listDishCategories(dish));
@@ -109,7 +110,7 @@ public class JdbcDishRepository implements DishRepository {
      */
     @Override
     public PaginationSupport<DishCategorySupport> searchByCategoryPage(Category category, int pageNo, int PageSize) {
-        int totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id='" + category.getCategory_id() + "'", int.class);
+        int totalCount = jdbc.queryForObject("SELECT COUNT(*) FROM dish d JOIN dish_category dc WHERE d.dish_id=dc.dish_id AND category_id=?", int.class, category.getCategory_id());
         int startIndex = PaginationSupport.convertFromPageToStartIndex(pageNo, PageSize);
         if (totalCount < 1)
             return new PaginationSupport<>(new ArrayList<>(0), 0);

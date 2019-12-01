@@ -39,7 +39,7 @@ public class JdbcCustomerRepository implements CustomerRepository {
 
     @Override
     public boolean isInDB(String customer_account) {
-        return jdbcTemplate.queryForObject(TOTAL_CUSTOMER + " where customer_account=\'" + customer_account+"\'", Integer.class) != 0;
+        return jdbcTemplate.queryForObject(TOTAL_CUSTOMER + " where customer_account=?", Integer.class, customer_account) != 0;
     }
 
     @Override

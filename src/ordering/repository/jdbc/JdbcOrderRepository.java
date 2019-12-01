@@ -85,7 +85,7 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public List<Order> getCustomerOrders(String customer_account) {
-        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"' order by create_time DESC ",orderRowMapper);
+        return jdbcTemplate.query(CUSTOMER_ORDERS + "? order by create_time DESC ", orderRowMapper, customer_account);
     }
 
     @Override
@@ -106,7 +106,7 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public Order getOrder(String order_id) {
-        return jdbcTemplate.queryForObject("select * from `order` where order_id = \'" + order_id + "\'", orderRowMapper);
+        return jdbcTemplate.queryForObject("select * from `order` where order_id = ?", orderRowMapper, order_id);
     }
 
     @Override
@@ -180,7 +180,8 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public long getTotalCompletedOrdersByDayNum(String day) {
-        return jdbcTemplate.queryForObject(SELECT_COMPLETED_COUNT + " AND create_time LIKE '" + day + "%'", long.class);
+        day = day + "%";
+        return jdbcTemplate.queryForObject(SELECT_COMPLETED_COUNT + " AND create_time LIKE ?", long.class, day);
     }
 
     @Override
@@ -190,7 +191,8 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public double getTotalIncomeByDay(String day) {
-        return jdbcTemplate.queryForObject(TOTAL_INCOME + " WHERE v.create_time LIKE '" + day + "%'", double.class);
+        day = day + "%";
+        return jdbcTemplate.queryForObject(TOTAL_INCOME + " WHERE v.create_time LIKE ?", double.class, day);
     }
 
     @Override
@@ -200,12 +202,12 @@ public class JdbcOrderRepository implements OrderRepository {
 
     @Override
     public List<Order> completedOrders(String customer_account) {
-        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"' and order_state =2 order by create_time DESC ",orderRowMapper);
+        return jdbcTemplate.query(CUSTOMER_ORDERS + "? and order_state =2 order by create_time DESC ", orderRowMapper, customer_account);
     }
 
     @Override
     public List<Order> uncompletedOrders(String customer_account) {
-        return jdbcTemplate.query(CUSTOMER_ORDERS+"'"+customer_account+"' and (order_state =0 or order_state = 1 )order by create_time DESC ",orderRowMapper);
+        return jdbcTemplate.query(CUSTOMER_ORDERS + "? and (order_state =0 or order_state = 1 )order by create_time DESC ", orderRowMapper, customer_account);
     }
 
 
