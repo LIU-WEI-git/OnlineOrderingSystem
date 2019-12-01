@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
 
-        <%request.getAttribute("alist");%>
+        <%request.getAttribute("admin");%>
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -66,20 +66,27 @@
                                     <th style="text-align: center">邮箱</th>
                                     <th style="text-align: center">电话</th>
                                     <th style="text-align: center">管理员权限状态</th>
+                                    <th style="text-align: center">修改管理员密码</th>
                                     <th style="text-align: center">删除管理员</th>
                                 </tr>
-                                <c:forEach items="${alist}" var="admin" varStatus="li">
+                                <c:forEach items="${alist}" var="admin_1" varStatus="li">
                                     <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
-                                        <td align="center">${admin.getAdmin_account()}</td>
-                                        <td align="center">${admin.getAdmin_name()}</td>
-                                        <td align="center">${admin.getAdmin_register_date()}</td>
-                                        <td align="center">${admin.getAdmin_email()}</td>
-                                        <td align="center">${admin.getAdmin_phone()}</td>
-                                        <td align="center"><c:if test ="${admin.isDelete_tag()==0}"> <c:out value="正常" /></c:if>
-                                            <c:if test ="${admin.isDelete_tag()==1}"> <c:out value="已被删除" /></c:if>
+                                        <td align="center">${admin_1.getAdmin_account()}</td>
+                                        <td align="center">${admin_1.getAdmin_name()}</td>
+                                        <td align="center">${admin_1.getAdmin_register_date()}</td>
+                                        <td align="center">${admin_1.getAdmin_email()}</td>
+                                        <td align="center">${admin_1.getAdmin_phone()}</td>
+                                        <td align="center"><c:if test ="${admin_1.isDelete_tag()==0}"> <c:out value="正常" /></c:if>
+                                            <c:if test ="${admin_1.isDelete_tag()==1}"> <c:out value="已被删除" /></c:if>
                                         </td>
                                         <td align="center">
-                                            <a href="<c:url value="/admin/deleteadmin?admin_username=${admin.getAdmin_name()}" />">删除</a>
+                                            <a href="<c:url value="/admin/Achange?admin_username=${admin_1.getAdmin_name()}" />">修改</a>
+                                        </td>
+                                        <td align="center">
+                                            <c:if test ="${admin_1.getAdmin_account().equals(admin.getAdmin_account())}"> </c:if>
+                                            <c:if test ="${admin_1.getAdmin_account()!=admin.getAdmin_account()}">
+                                                <a href="<c:url value="/admin/deleteadmin?admin_username=${admin_1.getAdmin_name()}" />">删除</a> </c:if>
+
                                         </td>
                                     </tr>
                                 </c:forEach>

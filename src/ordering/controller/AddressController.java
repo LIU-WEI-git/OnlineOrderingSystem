@@ -3,6 +3,7 @@ package ordering.controller;
 import ordering.domain.Address;
 import ordering.domain.Customer;
 import ordering.repository.AddressRepository;
+import ordering.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * 顾客地址信息操作相关的控制类
@@ -29,6 +30,8 @@ public class AddressController {
 
     @Autowired
     private AddressRepository addressRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
     /**
      * 顾客地址管理
@@ -91,7 +94,7 @@ public class AddressController {
                                 @RequestParam(value = "address_info")String info,
                                 Model model)
     {
-        Address address = new Address(address_id, customer_account, contact, phone, info);
+        Address address = new Address(address_id, customerRepository.getCustomerByAccount(customer_account), contact, phone, info);
         addressRepository.resetAddress(address);
         return "redirect:/myAddress";
     }
@@ -136,7 +139,7 @@ public class AddressController {
         if (addressRepository.isInDB(address_id)) {
             return "redirect:/myAddress/add_address?info=fail to register,please try again";
         }
-        Address address = new Address(address_id, ((Customer) session.getAttribute("customer")).getCustomer_account(), contact, phone, info);
+        Address address = new Address(address_id, (Customer) session.getAttribute("customer"), contact, phone, info);
         addressRepository.addAddress(address);
         return "redirect:/myAddress";
     }

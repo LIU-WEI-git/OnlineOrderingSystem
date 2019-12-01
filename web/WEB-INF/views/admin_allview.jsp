@@ -167,7 +167,120 @@ request.getSession().getAttribute("totalorder");
                         </div>
                     </div>
 
+                    <form class="input-group col-md-12" style="margin: 10px;position: relative" action="<c:url value="/admin/searchincome"/>">
 
+                        <input type="text" class="form-control" name="date"
+                               placeholder="请输入要查询日期" id="Date">
+                        <span class="input-group-btn">
+                        <button type="submit" class="btn btn-info btn-search" onclick="check()">日期查询</button>
+                    </span>
+                    </form>
+                    <h1>${error}</h1>
+                    <%--<%request.getAttribute("dayincome");
+                        request.getAttribute("dayorder");%>--%>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <div class="icon-big icon-warning text-center">
+                                                    <i class="ti-server"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <div class="numbers">
+                                                    <p>该日收入</p>
+                                                    ${dayincome}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <hr />
+                                            <div class="stats">
+                                                <i class="ti-reload"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <div class="icon-big icon-success text-center">
+                                                    <i class="ti-wallet"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <div class="numbers">
+                                                    <p>该日完成订单数</p>
+                                                    ${dayorder}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <hr />
+                                            <div class="stats">
+                                                <i class="ti-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                   <%-- <section class="tables" style="padding: 20px">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Income From Fine</th>
+                                                        <th></th>
+                                                        <th>Income From Deposit</th>
+                                                        <th></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>Today</th>
+                                                        <td>${todayFine}</td>
+                                                        <th>Today</th>
+                                                        <td>${todayDeposit}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>This Week</th>
+                                                        <td>${weekFine}</td>
+                                                        <th>This Week</th>
+                                                        <td>${weekDeposit}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>This Month</th>
+                                                        <td>${monthFine}</td>
+                                                        <th>This Month</th>
+                                                        <td>${monthDeposit}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Total Fine</th>
+                                                        <td>${totalFine}</td>
+                                                        <th>Total Deposit</th>
+                                                        <td>${totalDeposit}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>--%>
                 </div></div>
 
         </div>
@@ -197,6 +310,25 @@ request.getSession().getAttribute("totalorder");
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
 
+<script>
+    function check()
+    {
+        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
+        var str1 = document.getElementById("Date").value;
+        var arr = reg.exec(str1);
+
+        if (str1=="") {
+
+            alert("请输入日期");
+
+        }
+        else if (!reg.test(str1) || parseInt(RegExp.$2)>=12 || parseInt(RegExp.$3)>=31)/*(!reg.test(str1) && RegExp.$2 > 12 && RegExp.$3 > 31)*/ {
+            alert("请保证输入的为yyyy-mm-dd日期格式");
+        } else {
+            alert("输入正确");
+        }
+    }
+</script>
 
 
 

@@ -43,7 +43,7 @@ public class JdbcAddressRepository implements AddressRepository {
     @Override
     public boolean addAddress(Address address) {
         jdbcTemplate.update(INSERT_ADDRESS,address.getAddress_id(),
-                address.getCustomer_account(),address.getContact(),
+                address.getCustomer().getCustomer_account(), address.getContact(),
                 address.getPhone(),address.getInfo(),address.getDelete_tag());
         return true;
     }
@@ -57,7 +57,7 @@ public class JdbcAddressRepository implements AddressRepository {
     @Override
     public boolean resetAddress(Address address) {
         jdbcTemplate.update("update address set customer_account =?,contact=?,phone = ?,info =? where address_id = ?",
-                address.getCustomer_account(),address.getContact(),address.getPhone(),address.getInfo(),address.getAddress_id());
+                address.getCustomer(), address.getContact(), address.getPhone(), address.getInfo(), address.getAddress_id());
         return true;
     }
 

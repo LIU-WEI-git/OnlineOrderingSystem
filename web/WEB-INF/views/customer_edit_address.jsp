@@ -73,7 +73,7 @@
                     <div hidden>
                         <span>customer_account<label>*</label></span>
                         <label>
-                            <input type="text" name="customer_account" value="${address.customer_account}" minlength="3" maxlength="20" required/>
+                            <input type="text" name="customer_account" value="${address.customer.customer_account}" minlength="3" maxlength="20" required/>
                         </label>
                     </div>
                     <div class="clearfix"></div>
