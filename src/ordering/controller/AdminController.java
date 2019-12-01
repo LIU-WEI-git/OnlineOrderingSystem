@@ -1,27 +1,29 @@
 package ordering.controller;
 
-import ordering.domain.Admin;
-import ordering.domain.Category;
-import ordering.domain.Dish;
-import ordering.domain.Order;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import ordering.domain.*;
 import ordering.repository.*;
+import ordering.repository.jdbc.JdbcAddressRepository;
 import ordering.utils.CategoryDishSupport;
 import ordering.utils.DishCategorySupport;
 import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -44,6 +46,21 @@ public class AdminController {
     private  OrderAddressInfoViewRepository orderAddressInfoViewRepository;
     @Autowired
     private CustomerRepository customerRepository;
+
+    private static boolean isLegalDate(String sDate) {
+        int legalLen = 10;
+        if ((sDate == null) || (sDate.length() != legalLen)) {
+            return false;
+        }
+
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = formatter.parse(sDate);
+            return sDate.equals(formatter.format(date));
+        } catch (Exception e) {
+            return false;
+        }}
+
     /**
      * 管理员登陆
      * @return
@@ -70,10 +87,10 @@ public class AdminController {
         catch(Exception e){
 
         }
-        if (admin != null&&admin.getDelete_tag()== Admin.UNDELETED) {
+        if (admin != null&&admin.getDelete_tag()==admin.UNDELETED) {
             session.setAttribute("admin", admin);
             session.setAttribute("name", admin.getAdmin_name());
-            session.setAttribute("l", null);
+            session.setAttribute("l",null);
             return "redirect:/admin/overall";
         }
         else{
@@ -110,6 +127,23 @@ public class AdminController {
         return "redirect:/admin/user";
     }
 
+
+    @RequestMapping(value = "/Achange", method = GET)
+    public String A_change(@RequestParam(value = "admin_username", defaultValue = "") String name,HttpSession session) {
+       Admin peach=adminRepository.findAdminByUsername(name);
+      session.setAttribute("peach",peach);
+        return "admin_userchange";
+    }
+
+
+    @RequestMapping(value = "/Achange", method = POST)
+    public String B_change(@RequestParam(value = "password", defaultValue = "") String password,
+                           HttpSession session) {
+        Admin admin= (Admin) session.getAttribute("peach");
+        adminRepository.updateAdminPassword(password,admin);
+
+        return "admin_addsuccess";
+    }
     /**
      *添加管理员
      * @param model
@@ -146,10 +180,13 @@ public class AdminController {
      * @return
      */
     @RequestMapping(value = "/dish", method = GET)
-    public String showdishlist(HttpSession session) {
-        List<Dish> list=dishRepository.getAll();
+    public String showdishlist(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                               @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,HttpSession session,Model model) {
+       /* List<Dish> list=dishRepository.getAll();*/
+       PaginationSupport<DishCategorySupport> list=dishRepository.findByPage(pageNo,pageSize);
         List<Category> categories=categoryRepository.getCategoryList();
-        session.setAttribute("list",list);
+        model.addAttribute("list",list);
+        /*session.setAttribute("list",list);*/
         session.setAttribute("categories",categories);
         return "admin_dish";
     }
@@ -163,9 +200,9 @@ public class AdminController {
     @RequestMapping(value = "/changedish", method = GET)
     public String changdish(@RequestParam(value = "dish_id", defaultValue = "") String dishid,HttpSession session) {
        Dish dish=dishRepository.findById(dishid);
-        /*List<Category> tcategories=categoryRepository.getCategoryList();*/
+       /*List<Category> tcategories=categoryRepository.getCategoryList();*/
         session.setAttribute("dish",dish);
-        /* session.setAttribute(" tcategories", tcategories);*/
+       /* session.setAttribute(" tcategories", tcategories);*/
         return "admin_dishchange";
     }
 
@@ -179,27 +216,30 @@ public class AdminController {
     @RequestMapping(value = "/searchdish", method = GET)
     public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
                              @RequestParam(value = "message", defaultValue = "") String message,@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
-                             @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,HttpSession session) {
+                             @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,HttpSession session,Model model) {
         if(signal.equals("all")){
             if(message.equals("")){
-            List<Dish> list=dishRepository.getAll();
-            session.setAttribute("list",list);
+          /*  List<Dish> list=dishRepository.getAll();
+            session.setAttribute("list",list);*/
+                PaginationSupport<DishCategorySupport> list=dishRepository.findByPage(pageNo,pageSize);
+                model.addAttribute("list",list);
             return "admin_dish";}
             else{
-                List<Dish> list=new ArrayList<>();
-                PaginationSupport<DishCategorySupport> p=dishRepository.searchByKeywordsPage(message,pageNo,pageSize);
-                for (int i = 0; i < p.getItems().size(); i++) {
+               /* List<Dish> list=new ArrayList<>();*/
+                PaginationSupport<DishCategorySupport> list=dishRepository.searchByKeywordsPage(message,pageNo,pageSize);
+               /* for (int i = 0; i < p.getItems().size(); i++) {
                     Dish dish=p.getItems().get(i).getDish();
                     list.add(dish);
-                }
-                session.setAttribute("list",list);
+                }*/
+                model.addAttribute("list",list);
                 return "admin_dish";}
         }
         else{
         Category category=categoryRepository.getCategoryByName(signal);
-        CategoryDishSupport w=categoryRepository.listCategoryDishes(category);
-        List<Dish> list=w.getDishes();
-        session.setAttribute("list",list);
+       /* CategoryDishSupport w=categoryRepository.listCategoryDishes(category)*/;
+            PaginationSupport<DishCategorySupport> list=dishRepository.searchByCategoryPage(category,pageNo,pageSize);
+       /* List<Dish> list=w.getDishes();*/
+            model.addAttribute("list",list);
 
         return "admin_dish";}
     }
@@ -214,23 +254,21 @@ public class AdminController {
                               @RequestParam(value = "dish_price", defaultValue = "") float price,
                               @RequestParam(value = "dish_description", defaultValue = "") String description,
                               @RequestParam(value = "pic", defaultValue = "") String pic,
-                              @RequestParam(value = "cate", defaultValue = "") String[] cate) {
+                              @RequestParam(value = "cate", defaultValue = "") String [] cate){
 
         String t = Arrays.toString(cate);
-        String t2 = t.substring(1, t.length() - 1);
-        List<Category> categories = new ArrayList<>();
+        String t2=t.substring(1,t.length()-1);
+        List<Category> categories=new ArrayList<>();
         String[] split = t2.split(", ");
         for (int i = 0; i < split.length; i++) {
-            String c = split[i];
-            if (categoryRepository.isInDB(c)) {
-                Category m = categoryRepository.getCategoryById(c);
-                categories.add(m);
-            }
+            String c=split[i];
+            Category m=categoryRepository.getCategoryById(c);
+            categories.add(m);
         }
-        Dish dish = new Dish(id, name, pic, price, description);
-        DishCategorySupport p = new DishCategorySupport(categories, dish);
+        Dish dish=new Dish(id,name,pic,price,description);
+        DishCategorySupport p=new DishCategorySupport(categories, dish);
 
-        dishRepository.updateDish(name, pic, categories, price, description, p);
+        dishRepository.updateDish(name,pic,categories,price,description,p);
         return "redirect:/admin/dish";
     }
 
@@ -287,7 +325,6 @@ session.setAttribute("admin",admin);
     @RequestMapping(value = "/logout", method = GET)
     public String logout(HttpSession session){
     session.removeAttribute("admin");
-    session.removeAttribute("l");
     return "redirect:/admin/alogin";
     }
 
@@ -433,10 +470,9 @@ session.setAttribute("admin",admin);
             String[] split = t2.split(", ");
             for (int i = 0; i < split.length; i++) {
                 String c=split[i];
-                if (categoryRepository.isInDB(c)) {
-                    Category m = categoryRepository.getCategoryById(c);
-                    categories.add(m);
-                }
+                Category m=categoryRepository.getCategoryById(c);
+                categories.add(m);
+
             }
 
             Dish dish=new Dish(id,name,url,price,description);
@@ -534,6 +570,8 @@ session.setAttribute("admin",admin);
  session.setAttribute("totalorder",totalorder);
  session.setAttribute("cs",cs);
  session.setAttribute("as",as);
+ session.removeAttribute("dayincome");
+ session.removeAttribute("dayorder");
         return "admin_allview";
     }
 
@@ -590,6 +628,26 @@ session.setAttribute("admin",admin);
             return "admin_orderlist";
     }
 
+    @RequestMapping(value = "/searchincome", method = GET)
+    public String searchincome(@RequestParam(value = "date", defaultValue = "") String date,Model model,HttpSession session) {
+      boolean a=isLegalDate(date);
+        if (a) {
+
+            double dayincome = orderRepository.getTotalIncomeByDay(date);
+
+       long   dayorder=orderRepository.getTotalCompletedOrdersByDayNum(date);
+        session.setAttribute("dayincome",dayincome);
+        session.setAttribute("dayorder",dayorder);
+        model.addAttribute("error" ,null);
+        }
+        else{
+            String error="请填写正确格式";
+            model.addAttribute("error" ,error);
+            session.setAttribute("dayincome",0);
+            session.setAttribute("dayorder",0);
+        }
+        return "admin_allview";
+    }
 
     /**
      * 确认订单
@@ -659,8 +717,9 @@ session.setAttribute("admin",admin);
         return "admin_orderadress";
     }
 
-    @RequestMapping(value = "/reo", method = GET)
-    public String Reo() {
+    @RequestMapping(value = "/reo",method = GET)
+    public String Reo()
+    {
 
         return "redirect:/admin/overall";
     }
