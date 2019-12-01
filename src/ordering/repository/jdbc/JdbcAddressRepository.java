@@ -13,6 +13,13 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
+/**
+ * address资源库jdbc实现类
+ *
+ * @author niejunjie
+ * @version 2.0
+ * @since 2019/11/17 09:31
+ */
 @Repository
 public class JdbcAddressRepository implements AddressRepository {
 

@@ -5,7 +5,13 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import ordering.domain.Address;
 
 import java.util.List;
-
+/**
+ * address资源库接口
+ *
+ * @author neilly
+ * @version 2.0
+ * @since 2019/12/1 21:25
+ */
 public interface AddressRepository {
 
     /**

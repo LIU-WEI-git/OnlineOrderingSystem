@@ -40,7 +40,7 @@ public class Address {
         this.contact = contact;
         this.phone = phone;
         this.info = info;
-        this.delete_tag=ADDRESS_UNDELETED;
+        this.delete_tag = ADDRESS_UNDELETED;
     }
 
     /**

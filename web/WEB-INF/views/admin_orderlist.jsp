@@ -72,7 +72,6 @@
                         <button type="submit" class="btn btn-info btn-search">账号查询</button>
                     </span>
             </form>
-<% request.getSession().getAttribute("orders");%>
             <div class="content table-responsive table-full-width">
             <c:forEach items="${orders}" var="order">
                 <ul class="">

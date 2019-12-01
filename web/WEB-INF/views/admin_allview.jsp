@@ -310,25 +310,25 @@ request.getSession().getAttribute("totalorder");
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="${pageContext.request.contextPath}/res/js/demo.js"></script>
 
-<script>
-    function check()
-    {
-        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
-        var str1 = document.getElementById("Date").value;
-        var arr = reg.exec(str1);
+<%--<script>--%>
+<%--    function check()--%>
+<%--    {--%>
+<%--        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;--%>
+<%--        var str1 = document.getElementById("Date").value;--%>
+<%--        var arr = reg.exec(str1);--%>
 
-        if (str1=="") {
+<%--        if (str1=="") {--%>
 
-            alert("请输入日期");
+<%--            alert("请输入日期");--%>
 
-        }
-        else if (!reg.test(str1) || parseInt(RegExp.$2)>=12 || parseInt(RegExp.$3)>=31)/*(!reg.test(str1) && RegExp.$2 > 12 && RegExp.$3 > 31)*/ {
-            alert("请保证输入的为yyyy-mm-dd日期格式");
-        } else {
-            alert("输入正确");
-        }
-    }
-</script>
+<%--        }--%>
+<%--        else if (!reg.test(str1) || parseInt(RegExp.$2)>=12 || parseInt(RegExp.$3)>=31)/*(!reg.test(str1) && RegExp.$2 > 12 && RegExp.$3 > 31)*/ {--%>
+<%--            alert("请保证输入的为yyyy-mm-dd日期格式");--%>
+<%--        } else {--%>
+<%--            alert("输入正确");--%>
+<%--        }--%>
+<%--    }--%>
+<%--</script>--%>
 
 
 
