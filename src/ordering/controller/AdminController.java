@@ -3,6 +3,7 @@ package ordering.controller;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,10 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -48,6 +46,21 @@ public class AdminController {
     private  OrderAddressInfoViewRepository orderAddressInfoViewRepository;
     @Autowired
     private CustomerRepository customerRepository;
+
+    private static boolean isLegalDate(String sDate) {
+        int legalLen = 10;
+        if ((sDate == null) || (sDate.length() != legalLen)) {
+            return false;
+        }
+
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = formatter.parse(sDate);
+            return sDate.equals(formatter.format(date));
+        } catch (Exception e) {
+            return false;
+        }}
+
     /**
      * 管理员登陆
      * @return
@@ -114,6 +127,23 @@ public class AdminController {
         return "redirect:/admin/user";
     }
 
+
+    @RequestMapping(value = "/Achange", method = GET)
+    public String A_change(@RequestParam(value = "admin_username", defaultValue = "") String name,HttpSession session) {
+       Admin peach=adminRepository.findAdminByUsername(name);
+      session.setAttribute("peach",peach);
+        return "admin_userchange";
+    }
+
+
+    @RequestMapping(value = "/Achange", method = POST)
+    public String B_change(@RequestParam(value = "password", defaultValue = "") String password,
+                           HttpSession session) {
+        Admin admin= (Admin) session.getAttribute("peach");
+        adminRepository.updateAdminPassword(password,admin);
+
+        return "admin_addsuccess";
+    }
     /**
      *添加管理员
      * @param model
@@ -150,11 +180,13 @@ public class AdminController {
      * @return
      */
     @RequestMapping(value = "/dish", method = GET)
-    public String showdishlist(HttpSession session) {
+    public String showdishlist(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+                               @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,HttpSession session,Model model) {
        /* List<Dish> list=dishRepository.getAll();*/
-       PaginationSupport<DishCategorySupport> list=dishRepository.findByPage(1,10);
+       PaginationSupport<DishCategorySupport> list=dishRepository.findByPage(pageNo,pageSize);
         List<Category> categories=categoryRepository.getCategoryList();
-        session.setAttribute("list",list);
+        model.addAttribute("list",list);
+        /*session.setAttribute("list",list);*/
         session.setAttribute("categories",categories);
         return "admin_dish";
     }
@@ -184,27 +216,30 @@ public class AdminController {
     @RequestMapping(value = "/searchdish", method = GET)
     public String searchdish(@RequestParam(value = "signal", defaultValue = "") String signal,
                              @RequestParam(value = "message", defaultValue = "") String message,@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
-                             @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,HttpSession session) {
+                             @RequestParam(value = "pageSize", defaultValue = "4") int pageSize,HttpSession session,Model model) {
         if(signal.equals("all")){
             if(message.equals("")){
-            List<Dish> list=dishRepository.getAll();
-            session.setAttribute("list",list);
+          /*  List<Dish> list=dishRepository.getAll();
+            session.setAttribute("list",list);*/
+                PaginationSupport<DishCategorySupport> list=dishRepository.findByPage(pageNo,pageSize);
+                model.addAttribute("list",list);
             return "admin_dish";}
             else{
-                List<Dish> list=new ArrayList<>();
-                PaginationSupport<DishCategorySupport> p=dishRepository.searchByKeywordsPage(message,pageNo,pageSize);
-                for (int i = 0; i < p.getItems().size(); i++) {
+               /* List<Dish> list=new ArrayList<>();*/
+                PaginationSupport<DishCategorySupport> list=dishRepository.searchByKeywordsPage(message,pageNo,pageSize);
+               /* for (int i = 0; i < p.getItems().size(); i++) {
                     Dish dish=p.getItems().get(i).getDish();
                     list.add(dish);
-                }
-                session.setAttribute("list",list);
+                }*/
+                model.addAttribute("list",list);
                 return "admin_dish";}
         }
         else{
         Category category=categoryRepository.getCategoryByName(signal);
-        CategoryDishSupport w=categoryRepository.listCategoryDishes(category);
-        List<Dish> list=w.getDishes();
-        session.setAttribute("list",list);
+       /* CategoryDishSupport w=categoryRepository.listCategoryDishes(category)*/;
+            PaginationSupport<DishCategorySupport> list=dishRepository.searchByCategoryPage(category,pageNo,pageSize);
+       /* List<Dish> list=w.getDishes();*/
+            model.addAttribute("list",list);
 
         return "admin_dish";}
     }
@@ -595,10 +630,22 @@ session.setAttribute("admin",admin);
 
     @RequestMapping(value = "/searchincome", method = GET)
     public String searchincome(@RequestParam(value = "date", defaultValue = "") String date,Model model,HttpSession session) {
-       double dayincome= orderRepository.getTotalIncomeByDay(date);
+      boolean a=isLegalDate(date);
+        if (a) {
+
+            double dayincome = orderRepository.getTotalIncomeByDay(date);
+
        long   dayorder=orderRepository.getTotalCompletedOrdersByDayNum(date);
         session.setAttribute("dayincome",dayincome);
         session.setAttribute("dayorder",dayorder);
+        model.addAttribute("error" ,null);
+        }
+        else{
+            String error="请填写正确格式";
+            model.addAttribute("error" ,error);
+            session.setAttribute("dayincome",0);
+            session.setAttribute("dayorder",0);
+        }
         return "admin_allview";
     }
 

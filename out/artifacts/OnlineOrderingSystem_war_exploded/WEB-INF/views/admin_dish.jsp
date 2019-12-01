@@ -84,26 +84,26 @@
                 <th style="text-align: center">修改菜品</th>
                 </thead>
                 <tbody>
-                <c:forEach items="${list.items}" var="dish" varStatus="li">
+                <c:forEach items="${list.items}" var="dishCategorySupport" varStatus="li">
                 <tr bgcolor="${status.index%2 == 0?'#D0D8E8':'#E9EDF4'}">
-                    <td align="center">${dish.getDish_id()}</td>
-                    <td align="center">${dish.getDish_name()}</td>
-                    <td align="center">${dish.getPrice()}</td>
-                    <td align="center">${dish.getDescription()}</td>
-                    <td align="center"><img src="${pageContext.request.contextPath}/resources/${dish.getPicture_url()}"></td>
+                    <td align="center">${dishCategorySupport.dish.getDish_id()}</td>
+                    <td align="center">${dishCategorySupport.dish.getDish_name()}</td>
+                    <td align="center">${dishCategorySupport.dish.getPrice()}</td>
+                    <td align="center">${dishCategorySupport.dish.getDescription()}</td>
+                    <td align="center"><img src="${pageContext.request.contextPath}/resources/${dishCategorySupport.dish.getPicture_url()}"></td>
                     <td align="center">
-                    <a href="<c:url value="/admin/deletedish?dish_id=${dish.getDish_id()}" />">删除</a>
+                    <a href="<c:url value="/admin/deletedish?dish_id=${dishCategorySupport.dish.getDish_id()}" />">删除</a>
                     </td>
                     <td align="center">
-                        <a href="<c:url value="/admin/changedish?dish_id=${dish.getDish_id()}" />">修改</a>
+                        <a href="<c:url value="/admin/changedish?dish_id=${dishCategorySupport.dish.getDish_id()}" />">修改</a>
                     </td>
                 </tr>
                 </c:forEach></tbody></table></div>
             <c:if test="${list.previousPage}">
-                <a href="<c:url value="/admin/dish?pageNo=${list.currentPageNo-1}" />" >上一页</a>
+                <a href="<c:url value="/admin/dish?pageNo=${list.getCurrentPageNo()-1}" />" >上一页</a>
             </c:if>
             <c:if test="${list.nextPage}">
-                <a href="<c:url value="/admin/dish?pageNo=${list.currentPageNo+1}" />" >下一页</a>
+                <a href="<c:url value="/admin/dish?pageNo=${list.getCurrentPageNo()+1}" />" >下一页</a>
             </c:if>
              <%--   <table style="width:100%;border:1px white solid">
                     <tr bgcolor="#4F81BD"style="color: #fff;">

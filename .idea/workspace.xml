@@ -6,18 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="问题解决">
+    <list default="true" id="63cf23c7-867e-4325-be3f-013931a1b6d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_userchange.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/classes/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_dishcategory.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/admin_orderlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem_war_exploded/WEB-INF/views/adminlogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OnlineOrderingSystem/ordering/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ordering/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_allview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_allview.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_dish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminlogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin_user.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +88,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -274,6 +272,7 @@
       <workItem from="1575094447366" duration="210000" />
       <workItem from="1575097531679" duration="2154000" />
       <workItem from="1575117633544" duration="4680000" />
+      <workItem from="1575172440636" duration="8035000" />
     </task>
     <task id="LOCAL-00001" summary="newMaster">
       <created>1574006675080</created>
