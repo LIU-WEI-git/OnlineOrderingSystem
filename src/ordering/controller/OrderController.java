@@ -138,10 +138,10 @@ public class OrderController {
         ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
         Order order = null;
         if (shoppingCart.getTotalPrice() > RootConfig.TARGET_PRICE) {
-            order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()),
+            order = new Order(order_id, (Customer) session.getAttribute("customer"),addressRepository.getAddress(address_id), new Timestamp(create_time.getTime()),
                     remark, RootConfig.DISCOUNT, shoppingCart.getTotalPrice() - RootConfig.DISCOUNT);
         } else {
-            order = new Order(order_id, customer_account, address_id, new Timestamp(create_time.getTime()), remark, 0, shoppingCart.getTotalPrice());
+            order = new Order(order_id,(Customer) session.getAttribute("customer"), addressRepository.getAddress(address_id), new Timestamp(create_time.getTime()), remark, 0, shoppingCart.getTotalPrice());
         }
         orderRepository.addOrder(order);
         for (ShoppingCartItem shoppingCartItem : shoppingCart.getShoppingCartItemList()) {

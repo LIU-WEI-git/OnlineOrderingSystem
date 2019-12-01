@@ -1,20 +1,40 @@
 package ordering.repository.jdbc;
 
+import com.mysql.cj.xdevapi.Result;
 import ordering.domain.Address;
+import ordering.domain.Customer;
 import ordering.repository.AddressRepository;
+import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * address资源库jdbc实现类
+ *
+ * @author niejunjie
+ * @version 2.0
+ * @since 2019/11/17 09:31
+ */
 @Repository
 public class JdbcAddressRepository implements AddressRepository {
 
     private JdbcTemplate jdbcTemplate;
-    private RowMapper<Address>  addressRowMapper=new BeanPropertyRowMapper<>(Address.class);
+    private AddressRowMapper addressRowMapper=new AddressRowMapper();
+    private static class AddressRowMapper implements RowMapper<Address>{
+
+        @Override
+        public Address mapRow(ResultSet resultSet, int i) throws SQLException {
+            Customer customer=new Customer(resultSet.getString("customer_account"),resultSet.getString("customer_name"),
+                    resultSet.getString("customer_password"),resultSet.getTimestamp("customer_register_time"),resultSet.getString("customer_email"));
+            return new Address();
+        }
+    }
 
     private static final String SELECT_ADDRESS="select * from address";
     private static final String TOTAL_ADDRESS="select count(*) from address";
@@ -43,7 +63,7 @@ public class JdbcAddressRepository implements AddressRepository {
     @Override
     public boolean addAddress(Address address) {
         jdbcTemplate.update(INSERT_ADDRESS,address.getAddress_id(),
-                address.getCustomer_account(),address.getContact(),
+                address.getCustomer().getCustomer_account(),address.getContact(),
                 address.getPhone(),address.getInfo(),address.getDelete_tag());
         return true;
     }
@@ -57,7 +77,7 @@ public class JdbcAddressRepository implements AddressRepository {
     @Override
     public boolean resetAddress(Address address) {
         jdbcTemplate.update("update address set customer_account =?,contact=?,phone = ?,info =? where address_id = ?",
-                address.getCustomer_account(),address.getContact(),address.getPhone(),address.getInfo(),address.getAddress_id());
+                address.getCustomer().getCustomer_account(),address.getContact(),address.getPhone(),address.getInfo(),address.getAddress_id());
         return true;
     }
 

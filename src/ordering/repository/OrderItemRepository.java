@@ -4,6 +4,13 @@ import ordering.domain.OrderItem;
 
 import java.util.List;
 
+/**
+ * OrderItem资源库接口
+ *
+ * @author niejunjie
+ * @version 2.0
+ * @since 2019/12/1 21:25
+ */
 public interface OrderItemRepository {
     /**
      * 查看一份订单中的菜品数目

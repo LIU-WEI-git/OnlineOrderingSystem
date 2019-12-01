@@ -12,8 +12,8 @@ import java.util.Date;
 public class Order {
 
     private String order_id;
-    private String customer_account;
-    private String address_id;
+    private Customer customer;
+    private Address address;
     private Date create_time;
     private String remark;
     private int order_state;
@@ -38,17 +38,17 @@ public class Order {
      * 构造函数，默认订单状态为未接单，默认配送状态为未配送
      *
      * @param order_id
-     * @param customer_account
-     * @param address_id
+     * @param customer
+     * @param address
      * @param create_time
      * @param remark
      * @param discount
      * @param order_price
      */
-    public Order(String order_id, String customer_account, String address_id, Date create_time, String remark, float discount, float order_price) {
+    public Order(String order_id, Customer customer, Address address, Date create_time, String remark, float discount, float order_price) {
         this.order_id = order_id;
-        this.customer_account = customer_account;
-        this.address_id = address_id;
+        this.customer = customer;
+        this.address = address;
         this.create_time = create_time;
         this.remark = remark;
         this.discount = discount;
@@ -61,8 +61,8 @@ public class Order {
      * 构造函数
      *
      * @param order_id
-     * @param customer_account
-     * @param address_id
+     * @param customer
+     * @param address
      * @param create_time
      * @param remark
      * @param order_state
@@ -70,10 +70,10 @@ public class Order {
      * @param discount
      * @param order_price
      */
-    public Order(String order_id, String customer_account, String address_id, Date create_time, String remark, int order_state, int delivery_state, float discount, float order_price) {
+    public Order(String order_id,Customer customer, Address address, Date create_time, String remark, int order_state, int delivery_state, float discount, float order_price) {
         this.order_id = order_id;
-        this.customer_account = customer_account;
-        this.address_id = address_id;
+        this.customer = customer;
+        this.address = address;
         this.create_time = create_time;
         this.remark = remark;
         this.order_state = order_state;
@@ -90,20 +90,20 @@ public class Order {
         this.order_id = order_id;
     }
 
-    public String getCustomer_account() {
-        return customer_account;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomer_account(String customer_account) {
-        this.customer_account = customer_account;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getAddress_id() {
-        return address_id;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddress_id(String address_id) {
-        this.address_id = address_id;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Date getCreate_time() {

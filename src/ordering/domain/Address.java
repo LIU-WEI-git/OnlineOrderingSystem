@@ -10,7 +10,7 @@ package ordering.domain;
 public class Address {
 
     private String address_id;
-    private String customer_account;
+    private Customer customer;
     private String contact;
     private String phone;
     private String info;
@@ -29,14 +29,14 @@ public class Address {
      * 构造函数，默认删除状态为为删除
      *
      * @param address_id
-     * @param customer_account
+     * @param customer
      * @param contact
      * @param phone
      * @param info
      */
-    public Address(String address_id, String customer_account, String contact, String phone, String info) {
+    public Address(String address_id, Customer customer, String contact, String phone, String info) {
         this.address_id = address_id;
-        this.customer_account = customer_account;
+        this.customer = customer;
         this.contact = contact;
         this.phone = phone;
         this.info = info;
@@ -47,15 +47,15 @@ public class Address {
      * 构造函数
      *
      * @param address_id
-     * @param customer_account
+     * @param customer
      * @param contact
      * @param phone
      * @param info
      * @param delete_tag
      */
-    public Address(String address_id, String customer_account, String contact, String phone, String info,int delete_tag) {
+    public Address(String address_id, Customer customer, String contact, String phone, String info,int delete_tag) {
         this.address_id = address_id;
-        this.customer_account = customer_account;
+        this.customer = customer;
         this.contact = contact;
         this.phone = phone;
         this.info = info;
@@ -70,12 +70,12 @@ public class Address {
         this.address_id = address_id;
     }
 
-    public String getCustomer_account() {
-        return customer_account;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomer_account(String customer_account) {
-        this.customer_account = customer_account;
+    public void setCustomer_account(Customer customer) {
+        this.customer = customer;
     }
 
     public String getContact() {

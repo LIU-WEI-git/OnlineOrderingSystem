@@ -8,6 +8,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+/**
+ * category资源库接口的jdbc的实现类
+ *
+ * @author: niejunjie
+ * @version: 1.0
+ * Created in 2019/11/19 19:40
+ */
 @Repository
 public class JdbcOrderAddressInfoViewRepository implements OrderAddressInfoViewRepository {
     private JdbcTemplate jdbcTemplate;

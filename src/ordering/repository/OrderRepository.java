@@ -5,7 +5,13 @@ import ordering.domain.OrderItem;
 
 import java.util.List;
 
-
+/**
+ * Order资源库接口
+ *
+ * @author niejunjie
+ * @version 2.0
+ * @since 2019/12/1 21:25
+ */
 public interface OrderRepository {
 
     /**
