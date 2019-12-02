@@ -6,6 +6,7 @@ import ordering.domain.Customer;
 import ordering.domain.Order;
 import ordering.domain.OrderItem;
 import ordering.repository.*;
+import ordering.utils.PaginationSupport;
 import ordering.utils.ShoppingCart;
 import ordering.utils.ShoppingCartItem;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,26 +53,40 @@ public class OrderController {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String viewCustomerOrder(@RequestParam(value = "complete",required = false)String complete ,Model model, HttpSession session)
+    public String viewCustomerOrder(@RequestParam(value = "pageNo",defaultValue="1")int pageNo,@RequestParam(value = "pageSize",defaultValue = "2")int pageSize,
+                                    @RequestParam(value = "complete",required = false)String complete ,Model model, HttpSession session)
     {
         //如果用户未登录，重定向到登录界面
         if(session.getAttribute("customer")==null){
             return "redirect:/login";
         }
         List<Order> orders;
+            if(complete==null)
+            {
+                orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+            }
+            else if(complete.equals("2"))
+            {
+                orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+            }
+            else{
+                orders=orderRepository.uncompletedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+            }
+        //orders = orderRepository.getCustomerOrders(String.valueOf(10086123));
+        if(pageNo<=0)
+        {
+            pageNo=1;
+        }
+        PaginationSupport<Order> paginationSupport=orderRepository.customerFindPage(orders,pageNo,pageSize);
+        model.addAttribute("paginationSupport",paginationSupport);
         if(complete==null)
         {
-            orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+            model.addAttribute("complete","all");
         }
-        else if(complete.equals("2"))
-        {
-            orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
+        else {
+            model.addAttribute("complete",complete);
         }
-        else{
-            orders=orderRepository.uncompletedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());
-        }
-        //orders = orderRepository.getCustomerOrders(String.valueOf(10086123));
-        model.addAttribute("orders",orders);
+
         return "customer_order";
     }
     /**
@@ -96,7 +111,8 @@ public class OrderController {
      * @return
      */
     @RequestMapping(value="/order_item",method=RequestMethod.GET)
-    public String viewOrderItemInfo(@RequestParam(value="order_id" ) String order_id ,Model model)
+    public String viewOrderItemInfo(@RequestParam(value = "pageNo",defaultValue="1")int pageNo,@RequestParam(value = "pageSize",defaultValue = "10")int pageSize,
+                                    @RequestParam(value="order_id" ) String order_id ,Model model)
     {
         model.addAttribute("orderitems",orderItemInfoViewRepository.getOrderItems(order_id));
         return "customer_order_item";

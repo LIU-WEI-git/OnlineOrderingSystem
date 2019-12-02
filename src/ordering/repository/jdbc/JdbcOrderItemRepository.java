@@ -9,7 +9,12 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+/**
+ *orderItem资源访问的JDBC实现类
+ *
+ * @author niejunjie
+ * @version 1.0
+ */
 @Repository
 public class JdbcOrderItemRepository implements OrderItemRepository {
     private JdbcTemplate jdbcTemplate;

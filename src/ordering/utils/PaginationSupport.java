@@ -1,5 +1,6 @@
 package ordering.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -289,5 +290,24 @@ public class PaginationSupport<T> {
 	 */
 	public boolean isPreviousPage() {
 		return this.getCurrentPageNo() > 1;
+	}
+
+	public List<T> getCurrentPageItem()
+	{
+		List<T> itemlist=new ArrayList<T>();
+		if((startIndex+pageSize)<totalCount)
+		{
+			for(int i=0;i<pageSize;i++)
+			{
+				itemlist.add(this.items.get(startIndex+i));
+			}
+		}
+		else {
+			for(int i=startIndex;i<totalCount;i++)
+			{
+				itemlist.add(this.items.get(i));
+			}
+		}
+		return itemlist;
 	}
 }

@@ -35,7 +35,7 @@
                     <a href="<c:url value="/order?complete=2"/> " style="color: #3071a9">查看已完成订单</a>&nbsp;&nbsp;&nbsp;
                     <a href="<c:url value="/order?complete=0"/> " style="color: #3071a9">查看未完成的订单</a>
                     <br/><br/>
-                    <c:forEach items="${orders}" var="order">
+                    <c:forEach items="${paginationSupport.currentPageItem}" var="order">
                             <li class="product_right">
                                 <h3>下单时间：${order.create_time}</h3>
                                 <a href="<c:url value="/order/order_item?order_id=${order.order_id}"/>"><h4 style="color:blue"><strong>订单详情</strong></h4></a>
@@ -67,11 +67,28 @@
                         <a>----------------------------------------------------------------------------------------</a>
                         <br>
                     </c:forEach>
+                        <c:choose>
+                            <c:when test="${complete eq 'all'}">
+                                <a href="<c:url value="/order?pageNo=1"/> " class="btn-default">首页</a>&nbsp;&nbsp;&nbsp;
+                                <a href="<c:url value="/order?pageNo=${paginationSupport.currentPageNo-1}"/>" class="btn-default">上一页</a>&nbsp;&nbsp;&nbsp;
+                                <b>当前是第${paginationSupport.currentPageNo}页，共${paginationSupport.totalPageCount}页</b>&nbsp;&nbsp;&nbsp;
+                                <a href="<c:url value="/order?pageNo=${paginationSupport.currentPageNo+1}"/>" class="btn-default">下一页</a>&nbsp;&nbsp;&nbsp;
+                                <a href="<c:url value="/order?pageNo=${paginationSupport.totalPageCount}"/>" class="btn-default">末页</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="<c:url value="/order?pageNo=1&&complete=${complete}"/> " class="btn-default">首页</a>&nbsp;&nbsp;&nbsp;
+                                <a href="<c:url value="/order?pageNo=${paginationSupport.currentPageNo-1}&&complete=${complete}"/>" class="btn-default">上一页</a>&nbsp;&nbsp;&nbsp;
+                                <b>当前是第${paginationSupport.currentPageNo}页，共${paginationSupport.totalPageCount}页</b>&nbsp;&nbsp;&nbsp;
+                                <a href="<c:url value="/order?pageNo=${paginationSupport.currentPageNo+1}&&complete=${complete}"/>" class="btn-default">下一页</a>&nbsp;&nbsp;&nbsp;
+                                <a href="<c:url value="/order?pageNo=${paginationSupport.totalPageCount}&&complete=${complete}"/>" class="btn-default">末页</a>
+                                </c:otherwise>
+                        </c:choose>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <jsp:include page="customer_footer.jsp"/>
 </body>
 </html>

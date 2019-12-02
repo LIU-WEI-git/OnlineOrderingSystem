@@ -1,9 +1,11 @@
 package ordering.repository.jdbc;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import ordering.domain.Address;
 import ordering.domain.Customer;
 import ordering.domain.Order;
 import ordering.repository.OrderRepository;
+import ordering.utils.PaginationSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -218,6 +220,27 @@ public class JdbcOrderRepository implements OrderRepository {
     @Override
     public List<Order> uncompletedOrders(String customer_account) {
         return jdbcTemplate.query(CUSTOMER_ORDERS+" and (order_state =0 or order_state = 1 )order by create_time DESC ",orderRowMapper,customer_account);
+    }
+
+    @Override
+    public PaginationSupport<Order> customerFindPage(String customer_account,int pageNo, int pageSize) {
+        int totalCount=getCustomerTotalOrders(customer_account);
+        int startIndex=PaginationSupport.convertFromPageToStartIndex(pageNo,pageSize);
+        return new PaginationSupport<Order>(getCustomerOrders(customer_account),totalCount,pageSize,startIndex);
+    }
+
+    @Override
+    public PaginationSupport<Order> adminFindPage(int pageNo, int pageSize) {
+        int totalCount=getTotalOrder();
+        int startIndex=PaginationSupport.convertFromPageToStartIndex(pageNo,pageSize);
+        return new PaginationSupport<Order>(getOrders(),totalCount,pageSize,startIndex);
+    }
+
+    @Override
+    public PaginationSupport<Order> customerFindPage(List<Order> orders, int pageNo, int pageSize) {
+        int totalCount=orders.size();
+        int startIndex=PaginationSupport.convertFromPageToStartIndex(pageNo,pageSize);
+        return new PaginationSupport<Order>(orders,totalCount,pageSize,startIndex);
     }
 
 

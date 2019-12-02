@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 /**
- * category资源库接口的jdbc的实现类
+ * 视图orderAddressInfo资源库接口的jdbc的实现类
  *
  * @author: niejunjie
  * @version: 1.0

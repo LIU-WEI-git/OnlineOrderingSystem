@@ -2,6 +2,7 @@ package ordering.repository;
 
 import ordering.domain.Order;
 import ordering.domain.OrderItem;
+import ordering.utils.PaginationSupport;
 
 import java.util.List;
 
@@ -189,4 +190,32 @@ public interface OrderRepository {
      * @return
      */
     List<Order> uncompletedOrders(String customer_account);
+
+    /**
+     * 顾客查看订单的分页(通过顾客账号）
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    PaginationSupport<Order> customerFindPage(String customer_account,int pageNo,int pageSize);
+
+    /**
+     * 管理员查看订单的分页
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    PaginationSupport<Order> adminFindPage(int pageNo,int pageSize);
+
+    /**
+     * 对顾客筛选后的订单进行分页
+     *
+     * @param orders
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    PaginationSupport<Order> customerFindPage(List<Order> orders,int pageNo,int pageSize);
 }
