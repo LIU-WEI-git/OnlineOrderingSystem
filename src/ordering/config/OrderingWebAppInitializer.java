@@ -2,6 +2,9 @@ package ordering.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
 /**
  *用于配置Servlet容器的类
  *
@@ -26,5 +29,11 @@ public class OrderingWebAppInitializer extends AbstractAnnotationConfigDispatche
     protected String[] getServletMappings() {
         //将“/”路径映射到DispatcherServlet上，它将是应用的默认Servlet
         return new String[]{"/"};
+    }
+
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        //配置multipart，将用户上传的文件临时存储在默认目录下，设置最大文件大小为2M，最大请求大小为4M，并所有文件写入到磁盘中
+        registration.setMultipartConfig(new MultipartConfigElement("/", 2027125, 4194394, 0));
     }
 }

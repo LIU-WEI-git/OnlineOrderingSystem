@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-            <form method="POST" >
+            <form method="POST" enctype="multipart/form-data">
                 <%--<% request.getSession().getAttribute("dish");
                     request.getSession().getAttribute("categories");%>--%>
 <%--<c:forEach items="${dish}" var="dish" varStatus="li">--%>
@@ -57,7 +57,7 @@
                 菜品价格：<input type="number" name="dish_price" value="${dish.getPrice()}" minlength="2" maxlength="10"
                             required/><br/><br/>
                 菜品描述：<input  type="text" name="dish_description" value="${dish.getDescription()}" required/><br/><br/>
-                菜品图片：<input  type="text"  name="pic"  value="${dish.getPicture_url()}" minlength="2" maxlength="10" required/><br/><br/>
+                菜品图片：<input type="file" name="dish_picture" accept="image/gif,image/png,image/jpeg" required/><br/><br/>
                 菜品类：
                 <c:forEach items="${categories}" var="category" varStatus="li">
                     <input type="checkbox" name="cate"

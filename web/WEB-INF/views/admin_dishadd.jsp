@@ -49,12 +49,12 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-            <form method="POST" >
-
+            <form method="POST" enctype="multipart/form-data">
                 菜品编号：<input type="text"  name="id" minlength="2" maxlength="6" required/><br/><br/>
                 菜品名称：<input type="text"  name="name" minlength="2" maxlength="8" required/><br/><br/>
                 菜品价格：<input type="number" name="price"  minlength="1" maxlength="6" required/><br/><br/>
-                菜品图片：<input  type="text" name="url" required/><br/><br/>
+                <p>请选择要上传的jpg/png/gif图片，最大不能超过2M</p>
+                菜品图片：<input type="file" name="dish_picture" accept="image/gif,image/png,image/jpeg" required/><br/><br/>
                 菜品描述：<input  type="text"  name="description"  minlength="2" maxlength="20" required/><br/><br/>
                 菜品类：
                 <c:forEach items="${pcategories}" var="category" varStatus="li">
@@ -66,7 +66,6 @@
             </form>
             <%request.getSession().getAttribute("f");%>
             <p>${f}</p>
-
         </div>
     </div>
 </div>

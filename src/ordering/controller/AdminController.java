@@ -1,8 +1,24 @@
 package ordering.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import ordering.domain.Admin;
+import ordering.domain.Category;
+import ordering.domain.Dish;
+import ordering.domain.Order;
+import ordering.repository.*;
+import ordering.utils.CategoryDishSupport;
+import ordering.utils.DishCategorySupport;
+import ordering.utils.PaginationSupport;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,20 +26,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
-import ordering.domain.*;
-import ordering.repository.*;
-import ordering.repository.jdbc.JdbcAddressRepository;
-import ordering.utils.CategoryDishSupport;
-import ordering.utils.DishCategorySupport;
-import ordering.utils.PaginationSupport;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @Controller
@@ -85,7 +89,7 @@ public class AdminController {
         try{
         admin = adminRepository.findByUserName(useraccount, password);}
         catch(Exception e){
-
+            e.printStackTrace();
         }
         if (admin != null&&admin.getDelete_tag()==admin.UNDELETED) {
             session.setAttribute("admin", admin);
@@ -236,7 +240,7 @@ public class AdminController {
         }
         else{
         Category category=categoryRepository.getCategoryByName(signal);
-       /* CategoryDishSupport w=categoryRepository.listCategoryDishes(category)*/;
+            /* CategoryDishSupport w=categoryRepository.listCategoryDishes(category)*/
             PaginationSupport<DishCategorySupport> list=dishRepository.searchByCategoryPage(category,pageNo,pageSize);
        /* List<Dish> list=w.getDishes();*/
             model.addAttribute("list",list);
@@ -245,7 +249,13 @@ public class AdminController {
     }
 
     /**
-     *改变菜品
+     * 改变菜品
+     * @param id
+     * @param name
+     * @param price
+     * @param description
+     * @param dish_picture
+     * @param cate
      * @return
      */
     @RequestMapping(value = "/changedish", method = POST)
@@ -253,8 +263,9 @@ public class AdminController {
                               @RequestParam(value = "dish_name", defaultValue = "") String name,
                               @RequestParam(value = "dish_price", defaultValue = "") float price,
                               @RequestParam(value = "dish_description", defaultValue = "") String description,
-                              @RequestParam(value = "pic", defaultValue = "") String pic,
-                              @RequestParam(value = "cate", defaultValue = "") String [] cate){
+                              @RequestPart(value = "dish_picture") MultipartFile dish_picture,
+                              @RequestParam(value = "cate", defaultValue = "") String[] cate,
+                              HttpSession session) {
 
         String t = Arrays.toString(cate);
         String t2=t.substring(1,t.length()-1);
@@ -265,13 +276,32 @@ public class AdminController {
             Category m=categoryRepository.getCategoryById(c);
             categories.add(m);
         }
-        Dish dish=new Dish(id,name,pic,price,description);
-        DishCategorySupport p=new DishCategorySupport(categories, dish);
+        try {
+            //处理上传的图片
+            String originalFilename = dish_picture.getOriginalFilename();
+            split = originalFilename.split("\\\\");
+            String fileName = split[split.length - 1];
+            String urlInDB = "images/" + fileName;
+            String url = session.getServletContext().getRealPath("resources/images/");
+            File uploadFile = new File(url, fileName);
+            dish_picture.transferTo(uploadFile);
 
-        dishRepository.updateDish(name,pic,categories,price,description,p);
+            Dish dish = new Dish(id, name, urlInDB, price, description);
+            DishCategorySupport p = new DishCategorySupport(categories, dish);
+
+            dishRepository.updateDish(name, urlInDB, categories, price, description, p);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return "redirect:/admin/dish";
     }
 
+    /**
+     * 显示菜品类别
+     *
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/dishcategory", method = GET)
     public String showdishcategory(HttpSession session) {
         List<Category> blist=categoryRepository.getCategoryList();
@@ -399,10 +429,15 @@ session.setAttribute("admin",admin);
                               @RequestParam(value = "name", defaultValue = "") String name,HttpSession session){
         Category a=null;
         Category b=null;
-        try{a=categoryRepository.getCategoryById(id);}
-        catch(Exception e){}
+        try {
+            a = categoryRepository.getCategoryById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         try{b=categoryRepository.getCategoryByName(name);
-        }catch(Exception e){}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if(a==null&&b==null){
             Category category=new Category(id,name);
             categoryRepository.addCategory(category);
@@ -448,21 +483,24 @@ session.setAttribute("admin",admin);
      * @param id
      * @param name
      * @param price
-     * @param url
+     * @param dish_picture
      * @param description
      * @param session
      * @return
      */
-
     @RequestMapping(value = "/adddish", method = POST)
-    public String adddish(@RequestParam(value = "id", defaultValue = "") String id,
-                          @RequestParam(value = "name", defaultValue = "") String name,
-                          @RequestParam(value = "price", defaultValue = "") float price,
-                          @RequestParam(value = "url", defaultValue = "") String url,
-                          @RequestParam(value = "description", defaultValue = "") String description,
-                          @RequestParam(value = "cate", defaultValue = "") String [] cate,Model model,HttpSession session){
+    public String adddish(@RequestParam(value = "id") String id,
+                          @RequestParam(value = "name") String name,
+                          @RequestParam(value = "price") float price,
+                          @RequestPart(value = "dish_picture") MultipartFile dish_picture,
+                          @RequestParam(value = "description") String description,
+                          @RequestParam(value = "cate") String[] cate, Model model, HttpSession session) {
         Dish a=null;
-        try{a=dishRepository.findById(id);}catch(Exception e){}
+        try {
+            a = dishRepository.findById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         List<Category> categories=new ArrayList<>();
         if(a==null){
             String t = Arrays.toString(cate);
@@ -474,14 +512,26 @@ session.setAttribute("admin",admin);
                 categories.add(m);
 
             }
+            try {
+                //处理上传的图片
+                String originalFilename = dish_picture.getOriginalFilename();
+                split = originalFilename.split("\\\\");
+                String fileName = split[split.length - 1];
+                String urlInDB = "images/" + fileName;
+                String url = session.getServletContext().getRealPath("resources/images/");
+                File uploadFile = new File(url, fileName);
+                dish_picture.transferTo(uploadFile);
 
-            Dish dish=new Dish(id,name,url,price,description);
-            DishCategorySupport p=new DishCategorySupport(categories, dish);
-            dishRepository.addDish(p);
-            /*dishRepository.save(dish);*/
-            session.setAttribute("f", null);
-            return "redirect:/admin/dish";}
-        else{
+                Dish dish = new Dish(id, name, urlInDB, price, description);
+                DishCategorySupport p = new DishCategorySupport(categories, dish);
+                dishRepository.addDish(p);
+                /*dishRepository.save(dish);*/
+                session.setAttribute("f", null);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "redirect:/admin/dish";
+        } else {
 
             String  f="提示：添加失败，该菜品编号已被使用";
             session.setAttribute("f", f);
