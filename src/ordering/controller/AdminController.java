@@ -527,7 +527,7 @@ session.setAttribute("admin",admin);
      * @param session
      * @return
      */
-    @RequestMapping(value="/order",method = GET)
+   /* @RequestMapping(value="/order",method = GET)
     public String viewCustomerOrder(HttpSession session)
     {
         List<Order> orders=null;
@@ -537,8 +537,60 @@ session.setAttribute("admin",admin);
 
         session.setAttribute("orders",orders);
         return "admin_orderlist";
-    }
+    }*/
+    @RequestMapping(value="/order" ,method = GET)
+    public String viewCustomerOrder(@RequestParam(value = "pageNo",defaultValue="1")int pageNo,@RequestParam(value = "pageSize",defaultValue = "3")int pageSize,
+                                    @RequestParam(value = "complete",required = false)String complete,Model model, HttpSession session)
+    {
+/*
+        PaginationSupport<Order> paginationSupport=orderRepository.adminFindPage(pageNo,pageSize);*//*customerFindPage(orders,pageNo,pageSize);*//*
+        model.addAttribute("paginationSupport",paginationSupport);*/
 
+        List<Order> orders=new ArrayList<>();
+        if(complete==null)
+        {
+            orders=orderRepository.getOrders();
+            /*orders=orderRepository.getCustomerOrders(((Customer)session.getAttribute("customer")).getCustomer_account());*/
+        }else if(complete.equals("0"))
+        {
+            orders=orderRepository.getUncomfirmedOrder();
+            /* orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());*/
+        }
+        else if(complete.equals("3"))
+        {
+            orders=orderRepository.getConfirmedAndUndeliveredOrder();
+            /* orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());*/
+        }
+        else if(complete.equals("2"))
+        {
+            orders=orderRepository.getCompletedOrder();
+           /* orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());*/
+        }
+        else if(complete.equals("1"))
+        {
+            orders=orderRepository.getDeliveringOrder();
+            /* orders=orderRepository.completedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());*/
+        }
+        /*else{
+            orders=orderRepository.getCompletedOrder();
+           *//* orders=orderRepository.uncompletedOrders(((Customer)session.getAttribute("customer")).getCustomer_account());*//*
+        }*/
+        //orders = orderRepository.getCustomerOrders(String.valueOf(10086123));
+        if(pageNo<=0)
+        {
+            pageNo=1;
+        }
+        PaginationSupport<Order> paginationSupport=orderRepository.customerFindPage(orders,pageNo,pageSize);
+        model.addAttribute("paginationSupport",paginationSupport);
+        if(complete==null)
+        {
+            model.addAttribute("complete","all");
+        }
+        else {
+            model.addAttribute("complete",complete);
+        }
+        return "admin_orderlist";
+    }
     /**
      * 订单id搜素
      * @param id
@@ -614,15 +666,17 @@ session.setAttribute("admin",admin);
     /**
      * 搜索订单
      * @param message
-     * @param session
      * @return
      */
     @RequestMapping(value = "/searchorder", method = GET)
-    public String searchorderbycustomer(@RequestParam(value = "message", defaultValue = "") String message,HttpSession session) {
+    public String searchorderbycustomer(@RequestParam(value = "message", defaultValue = "") String message,
+                                        @RequestParam(value = "pageNo",defaultValue="1")int pageNo,@RequestParam(value = "pageSize",defaultValue = "3")int pageSize,
+                                        Model model) {
         List<Order> orders=new ArrayList<>();
         orders=orderRepository.getCustomerOrders(message);
-
-       session.setAttribute("orders",orders);
+        PaginationSupport<Order> paginationSupport=orderRepository.customerFindPage(orders,pageNo,pageSize);
+        model.addAttribute("paginationSupport",paginationSupport);
+       /*session.setAttribute("orders",orders);*/
 
 
             return "admin_orderlist";

@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-            <%request.getSession().getAttribute("admin");%>
+           <%-- <%request.getSession().getAttribute("admin");%>--%>
             <form method="post">
                 <input>
 

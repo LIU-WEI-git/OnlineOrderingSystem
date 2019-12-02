@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-                <%request.getSession().getAttribute("admin");%>
+               <%-- <%request.getSession().getAttribute("admin");%>--%>
             <form action="<c:url value="/admin/personma"/>">
                 电话： <input type="text"  name="phone" value="${admin.getAdmin_phone()}" minlength="2" maxlength="15" required/><br/><br/>
                 邮箱： <input type="email"  name="email" value="${admin.getAdmin_email()}"  required/><br/><br/>

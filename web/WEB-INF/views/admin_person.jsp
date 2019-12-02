@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-         <%request.getSession().getAttribute("admin");%>
+       <%--  <%request.getSession().getAttribute("admin");%>--%>
             <h1>管理员：      ${admin.getAdmin_name()}</h1><br>
             <h4>您的邮箱为：  ${admin.getAdmin_email()}</h4><br>
             <h4>您的电话为：  ${admin.getAdmin_phone()}</h4><br>

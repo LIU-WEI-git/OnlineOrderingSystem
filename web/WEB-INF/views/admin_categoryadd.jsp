@@ -56,7 +56,7 @@
 
                 <input type="submit" value="添加" />
             </form>
-<%request.getSession().getAttribute("u");%>
+<%--<%request.getSession().getAttribute("u");%>--%>
             <p>${u}</p>
 
         </div>

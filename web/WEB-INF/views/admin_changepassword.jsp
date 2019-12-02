@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-            <%request.getSession().getAttribute("admin");%>
+            <%--<%request.getSession().getAttribute("admin");%>--%>
             <form method="post">
                  原密码：  <input type="password"  name="p_1"    required/><br/><br/>
                  新密码：  <input type="password"  name="p_2"    required/><br/><br/>
@@ -56,7 +56,7 @@
                 <input type="submit" value="修改" />
             </form>
             <a href="<c:url value="/admin/person"/>">返回</a>
-            <%request.getSession().getAttribute("x");%>
+         <%--   <%request.getSession().getAttribute("x");%>--%>
             <p>${x}</p>
         </div>
     </div></div>

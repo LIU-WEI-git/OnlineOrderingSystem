@@ -49,8 +49,8 @@
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
             <form method="POST" >
-                <% request.getSession().getAttribute("dish");
-                    request.getSession().getAttribute("categories");%>
+                <%--<% request.getSession().getAttribute("dish");
+                    request.getSession().getAttribute("categories");%>--%>
 <%--<c:forEach items="${dish}" var="dish" varStatus="li">--%>
                 菜品编号：${dish.getDish_id()}<input type="hidden" name="m_id" value="${dish.getDish_id()}"/><br/><br/>
                 菜品名称：<input type="text"  name="dish_name"  value="${dish.getDish_name()}" minlength="2" maxlength="10" required/><br/><br/>

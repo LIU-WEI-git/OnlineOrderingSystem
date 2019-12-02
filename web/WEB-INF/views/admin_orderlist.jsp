@@ -48,7 +48,7 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-           <form action="<c:url value="/admin/ordertype"/>">
+         <%--  <form action="<c:url value="/admin/ordertype"/>">
             <select  name="signal" class="btn btn-info btn-search">
                 <option>all</option>
                 <option>noconfirmed</option>
@@ -60,7 +60,7 @@
                 <br><br>
                         <button type="submit" class="btn btn-info btn-search">类别查询</button>
 
-           </form>
+           </form>--%>
 
             <form class="input-group col-md-12" style="margin: 10px;position: relative" action="<c:url value="/admin/searchorder"/>">
 
@@ -73,7 +73,81 @@
                     </span>
             </form>
             <div class="content table-responsive table-full-width">
-            <c:forEach items="${orders}" var="order">
+               &nbsp;
+                <a href="<c:url value="/admin/order"/> " style="color: #3071a9">查看所有订单</a>&nbsp;&nbsp;&nbsp;
+                <a href="<c:url value="/admin/order?complete=2"/> " style="color: #3071a9">查看已完成订单</a>&nbsp;
+                <a href="<c:url value="/admin/order?complete=1"/> " style="color: #3071a9">查看配送中的订单</a>&nbsp;
+                <a href="<c:url value="/admin/order?complete=0"/> " style="color: #3071a9">查看未确定的订单</a>
+                <a href="<c:url value="/admin/order?complete=3"/> " style="color: #3071a9">查看未配送的订单</a>
+                <br/><br/>
+
+                <c:forEach items="${paginationSupport.currentPageItem}" var="order">
+                    <li class="product_right">
+                        <h3>下单时间：${order.create_time}</h3>
+                        <a href="<c:url value="/admin/order_item?order_id=${order.order_id}"/>"><h4 style="color:blue"><strong>订单详情</strong></h4></a>
+                        <h4 class="model"><strong>订单价格: </strong>${order.order_price}</h4>
+                        <h4 class="model"><strong>折扣: ${order.discount}</strong></h4><br>
+                        <h4>订单状态:
+                            <c:choose>
+                                <c:when test="${order.order_state ==0}">商家暂未接单</c:when>
+                                <c:when test="${order.order_state ==1}">商家已接单</c:when>
+                                <c:when test="${order.order_state ==2}">订单已结束</c:when>
+                            </c:choose>
+                        </h4>
+                        <div class="product_price">
+                            <h4>配送状态:
+                                <c:choose>
+                                    <c:when test="${order.delivery_state ==0}">未配送</c:when>
+                                    <c:when test="${order.delivery_state==1}">配送中</c:when>
+                                    <c:when test="${order.delivery_state==2}">已送达</c:when>
+                                </c:choose>
+                            </h4>
+                        </div>
+                        <div class="but1">
+                            <a href="<c:url value="/admin/address_info?order_id=${order.order_id}" />"><h4 style="color:blue">订单地址详情</h4></a>
+                        </div>
+                        <h4>备注：</h4><span>${order.remark}</span>
+                    </li>
+                    <c:choose>
+                        <c:when test="${order.delivery_state ==0&&order.order_state==0}">
+                            <p class="detail_desc"><a href="<c:url value="/admin/confirmorder?order_id=${order.order_id}"/>">确认订单</a></p>
+                        </c:when>
+                        <c:when test="${order.delivery_state ==0&&order.order_state==1}">
+                            <p class="detail_desc"><a href="<c:url value="/admin/begindeliver?order_id=${order.order_id}"/>">开始配送</a></p>
+                        </c:when>
+                        <c:when test="${order.delivery_state==1&&order.order_state==1}">
+                            <p class="detail_desc"><a href="<c:url value="/admin/enddeliver?order_id=${order.order_id}"/>">完成配送</a></p>
+                        </c:when>
+
+                    </c:choose>
+                    <h4 class="detail"> </h4>
+                    <p class="detail_desc "> </p>
+                    <a>----------------------------------------------------------------------------------------</a>
+                    <br>
+                </c:forEach>
+                <c:choose>
+                    <c:when test="${complete eq 'all'}">
+                        <%--<a href="<c:url value="/order?pageNo=1"/> " class="btn-default">首页</a>&nbsp;--%>&nbsp;&nbsp;
+                        <a href="<c:url value="/admin/order?pageNo=${paginationSupport.currentPageNo-1}"/>" class="btn-default">上一页</a>&nbsp;&nbsp;&nbsp;
+                        <b>当前是第${paginationSupport.currentPageNo}页，共${paginationSupport.totalPageCount}页</b>&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value="/admin/order?pageNo=${paginationSupport.currentPageNo+1}"/>" class="btn-default">下一页</a>&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value="/admin/order?pageNo=${paginationSupport.totalPageCount}"/>" class="btn-default">末页</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="<c:url value="/admin/order?pageNo=1&&complete=${complete}"/> " class="btn-default">首页</a>&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value="/admin/order?pageNo=${paginationSupport.currentPageNo-1}&&complete=${complete}"/>" class="btn-default">上一页</a>&nbsp;&nbsp;&nbsp;
+                        <b>当前是第${paginationSupport.currentPageNo}页，共${paginationSupport.totalPageCount}页</b>&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value="/admin/order?pageNo=${paginationSupport.currentPageNo+1}&&complete=${complete}"/>" class="btn-default">下一页</a>&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value="/admin/order?pageNo=${paginationSupport.totalPageCount}&&complete=${complete}"/>" class="btn-default">末页</a>
+                    </c:otherwise>
+                </c:choose>
+              <%--  <c:if test="${paginationSupport.previousPage}">
+                    <a href="<c:url value="/admin/order?pageNo=${paginationSupport.getCurrentPageNo()-1}" />" >上一页</a>
+                </c:if>
+                <c:if test="${paginationSupport.nextPage}">
+                    <a href="<c:url value="/admin/order?pageNo=${paginationSupport.getCurrentPageNo()+1}" />" >下一页</a>
+                </c:if>--%>
+           <%-- <c:forEach items="${orders}" var="order">
                 <ul class="">
                     <li class=""><img src="" class="img-responsive" alt=""/>
                         <p>订单流水号：${order.order_id}</p>
@@ -118,7 +192,7 @@
                     </c:choose>
                     <p class="detail_desc"><a href="<c:url value="/admin/order_item?order_id=${order.order_id}"/>">订单详情</a></p>
                 </ul>
-            </c:forEach>
+            </c:forEach>--%>
             </div>
         </div>
     </div></div>

@@ -55,10 +55,10 @@
     <div class="main-panel">
         <jsp:include page="admin_header.jsp" flush="true"/>
         <div class="content">
-<%request.getSession().getAttribute("income");
+<%--<%request.getSession().getAttribute("income");
 request.getSession().getAttribute("totalorder");
     request.getSession().getAttribute("cs");
-    request.getSession().getAttribute("as");%>
+    request.getSession().getAttribute("as");%>--%>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">

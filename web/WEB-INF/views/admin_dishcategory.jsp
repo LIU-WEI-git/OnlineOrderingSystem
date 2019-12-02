@@ -79,7 +79,7 @@
                                     </tr>
                                 </c:forEach>
                             </table>
-                            <%request.getSession().getAttribute("a");%>
+                          <%--  <%request.getSession().getAttribute("a");%>--%>
                             <p>${a}</p>
                             <a href="<c:url value="/admin/addcategory" />">添加菜品类</a>
                             <%-- <button type="submit" class="btn btn-info btn-fill btn-wd" href="<c:url value="/admin/addadmin" />">添加管理员</button>--%>
