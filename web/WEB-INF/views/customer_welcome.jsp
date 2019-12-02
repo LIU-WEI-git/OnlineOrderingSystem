@@ -76,7 +76,7 @@
         </div>
     </div>
 </div>
-<a href="<c:url value="/admin/alogin" />">登录</a>
+<%--<a href="<c:url value="/admin/alogin" />">登录</a>--%>
 <jsp:include page="customer_footer.jsp" flush="true"/>
 </body>
 </html>

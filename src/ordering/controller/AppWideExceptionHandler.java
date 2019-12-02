@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
  * @version: 1.0
  * Created in 2019/11/30 8:28
  */
-//@ControllerAdvice
+@ControllerAdvice
 public class AppWideExceptionHandler {
 
     private static final String DEFAULT_ERROR_VIEW = "error"; // 定义错误显示页，error.html
