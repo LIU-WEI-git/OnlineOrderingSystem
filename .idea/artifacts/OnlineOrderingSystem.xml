@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="OnlineOrderingSystem">
+    <output-path>$PROJECT_DIR$/out/artifacts/OnlineOrderingSystem</output-path>
+    <root id="archive" name="OnlineOrderingSystem.war">
+      <element id="artifact" artifact-name="OnlineOrderingSystem:war exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+    </root>
+  </artifact>
+</component>
